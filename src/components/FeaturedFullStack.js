@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
@@ -20,8 +20,8 @@ export default function FeaturedFullStack({ onOpenApply }) {
           {/* Left Column: Coder with Headphones (5 cols) */}
           <div className="lg:col-span-5 h-full min-h-[380px] relative bg-gray-900 overflow-hidden group">
             {/* Red Diagonal Neon Beam */}
-            <div className="absolute -top-16 left-1/2 w-4 h-[160%] bg-[#E50914] rotate-[26deg] shadow-[0_0_35px_#E50914] opacity-90 z-0 pointer-events-none"></div>
-            <div className="absolute -top-16 left-1/2 w-14 h-[160%] bg-[#E50914]/40 rotate-[26deg] blur-md z-0 pointer-events-none"></div>
+            <div className="absolute -top-16 left-1/2 w-4 h-[160%] bg-[#1D4ED8] rotate-[26deg] shadow-[0_0_35px_#1D4ED8] opacity-90 z-0 pointer-events-none"></div>
+            <div className="absolute -top-16 left-1/2 w-14 h-[160%] bg-[#1D4ED8]/40 rotate-[26deg] blur-md z-0 pointer-events-none"></div>
 
             <motion.img
               whileHover={{ scale: 1.04 }}
@@ -38,12 +38,12 @@ export default function FeaturedFullStack({ onOpenApply }) {
           <div className="lg:col-span-7 p-8 sm:p-12 lg:p-14 space-y-6">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <span className="text-[#E50914] font-mono font-bold text-sm">//</span>
+                <span className="text-[#1D4ED8] font-mono font-bold text-sm">//</span>
                 <span className="text-xs uppercase font-mono font-bold tracking-[0.2em] text-gray-500">
                   FEATURED PROGRAM
                 </span>
               </div>
-              <span className="text-[#E50914] font-mono font-black text-2xl tracking-tighter">
+              <span className="text-[#1D4ED8] font-mono font-black text-2xl tracking-tighter">
                 &lt;/&gt;
               </span>
             </div>
@@ -66,10 +66,10 @@ export default function FeaturedFullStack({ onOpenApply }) {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: 0.05 * idx }}
-                    whileHover={{ scale: 1.05, borderColor: "#E50914" }}
+                    whileHover={{ scale: 1.05, borderColor: "#1D4ED8" }}
                     className="px-3.5 py-1.5 rounded-full bg-white border border-gray-200 text-xs font-mono text-gray-800 flex items-center gap-1.5 cursor-default transition-all shadow-sm"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#E50914]"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#1D4ED8]"></span>
                     <span>{tech}</span>
                   </motion.div>
                 ))}
@@ -83,10 +83,10 @@ export default function FeaturedFullStack({ onOpenApply }) {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: 0.05 * (idx + row1.length) }}
-                    whileHover={{ scale: 1.05, borderColor: "#E50914" }}
+                    whileHover={{ scale: 1.05, borderColor: "#1D4ED8" }}
                     className="px-3.5 py-1.5 rounded-full bg-white border border-gray-200 text-xs font-mono text-gray-800 flex items-center gap-1.5 cursor-default transition-all shadow-sm"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#E50914]"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#1D4ED8]"></span>
                     <span>{tech}</span>
                   </motion.div>
                 ))}
@@ -99,7 +99,7 @@ export default function FeaturedFullStack({ onOpenApply }) {
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => onOpenApply("Full Stack Development")}
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#E50914] hover:bg-[#B91C1C] text-white text-xs font-black uppercase tracking-wider rounded-full shadow-[0_4px_20px_rgba(229,9,20,0.35)] transition-all"
+                className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#1D4ED8] hover:bg-[#B91C1C] text-white text-xs font-black uppercase tracking-wider rounded-full shadow-[0_4px_20px_rgba(229,9,20,0.35)] transition-all"
               >
                 <span>Explore Program</span>
                 <ArrowRight className="w-4 h-4" />

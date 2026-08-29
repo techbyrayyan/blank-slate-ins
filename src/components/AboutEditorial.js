@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import Link from "next/link";
@@ -104,7 +104,7 @@ export default function AboutEditorial() {
                           <span className="font-bold text-gray-900 text-xs sm:text-sm leading-snug">
                             {card.title}
                           </span>
-                          <div className="w-7 h-7 rounded-full bg-gray-50 group-hover:bg-[#E50914] flex items-center justify-center transition-colors flex-shrink-0">
+                          <div className="w-7 h-7 rounded-full bg-gray-50 group-hover:bg-[#1D4ED8] flex items-center justify-center transition-colors flex-shrink-0">
                             <ArrowRight className="w-3.5 h-3.5 text-gray-700 group-hover:text-white transition-colors" />
                           </div>
                         </div>
@@ -133,7 +133,7 @@ export default function AboutEditorial() {
                     onClick={() => setCurrentSlide(i)}
                     className={`rounded-full transition-all duration-300 ${
                       i === currentSlide
-                        ? "w-7 h-2 bg-[#E50914]"
+                        ? "w-7 h-2 bg-[#1D4ED8]"
                         : "w-2 h-2 bg-gray-300 hover:bg-gray-400"
                     }`}
                     aria-label={`Go to slide ${i + 1}`}

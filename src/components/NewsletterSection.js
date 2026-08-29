@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { Mail, CheckCircle2, ArrowRight } from "lucide-react";
@@ -18,7 +18,7 @@ export default function NewsletterSection() {
   return (
     <section className="py-16 bg-[#F7F7F8] border-t border-b border-gray-200/60 relative">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-        <div className="w-12 h-12 rounded-2xl bg-white shadow-sm border border-gray-100 text-[#E50914] flex items-center justify-center mx-auto">
+        <div className="w-12 h-12 rounded-2xl bg-white shadow-sm border border-gray-100 text-[#1D4ED8] flex items-center justify-center mx-auto">
           <Mail className="w-6 h-6" />
         </div>
 
@@ -44,11 +44,11 @@ export default function NewsletterSection() {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email address"
               required
-              className="flex-1 px-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#E50914]/20 focus:border-[#E50914] shadow-sm transition-all"
+              className="flex-1 px-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]/20 focus:border-[#1D4ED8] shadow-sm transition-all"
             />
             <button
               type="submit"
-              className="px-6 py-3 bg-[#0B0B0C] hover:bg-[#E50914] text-white text-xs font-bold uppercase tracking-wider rounded-xl shadow-md transition-all duration-200 flex items-center justify-center gap-1.5"
+              className="px-6 py-3 bg-[#0B0B0C] hover:bg-[#1D4ED8] text-white text-xs font-bold uppercase tracking-wider rounded-xl shadow-md transition-all duration-200 flex items-center justify-center gap-1.5"
             >
               <span>Subscribe</span>
               <ArrowRight className="w-3.5 h-3.5" />

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { ArrowRight, Sparkles, PhoneCall, CheckCircle } from "lucide-react";
@@ -10,10 +10,10 @@ export default function AdmissionsCTA({ onOpenApply }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-[#0B0B0C] text-white rounded-3xl p-8 sm:p-14 lg:p-16 relative overflow-hidden border border-white/10 shadow-2xl">
           {/* Subtle Ambient Glow */}
-          <div className="absolute -top-24 -left-24 w-80 h-80 bg-[#E50914]/15 rounded-full blur-3xl pointer-events-none"></div>
+          <div className="absolute -top-24 -left-24 w-80 h-80 bg-[#1D4ED8]/15 rounded-full blur-3xl pointer-events-none"></div>
 
           <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8">
-            <span className="inline-block text-xs font-black uppercase tracking-[0.2em] text-[#E50914] bg-white/5 border border-white/10 px-4 py-1.5 rounded-full">
+            <span className="inline-block text-xs font-black uppercase tracking-[0.2em] text-[#1D4ED8] bg-white/5 border border-white/10 px-4 py-1.5 rounded-full">
               ADMISSIONS OPEN 2026
             </span>
 
@@ -30,10 +30,10 @@ export default function AdmissionsCTA({ onOpenApply }) {
               {admissionsSteps.map((step) => (
                 <div
                   key={step.step}
-                  className="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm space-y-2 hover:border-[#E50914]/50 transition-colors"
+                  className="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm space-y-2 hover:border-[#1D4ED8]/50 transition-colors"
                 >
                   <div className="flex items-center justify-between">
-                    <span className="text-2xl font-black text-[#E50914]">{step.step}</span>
+                    <span className="text-2xl font-black text-[#1D4ED8]">{step.step}</span>
                     <CheckCircle className="w-4 h-4 text-gray-500" />
                   </div>
                   <h3 className="text-base font-bold text-white">{step.title}</h3>
@@ -46,7 +46,7 @@ export default function AdmissionsCTA({ onOpenApply }) {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
               <button
                 onClick={() => onOpenApply()}
-                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 bg-[#E50914] hover:bg-[#B80710] text-white font-bold rounded-xl text-sm shadow-lg glow-red transition-all transform hover:-translate-y-0.5"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 bg-[#1D4ED8] hover:bg-[#B80710] text-white font-bold rounded-xl text-sm shadow-lg glow-red transition-all transform hover:-translate-y-0.5"
               >
                 <span>Apply Now for Fall 2026</span>
                 <Sparkles className="w-4 h-4 ml-2" />

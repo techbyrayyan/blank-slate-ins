@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 
 export default function Logo({
   variant = "dark", // "dark" (for light backgrounds) | "light" (for dark backgrounds)
@@ -50,13 +50,13 @@ export default function Logo({
             cx="34"
             cy="32"
             r="4.5"
-            className="fill-[#E50914]"
+            className="fill-[#1D4ED8]"
           />
           <circle
             cx="34"
             cy="32"
             r="7"
-            className="stroke-[#E50914]/40"
+            className="stroke-[#1D4ED8]/40"
             strokeWidth="1.5"
           />
         </svg>
@@ -70,7 +70,7 @@ export default function Logo({
                 isLight ? "text-white" : "text-[#09090B]"
               }`}
             >
-              BLANK<span className="text-[#E50914]">SLATE</span>
+              BLANK<span className="text-[#1D4ED8]">SLATE</span>
             </span>
           </div>
           <span

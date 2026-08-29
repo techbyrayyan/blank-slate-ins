@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import CustomCursor from "@/components/CustomCursor";
@@ -22,7 +22,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col selection:bg-[#E50914] selection:text-white font-sans">
+    <div className="min-h-screen flex flex-col selection:bg-[#1D4ED8] selection:text-white font-sans">
       {/* Interactive Custom Cursor */}
       <CustomCursor />
 

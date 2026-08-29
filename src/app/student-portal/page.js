@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
@@ -27,7 +27,7 @@ export default function StudentPortalPage() {
   const { student, courses, attendance, assignments, invoices } = studentPortalData;
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-[#09090B] selection:bg-[#E50914] selection:text-white font-sans">
+    <div className="min-h-screen flex flex-col bg-white text-[#09090B] selection:bg-[#1D4ED8] selection:text-white font-sans">
       <CustomCursor />
       <Navbar />
 
@@ -39,12 +39,12 @@ export default function StudentPortalPage() {
               <img
                 src={student.avatar}
                 alt={student.name}
-                className="w-16 h-16 rounded-2xl object-cover ring-2 ring-[#E50914]"
+                className="w-16 h-16 rounded-2xl object-cover ring-2 ring-[#1D4ED8]"
               />
               <div className="space-y-1">
                 <div className="flex items-center gap-2">
                   <h1 className="text-2xl font-black text-gray-950">{student.name}</h1>
-                  <span className="px-2 py-0.5 rounded bg-[#E50914]/10 border border-[#E50914]/30 text-[#E50914] text-[9px] font-mono font-bold uppercase">
+                  <span className="px-2 py-0.5 rounded bg-[#1D4ED8]/10 border border-[#1D4ED8]/30 text-[#1D4ED8] text-[9px] font-mono font-bold uppercase">
                     STUDENT
                   </span>
                 </div>
@@ -61,7 +61,7 @@ export default function StudentPortalPage() {
               </div>
               <div className="px-4 py-2 bg-gray-50 border border-gray-200 rounded-xl text-center">
                 <p className="text-gray-500 text-[10px] uppercase font-bold">ATTENDANCE</p>
-                <p className="text-xl font-bold text-[#E50914] leading-none">{attendance.percentage}%</p>
+                <p className="text-xl font-bold text-[#1D4ED8] leading-none">{attendance.percentage}%</p>
               </div>
             </div>
           </div>
@@ -79,7 +79,7 @@ export default function StudentPortalPage() {
                     onClick={() => setActiveTab(tab.id)}
                     className={`w-full p-3 rounded-2xl flex items-center gap-3 text-xs font-bold transition-all text-left ${
                       isActive
-                        ? "bg-[#E50914] text-white shadow-md"
+                        ? "bg-[#1D4ED8] text-white shadow-md"
                         : "text-gray-600 hover:text-black hover:bg-gray-50"
                     }`}
                   >
@@ -101,13 +101,13 @@ export default function StudentPortalPage() {
                       {courses.map((c) => (
                         <div key={c.code} className="p-4 rounded-2xl bg-gray-50 border border-gray-200 space-y-2">
                           <div className="flex items-center justify-between text-xs">
-                            <span className="font-mono font-bold text-[#E50914]">{c.code}</span>
+                            <span className="font-mono font-bold text-[#1D4ED8]">{c.code}</span>
                             <span className="font-bold text-gray-700">{c.progress}% Completed</span>
                           </div>
                           <h3 className="text-base font-bold text-gray-950">{c.title}</h3>
                           <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
                             <div
-                              className="bg-[#E50914] h-2 rounded-full transition-all duration-500"
+                              className="bg-[#1D4ED8] h-2 rounded-full transition-all duration-500"
                               style={{ width: `${c.progress}%` }}
                             ></div>
                           </div>
@@ -148,7 +148,7 @@ export default function StudentPortalPage() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {courses.map((c) => (
                       <div key={c.code} className="p-6 rounded-2xl bg-gray-50 border border-gray-200 space-y-3">
-                        <span className="text-xs font-mono font-bold text-[#E50914]">{c.code}</span>
+                        <span className="text-xs font-mono font-bold text-[#1D4ED8]">{c.code}</span>
                         <h3 className="text-lg font-bold text-gray-950">{c.title}</h3>
                         <p className="text-xs text-gray-600">Instructor: {c.instructor}</p>
                         <div className="pt-2 flex items-center justify-between text-xs font-mono">
@@ -186,9 +186,9 @@ export default function StudentPortalPage() {
                   <div className="p-6 rounded-2xl bg-gray-50 border border-gray-200 text-gray-900 flex items-center justify-between">
                     <div>
                       <p className="text-xs font-mono uppercase text-gray-500">Cumulative Grade Point Average</p>
-                      <p className="text-4xl font-mono font-black text-[#E50914] mt-1">{student.gpa} / 4.00</p>
+                      <p className="text-4xl font-mono font-black text-[#1D4ED8] mt-1">{student.gpa} / 4.00</p>
                     </div>
-                    <button className="px-4 py-2 bg-[#E50914] hover:bg-[#B91C1C] text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-md transition-all">
+                    <button className="px-4 py-2 bg-[#1D4ED8] hover:bg-[#B91C1C] text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-md transition-all">
                       <Download className="w-3.5 h-3.5" /> Download Transcript PDF
                     </button>
                   </div>
@@ -207,7 +207,7 @@ export default function StudentPortalPage() {
                           <p className="text-xs text-gray-500 font-mono">{inv.date}</p>
                         </div>
                         <div className="text-right">
-                          <p className="text-base font-mono font-black text-[#E50914]">{inv.amount}</p>
+                          <p className="text-base font-mono font-black text-[#1D4ED8]">{inv.amount}</p>
                           <span
                             className={`text-[10px] font-mono font-bold uppercase ${
                               inv.status === "Paid" ? "text-emerald-600" : "text-amber-600"

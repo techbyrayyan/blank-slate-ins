@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -40,7 +40,7 @@ export default function CampusLifePage() {
   const [applyModalOpen, setApplyModalOpen] = useState(false);
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-[#09090B] selection:bg-[#E50914] selection:text-white font-sans">
+    <div className="min-h-screen flex flex-col bg-white text-[#09090B] selection:bg-[#1D4ED8] selection:text-white font-sans">
       <CustomCursor />
       <Navbar onOpenApply={() => setApplyModalOpen(true)} />
 
@@ -53,12 +53,12 @@ export default function CampusLifePage() {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-3xl space-y-4 mb-16"
           >
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E50914]/10 border border-[#E50914]/30 text-[#E50914] text-xs font-mono font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#1D4ED8]/10 border border-[#1D4ED8]/30 text-[#1D4ED8] text-xs font-mono font-bold uppercase tracking-wider">
               <Sparkles className="w-3.5 h-3.5" /> CAMPUS CULTURE
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.05] text-gray-950">
               Life Inside the <br />
-              <span className="text-[#E50914]">Innovation District</span>
+              <span className="text-[#1D4ED8]">Innovation District</span>
             </h1>
             <p className="text-base sm:text-lg text-gray-600 leading-relaxed pt-2">
               Discover student tech societies, 48-hour hackathons, prototyping maker spaces, and collaborative work lounges.
@@ -68,7 +68,7 @@ export default function CampusLifePage() {
           {/* Student Societies Grid */}
           <div className="space-y-8 mb-20">
             <div className="space-y-2">
-              <span className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-[#E50914]">
+              <span className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-[#1D4ED8]">
                 STUDENT ORGANIZATIONS
               </span>
               <h2 className="text-3xl sm:text-4xl font-black text-gray-950">Technical Clubs & Guilds</h2>
@@ -84,14 +84,14 @@ export default function CampusLifePage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: idx * 0.1 }}
-                    whileHover={{ y: -5, borderColor: "#E50914" }}
+                    whileHover={{ y: -5, borderColor: "#1D4ED8" }}
                     className="p-8 rounded-3xl bg-white border border-gray-200 space-y-4 shadow-sm hover:shadow-xl transition-all cursor-default"
                   >
                     <div className="flex items-center justify-between">
-                      <div className="w-12 h-12 rounded-2xl bg-gray-100 border border-gray-200 text-[#E50914] flex items-center justify-center">
+                      <div className="w-12 h-12 rounded-2xl bg-gray-100 border border-gray-200 text-[#1D4ED8] flex items-center justify-center">
                         <Icon className="w-6 h-6" />
                       </div>
-                      <span className="text-xs font-mono font-bold text-[#E50914]">{club.members}</span>
+                      <span className="text-xs font-mono font-bold text-[#1D4ED8]">{club.members}</span>
                     </div>
 
                     <h3 className="text-2xl font-bold text-gray-950">{club.name}</h3>

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -90,7 +90,7 @@ export default function ApplicationModal({ isOpen, onClose, preselectedCourse = 
           particleCount: 120,
           spread: 80,
           origin: { y: 0.6 },
-          colors: ["#E50914", "#B91C1C", "#FFFFFF", "#FF3355"],
+          colors: ["#1D4ED8", "#B91C1C", "#FFFFFF", "#FF3355"],
         });
       } catch (err) {}
 
@@ -117,7 +117,7 @@ export default function ApplicationModal({ isOpen, onClose, preselectedCourse = 
           {/* Header */}
           <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-[#08080B]">
             <div className="flex items-center gap-2.5">
-              <span className="w-2 h-2 rounded-full bg-[#E50914] animate-pulse"></span>
+              <span className="w-2 h-2 rounded-full bg-[#1D4ED8] animate-pulse"></span>
               <div>
                 <h3 className="text-base font-bold text-white">Online Application Terminal</h3>
                 <p className="text-[10px] text-gray-400">BlankSlate Institute — Academic Year 2026</p>
@@ -139,14 +139,14 @@ export default function ApplicationModal({ isOpen, onClose, preselectedCourse = 
                 animate={{ opacity: 1, scale: 1 }}
                 className="py-8 text-center space-y-5"
               >
-                <div className="w-16 h-16 bg-[#E50914]/20 text-[#E50914] rounded-full flex items-center justify-center mx-auto ring-8 ring-[#E50914]/10">
+                <div className="w-16 h-16 bg-[#1D4ED8]/20 text-[#1D4ED8] rounded-full flex items-center justify-center mx-auto ring-8 ring-[#1D4ED8]/10">
                   <CheckCircle2 className="w-9 h-9" />
                 </div>
                 <div>
                   <h4 className="text-2xl font-black text-white">Application Submitted!</h4>
                   <p className="text-xs sm:text-sm text-gray-400 max-w-md mx-auto mt-2">
                     Thank you, <span className="font-semibold text-white">{formData.fullName}</span>. Your application for{" "}
-                    <span className="font-bold text-[#E50914]">{formData.course}</span> has been confirmed.
+                    <span className="font-bold text-[#1D4ED8]">{formData.course}</span> has been confirmed.
                   </p>
                 </div>
 
@@ -158,7 +158,7 @@ export default function ApplicationModal({ isOpen, onClose, preselectedCourse = 
                 <div className="pt-3">
                   <button
                     onClick={onClose}
-                    className="px-6 py-2.5 bg-[#E50914] hover:bg-[#B91C1C] text-white font-bold rounded-xl text-xs uppercase tracking-wider"
+                    className="px-6 py-2.5 bg-[#1D4ED8] hover:bg-[#B91C1C] text-white font-bold rounded-xl text-xs uppercase tracking-wider"
                   >
                     Return to Website
                   </button>
@@ -168,11 +168,11 @@ export default function ApplicationModal({ isOpen, onClose, preselectedCourse = 
               <form onSubmit={handleSubmit} className="space-y-4">
                 {/* Progress Steps */}
                 <div className="flex items-center justify-between pb-3 border-b border-white/10 text-xs">
-                  <span className={`font-bold ${step >= 1 ? "text-[#E50914]" : "text-gray-500"}`}>1. Personal Info</span>
+                  <span className={`font-bold ${step >= 1 ? "text-[#1D4ED8]" : "text-gray-500"}`}>1. Personal Info</span>
                   <span className="text-gray-600">→</span>
-                  <span className={`font-bold ${step >= 2 ? "text-[#E50914]" : "text-gray-500"}`}>2. Course Track</span>
+                  <span className={`font-bold ${step >= 2 ? "text-[#1D4ED8]" : "text-gray-500"}`}>2. Course Track</span>
                   <span className="text-gray-600">→</span>
-                  <span className={`font-bold ${step >= 3 ? "text-[#E50914]" : "text-gray-500"}`}>3. Confirmation</span>
+                  <span className={`font-bold ${step >= 3 ? "text-[#1D4ED8]" : "text-gray-500"}`}>3. Confirmation</span>
                 </div>
 
                 {errorMsg && (
@@ -196,7 +196,7 @@ export default function ApplicationModal({ isOpen, onClose, preselectedCourse = 
                         value={formData.fullName}
                         onChange={handleChange}
                         placeholder="e.g. Rayyan Ansari"
-                        className="w-full px-3.5 py-2.5 bg-white/5 border border-white/10 rounded-xl text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#E50914] focus:ring-1 focus:ring-[#E50914]"
+                        className="w-full px-3.5 py-2.5 bg-white/5 border border-white/10 rounded-xl text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#1D4ED8] focus:ring-1 focus:ring-[#1D4ED8]"
                       />
                     </div>
 
@@ -212,7 +212,7 @@ export default function ApplicationModal({ isOpen, onClose, preselectedCourse = 
                           value={formData.email}
                           onChange={handleChange}
                           placeholder="you@domain.com"
-                          className="w-full px-3.5 py-2.5 bg-white/5 border border-white/10 rounded-xl text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#E50914]"
+                          className="w-full px-3.5 py-2.5 bg-white/5 border border-white/10 rounded-xl text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#1D4ED8]"
                         />
                       </div>
                       <div>
@@ -226,7 +226,7 @@ export default function ApplicationModal({ isOpen, onClose, preselectedCourse = 
                           value={formData.phone}
                           onChange={handleChange}
                           placeholder="+1 (555) 000-0000"
-                          className="w-full px-3.5 py-2.5 bg-white/5 border border-white/10 rounded-xl text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#E50914]"
+                          className="w-full px-3.5 py-2.5 bg-white/5 border border-white/10 rounded-xl text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#1D4ED8]"
                         />
                       </div>
                     </div>
@@ -244,7 +244,7 @@ export default function ApplicationModal({ isOpen, onClose, preselectedCourse = 
                         name="course"
                         value={formData.course}
                         onChange={handleChange}
-                        className="w-full px-3.5 py-2.5 bg-[#14141B] border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-[#E50914]"
+                        className="w-full px-3.5 py-2.5 bg-[#14141B] border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-[#1D4ED8]"
                       >
                         {coursesData.map((c) => (
                           <option key={c.slug || c.id} value={c.title}>
@@ -263,7 +263,7 @@ export default function ApplicationModal({ isOpen, onClose, preselectedCourse = 
                           name="educationLevel"
                           value={formData.educationLevel}
                           onChange={handleChange}
-                          className="w-full px-3.5 py-2.5 bg-[#14141B] border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-[#E50914]"
+                          className="w-full px-3.5 py-2.5 bg-[#14141B] border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-[#1D4ED8]"
                         >
                           <option value="High School">High School / Intermediate</option>
                           <option value="Associate Degree">Associate Degree</option>
@@ -280,7 +280,7 @@ export default function ApplicationModal({ isOpen, onClose, preselectedCourse = 
                           name="mode"
                           value={formData.mode}
                           onChange={handleChange}
-                          className="w-full px-3.5 py-2.5 bg-[#14141B] border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-[#E50914]"
+                          className="w-full px-3.5 py-2.5 bg-[#14141B] border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-[#1D4ED8]"
                         >
                           <option value="On Campus">On Campus (Interactive Labs)</option>
                           <option value="Online Live">Online Live</option>
@@ -299,7 +299,7 @@ export default function ApplicationModal({ isOpen, onClose, preselectedCourse = 
                         value={formData.message}
                         onChange={handleChange}
                         placeholder="What would you like to build at BlankSlate?"
-                        className="w-full px-3.5 py-2.5 bg-white/5 border border-white/10 rounded-xl text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#E50914]"
+                        className="w-full px-3.5 py-2.5 bg-white/5 border border-white/10 rounded-xl text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#1D4ED8]"
                       ></textarea>
                     </div>
                   </div>
@@ -313,7 +313,7 @@ export default function ApplicationModal({ isOpen, onClose, preselectedCourse = 
                       <div className="grid grid-cols-2 gap-2 text-gray-300">
                         <div>Name: <span className="font-bold text-white">{formData.fullName}</span></div>
                         <div>Email: <span className="font-bold text-white">{formData.email}</span></div>
-                        <div>Course: <span className="font-bold text-[#E50914]">{formData.course}</span></div>
+                        <div>Course: <span className="font-bold text-[#1D4ED8]">{formData.course}</span></div>
                         <div>Mode: <span className="font-bold text-white">{formData.mode}</span></div>
                       </div>
                     </div>
@@ -338,7 +338,7 @@ export default function ApplicationModal({ isOpen, onClose, preselectedCourse = 
                     <button
                       type="button"
                       onClick={handleNext}
-                      className="px-5 py-2 text-xs font-bold text-white bg-[#E50914] hover:bg-[#B91C1C] rounded-xl flex items-center gap-1.5 uppercase"
+                      className="px-5 py-2 text-xs font-bold text-white bg-[#1D4ED8] hover:bg-[#B91C1C] rounded-xl flex items-center gap-1.5 uppercase"
                     >
                       Next Step <ArrowRight className="w-3.5 h-3.5" />
                     </button>
@@ -346,7 +346,7 @@ export default function ApplicationModal({ isOpen, onClose, preselectedCourse = 
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="px-6 py-2.5 text-xs font-bold text-white bg-[#E50914] hover:bg-[#B91C1C] rounded-xl shadow-lg flex items-center gap-2 uppercase tracking-wider"
+                      className="px-6 py-2.5 text-xs font-bold text-white bg-[#1D4ED8] hover:bg-[#B91C1C] rounded-xl shadow-lg flex items-center gap-2 uppercase tracking-wider"
                     >
                       {isSubmitting ? "Submitting..." : "Confirm & Submit Application"}
                       <Sparkles className="w-3.5 h-3.5" />

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle2, MessageSquare } from "lucide-react";
@@ -35,7 +35,7 @@ export default function ContactSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <span className="inline-block text-xs font-black uppercase tracking-[0.2em] text-[#E50914]">
+          <span className="inline-block text-xs font-black uppercase tracking-[0.2em] text-[#1D4ED8]">
             GET IN TOUCH
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0B0B0C] tracking-tight">
@@ -54,7 +54,7 @@ export default function ContactSection() {
 
               <div className="space-y-4 text-xs sm:text-sm text-gray-300">
                 <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-xl bg-white/10 text-[#E50914] flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 rounded-xl bg-white/10 text-[#1D4ED8] flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-4 h-4" />
                   </div>
                   <div>
@@ -64,7 +64,7 @@ export default function ContactSection() {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-xl bg-white/10 text-[#E50914] flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 rounded-xl bg-white/10 text-[#1D4ED8] flex items-center justify-center flex-shrink-0">
                     <Phone className="w-4 h-4" />
                   </div>
                   <div>
@@ -75,7 +75,7 @@ export default function ContactSection() {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-xl bg-white/10 text-[#E50914] flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 rounded-xl bg-white/10 text-[#1D4ED8] flex items-center justify-center flex-shrink-0">
                     <Mail className="w-4 h-4" />
                   </div>
                   <div>
@@ -86,7 +86,7 @@ export default function ContactSection() {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-xl bg-white/10 text-[#E50914] flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 rounded-xl bg-white/10 text-[#1D4ED8] flex items-center justify-center flex-shrink-0">
                     <Clock className="w-4 h-4" />
                   </div>
                   <div>
@@ -139,7 +139,7 @@ export default function ContactSection() {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="e.g. Rayyan Ansari"
-                      className="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#E50914]/20 focus:border-[#E50914] transition-all"
+                      className="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]/20 focus:border-[#1D4ED8] transition-all"
                     />
                   </div>
                   <div>
@@ -152,7 +152,7 @@ export default function ContactSection() {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="you@domain.com"
-                      className="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#E50914]/20 focus:border-[#E50914] transition-all"
+                      className="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]/20 focus:border-[#1D4ED8] transition-all"
                     />
                   </div>
                 </div>
@@ -167,7 +167,7 @@ export default function ContactSection() {
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       placeholder="+1 (555) 000-0000"
-                      className="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#E50914]/20 focus:border-[#E50914] transition-all"
+                      className="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]/20 focus:border-[#1D4ED8] transition-all"
                     />
                   </div>
                   <div>
@@ -177,7 +177,7 @@ export default function ContactSection() {
                     <select
                       value={formData.subject}
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                      className="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#E50914]/20 focus:border-[#E50914] transition-all"
+                      className="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]/20 focus:border-[#1D4ED8] transition-all"
                     >
                       <option value="Admissions Inquiry">Admissions Inquiry</option>
                       <option value="Scholarship & Financial Aid">Scholarship & Financial Aid</option>
@@ -198,14 +198,14 @@ export default function ContactSection() {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="How can our admissions and advisory team help you?"
-                    className="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#E50914]/20 focus:border-[#E50914] transition-all"
+                    className="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]/20 focus:border-[#1D4ED8] transition-all"
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
                   disabled={isSending}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[#E50914] hover:bg-[#B80710] text-white font-bold rounded-xl text-sm shadow-md glow-red transition-all duration-200"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[#1D4ED8] hover:bg-[#B80710] text-white font-bold rounded-xl text-sm shadow-md glow-red transition-all duration-200"
                 >
                   <Send className="w-4 h-4" />
                   <span>{isSending ? "Sending Message..." : "Send Message to Admissions"}</span>

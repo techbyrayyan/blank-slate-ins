@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -117,10 +117,10 @@ export default function TestimonialsEditorial() {
         </div>
 
         {/* Main Wine Red Banner Box */}
-        <div className="bg-gradient-to-r from-[#8B0021] via-[#A81131] to-[#750019] rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl relative overflow-hidden">
+        <div className="bg-gradient-to-r from-[#1e3a8a] via-[#1d4ed8] to-[#1e3a8a] rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl relative overflow-hidden">
           
           {/* Ambient Glow */}
-          <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#E50914]/20 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#1D4ED8]/20 rounded-full blur-3xl pointer-events-none" />
           
           <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-stretch relative z-10">
             

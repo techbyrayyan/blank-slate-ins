@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useCallback } from "react";
 import Link from "next/link";
@@ -9,7 +9,7 @@ const slides = [
   {
     id: 0,
     bg: "#FEF3C7",     // warm yellow
-    btnBg: "#E50914",
+    btnBg: "#1D4ED8",
     title: "Shape Your Future in Tech",
     desc: "Enroll in 20+ industry-focused programs and become job-ready with real skills that employers demand today.",
     cta: "Explore Programs",
@@ -19,7 +19,7 @@ const slides = [
   {
     id: 1,
     bg: "#D1FAE5",     // mint green
-    btnBg: "#E50914",
+    btnBg: "#1D4ED8",
     title: "Master Artificial Intelligence",
     desc: "Build production-ready AI models with Python, TensorFlow, and LLMs — guided by real-world practitioners.",
     cta: "Start AI Journey",
@@ -29,7 +29,7 @@ const slides = [
   {
     id: 2,
     bg: "#EDE9FE",     // soft lavender
-    btnBg: "#E50914",
+    btnBg: "#1D4ED8",
     title: "Design Your Digital World",
     desc: "Craft stunning user experiences — from wireframes to polished, production-ready interface designs.",
     cta: "Start Designing",
@@ -219,7 +219,7 @@ export default function Hero({ onOpenApply }) {
               onClick={() => goToDot(i)}
               className={`rounded-full transition-all duration-300 ${
                 i === current
-                  ? "w-8 h-3 bg-[#E50914]"
+                  ? "w-8 h-3 bg-[#1D4ED8]"
                   : "w-3 h-3 bg-gray-300 hover:bg-gray-400"
               }`}
               aria-label={`Go to slide ${i + 1}`}

@@ -8,7 +8,7 @@
     --border-light: rgba(0, 0, 0, 0.08);
     --text-black: #09090B;
     --text-muted: #6B7280;
-    --vine-red: #E50914;
+    --vine-red: #1D4ED8;
     --vine-red-dark: #B91C1C;
   }
 
@@ -27,7 +27,7 @@
 
   /* Custom selection */
   ::selection {
-    background-color: #E50914;
+    background-color: #1D4ED8;
     color: #FFFFFF;
   }
 }
@@ -45,7 +45,7 @@
 }
 
 .text-gradient-vine {
-  background: linear-gradient(135deg, #E50914 0%, #B91C1C 50%, #991B1B 100%);
+  background: linear-gradient(135deg, #1D4ED8 0%, #B91C1C 50%, #991B1B 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -66,7 +66,7 @@
 }
 
 .btn-vine {
-  background: linear-gradient(135deg, #E50914 0%, #B91C1C 100%);
+  background: linear-gradient(135deg, #1D4ED8 0%, #B91C1C 100%);
   box-shadow: 0 4px 20px rgba(229, 9, 20, 0.35);
   transition: all 0.25s ease;
 }
@@ -93,7 +93,7 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #E50914;
+  background: #1D4ED8;
 }
 
 .no-scrollbar::-webkit-scrollbar {

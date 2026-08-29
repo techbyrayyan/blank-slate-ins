@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle } from "lucide-react";
+﻿import { ArrowRight, CheckCircle } from "lucide-react";
 import { learningSteps } from "@/data/instituteData";
 
 export default function LearningExperience() {
@@ -7,7 +7,7 @@ export default function LearningExperience() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <span className="inline-block text-xs font-black uppercase tracking-[0.2em] text-[#E50914]">
+          <span className="inline-block text-xs font-black uppercase tracking-[0.2em] text-[#1D4ED8]">
             METHODOLOGY
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0B0B0C] tracking-tight">
@@ -28,15 +28,15 @@ export default function LearningExperience() {
               <div>
                 {/* Step Number & Badge */}
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-2xl font-black text-gray-300 group-hover:text-[#E50914] transition-colors">
+                  <span className="text-2xl font-black text-gray-300 group-hover:text-[#1D4ED8] transition-colors">
                     {step.num}
                   </span>
-                  <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 bg-gray-100 group-hover:bg-red-50 group-hover:text-[#E50914] text-gray-600 rounded-md transition-colors">
+                  <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 bg-gray-100 group-hover:bg-red-50 group-hover:text-[#1D4ED8] text-gray-600 rounded-md transition-colors">
                     {step.phase}
                   </span>
                 </div>
 
-                <h3 className="text-base font-bold text-[#0B0B0C] group-hover:text-[#E50914] transition-colors">
+                <h3 className="text-base font-bold text-[#0B0B0C] group-hover:text-[#1D4ED8] transition-colors">
                   {step.title}
                 </h3>
                 <p className="text-xs text-[#6B7280] leading-relaxed mt-2">
@@ -47,7 +47,7 @@ export default function LearningExperience() {
               {/* Step indicator footer */}
               <div className="mt-6 pt-3 border-t border-gray-100 flex items-center justify-between text-[11px] font-semibold text-gray-400 group-hover:text-gray-900">
                 <span>{step.badge}</span>
-                <CheckCircle className="w-3.5 h-3.5 text-gray-300 group-hover:text-[#E50914] transition-colors" />
+                <CheckCircle className="w-3.5 h-3.5 text-gray-300 group-hover:text-[#1D4ED8] transition-colors" />
               </div>
             </div>
           ))}

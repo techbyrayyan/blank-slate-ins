@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
@@ -31,7 +31,7 @@ function AnimatedCounter({ target, duration = 2, suffix = "" }) {
   return (
     <span ref={ref} style={{ fontVariantNumeric: "tabular-nums" }}>
       {count}
-      <span style={{ color: "#E50914", marginLeft: "2px" }}>{suffix}</span>
+      <span style={{ color: "#1D4ED8", marginLeft: "2px" }}>{suffix}</span>
     </span>
   );
 }
@@ -115,7 +115,7 @@ function StatCard({ item, idx, Icon }) {
           right: "25%",
           height: "2px",
           borderRadius: "99px",
-          backgroundColor: "#E50914",
+          backgroundColor: "#1D4ED8",
           opacity: hovered ? 1 : 0,
           transition: "opacity 0.3s ease",
         }}
@@ -128,8 +128,8 @@ function StatCard({ item, idx, Icon }) {
           height: "44px",
           marginBottom: "16px",
           borderRadius: "14px",
-          backgroundColor: hovered ? "#E50914" : "#f3f4f6",
-          border: hovered ? "1px solid #E50914" : "1px solid #e5e7eb",
+          backgroundColor: hovered ? "#1D4ED8" : "#f3f4f6",
+          border: hovered ? "1px solid #1D4ED8" : "1px solid #e5e7eb",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -162,7 +162,7 @@ function StatCard({ item, idx, Icon }) {
           width: "32px",
           height: "2px",
           borderRadius: "99px",
-          backgroundColor: hovered ? "#E50914" : "#e5e7eb",
+          backgroundColor: hovered ? "#1D4ED8" : "#e5e7eb",
           margin: "12px 0",
           transition: "background-color 0.3s ease",
         }}

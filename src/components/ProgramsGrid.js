@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import Link from "next/link";
@@ -20,7 +20,7 @@ export default function ProgramsGrid({ onOpenApply }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
-          <span className="inline-block text-xs font-black uppercase tracking-[0.2em] text-[#E50914]">
+          <span className="inline-block text-xs font-black uppercase tracking-[0.2em] text-[#1D4ED8]">
             CAREER PATHWAYS
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0B0B0C] tracking-tight">
@@ -73,7 +73,7 @@ export default function ProgramsGrid({ onOpenApply }) {
 
                 {/* Category Pill */}
                 <div className="absolute bottom-4 left-4">
-                  <span className="px-2.5 py-0.5 bg-[#E50914] text-white text-[10px] font-black uppercase tracking-wider rounded-md">
+                  <span className="px-2.5 py-0.5 bg-[#1D4ED8] text-white text-[10px] font-black uppercase tracking-wider rounded-md">
                     {prog.category}
                   </span>
                 </div>
@@ -82,7 +82,7 @@ export default function ProgramsGrid({ onOpenApply }) {
               {/* Card Body */}
               <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                 <div className="space-y-2.5">
-                  <h3 className="text-xl font-bold text-[#0B0B0C] group-hover:text-[#E50914] transition-colors">
+                  <h3 className="text-xl font-bold text-[#0B0B0C] group-hover:text-[#1D4ED8] transition-colors">
                     {prog.title}
                   </h3>
                   <p className="text-xs text-[#6B7280] leading-relaxed line-clamp-3">
@@ -93,7 +93,7 @@ export default function ProgramsGrid({ onOpenApply }) {
                 {/* Metadata Pills */}
                 <div className="pt-2 border-t border-gray-100 grid grid-cols-2 gap-2 text-xs text-[#6B7280]">
                   <div className="flex items-center gap-1.5 font-medium">
-                    <Clock className="w-3.5 h-3.5 text-[#E50914]" />
+                    <Clock className="w-3.5 h-3.5 text-[#1D4ED8]" />
                     <span>{prog.duration}</span>
                   </div>
                   <div className="flex items-center gap-1.5 font-medium">
@@ -113,7 +113,7 @@ export default function ProgramsGrid({ onOpenApply }) {
                   </Link>
                   <button
                     onClick={() => onOpenApply(prog.title)}
-                    className="px-3.5 py-2.5 bg-red-50 hover:bg-[#E50914] text-[#E50914] hover:text-white rounded-xl text-xs font-bold transition-all duration-200"
+                    className="px-3.5 py-2.5 bg-red-50 hover:bg-[#1D4ED8] text-[#1D4ED8] hover:text-white rounded-xl text-xs font-bold transition-all duration-200"
                     title="Quick Apply"
                   >
                     Apply
@@ -122,7 +122,7 @@ export default function ProgramsGrid({ onOpenApply }) {
               </div>
 
               {/* Bottom Red Accent Indicator on Hover */}
-              <div className="h-1 w-full bg-transparent group-hover:bg-[#E50914] transition-colors duration-300"></div>
+              <div className="h-1 w-full bg-transparent group-hover:bg-[#1D4ED8] transition-colors duration-300"></div>
             </div>
           ))}
         </div>
@@ -131,10 +131,10 @@ export default function ProgramsGrid({ onOpenApply }) {
         <div className="text-center mt-12">
           <Link
             href="/programs"
-            className="inline-flex items-center gap-2 text-sm font-bold text-[#0B0B0C] hover:text-[#E50914] transition-colors group"
+            className="inline-flex items-center gap-2 text-sm font-bold text-[#0B0B0C] hover:text-[#1D4ED8] transition-colors group"
           >
             <span>Browse Complete Curriculum & All Tracks</span>
-            <ArrowRight className="w-4 h-4 text-[#E50914] group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-4 h-4 text-[#1D4ED8] group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
       </div>

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { use, useState } from "react";
 import { notFound } from "next/navigation";
@@ -32,7 +32,7 @@ export default function BlogArticlePage({ params }) {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-[#09090B] selection:bg-[#E50914] selection:text-white font-sans">
+    <div className="min-h-screen flex flex-col bg-white text-[#09090B] selection:bg-[#1D4ED8] selection:text-white font-sans">
       <CustomCursor />
       <Navbar onOpenApply={() => setApplyModalOpen(true)} />
 
@@ -47,7 +47,7 @@ export default function BlogArticlePage({ params }) {
           >
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase text-gray-500 hover:text-[#E50914] transition-colors"
+              className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase text-gray-500 hover:text-[#1D4ED8] transition-colors"
             >
               <ArrowLeft className="w-3.5 h-3.5" /> Back to All Insights
             </Link>
@@ -61,7 +61,7 @@ export default function BlogArticlePage({ params }) {
             className="space-y-6 mb-12"
           >
             <div className="flex items-center gap-3">
-              <span className="px-3 py-1 rounded-full bg-[#E50914]/10 border border-[#E50914]/30 text-[#E50914] text-xs font-mono font-bold uppercase">
+              <span className="px-3 py-1 rounded-full bg-[#1D4ED8]/10 border border-[#1D4ED8]/30 text-[#1D4ED8] text-xs font-mono font-bold uppercase">
                 {article.category}
               </span>
               <span className="text-xs font-mono text-gray-500">{article.readTime}</span>
@@ -86,7 +86,7 @@ export default function BlogArticlePage({ params }) {
                 <span>{article.date}</span>
                 <button
                   onClick={handleShare}
-                  className="px-3 py-1.5 bg-gray-100 hover:bg-[#E50914] border border-gray-200 hover:border-[#E50914] text-gray-900 hover:text-white rounded-lg transition-colors flex items-center gap-1.5"
+                  className="px-3 py-1.5 bg-gray-100 hover:bg-[#1D4ED8] border border-gray-200 hover:border-[#1D4ED8] text-gray-900 hover:text-white rounded-lg transition-colors flex items-center gap-1.5"
                 >
                   <Share2 className="w-3.5 h-3.5" />
                   <span>{copied ? "Link Copied!" : "Share"}</span>
@@ -112,7 +112,7 @@ export default function BlogArticlePage({ params }) {
             transition={{ duration: 0.7, delay: 0.25 }}
             className="prose prose-lg max-w-none text-gray-700 space-y-6 leading-relaxed"
           >
-            <p className="text-lg sm:text-xl font-medium text-gray-900 leading-relaxed italic border-l-4 border-[#E50914] pl-4">
+            <p className="text-lg sm:text-xl font-medium text-gray-900 leading-relaxed italic border-l-4 border-[#1D4ED8] pl-4">
               &ldquo;{article.excerpt}&rdquo;
             </p>
 

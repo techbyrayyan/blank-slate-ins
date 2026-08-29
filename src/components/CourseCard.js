@@ -154,9 +154,9 @@ export default function CourseCard({ course, onOpenApply }) {
               <button
                 onClick={() => onOpenApply && onOpenApply(course.title)}
                 className="w-full text-white font-bold py-3.5 rounded-lg flex items-center justify-center gap-2 text-sm transition-colors"
-                style={{ backgroundColor: "#E50914" }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#c7000f")}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#E50914")}
+                style={{ backgroundColor: "#1D4ED8" }}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#1e40af")}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#1D4ED8")}
               >
                 <ShoppingCart className="w-4 h-4" />
                 Add to cart

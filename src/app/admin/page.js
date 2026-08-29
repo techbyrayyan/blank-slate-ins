@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
@@ -23,7 +23,7 @@ export default function AdminPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-[#09090B] selection:bg-[#E50914] selection:text-white font-sans">
+    <div className="min-h-screen flex flex-col bg-white text-[#09090B] selection:bg-[#1D4ED8] selection:text-white font-sans">
       <CustomCursor />
       <Navbar />
 
@@ -33,8 +33,8 @@ export default function AdminPage() {
           <div className="p-8 sm:p-10 rounded-3xl bg-white border border-gray-200 text-gray-900 shadow-md mb-10 flex flex-col sm:flex-row items-center justify-between gap-6">
             <div className="space-y-1">
               <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#E50914] animate-pulse"></span>
-                <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#E50914]">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#1D4ED8] animate-pulse"></span>
+                <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#1D4ED8]">
                   ADMINISTRATIVE CONSOLE
                 </span>
               </div>
@@ -43,7 +43,7 @@ export default function AdminPage() {
             </div>
 
             <div className="px-4 py-2 bg-gray-50 border border-gray-200 rounded-xl flex items-center gap-2 text-xs font-mono text-gray-700">
-              <ShieldCheck className="w-4 h-4 text-[#E50914]" />
+              <ShieldCheck className="w-4 h-4 text-[#1D4ED8]" />
               <span>Role: Super Administrator</span>
             </div>
           </div>
@@ -74,7 +74,7 @@ export default function AdminPage() {
                 <p className="text-xs text-gray-500">Review, approve or request additional documentation from applicants.</p>
               </div>
 
-              <span className="text-xs font-mono font-bold text-[#E50914] bg-[#E50914]/10 border border-[#E50914]/30 px-3 py-1.5 rounded-full">
+              <span className="text-xs font-mono font-bold text-[#1D4ED8] bg-[#1D4ED8]/10 border border-[#1D4ED8]/30 px-3 py-1.5 rounded-full">
                 {applications.filter((a) => a.status === "Pending").length} Pending Decisions
               </span>
             </div>

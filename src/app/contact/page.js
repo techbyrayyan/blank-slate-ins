@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -46,7 +46,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-[#09090B] selection:bg-[#E50914] selection:text-white font-sans">
+    <div className="min-h-screen flex flex-col bg-white text-[#09090B] selection:bg-[#1D4ED8] selection:text-white font-sans">
       <CustomCursor />
       <Navbar onOpenApply={() => setApplyModalOpen(true)} />
 
@@ -59,12 +59,12 @@ export default function ContactPage() {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-3xl space-y-4 mb-16"
           >
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E50914]/10 border border-[#E50914]/30 text-[#E50914] text-xs font-mono font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#1D4ED8]/10 border border-[#1D4ED8]/30 text-[#1D4ED8] text-xs font-mono font-bold uppercase tracking-wider">
               <Sparkles className="w-3.5 h-3.5" /> REACH OUT
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.05] text-gray-950">
               Let&apos;s Start a <br />
-              <span className="text-[#E50914]">Conversation</span>
+              <span className="text-[#1D4ED8]">Conversation</span>
             </h1>
             <p className="text-base sm:text-lg text-gray-600 leading-relaxed pt-2">
               Have questions about program prerequisites, admission timelines, or campus tours? Our team is available 5 days a week.
@@ -84,7 +84,7 @@ export default function ContactPage() {
 
                 <div className="space-y-5 text-xs sm:text-sm text-gray-700">
                   <div className="flex items-start gap-3.5">
-                    <div className="w-10 h-10 rounded-xl bg-gray-100 text-[#E50914] border border-gray-200 flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-gray-100 text-[#1D4ED8] border border-gray-200 flex items-center justify-center flex-shrink-0">
                       <MapPin className="w-5 h-5" />
                     </div>
                     <div>
@@ -94,7 +94,7 @@ export default function ContactPage() {
                   </div>
 
                   <div className="flex items-start gap-3.5">
-                    <div className="w-10 h-10 rounded-xl bg-gray-100 text-[#E50914] border border-gray-200 flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-gray-100 text-[#1D4ED8] border border-gray-200 flex items-center justify-center flex-shrink-0">
                       <Phone className="w-5 h-5" />
                     </div>
                     <div>
@@ -104,7 +104,7 @@ export default function ContactPage() {
                   </div>
 
                   <div className="flex items-start gap-3.5">
-                    <div className="w-10 h-10 rounded-xl bg-gray-100 text-[#E50914] border border-gray-200 flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-gray-100 text-[#1D4ED8] border border-gray-200 flex items-center justify-center flex-shrink-0">
                       <Mail className="w-5 h-5" />
                     </div>
                     <div>
@@ -114,7 +114,7 @@ export default function ContactPage() {
                   </div>
 
                   <div className="flex items-start gap-3.5">
-                    <div className="w-10 h-10 rounded-xl bg-gray-100 text-[#E50914] border border-gray-200 flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-gray-100 text-[#1D4ED8] border border-gray-200 flex items-center justify-center flex-shrink-0">
                       <Clock className="w-5 h-5" />
                     </div>
                     <div>
@@ -154,7 +154,7 @@ export default function ContactPage() {
                   </p>
                   <button
                     onClick={() => setIsSent(false)}
-                    className="px-6 py-2.5 bg-[#E50914] text-white text-xs font-bold rounded-full uppercase"
+                    className="px-6 py-2.5 bg-[#1D4ED8] text-white text-xs font-bold rounded-full uppercase"
                   >
                     Send Another Inquiry
                   </button>
@@ -172,7 +172,7 @@ export default function ContactPage() {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="e.g. Rayyan Ansari"
-                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#E50914]"
+                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#1D4ED8]"
                       />
                     </div>
 
@@ -186,7 +186,7 @@ export default function ContactPage() {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="you@domain.com"
-                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#E50914]"
+                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#1D4ED8]"
                       />
                     </div>
                   </div>
@@ -201,7 +201,7 @@ export default function ContactPage() {
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         placeholder="+1 (555) 000-0000"
-                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#E50914]"
+                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#1D4ED8]"
                       />
                     </div>
 
@@ -212,7 +212,7 @@ export default function ContactPage() {
                       <select
                         value={formData.subject}
                         onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm text-gray-900 focus:outline-none focus:border-[#E50914]"
+                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm text-gray-900 focus:outline-none focus:border-[#1D4ED8]"
                       >
                         <option value="Admissions & Enrollment">Admissions & Enrollment</option>
                         <option value="Curriculum & Prerequisites">Curriculum & Prerequisites</option>
@@ -232,7 +232,7 @@ export default function ContactPage() {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="How can our admissions and advisory team help you?"
-                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#E50914]"
+                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#1D4ED8]"
                     ></textarea>
                   </div>
 
@@ -241,7 +241,7 @@ export default function ContactPage() {
                     whileTap={{ scale: 0.98 }}
                     type="submit"
                     disabled={isSending}
-                    className="w-full sm:w-auto px-8 py-4 bg-[#E50914] hover:bg-[#B91C1C] text-white text-xs font-black uppercase tracking-widest rounded-full shadow-lg flex items-center justify-center gap-2 transition-all"
+                    className="w-full sm:w-auto px-8 py-4 bg-[#1D4ED8] hover:bg-[#B91C1C] text-white text-xs font-black uppercase tracking-widest rounded-full shadow-lg flex items-center justify-center gap-2 transition-all"
                   >
                     <Send className="w-3.5 h-3.5" />
                     <span>{isSending ? "Transmitting..." : "Send Message to Admissions"}</span>

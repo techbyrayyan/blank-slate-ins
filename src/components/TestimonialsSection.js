@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react";
@@ -30,7 +30,7 @@ export default function TestimonialsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <span className="inline-block text-xs font-black uppercase tracking-[0.2em] text-[#E50914]">
+          <span className="inline-block text-xs font-black uppercase tracking-[0.2em] text-[#1D4ED8]">
             STUDENT SUCCESS STORIES
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0B0B0C] tracking-tight">
@@ -72,7 +72,7 @@ export default function TestimonialsSection() {
 
               <div className="pt-2">
                 <h4 className="text-base font-bold text-[#0B0B0C]">{current.name}</h4>
-                <p className="text-xs font-semibold text-[#E50914]">{current.role}</p>
+                <p className="text-xs font-semibold text-[#1D4ED8]">{current.role}</p>
                 <p className="text-xs text-gray-400">{current.program}</p>
               </div>
             </div>
@@ -87,7 +87,7 @@ export default function TestimonialsSection() {
                   key={idx}
                   onClick={() => setCurrentIndex(idx)}
                   className={`h-2 rounded-full transition-all duration-300 ${
-                    currentIndex === idx ? "w-8 bg-[#E50914]" : "w-2 bg-gray-200"
+                    currentIndex === idx ? "w-8 bg-[#1D4ED8]" : "w-2 bg-gray-200"
                   }`}
                   aria-label={`Go to slide ${idx + 1}`}
                 />

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import Link from "next/link";
@@ -21,7 +21,7 @@ export default function EventsSection() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="space-y-3 max-w-2xl">
-            <span className="inline-block text-xs font-black uppercase tracking-[0.2em] text-[#E50914]">
+            <span className="inline-block text-xs font-black uppercase tracking-[0.2em] text-[#1D4ED8]">
               COMMUNITY & WORKSHOPS
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0B0B0C] tracking-tight">
@@ -34,10 +34,10 @@ export default function EventsSection() {
 
           <Link
             href="/events"
-            className="inline-flex items-center gap-2 text-sm font-bold text-[#0B0B0C] hover:text-[#E50914] transition-colors group flex-shrink-0"
+            className="inline-flex items-center gap-2 text-sm font-bold text-[#0B0B0C] hover:text-[#1D4ED8] transition-colors group flex-shrink-0"
           >
             <span>View Full Events Calendar</span>
-            <ArrowRight className="w-4 h-4 text-[#E50914] group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-4 h-4 text-[#1D4ED8] group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
 
@@ -62,7 +62,7 @@ export default function EventsSection() {
 
                   {/* Date Tag */}
                   <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-xl shadow-md text-center">
-                    <p className="text-[10px] font-black uppercase text-[#E50914] leading-none">
+                    <p className="text-[10px] font-black uppercase text-[#1D4ED8] leading-none">
                       {evt.date.split(" ")[0]}
                     </p>
                     <p className="text-base font-black text-[#0B0B0C] leading-tight">
@@ -74,10 +74,10 @@ export default function EventsSection() {
                 {/* Event Details */}
                 <div className="p-6 sm:w-3/5 flex flex-col justify-between space-y-4">
                   <div className="space-y-2">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#E50914] bg-red-50 px-2 py-0.5 rounded">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#1D4ED8] bg-red-50 px-2 py-0.5 rounded">
                       {evt.category}
                     </span>
-                    <h3 className="text-base sm:text-lg font-bold text-[#0B0B0C] group-hover:text-[#E50914] transition-colors leading-snug">
+                    <h3 className="text-base sm:text-lg font-bold text-[#0B0B0C] group-hover:text-[#1D4ED8] transition-colors leading-snug">
                       {evt.title}
                     </h3>
                     <p className="text-xs text-[#6B7280] line-clamp-2 leading-relaxed">
@@ -107,7 +107,7 @@ export default function EventsSection() {
                     ) : (
                       <button
                         onClick={() => handleRegister(evt.id)}
-                        className="w-full inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-[#0B0B0C] hover:bg-[#E50914] text-white text-xs font-bold rounded-xl shadow-sm transition-all duration-200"
+                        className="w-full inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-[#0B0B0C] hover:bg-[#1D4ED8] text-white text-xs font-bold rounded-xl shadow-sm transition-all duration-200"
                       >
                         <span>Register for Event</span>
                         <ArrowRight className="w-3.5 h-3.5" />

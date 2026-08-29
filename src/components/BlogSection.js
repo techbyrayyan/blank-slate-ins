@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { ArrowRight, Calendar, Clock, BookOpen } from "lucide-react";
 import { blogArticles } from "@/data/instituteData";
 
@@ -11,7 +11,7 @@ export default function BlogSection() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="space-y-3 max-w-2xl">
-            <span className="inline-block text-xs font-black uppercase tracking-[0.2em] text-[#E50914]">
+            <span className="inline-block text-xs font-black uppercase tracking-[0.2em] text-[#1D4ED8]">
               KNOWLEDGE CENTER
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0B0B0C] tracking-tight">
@@ -24,10 +24,10 @@ export default function BlogSection() {
 
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-sm font-bold text-[#0B0B0C] hover:text-[#E50914] transition-colors group flex-shrink-0"
+            className="inline-flex items-center gap-2 text-sm font-bold text-[#0B0B0C] hover:text-[#1D4ED8] transition-colors group flex-shrink-0"
           >
             <span>View All Articles</span>
-            <ArrowRight className="w-4 h-4 text-[#E50914] group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-4 h-4 text-[#1D4ED8] group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
 
@@ -67,7 +67,7 @@ export default function BlogSection() {
                     </span>
                   </div>
 
-                  <h3 className="text-base sm:text-lg font-bold text-[#0B0B0C] group-hover:text-[#E50914] transition-colors leading-snug line-clamp-2">
+                  <h3 className="text-base sm:text-lg font-bold text-[#0B0B0C] group-hover:text-[#1D4ED8] transition-colors leading-snug line-clamp-2">
                     <Link href={`/blog/${article.slug}`}>
                       {article.title}
                     </Link>
@@ -82,10 +82,10 @@ export default function BlogSection() {
                 <div className="pt-3 border-t border-gray-100">
                   <Link
                     href={`/blog/${article.slug}`}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0B0B0C] group-hover:text-[#E50914] transition-colors"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0B0B0C] group-hover:text-[#1D4ED8] transition-colors"
                   >
                     <span>Read Full Article</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-[#E50914] group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-3.5 h-3.5 text-[#1D4ED8] group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -27,7 +27,7 @@ export default function FacultyPage() {
   });
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-[#09090B] selection:bg-[#E50914] selection:text-white font-sans">
+    <div className="min-h-screen flex flex-col bg-white text-[#09090B] selection:bg-[#1D4ED8] selection:text-white font-sans">
       <CustomCursor />
       <Navbar onOpenApply={() => setApplyModalOpen(true)} />
 
@@ -40,12 +40,12 @@ export default function FacultyPage() {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-3xl space-y-4 mb-14"
           >
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E50914]/10 border border-[#E50914]/30 text-[#E50914] text-xs font-mono font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#1D4ED8]/10 border border-[#1D4ED8]/30 text-[#1D4ED8] text-xs font-mono font-bold uppercase tracking-wider">
               <Sparkles className="w-3.5 h-3.5" /> RESEARCHERS & DIRECTORS
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.05] text-gray-950">
               Distinguished Faculty <br />
-              <span className="text-[#E50914]">& Mentors</span>
+              <span className="text-[#1D4ED8]">& Mentors</span>
             </h1>
             <p className="text-base sm:text-lg text-gray-600 leading-relaxed pt-2">
               Learn directly from senior practitioners and academic researchers who have engineered production systems at Google, Meta, Stanford, and MIT.
@@ -66,7 +66,7 @@ export default function FacultyPage() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search faculty by name or expertise..."
-                className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-300 rounded-xl text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#E50914]"
+                className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-300 rounded-xl text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#1D4ED8]"
               />
             </div>
 
@@ -77,7 +77,7 @@ export default function FacultyPage() {
                   onClick={() => setActiveDept(dept)}
                   className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
                     activeDept === dept
-                      ? "bg-[#E50914] text-white shadow-md"
+                      ? "bg-[#1D4ED8] text-white shadow-md"
                       : "bg-white text-gray-700 hover:text-black border border-gray-200 shadow-sm"
                   }`}
                 >
@@ -98,7 +98,7 @@ export default function FacultyPage() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.5, delay: idx * 0.05 }}
-                  whileHover={{ y: -6, borderColor: "#E50914" }}
+                  whileHover={{ y: -6, borderColor: "#1D4ED8" }}
                   data-cursor="view"
                   className="rounded-3xl p-6 bg-white border border-gray-200 flex flex-col justify-between space-y-6 transition-all group shadow-sm hover:shadow-xl"
                 >
@@ -112,17 +112,17 @@ export default function FacultyPage() {
                         className="w-full h-full object-cover"
                       />
                       <div className="absolute top-3 left-3">
-                        <span className="px-2.5 py-1 bg-white/95 backdrop-blur-md border border-gray-200 text-[#E50914] text-[10px] font-mono font-bold uppercase rounded shadow-sm">
+                        <span className="px-2.5 py-1 bg-white/95 backdrop-blur-md border border-gray-200 text-[#1D4ED8] text-[10px] font-mono font-bold uppercase rounded shadow-sm">
                           {f.department}
                         </span>
                       </div>
                     </div>
 
                     <div className="space-y-1">
-                      <h2 className="text-2xl font-black text-gray-950 group-hover:text-[#E50914] transition-colors leading-tight">
+                      <h2 className="text-2xl font-black text-gray-950 group-hover:text-[#1D4ED8] transition-colors leading-tight">
                         {f.name}
                       </h2>
-                      <p className="text-xs font-mono font-bold text-[#E50914]">{f.role}</p>
+                      <p className="text-xs font-mono font-bold text-[#1D4ED8]">{f.role}</p>
                       <p className="text-xs text-gray-600 leading-relaxed pt-2">{f.bio}</p>
                     </div>
                   </div>
@@ -138,10 +138,10 @@ export default function FacultyPage() {
 
                     <div className="flex items-center justify-between pt-2 text-xs text-gray-600">
                       <a href={`mailto:${f.email}`} className="hover:text-black flex items-center gap-1">
-                        <Mail className="w-3.5 h-3.5 text-[#E50914]" /> Email
+                        <Mail className="w-3.5 h-3.5 text-[#1D4ED8]" /> Email
                       </a>
                       <a href={f.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-black flex items-center gap-1">
-                        <LinkedinIcon className="w-3.5 h-3.5 text-[#E50914]" /> LinkedIn
+                        <LinkedinIcon className="w-3.5 h-3.5 text-[#1D4ED8]" /> LinkedIn
                       </a>
                     </div>
                   </div>

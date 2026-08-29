@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { Mail, ArrowRight, BookOpen } from "lucide-react";
 import { LinkedinIcon } from "./SocialIcons";
 import { facultyMembers } from "@/data/instituteData";
@@ -12,7 +12,7 @@ export default function FacultySection() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="space-y-3 max-w-2xl">
-            <span className="inline-block text-xs font-black uppercase tracking-[0.2em] text-[#E50914]">
+            <span className="inline-block text-xs font-black uppercase tracking-[0.2em] text-[#1D4ED8]">
               ACADEMIC EXCELLENCE
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0B0B0C] tracking-tight">
@@ -25,10 +25,10 @@ export default function FacultySection() {
 
           <Link
             href="/faculty"
-            className="inline-flex items-center gap-2 text-sm font-bold text-[#0B0B0C] hover:text-[#E50914] transition-colors group flex-shrink-0"
+            className="inline-flex items-center gap-2 text-sm font-bold text-[#0B0B0C] hover:text-[#1D4ED8] transition-colors group flex-shrink-0"
           >
             <span>View All Faculty Members</span>
-            <ArrowRight className="w-4 h-4 text-[#E50914] group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-4 h-4 text-[#1D4ED8] group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
 
@@ -54,14 +54,14 @@ export default function FacultySection() {
                     href={member.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-8 h-8 rounded-full bg-white/90 text-gray-900 hover:bg-[#E50914] hover:text-white flex items-center justify-center shadow-md transition-colors"
+                    className="w-8 h-8 rounded-full bg-white/90 text-gray-900 hover:bg-[#1D4ED8] hover:text-white flex items-center justify-center shadow-md transition-colors"
                     aria-label="LinkedIn"
                   >
                     <LinkedinIcon className="w-3.5 h-3.5" />
                   </a>
                   <a
                     href={`mailto:${member.email}`}
-                    className="w-8 h-8 rounded-full bg-white/90 text-gray-900 hover:bg-[#E50914] hover:text-white flex items-center justify-center shadow-md transition-colors"
+                    className="w-8 h-8 rounded-full bg-white/90 text-gray-900 hover:bg-[#1D4ED8] hover:text-white flex items-center justify-center shadow-md transition-colors"
                     aria-label="Email"
                   >
                     <Mail className="w-3.5 h-3.5" />
@@ -79,7 +79,7 @@ export default function FacultySection() {
               {/* Card Body */}
               <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
                 <div>
-                  <h3 className="text-lg font-bold text-[#0B0B0C] group-hover:text-[#E50914] transition-colors">
+                  <h3 className="text-lg font-bold text-[#0B0B0C] group-hover:text-[#1D4ED8] transition-colors">
                     {member.name}
                   </h3>
                   <p className="text-xs font-semibold text-gray-500 mt-0.5">{member.role}</p>

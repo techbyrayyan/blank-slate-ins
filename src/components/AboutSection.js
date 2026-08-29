@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { BookOpen, Code, TrendingUp, CheckCircle, ArrowRight } from "lucide-react";
 
 export default function AboutSection() {
@@ -34,7 +34,7 @@ export default function AboutSection() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
               <div className="absolute bottom-6 left-6 right-6 text-white">
-                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#E50914] bg-white/90 backdrop-blur-md px-3 py-1 rounded-full w-fit mb-2">
+                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#1D4ED8] bg-white/90 backdrop-blur-md px-3 py-1 rounded-full w-fit mb-2">
                   <CheckCircle className="w-3.5 h-3.5" /> Hands-On Education
                 </div>
                 <p className="text-sm font-medium text-gray-200">
@@ -49,7 +49,7 @@ export default function AboutSection() {
           {/* Right Column: Text & Pillars (7 cols) */}
           <div className="lg:col-span-7 space-y-6">
             <div>
-              <span className="inline-block text-xs font-black uppercase tracking-[0.2em] text-[#E50914] mb-2.5">
+              <span className="inline-block text-xs font-black uppercase tracking-[0.2em] text-[#1D4ED8] mb-2.5">
                 ABOUT BLANKSLATE
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0B0B0C] tracking-tight leading-tight">
@@ -70,7 +70,7 @@ export default function AboutSection() {
                     key={item.title}
                     className="p-5 rounded-2xl bg-gray-50/80 border border-gray-100 hover:border-red-100 hover:bg-red-50/20 transition-all duration-200"
                   >
-                    <div className="w-10 h-10 rounded-xl bg-white text-[#E50914] shadow-sm flex items-center justify-center mb-3">
+                    <div className="w-10 h-10 rounded-xl bg-white text-[#1D4ED8] shadow-sm flex items-center justify-center mb-3">
                       <Icon className="w-5 h-5" />
                     </div>
                     <h3 className="text-base font-bold text-[#0B0B0C]">{item.title}</h3>
@@ -87,7 +87,7 @@ export default function AboutSection() {
                 className="inline-flex items-center gap-2 px-6 py-3 text-sm font-bold text-white bg-[#0B0B0C] hover:bg-[#1F2328] rounded-xl shadow-md transition-all group"
               >
                 <span>Discover Our Story</span>
-                <ArrowRight className="w-4 h-4 text-[#E50914] group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 text-[#1D4ED8] group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </div>

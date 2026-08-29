@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import Link from "next/link";
@@ -33,7 +33,7 @@ export default function ProgramsPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-[#09090B] selection:bg-[#E50914] selection:text-white font-sans">
+    <div className="min-h-screen flex flex-col bg-white text-[#09090B] selection:bg-[#1D4ED8] selection:text-white font-sans">
       <CustomCursor />
       <Navbar onOpenApply={() => handleApply("Full Stack Development")} />
 
@@ -46,12 +46,12 @@ export default function ProgramsPage() {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-3xl space-y-4 mb-14"
           >
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E50914]/10 border border-[#E50914]/30 text-[#E50914] text-xs font-mono font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#1D4ED8]/10 border border-[#1D4ED8]/30 text-[#1D4ED8] text-xs font-mono font-bold uppercase tracking-wider">
               <Sparkles className="w-3.5 h-3.5" /> ACADEMIC PROGRAMS
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.05] text-gray-950">
               Specialized Technical <br />
-              <span className="text-[#E50914]">Career Tracks</span>
+              <span className="text-[#1D4ED8]">Career Tracks</span>
             </h1>
             <p className="text-base sm:text-lg text-gray-600 leading-relaxed pt-2">
               Explore our intensive engineering and product tracks. Each curriculum combines structured live lectures, code reviews, and enterprise capstone builds.
@@ -72,7 +72,7 @@ export default function ProgramsPage() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search programs by technology or keyword..."
-                className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-300 rounded-xl text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#E50914]"
+                className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-300 rounded-xl text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#1D4ED8]"
               />
             </div>
 
@@ -83,7 +83,7 @@ export default function ProgramsPage() {
                   onClick={() => setActiveCategory(cat)}
                   className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
                     activeCategory === cat
-                      ? "bg-[#E50914] text-white shadow-md"
+                      ? "bg-[#1D4ED8] text-white shadow-md"
                       : "bg-white text-gray-700 hover:text-black border border-gray-200 shadow-sm"
                   }`}
                 >
@@ -104,19 +104,19 @@ export default function ProgramsPage() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.5, delay: idx * 0.05 }}
-                  whileHover={{ y: -6, borderColor: "#E50914" }}
+                  whileHover={{ y: -6, borderColor: "#1D4ED8" }}
                   data-cursor="explore"
                   className="rounded-3xl p-8 bg-white border border-gray-200 flex flex-col justify-between space-y-6 transition-all group shadow-sm hover:shadow-xl"
                 >
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#E50914] bg-[#E50914]/10 border border-[#E50914]/30 px-2.5 py-1 rounded">
+                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#1D4ED8] bg-[#1D4ED8]/10 border border-[#1D4ED8]/30 px-2.5 py-1 rounded">
                         {p.category}
                       </span>
                       <span className="text-xs font-mono font-bold text-gray-500">{p.duration}</span>
                     </div>
 
-                    <h2 className="text-2xl font-black text-gray-900 group-hover:text-[#E50914] transition-colors leading-tight">
+                    <h2 className="text-2xl font-black text-gray-900 group-hover:text-[#1D4ED8] transition-colors leading-tight">
                       {p.title}
                     </h2>
 
@@ -127,7 +127,7 @@ export default function ProgramsPage() {
                     <div className="space-y-1.5 pt-2">
                       {p.highlights.slice(0, 2).map((h, i) => (
                         <div key={i} className="flex items-start gap-2 text-xs text-gray-700">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#E50914] flex-shrink-0 mt-0.5" />
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#1D4ED8] flex-shrink-0 mt-0.5" />
                           <span className="line-clamp-1">{h}</span>
                         </div>
                       ))}
@@ -144,7 +144,7 @@ export default function ProgramsPage() {
 
                   <div className="pt-4 border-t border-gray-100 space-y-3">
                     <div className="flex items-center justify-between text-xs text-gray-600">
-                      <span>Tuition: <strong className="text-[#E50914] font-mono font-bold">{p.tuition}</strong></span>
+                      <span>Tuition: <strong className="text-[#1D4ED8] font-mono font-bold">{p.tuition}</strong></span>
                       <span>Starts: <strong className="text-gray-900">{p.startDate}</strong></span>
                     </div>
 
@@ -157,7 +157,7 @@ export default function ProgramsPage() {
                       </Link>
                       <button
                         onClick={() => handleApply(p.title)}
-                        className="px-5 py-3 bg-[#E50914] hover:bg-[#B91C1C] text-white rounded-xl text-xs font-black uppercase tracking-wider transition-all shadow-md"
+                        className="px-5 py-3 bg-[#1D4ED8] hover:bg-[#B91C1C] text-white rounded-xl text-xs font-black uppercase tracking-wider transition-all shadow-md"
                       >
                         Apply
                       </button>

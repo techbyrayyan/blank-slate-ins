@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import { Target, Code, Users, Briefcase, Cpu, Award } from "lucide-react";
@@ -55,13 +55,13 @@ export default function WhyBlankSlateHorizontal() {
           className="space-y-3 mb-16"
         >
           <div className="flex items-center gap-2">
-            <span className="text-[#E50914] font-mono font-bold text-sm">//</span>
+            <span className="text-[#1D4ED8] font-mono font-bold text-sm">//</span>
             <span className="text-xs uppercase font-mono font-bold tracking-[0.2em] text-gray-500">
               WHY BLANKSLATE
             </span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-950 tracking-tight leading-[1.1]">
-            Why Students Choose <span className="text-[#E50914]">BlankSlate</span>
+            Why Students Choose <span className="text-[#1D4ED8]">BlankSlate</span>
           </h2>
         </motion.div>
 
@@ -76,10 +76,10 @@ export default function WhyBlankSlateHorizontal() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.5, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                whileHover={{ y: -5, borderColor: "#E50914" }}
+                whileHover={{ y: -5, borderColor: "#1D4ED8" }}
                 className="p-6 rounded-2xl bg-white border border-gray-200 transition-all duration-300 space-y-4 shadow-sm hover:shadow-xl group cursor-default"
               >
-                <div className="w-10 h-10 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center text-gray-700 group-hover:bg-[#E50914] group-hover:border-[#E50914] group-hover:text-white transition-all duration-300 shadow-sm">
+                <div className="w-10 h-10 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center text-gray-700 group-hover:bg-[#1D4ED8] group-hover:border-[#1D4ED8] group-hover:text-white transition-all duration-300 shadow-sm">
                   <Icon className="w-5 h-5" />
                 </div>
 
@@ -87,7 +87,7 @@ export default function WhyBlankSlateHorizontal() {
                   <span className="text-xs font-mono font-bold text-gray-400">
                     {item.num}
                   </span>
-                  <h3 className="text-sm font-bold text-gray-900 group-hover:text-[#E50914] transition-colors leading-snug">
+                  <h3 className="text-sm font-bold text-gray-900 group-hover:text-[#1D4ED8] transition-colors leading-snug">
                     {item.title}
                   </h3>
                 </div>

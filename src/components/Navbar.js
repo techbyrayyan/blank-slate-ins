@@ -99,28 +99,28 @@ export default function Navbar({ onOpenApply }) {
             <div className="flex items-center gap-6 flex-wrap">
               <a href="mailto:blankslateinstitute1@gmail.com"
                 className="flex items-center gap-2 hover:text-white transition-colors group">
-                <Mail className="w-4 h-4 text-[#E50914] group-hover:scale-110 transition-transform" />
+                <Mail className="w-4 h-4 text-[#1D4ED8] group-hover:scale-110 transition-transform" />
                 <span className="text-sm font-medium hidden sm:inline">blankslateinstitute1@gmail.com</span>
                 <span className="text-sm font-medium sm:hidden">Email Us</span>
               </a>
               <span className="hidden sm:inline text-gray-600">|</span>
               <a href="tel:+9235746486463"
                 className="flex items-center gap-2 hover:text-white transition-colors group">
-                <Phone className="w-4 h-4 text-[#E50914] group-hover:scale-110 transition-transform" />
+                <Phone className="w-4 h-4 text-[#1D4ED8] group-hover:scale-110 transition-transform" />
                 <span className="text-sm font-medium">+92 35746486463</span>
               </a>
             </div>
             <div className="flex items-center gap-3">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
-                className="text-gray-400 hover:text-[#E50914] transition-colors p-1.5" aria-label="Facebook">
+                className="text-gray-400 hover:text-[#1D4ED8] transition-colors p-1.5" aria-label="Facebook">
                 <FacebookIcon className="w-4 h-4" />
               </a>
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
-                className="text-gray-400 hover:text-[#E50914] transition-colors p-1.5" aria-label="LinkedIn">
+                className="text-gray-400 hover:text-[#1D4ED8] transition-colors p-1.5" aria-label="LinkedIn">
                 <LinkedinIcon className="w-4 h-4" />
               </a>
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
-                className="text-gray-400 hover:text-[#E50914] transition-colors p-1.5" aria-label="Instagram">
+                className="text-gray-400 hover:text-[#1D4ED8] transition-colors p-1.5" aria-label="Instagram">
                 <InstagramIcon className="w-4 h-4" />
               </a>
             </div>
@@ -148,35 +148,35 @@ export default function Navbar({ onOpenApply }) {
             </div>
             <div className="flex items-center gap-3 ml-auto">
               <Link href="/student-portal"
-                className="hidden lg:inline-flex text-sm font-semibold text-gray-700 hover:text-[#E50914] transition-colors px-2 whitespace-nowrap">
+                className="hidden lg:inline-flex text-sm font-semibold text-gray-700 hover:text-[#1D4ED8] transition-colors px-2 whitespace-nowrap">
                 Student Portal
               </Link>
               <button onClick={() => setSearchModalOpen(true)}
-                className="md:hidden p-2.5 text-gray-700 hover:text-[#E50914] transition-colors" aria-label="Search">
+                className="md:hidden p-2.5 text-gray-700 hover:text-[#1D4ED8] transition-colors" aria-label="Search">
                 <Search className="w-5 h-5" />
               </button>
               {/* Log In — slide LEFT → RIGHT */}
               <Link href="/student-portal"
-                className="relative hidden sm:inline-flex items-center overflow-hidden px-5 py-2.5 text-sm font-bold border border-[#E50914] rounded whitespace-nowrap group">
-                <span className="absolute inset-0 bg-[#E50914] -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
-                <span className="relative z-10 text-[#E50914] group-hover:text-white transition-colors duration-300">Log in</span>
+                className="relative hidden sm:inline-flex items-center overflow-hidden px-5 py-2.5 text-sm font-bold border border-[#1D4ED8] rounded whitespace-nowrap group">
+                <span className="absolute inset-0 bg-[#1D4ED8] -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
+                <span className="relative z-10 text-[#1D4ED8] group-hover:text-white transition-colors duration-300">Log in</span>
               </Link>
               {/* Sign Up — slide RIGHT → LEFT */}
               <button onClick={onOpenApply}
-                className="relative hidden sm:inline-flex items-center justify-center overflow-hidden px-5 py-2.5 text-sm font-bold border border-[#E50914] rounded whitespace-nowrap group">
-                <span className="absolute inset-0 bg-[#E50914]" />
+                className="relative hidden sm:inline-flex items-center justify-center overflow-hidden px-5 py-2.5 text-sm font-bold border border-[#1D4ED8] rounded whitespace-nowrap group">
+                <span className="absolute inset-0 bg-[#1D4ED8]" />
                 <span className="absolute inset-0 bg-white translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
-                <span className="relative z-10 text-white group-hover:text-[#E50914] transition-colors duration-300">Sign up</span>
+                <span className="relative z-10 text-white group-hover:text-[#1D4ED8] transition-colors duration-300">Sign up</span>
               </button>
               {/* Globe */}
               <button onClick={() => setLangModalOpen((v) => !v)}
-                className="hidden sm:flex items-center justify-center w-10 h-10 border border-[#E50914] rounded hover:bg-[#E50914] hover:text-white text-[#E50914] transition-all duration-200"
+                className="hidden sm:flex items-center justify-center w-10 h-10 border border-[#1D4ED8] rounded hover:bg-[#1D4ED8] hover:text-white text-[#1D4ED8] transition-all duration-200"
                 aria-label="Choose language">
                 <Globe className="w-5 h-5" />
               </button>
               {/* Mobile hamburger */}
               <button onClick={() => setMobileMenuOpen(true)}
-                className="xl:hidden p-2.5 text-gray-900 hover:text-[#E50914] rounded transition-colors" aria-label="Open menu">
+                className="xl:hidden p-2.5 text-gray-900 hover:text-[#1D4ED8] rounded transition-colors" aria-label="Open menu">
                 <Menu className="w-6 h-6" />
               </button>
             </div>
@@ -202,10 +202,10 @@ export default function Navbar({ onOpenApply }) {
                   return (
                     <Link key={item.name} href={item.href}
                       className={`relative text-sm font-semibold tracking-wide transition-colors duration-200 pb-1 group ${
-                        isActive ? "text-[#E50914]" : "text-gray-700 hover:text-[#E50914]"
+                        isActive ? "text-[#1D4ED8]" : "text-gray-700 hover:text-[#1D4ED8]"
                       }`}>
                       {item.name}
-                      <span className={`absolute -bottom-3 left-0 right-0 h-0.5 bg-[#E50914] transition-all duration-200 ${
+                      <span className={`absolute -bottom-3 left-0 right-0 h-0.5 bg-[#1D4ED8] transition-all duration-200 ${
                         isActive ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100"
                       }`} />
                     </Link>
@@ -227,7 +227,7 @@ export default function Navbar({ onOpenApply }) {
                   <Logo variant="dark" size="sm" />
                 </div>
                 <button onClick={() => setMobileMenuOpen(true)}
-                  className="p-2.5 text-gray-900 hover:text-[#E50914] rounded transition-colors" aria-label="Open menu">
+                  className="p-2.5 text-gray-900 hover:text-[#1D4ED8] rounded transition-colors" aria-label="Open menu">
                   <Menu className="w-6 h-6" />
                 </button>
               </div>
@@ -253,8 +253,8 @@ export default function Navbar({ onOpenApply }) {
                 <button key={lang.code} onClick={() => changeLang(lang.code)}
                   className={`text-left text-sm py-1.5 px-3 rounded transition-colors ${
                     currentLang === lang.code
-                      ? "text-[#E50914] border border-[#E50914] font-semibold bg-[#E50914]/5"
-                      : "text-[#3B82F6] hover:text-[#E50914] hover:bg-gray-50"
+                      ? "text-[#1D4ED8] border border-[#1D4ED8] font-semibold bg-[#1D4ED8]/5"
+                      : "text-[#3B82F6] hover:text-[#1D4ED8] hover:bg-gray-50"
                   }`}>
                   {lang.name}
                 </button>
@@ -289,7 +289,7 @@ export default function Navbar({ onOpenApply }) {
               return (
                 <Link key={item.name} href={item.href} onClick={() => setMobileMenuOpen(false)}
                   className={`block text-2xl sm:text-3xl font-black transition-colors ${
-                    isActive ? "text-[#E50914]" : "text-gray-900 hover:text-[#E50914]"
+                    isActive ? "text-[#1D4ED8]" : "text-gray-900 hover:text-[#1D4ED8]"
                   }`}>
                   {item.name}
                 </Link>
@@ -299,42 +299,42 @@ export default function Navbar({ onOpenApply }) {
           <div className="pt-6 border-t border-gray-200 space-y-4 mt-6">
             <div className="flex flex-col gap-3 text-sm text-gray-600 font-medium">
               <a href="mailto:blankslateinstitute1@gmail.com"
-                className="flex items-center gap-2 text-gray-700 hover:text-[#E50914] transition-colors">
-                <Mail className="w-4 h-4 text-[#E50914]" />
+                className="flex items-center gap-2 text-gray-700 hover:text-[#1D4ED8] transition-colors">
+                <Mail className="w-4 h-4 text-[#1D4ED8]" />
                 <span>blankslateinstitute1@gmail.com</span>
               </a>
               <a href="tel:+9235746486463"
-                className="flex items-center gap-2 text-gray-700 hover:text-[#E50914] transition-colors">
-                <Phone className="w-4 h-4 text-[#E50914]" />
+                className="flex items-center gap-2 text-gray-700 hover:text-[#1D4ED8] transition-colors">
+                <Phone className="w-4 h-4 text-[#1D4ED8]" />
                 <span>+92 35746486463</span>
               </a>
             </div>
             <div className="flex items-center gap-3">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-[#E50914] hover:text-white transition-colors" aria-label="Facebook">
+                className="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-[#1D4ED8] hover:text-white transition-colors" aria-label="Facebook">
                 <FacebookIcon className="w-4 h-4" />
               </a>
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-[#E50914] hover:text-white transition-colors" aria-label="LinkedIn">
+                className="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-[#1D4ED8] hover:text-white transition-colors" aria-label="LinkedIn">
                 <LinkedinIcon className="w-4 h-4" />
               </a>
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-[#E50914] hover:text-white transition-colors" aria-label="Instagram">
+                className="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-[#1D4ED8] hover:text-white transition-colors" aria-label="Instagram">
                 <InstagramIcon className="w-4 h-4" />
               </a>
             </div>
             <button onClick={() => { setMobileMenuOpen(false); setLangModalOpen(true); }}
-              className="flex items-center gap-2 text-sm font-semibold text-[#E50914] border border-[#E50914] rounded px-4 py-2.5 hover:bg-[#E50914] hover:text-white transition-colors">
+              className="flex items-center gap-2 text-sm font-semibold text-[#1D4ED8] border border-[#1D4ED8] rounded px-4 py-2.5 hover:bg-[#1D4ED8] hover:text-white transition-colors">
               <Globe className="w-4 h-4" />
               <span>{currentLangName}</span>
             </button>
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               <button onClick={() => { setMobileMenuOpen(false); onOpenApply(); }}
-                className="w-full sm:w-auto px-8 py-3.5 bg-[#E50914] border border-[#E50914] text-white text-sm font-black uppercase tracking-wider rounded hover:bg-white hover:text-[#E50914] transition-all">
+                className="w-full sm:w-auto px-8 py-3.5 bg-[#1D4ED8] border border-[#1D4ED8] text-white text-sm font-black uppercase tracking-wider rounded hover:bg-white hover:text-[#1D4ED8] transition-all">
                 Sign Up
               </button>
               <Link href="/student-portal" onClick={() => setMobileMenuOpen(false)}
-                className="w-full sm:w-auto px-8 py-3.5 border border-[#E50914] text-[#E50914] text-sm font-black uppercase tracking-wider rounded text-center hover:bg-[#E50914] hover:text-white transition-all">
+                className="w-full sm:w-auto px-8 py-3.5 border border-[#1D4ED8] text-[#1D4ED8] text-sm font-black uppercase tracking-wider rounded text-center hover:bg-[#1D4ED8] hover:text-white transition-all">
                 Log In
               </Link>
             </div>

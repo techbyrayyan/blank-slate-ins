@@ -1,10 +1,10 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { ChevronRight, Home } from "lucide-react";
 
 export default function Breadcrumbs({ items = [] }) {
   return (
     <nav className="flex items-center space-x-2 text-xs font-semibold text-gray-500 mb-6" aria-label="Breadcrumb">
-      <Link href="/" className="hover:text-[#E50914] flex items-center gap-1 transition-colors">
+      <Link href="/" className="hover:text-[#1D4ED8] flex items-center gap-1 transition-colors">
         <Home className="w-3.5 h-3.5" />
         <span>Home</span>
       </Link>
@@ -12,7 +12,7 @@ export default function Breadcrumbs({ items = [] }) {
         <div key={idx} className="flex items-center space-x-2">
           <ChevronRight className="w-3.5 h-3.5 text-gray-300 flex-shrink-0" />
           {item.href ? (
-            <Link href={item.href} className="hover:text-[#E50914] transition-colors">
+            <Link href={item.href} className="hover:text-[#1D4ED8] transition-colors">
               {item.label}
             </Link>
           ) : (

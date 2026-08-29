@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import Link from "next/link";
@@ -91,7 +91,7 @@ export default function AdmissionsPage() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-[#09090B] selection:bg-[#E50914] selection:text-white font-sans">
+    <div className="min-h-screen flex flex-col bg-white text-[#09090B] selection:bg-[#1D4ED8] selection:text-white font-sans">
       <CustomCursor />
       <Navbar onOpenApply={() => setApplyModalOpen(true)} />
 
@@ -113,13 +113,13 @@ export default function AdmissionsPage() {
                     <span>Home</span>
                   </Link>
                   <span>&gt;</span>
-                  <span className="text-[#E50914]">Admissions 2026</span>
+                  <span className="text-[#1D4ED8]">Admissions 2026</span>
                 </div>
 
                 {/* Main Heading */}
                 <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-gray-950 tracking-tight leading-[1.05]">
                   Your Next Chapter <br />
-                  <span className="text-[#E50914]">Starts Here.</span>
+                  <span className="text-[#1D4ED8]">Starts Here.</span>
                 </h1>
 
                 {/* Subtitle */}
@@ -145,7 +145,7 @@ export default function AdmissionsPage() {
                         whileHover={{ y: -3 }}
                         className="flex items-center gap-2.5 cursor-default"
                       >
-                        <div className="w-9 h-9 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center text-[#E50914] shadow-sm">
+                        <div className="w-9 h-9 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center text-[#1D4ED8] shadow-sm">
                           <Icon className="w-4 h-4" />
                         </div>
                         <div>
@@ -163,7 +163,7 @@ export default function AdmissionsPage() {
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => setApplyModalOpen(true)}
-                    className="px-7 py-3.5 bg-[#E50914] hover:bg-[#B91C1C] text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-[0_4px_20px_rgba(229,9,20,0.35)] transition-all flex items-center gap-2"
+                    className="px-7 py-3.5 bg-[#1D4ED8] hover:bg-[#B91C1C] text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-[0_4px_20px_rgba(229,9,20,0.35)] transition-all flex items-center gap-2"
                   >
                     <span>Apply for Next Intake</span>
                     <ArrowRight className="w-4 h-4" />
@@ -199,7 +199,7 @@ export default function AdmissionsPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
 
                   {/* Floating Badges */}
-                  <div className="absolute top-4 right-4 p-2.5 rounded-xl bg-white/95 backdrop-blur-md border border-gray-200 text-[#E50914] flex items-center gap-1.5 text-xs font-mono font-bold shadow-md">
+                  <div className="absolute top-4 right-4 p-2.5 rounded-xl bg-white/95 backdrop-blur-md border border-gray-200 text-[#1D4ED8] flex items-center gap-1.5 text-xs font-mono font-bold shadow-md">
                     <Sparkles className="w-3.5 h-3.5" /> Rolling Admissions
                   </div>
                   <div className="absolute bottom-6 left-6 p-3 rounded-2xl bg-white/95 backdrop-blur-md border border-gray-200 text-gray-900 flex items-center gap-3 text-xs font-mono shadow-lg">
@@ -223,14 +223,14 @@ export default function AdmissionsPage() {
                     key={tab}
                     onClick={() => setActiveTab(tab)}
                     className={`text-xs font-semibold uppercase tracking-wider py-1.5 transition-colors relative ${
-                      isActive ? "text-[#E50914] font-bold" : "text-gray-600 hover:text-black"
+                      isActive ? "text-[#1D4ED8] font-bold" : "text-gray-600 hover:text-black"
                     }`}
                   >
                     <span>{tab}</span>
                     {isActive && (
                       <motion.span
                         layoutId="activeAdmissionsTab"
-                        className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#E50914]"
+                        className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#1D4ED8]"
                       ></motion.span>
                     )}
                   </button>
@@ -254,7 +254,7 @@ export default function AdmissionsPage() {
                 className="space-y-6"
               >
                 <div className="space-y-2">
-                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#E50914]">
+                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#1D4ED8]">
                     ADMISSION PROCESS
                   </span>
                   <h2 className="text-2xl sm:text-3xl font-black text-gray-950">How to Apply</h2>
@@ -268,11 +268,11 @@ export default function AdmissionsPage() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: idx * 0.1 }}
-                      whileHover={{ y: -3, borderColor: "#E50914" }}
+                      whileHover={{ y: -3, borderColor: "#1D4ED8" }}
                       className="p-6 rounded-2xl bg-white border border-gray-200 space-y-2 transition-all shadow-sm hover:shadow-md cursor-default"
                     >
                       <div className="flex items-center gap-3">
-                        <span className="w-8 h-8 rounded-full bg-[#E50914] text-white flex items-center justify-center text-xs font-mono font-black shadow-sm">
+                        <span className="w-8 h-8 rounded-full bg-[#1D4ED8] text-white flex items-center justify-center text-xs font-mono font-black shadow-sm">
                           {step.num}
                         </span>
                         <h3 className="text-base font-bold text-gray-950">{step.title}</h3>
@@ -293,7 +293,7 @@ export default function AdmissionsPage() {
                 className="space-y-6"
               >
                 <div className="space-y-2">
-                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#E50914]">
+                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#1D4ED8]">
                     REQUIREMENTS
                   </span>
                   <h2 className="text-2xl sm:text-3xl font-black text-gray-950">Eligibility & Prerequisites</h2>
@@ -310,7 +310,7 @@ export default function AdmissionsPage() {
                       whileHover={{ y: -3 }}
                       className="p-4 rounded-2xl bg-gray-50 border border-gray-200 flex items-start gap-2.5 cursor-default shadow-sm"
                     >
-                      <CheckCircle2 className="w-4 h-4 text-[#E50914] flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-[#1D4ED8] flex-shrink-0 mt-0.5" />
                       <span className="text-xs text-gray-700 font-medium leading-snug">{item}</span>
                     </motion.div>
                   ))}
@@ -326,7 +326,7 @@ export default function AdmissionsPage() {
                 className="space-y-6"
               >
                 <div className="space-y-2">
-                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#E50914]">
+                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#1D4ED8]">
                     TRANSPARENT TUITION
                   </span>
                   <h2 className="text-2xl sm:text-3xl font-black text-gray-950">Tuition & Installment Plans</h2>
@@ -348,14 +348,14 @@ export default function AdmissionsPage() {
                         <tr key={prog.slug} className="hover:bg-gray-50 transition-colors">
                           <td className="p-4 font-bold text-gray-900">{prog.title}</td>
                           <td className="p-4 text-gray-500 font-mono">{prog.duration}</td>
-                          <td className="p-4 font-mono font-black text-[#E50914]">{prog.tuition}</td>
+                          <td className="p-4 font-mono font-black text-[#1D4ED8]">{prog.tuition}</td>
                           <td className="p-4 text-gray-600 font-mono">0% Interest</td>
                           <td className="p-4 text-right">
                             <motion.button
                               whileHover={{ scale: 1.05 }}
                               whileTap={{ scale: 0.95 }}
                               onClick={() => setApplyModalOpen(true)}
-                              className="px-3.5 py-1.5 bg-[#E50914] hover:bg-[#B91C1C] text-white rounded-lg font-bold text-xs shadow-sm transition-all"
+                              className="px-3.5 py-1.5 bg-[#1D4ED8] hover:bg-[#B91C1C] text-white rounded-lg font-bold text-xs shadow-sm transition-all"
                             >
                               Apply
                             </motion.button>
@@ -376,7 +376,7 @@ export default function AdmissionsPage() {
                 className="space-y-6"
               >
                 <div className="space-y-2">
-                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#E50914]">
+                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#1D4ED8]">
                     COMMON INQUIRIES
                   </span>
                   <h2 className="text-2xl sm:text-3xl font-black text-gray-950">Frequently Asked Questions</h2>
@@ -392,11 +392,11 @@ export default function AdmissionsPage() {
                       >
                         <button
                           onClick={() => setOpenFaqIndex(isOpen ? -1 : idx)}
-                          className="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-xs sm:text-sm text-gray-900 hover:text-[#E50914] transition-colors"
+                          className="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-xs sm:text-sm text-gray-900 hover:text-[#1D4ED8] transition-colors"
                         >
                           <span>{faq.q}</span>
                           {isOpen ? (
-                            <ChevronUp className="w-4 h-4 text-[#E50914]" />
+                            <ChevronUp className="w-4 h-4 text-[#1D4ED8]" />
                           ) : (
                             <ChevronDown className="w-4 h-4 text-gray-400" />
                           )}
@@ -436,7 +436,7 @@ export default function AdmissionsPage() {
 
                 <div className="space-y-4 text-xs">
                   <div className="p-4 rounded-xl bg-gray-50 border border-gray-200 space-y-1">
-                    <span className="text-[10px] font-mono text-[#E50914] font-bold uppercase">
+                    <span className="text-[10px] font-mono text-[#1D4ED8] font-bold uppercase">
                       Early Decision Deadline
                     </span>
                     <p className="text-base font-black text-gray-950">October 15, 2026</p>
@@ -456,7 +456,7 @@ export default function AdmissionsPage() {
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => setApplyModalOpen(true)}
-                  className="w-full py-3.5 bg-[#E50914] hover:bg-[#B91C1C] text-white text-xs font-bold uppercase tracking-wider rounded-xl shadow-[0_4px_15px_rgba(229,9,20,0.35)] transition-all flex items-center justify-center gap-2"
+                  className="w-full py-3.5 bg-[#1D4ED8] hover:bg-[#B91C1C] text-white text-xs font-bold uppercase tracking-wider rounded-xl shadow-[0_4px_15px_rgba(229,9,20,0.35)] transition-all flex items-center justify-center gap-2"
                 >
                   <span>Apply Now</span>
                   <ArrowRight className="w-4 h-4" />
@@ -465,14 +465,14 @@ export default function AdmissionsPage() {
 
               {/* CARD 2: Merit Scholarships */}
               <div className="p-6 sm:p-8 rounded-3xl bg-white border border-gray-200 space-y-4 shadow-md">
-                <div className="w-10 h-10 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center text-[#E50914]">
+                <div className="w-10 h-10 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center text-[#1D4ED8]">
                   <Award className="w-5 h-5" />
                 </div>
                 <h3 className="text-lg font-black text-gray-950">Merit Aid Scholarships</h3>
                 <p className="text-xs text-gray-600 leading-relaxed">
                   We award merit-based tuition reductions of up to 40% to promising developers, researchers, and female tech leaders.
                 </p>
-                <div className="pt-2 text-xs font-mono text-[#E50914] font-bold">
+                <div className="pt-2 text-xs font-mono text-[#1D4ED8] font-bold">
                   ✓ Automatically evaluated upon applying
                 </div>
               </div>
@@ -482,15 +482,15 @@ export default function AdmissionsPage() {
                 <h3 className="text-lg font-black text-gray-950">Admissions Desk</h3>
                 <div className="space-y-3 text-gray-700">
                   <div className="flex items-start gap-2.5">
-                    <MapPin className="w-4 h-4 text-[#E50914] flex-shrink-0 mt-0.5" />
+                    <MapPin className="w-4 h-4 text-[#1D4ED8] flex-shrink-0 mt-0.5" />
                     <span>123 Education Lane, Lahore, Pakistan</span>
                   </div>
                   <div className="flex items-center gap-2.5">
-                    <Phone className="w-4 h-4 text-[#E50914] flex-shrink-0" />
+                    <Phone className="w-4 h-4 text-[#1D4ED8] flex-shrink-0" />
                     <span>+92 42 111 222 333</span>
                   </div>
                   <div className="flex items-center gap-2.5">
-                    <Mail className="w-4 h-4 text-[#E50914] flex-shrink-0" />
+                    <Mail className="w-4 h-4 text-[#1D4ED8] flex-shrink-0" />
                     <span>admissions@blankslate.edu.pk</span>
                   </div>
                 </div>
@@ -510,7 +510,7 @@ export default function AdmissionsPage() {
               className="p-8 sm:p-12 rounded-3xl bg-gray-950 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden"
             >
               <div className="space-y-1 relative z-10">
-                <span className="text-[11px] font-mono text-rose-300 uppercase">Still have questions?</span>
+                <span className="text-[11px] font-mono text-blue-300 uppercase">Still have questions?</span>
                 <h3 className="text-2xl sm:text-3xl font-black text-white">We&apos;re here to help.</h3>
                 <p className="text-xs text-gray-300">Talk to our admissions team and start your journey with BlankSlate Institute.</p>
               </div>
@@ -532,7 +532,7 @@ export default function AdmissionsPage() {
                   href="https://wa.me/923121234567"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-3 bg-[#E50914] hover:bg-[#B91C1C] text-white text-xs font-bold rounded-full shadow-lg transition-all flex items-center gap-2"
+                  className="px-6 py-3 bg-[#1D4ED8] hover:bg-[#B91C1C] text-white text-xs font-bold rounded-full shadow-lg transition-all flex items-center gap-2"
                 >
                   <Phone className="w-3.5 h-3.5" />
                   <span>+92 312 1234567</span>

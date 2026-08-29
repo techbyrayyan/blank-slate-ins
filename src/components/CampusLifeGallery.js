@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { Maximize2, X, ChevronLeft, ChevronRight } from "lucide-react";
@@ -42,7 +42,7 @@ export default function CampusLifeGallery() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
-          <span className="inline-block text-xs font-black uppercase tracking-[0.2em] text-[#E50914]">
+          <span className="inline-block text-xs font-black uppercase tracking-[0.2em] text-[#1D4ED8]">
             CAMPUS CULTURE
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0B0B0C] tracking-tight">
@@ -92,7 +92,7 @@ export default function CampusLifeGallery() {
 
               {/* Caption */}
               <div className="absolute bottom-4 left-4 right-4 text-white">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[#E50914] bg-white/90 px-2 py-0.5 rounded-md">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#1D4ED8] bg-white/90 px-2 py-0.5 rounded-md">
                   {item.category}
                 </span>
                 <h3 className="text-sm font-bold text-white mt-1.5 line-clamp-1">
@@ -144,7 +144,7 @@ export default function CampusLifeGallery() {
               className="max-h-[65vh] w-auto object-contain mx-auto"
             />
             <div className="p-6 bg-[#0B0B0C] text-white">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#E50914]">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#1D4ED8]">
                 {filteredItems[selectedImageIndex].category}
               </span>
               <h3 className="text-xl font-bold mt-1">

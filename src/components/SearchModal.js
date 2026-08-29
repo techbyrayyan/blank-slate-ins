@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import { Search, X, ArrowRight } from "lucide-react";
@@ -51,7 +51,7 @@ export default function SearchModal({ isOpen, onClose }) {
           onClick={(e) => e.stopPropagation()}
         >
           <div className="flex items-center px-5 py-4 border-b border-white/10 bg-[#08080B]">
-            <Search className="w-5 h-5 text-[#E50914] mr-3 flex-shrink-0" />
+            <Search className="w-5 h-5 text-[#1D4ED8] mr-3 flex-shrink-0" />
             <input
               type="text"
               autoFocus
@@ -79,7 +79,7 @@ export default function SearchModal({ isOpen, onClose }) {
                     <button
                       key={tag}
                       onClick={() => setQuery(tag)}
-                      className="px-3 py-1 bg-white/5 hover:bg-[#E50914] text-gray-300 hover:text-white rounded-lg text-xs font-semibold transition-colors"
+                      className="px-3 py-1 bg-white/5 hover:bg-[#1D4ED8] text-gray-300 hover:text-white rounded-lg text-xs font-semibold transition-colors"
                     >
                       {tag}
                     </button>
@@ -100,12 +100,12 @@ export default function SearchModal({ isOpen, onClose }) {
                     className="flex items-center justify-between p-3 rounded-2xl hover:bg-white/5 transition-colors group"
                   >
                     <div className="space-y-0.5">
-                      <p className="text-sm font-bold text-white group-hover:text-[#E50914] transition-colors">
+                      <p className="text-sm font-bold text-white group-hover:text-[#1D4ED8] transition-colors">
                         {c.title}
                       </p>
                       <p className="text-xs text-gray-400 line-clamp-1">{c.shortDesc}</p>
                     </div>
-                    <span className="text-xs font-bold text-[#E50914] flex items-center gap-1 flex-shrink-0">
+                    <span className="text-xs font-bold text-[#1D4ED8] flex items-center gap-1 flex-shrink-0">
                       {c.duration} <ArrowRight className="w-3.5 h-3.5" />
                     </span>
                   </Link>

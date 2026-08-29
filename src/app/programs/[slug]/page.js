@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { use, useState } from "react";
 import Link from "next/link";
@@ -115,7 +115,7 @@ export default function ProgramDetailPage({ params }) {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-[#09090B] selection:bg-[#E50914] selection:text-white font-sans">
+    <div className="min-h-screen flex flex-col bg-white text-[#09090B] selection:bg-[#1D4ED8] selection:text-white font-sans">
       <CustomCursor />
       <Navbar onOpenApply={() => setApplyModalOpen(true)} />
 
@@ -141,13 +141,13 @@ export default function ProgramDetailPage({ params }) {
                     Programs
                   </Link>
                   <span>&gt;</span>
-                  <span className="text-[#E50914]">{currentProgram.title}</span>
+                  <span className="text-[#1D4ED8]">{currentProgram.title}</span>
                 </div>
 
                 {/* Main Heading */}
                 <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-gray-950 tracking-tight leading-[1.05]">
                   Full Stack <br />
-                  <span className="text-[#E50914]">Development</span>
+                  <span className="text-[#1D4ED8]">Development</span>
                 </h1>
 
                 {/* Subtitle */}
@@ -173,7 +173,7 @@ export default function ProgramDetailPage({ params }) {
                         whileHover={{ y: -3 }}
                         className="flex items-center gap-2.5 cursor-default"
                       >
-                        <div className="w-9 h-9 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center text-[#E50914] shadow-sm">
+                        <div className="w-9 h-9 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center text-[#1D4ED8] shadow-sm">
                           <Icon className="w-4 h-4" />
                         </div>
                         <div>
@@ -191,7 +191,7 @@ export default function ProgramDetailPage({ params }) {
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => setApplyModalOpen(true)}
-                    className="px-7 py-3.5 bg-[#E50914] hover:bg-[#B91C1C] text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-[0_4px_20px_rgba(229,9,20,0.35)] transition-all flex items-center gap-2"
+                    className="px-7 py-3.5 bg-[#1D4ED8] hover:bg-[#B91C1C] text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-[0_4px_20px_rgba(229,9,20,0.35)] transition-all flex items-center gap-2"
                   >
                     <span>Apply Now</span>
                     <ArrowRight className="w-4 h-4" />
@@ -262,14 +262,14 @@ export default function ProgramDetailPage({ params }) {
                     key={tab}
                     onClick={() => setActiveTab(tab)}
                     className={`text-xs font-semibold uppercase tracking-wider py-1.5 transition-colors relative ${
-                      isActive ? "text-[#E50914] font-bold" : "text-gray-600 hover:text-black"
+                      isActive ? "text-[#1D4ED8] font-bold" : "text-gray-600 hover:text-black"
                     }`}
                   >
                     <span>{tab}</span>
                     {isActive && (
                       <motion.span
                         layoutId="activeProgramTab"
-                        className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#E50914]"
+                        className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#1D4ED8]"
                       ></motion.span>
                     )}
                   </button>
@@ -311,7 +311,7 @@ export default function ProgramDetailPage({ params }) {
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.4, delay: idx * 0.05 }}
-                      whileHover={{ y: -4, borderColor: "#E50914" }}
+                      whileHover={{ y: -4, borderColor: "#1D4ED8" }}
                       className="p-3 rounded-2xl bg-white border border-gray-200 flex flex-col items-center justify-center space-y-1.5 text-center group transition-all shadow-sm cursor-default"
                     >
                       <span className={`w-8 h-8 rounded-xl bg-gradient-to-br ${t.color} text-white flex items-center justify-center text-[10px] font-mono font-black shadow-sm`}>
@@ -343,7 +343,7 @@ export default function ProgramDetailPage({ params }) {
                       whileHover={{ y: -3 }}
                       className="p-4 rounded-2xl bg-gray-50 border border-gray-200 flex items-start gap-2.5 cursor-default shadow-sm"
                     >
-                      <CheckCircle2 className="w-4 h-4 text-[#E50914] flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-[#1D4ED8] flex-shrink-0 mt-0.5" />
                       <span className="text-xs text-gray-700 font-medium leading-snug">{item}</span>
                     </motion.div>
                   ))}
@@ -370,10 +370,10 @@ export default function ProgramDetailPage({ params }) {
                       >
                         <button
                           onClick={() => setOpenModuleIndex(isOpen ? -1 : idx)}
-                          className="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-xs sm:text-sm text-gray-900 hover:text-[#E50914] transition-colors"
+                          className="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-xs sm:text-sm text-gray-900 hover:text-[#1D4ED8] transition-colors"
                         >
                           <div className="flex items-center gap-3">
-                            <span className="w-7 h-7 rounded-lg bg-[#E50914]/10 text-[#E50914] flex items-center justify-center text-xs">
+                            <span className="w-7 h-7 rounded-lg bg-[#1D4ED8]/10 text-[#1D4ED8] flex items-center justify-center text-xs">
                               <Layers className="w-3.5 h-3.5" />
                             </span>
                             <span>{mod.title}</span>
@@ -382,7 +382,7 @@ export default function ProgramDetailPage({ params }) {
                           <div className="flex items-center gap-3">
                             <span className="text-xs font-mono text-gray-500">{mod.duration}</span>
                             {isOpen ? (
-                              <ChevronUp className="w-4 h-4 text-[#E50914]" />
+                              <ChevronUp className="w-4 h-4 text-[#1D4ED8]" />
                             ) : (
                               <ChevronDown className="w-4 h-4 text-gray-400" />
                             )}
@@ -414,7 +414,7 @@ export default function ProgramDetailPage({ params }) {
                     onClick={() => alert("Curriculum download initiated.")}
                     className="inline-flex items-center gap-2 px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-900 text-xs font-bold rounded-full border border-gray-200 transition-all"
                   >
-                    <Download className="w-4 h-4 text-[#E50914]" />
+                    <Download className="w-4 h-4 text-[#1D4ED8]" />
                     <span>Download Full Curriculum</span>
                   </motion.button>
                 </div>
@@ -445,7 +445,7 @@ export default function ProgramDetailPage({ params }) {
                     const Icon = row.icon;
                     return (
                       <div key={row.label} className="flex items-start gap-3">
-                        <Icon className="w-4 h-4 text-[#E50914] flex-shrink-0 mt-0.5" />
+                        <Icon className="w-4 h-4 text-[#1D4ED8] flex-shrink-0 mt-0.5" />
                         <div>
                           <p className="text-gray-500 font-mono">{row.label}</p>
                           <p className="font-bold text-gray-900">{row.val}</p>
@@ -460,7 +460,7 @@ export default function ProgramDetailPage({ params }) {
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => setApplyModalOpen(true)}
-                    className="w-full py-3.5 bg-[#E50914] hover:bg-[#B91C1C] text-white text-xs font-bold uppercase tracking-wider rounded-xl shadow-[0_4px_15px_rgba(229,9,20,0.35)] transition-all flex items-center justify-center gap-2"
+                    className="w-full py-3.5 bg-[#1D4ED8] hover:bg-[#B91C1C] text-white text-xs font-bold uppercase tracking-wider rounded-xl shadow-[0_4px_15px_rgba(229,9,20,0.35)] transition-all flex items-center justify-center gap-2"
                   >
                     <span>Apply Now</span>
                     <ArrowRight className="w-4 h-4" />
@@ -482,8 +482,8 @@ export default function ProgramDetailPage({ params }) {
               <div className="p-6 sm:p-8 rounded-3xl bg-white border border-gray-200 space-y-4 shadow-md">
                 <h3 className="text-lg font-black text-gray-950">Certifications You&apos;ll Earn</h3>
 
-                <div className="p-5 rounded-2xl bg-gray-50 text-gray-900 border-2 border-[#E50914]/40 space-y-3 text-center shadow-inner relative overflow-hidden">
-                  <p className="text-[10px] font-mono uppercase tracking-widest font-black text-[#E50914]">
+                <div className="p-5 rounded-2xl bg-gray-50 text-gray-900 border-2 border-[#1D4ED8]/40 space-y-3 text-center shadow-inner relative overflow-hidden">
+                  <p className="text-[10px] font-mono uppercase tracking-widest font-black text-[#1D4ED8]">
                     BlankSlate Institute
                   </p>
                   <p className="text-xs font-mono text-gray-500 uppercase">Certificate of Completion</p>
@@ -505,7 +505,7 @@ export default function ProgramDetailPage({ params }) {
                       key={tool}
                       className="px-3 py-1.5 rounded-xl bg-gray-50 border border-gray-200 text-xs font-mono text-gray-700 flex items-center gap-1.5"
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#E50914]"></span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#1D4ED8]"></span>
                       <span>{tool}</span>
                     </span>
                   ))}
@@ -548,7 +548,7 @@ export default function ProgramDetailPage({ params }) {
                   href="https://wa.me/923121234567"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-3 bg-[#E50914] hover:bg-[#B91C1C] text-white text-xs font-bold rounded-full shadow-lg transition-all flex items-center gap-2"
+                  className="px-6 py-3 bg-[#1D4ED8] hover:bg-[#B91C1C] text-white text-xs font-bold rounded-full shadow-lg transition-all flex items-center gap-2"
                 >
                   <Phone className="w-3.5 h-3.5" />
                   <span>+92 312 1234567</span>
