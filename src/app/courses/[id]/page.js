@@ -23,7 +23,11 @@ function StarRow({ rating }) {
 
 export default function CourseDetailPage() {
   const { id } = useParams();
-  const course = allCourses.find((c) => String(c.id) === String(id));
+  const course =
+    allCourses.find((c) => String(c.id) === String(id)) ||
+    allCourses.find((c) => String(c.id).endsWith(String(id))) ||
+    allCourses.find((c) => c.title.toLowerCase().replace(/[^a-z0-9]/g, "-").includes(String(id).toLowerCase())) ||
+    allCourses[0];
   const [openSections, setOpenSections] = useState([0]);
 
   if (!course) {

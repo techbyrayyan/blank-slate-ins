@@ -32,17 +32,7 @@ export default function CampusExperience() {
               A vibrant community, modern facilities and endless opportunities.
             </p>
 
-            <div className="pt-2">
-              <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }} className="inline-block">
-                <Link
-                  href="/campus-life"
-                  className="inline-flex items-center gap-2 px-7 py-3.5 bg-gray-100 hover:bg-[#2563EB] hover:text-white text-gray-900 text-xs font-black uppercase tracking-wider rounded-full border border-gray-300 hover:border-[#2563EB] transition-all duration-200 shadow-sm"
-                >
-                  <span>Explore Campus</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </motion.div>
-            </div>
+
           </motion.div>
 
           {/* Right Column: 4-Photo Masonry Collage (8 cols) */}
