@@ -54,68 +54,73 @@ export default function CourseDetailPage() {
       <Navbar />
       <main className="min-h-screen bg-white">
 
-        {/* ── Dark Hero Banner ── */}
-        <div className="bg-[#1c1d1f] text-white pt-[220px] pb-10">
-          <div className="max-w-[1180px] mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-10 items-start">
+        {/* ── Royal Blue Hero Banner ── */}
+        <div className="bg-gradient-to-r from-[#0a1f4a] via-[#1D4ED8] to-[#0d2757] text-white pt-[220px] pb-12 relative overflow-hidden shadow-md">
+          
+          {/* Ambient Blue Background Glow */}
+          <div className="absolute -top-24 -right-24 w-96 h-96 bg-white/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="max-w-[1180px] mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-10 items-start relative z-10">
             <div>
               {/* Breadcrumb */}
-              <div className="flex items-center gap-1.5 text-xs text-gray-400 mb-4">
+              <div className="flex items-center gap-1.5 text-xs text-blue-100 mb-4">
                 <Link href="/" className="hover:text-white transition-colors">Home</Link>
                 <span>/</span>
                 <Link href="/courses" className="hover:text-white transition-colors">Courses</Link>
                 <span>/</span>
-                <span className="text-gray-300">{course.category}</span>
+                <span className="text-white font-medium">{course.category}</span>
               </div>
 
               {/* Title */}
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-tight mb-4">{course.title}</h1>
-              <p className="text-base text-gray-300 mb-5">{course.description}</p>
+              <p className="text-base text-blue-100 mb-5 leading-relaxed">{course.description}</p>
 
               {/* Badges + Rating */}
               <div className="flex flex-wrap items-center gap-3 mb-4">
                 {course.badgeType === "bestseller" ? (
-                  <span className="bg-[#eceb98] text-[#3d3c0a] text-xs font-bold px-2 py-0.5 rounded">Bestseller</span>
+                  <span className="bg-[#eceb98] text-[#3d3c0a] text-xs font-bold px-2.5 py-1 rounded">Bestseller</span>
                 ) : (
-                  <span className="bg-[#1D4ED8] text-white text-xs font-bold px-2 py-0.5 rounded">New</span>
+                  <span className="bg-white text-[#1D4ED8] text-xs font-bold px-2.5 py-1 rounded">New</span>
                 )}
-                <span className="font-bold text-[#e59819]">{course.rating}</span>
+                <span className="font-bold text-[#fbc02d] text-sm">{course.rating}</span>
                 <StarRow rating={course.rating} />
-                <span className="text-sm text-gray-400">({course.ratingCount})</span>
-                <span className="text-sm text-gray-400">{course.students} students</span>
+                <span className="text-sm text-blue-100">({course.ratingCount})</span>
+                <span className="text-sm text-blue-100">{course.students} students</span>
               </div>
 
               {/* Author + Meta */}
-              <div className="flex flex-wrap gap-4 text-sm text-gray-300 mb-3">
-                <span>Created by <span className="text-[#cec0fc]">{course.author}</span></span>
+              <div className="flex flex-wrap gap-4 text-sm text-blue-100 mb-3">
+                <span>Created by <span className="text-white font-semibold underline underline-offset-2">{course.author}</span></span>
               </div>
-              <div className="flex flex-wrap gap-4 text-xs text-gray-400">
-                <span>Last updated <strong className="text-gray-200">{course.updated}</strong></span>
+              <div className="flex flex-wrap gap-4 text-xs text-blue-200">
+                <span>Last updated <strong className="text-white">{course.updated}</strong></span>
                 <span>{course.hours}</span>
                 <span>{course.level}</span>
                 <span>English</span>
               </div>
             </div>
 
-            {/* Desktop Sticky Purchase Card */}
+            {/* Desktop Purchase Card — scrolls with page (not fixed) */}
             <div className="hidden lg:block">
-              <div className="bg-white text-[#1c1d1f] rounded-xl shadow-2xl overflow-hidden sticky top-[100px]">
+              <div className="bg-white text-[#1c1d1f] rounded-2xl shadow-2xl border border-gray-100 overflow-hidden relative">
                 {/* Course Image with Play Button */}
-                <div className="relative aspect-[16/9] overflow-hidden">
+                <div className="relative aspect-[16/9] overflow-hidden bg-gray-100">
                   <img src={course.image} alt={course.title} className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-black/35 flex items-center justify-center">
-                    <div className="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
+                    <div className="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
                       <svg width="22" height="22" viewBox="0 0 24 24" fill="#1c1d1f">
                         <polygon points="5,3 19,12 5,21" />
                       </svg>
                     </div>
                   </div>
                 </div>
-                <div className="p-5">
+                <div className="p-6">
                   <div className="text-3xl font-extrabold text-[#1c1d1f] mb-4">{course.price}</div>
-                  <button className="w-full bg-[#1D4ED8] hover:bg-[#1e40af] text-white font-bold py-3.5 rounded-lg flex items-center justify-center gap-2 text-sm mb-3 transition-colors">
+                  <button className="w-full bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-bold py-3.5 rounded-xl flex items-center justify-center gap-2 text-sm mb-3 transition-colors shadow-md hover:shadow-lg">
                     <ShoppingCart className="w-4 h-4" /> Add to cart
                   </button>
-                  <button className="w-full border border-[#1D4ED8] text-[#1D4ED8] font-bold py-3 rounded-lg text-sm hover:bg-blue-50 transition-colors mb-4">
+                  <button className="w-full border-2 border-[#2563EB] text-[#2563EB] font-bold py-3 rounded-xl text-sm hover:bg-blue-50 transition-colors mb-4">
                     Enroll Now
                   </button>
                   <p className="text-xs text-center text-gray-500 mb-5">30-Day Money-Back Guarantee</p>
