@@ -105,7 +105,7 @@ export default function CourseDetailPage() {
 
         {/* ── Page Body with Sticky Floating Sidebar Card ── */}
         <div className="max-w-[1180px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-10 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-10">
             
             {/* Left Column: Course Details */}
             <div className="space-y-8 min-w-0">
@@ -230,7 +230,7 @@ export default function CourseDetailPage() {
             </div>
 
             {/* Right Column: Floating Sticky Purchase Card (Follows scroll down the page) */}
-            <div className="hidden lg:block -mt-[310px] relative z-30">
+            <div className="hidden lg:block h-full relative -mt-[310px] z-30">
               <div className="sticky top-[100px] bg-white text-[#1c1d1f] rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
                 {/* Course Image with Play Button */}
                 <div className="relative aspect-[16/9] overflow-hidden bg-gray-100">

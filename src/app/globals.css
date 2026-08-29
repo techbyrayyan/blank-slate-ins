@@ -21,7 +21,7 @@
     background-color: #ffffff !important;
     color: #09090B !important;
     font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    overflow-x: hidden;
+    overflow-x: clip;
     letter-spacing: -0.015em;
   }
 
