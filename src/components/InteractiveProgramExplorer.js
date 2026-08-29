@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import CourseCard from "./CourseCard";
 
 const trendingCourses12 = [
@@ -275,6 +276,13 @@ export default function InteractiveProgramExplorer({ onOpenApply }) {
           <h2 className="text-2xl sm:text-3xl font-bold text-[#1c1d1f] tracking-tight">
             Trending courses
           </h2>
+          <Link
+            href="/courses"
+            className="flex-shrink-0 inline-flex items-center gap-2 px-5 py-2.5 bg-[#1D4ED8] hover:bg-[#1e40af] text-white text-sm font-semibold rounded-md transition-colors duration-200"
+          >
+            View More Courses
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </Link>
         </div>
 
         {/* 4-column Grid System (3 rows x 4 columns = 12 cards total) */}
