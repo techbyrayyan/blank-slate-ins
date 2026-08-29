@@ -55,14 +55,14 @@ export default function CourseDetailPage() {
       <main className="min-h-screen bg-white">
 
         {/* ── Royal Blue Hero Banner ── */}
-        <div className="bg-gradient-to-r from-[#0a1f4a] via-[#1D4ED8] to-[#0d2757] text-white pt-[220px] pb-12 relative overflow-hidden shadow-md">
+        <div className="bg-gradient-to-r from-[#0a1f4a] via-[#1D4ED8] to-[#0d2757] text-white pt-[220px] pb-14 relative overflow-hidden shadow-md">
           
           {/* Ambient Blue Background Glow */}
           <div className="absolute -top-24 -right-24 w-96 h-96 bg-white/10 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl pointer-events-none" />
 
-          <div className="max-w-[1180px] mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-10 items-start relative z-10">
-            <div>
+          <div className="max-w-[1180px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="lg:max-w-[calc(100%-380px)]">
               {/* Breadcrumb */}
               <div className="flex items-center gap-1.5 text-xs text-blue-100 mb-4">
                 <Link href="/" className="hover:text-white transition-colors">Home</Link>
@@ -100,10 +100,138 @@ export default function CourseDetailPage() {
                 <span>English</span>
               </div>
             </div>
+          </div>
+        </div>
 
-            {/* Desktop Purchase Card — scrolls with page (not fixed) */}
-            <div className="hidden lg:block">
-              <div className="bg-white text-[#1c1d1f] rounded-2xl shadow-2xl border border-gray-100 overflow-hidden relative">
+        {/* ── Page Body with Sticky Floating Sidebar Card ── */}
+        <div className="max-w-[1180px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-10 items-start">
+            
+            {/* Left Column: Course Details */}
+            <div className="space-y-8 min-w-0">
+
+              {/* Mobile Purchase Card */}
+              <div className="lg:hidden bg-white border border-gray-200 rounded-xl shadow-md overflow-hidden">
+                <div className="relative aspect-[16/9] overflow-hidden bg-gray-100">
+                  <img src={course.image} alt={course.title} className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-black/35 flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="#1c1d1f"><polygon points="5,3 19,12 5,21" /></svg>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-4">
+                  <div className="text-2xl font-extrabold mb-3">{course.price}</div>
+                  <button className="w-full bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-bold py-3 rounded-lg text-sm mb-2 flex items-center justify-center gap-2">
+                    <ShoppingCart className="w-4 h-4" /> Add to cart
+                  </button>
+                  <button className="w-full border-2 border-[#2563EB] text-[#2563EB] font-bold py-2.5 rounded-lg text-sm">Enroll Now</button>
+                </div>
+              </div>
+
+              {/* What You'll Learn */}
+              <section className="border border-gray-200 rounded-2xl p-6 shadow-sm bg-white">
+                <h2 className="text-xl font-bold text-[#1c1d1f] mb-4">What you'll learn</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {course.bullets.map((b, i) => (
+                    <div key={i} className="flex items-start gap-2 text-sm text-[#1c1d1f]">
+                      <Check className="w-4 h-4 text-[#2563EB] mt-0.5 flex-shrink-0" />
+                      <span>{b}</span>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              {/* Course Content */}
+              <section className="bg-white rounded-2xl">
+                <h2 className="text-xl font-bold text-[#1c1d1f] mb-2">Course content</h2>
+                <p className="text-sm text-gray-500 mb-4">
+                  {course.sections?.length || 0} sections &bull; {totalLectures} lectures &bull; {course.hours}
+                </p>
+                <div className="border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+                  {course.sections?.map((sec, i) => (
+                    <div key={i} className="border-b border-gray-200 last:border-0">
+                      <button
+                        onClick={() => toggleSection(i)}
+                        className="w-full flex items-center justify-between px-5 py-4 bg-gray-50 hover:bg-blue-50/50 text-left transition-colors"
+                      >
+                        <div className="flex items-center gap-3">
+                          {openSections.includes(i) ? (
+                            <ChevronUp className="w-4 h-4 text-gray-500 flex-shrink-0" />
+                          ) : (
+                            <ChevronDown className="w-4 h-4 text-gray-500 flex-shrink-0" />
+                          )}
+                          <span className="font-semibold text-sm text-[#1c1d1f]">{sec.title}</span>
+                        </div>
+                        <span className="text-xs text-gray-500 flex-shrink-0 ml-4">
+                          {sec.lectures} lectures &bull; {sec.duration}
+                        </span>
+                      </button>
+                      {openSections.includes(i) && (
+                        <div className="px-5 py-3 bg-white">
+                          {Array.from({ length: Math.min(sec.lectures, 4) }).map((_, j) => (
+                            <div key={j} className="flex items-center gap-3 py-2.5 text-sm text-gray-700 border-b border-gray-100 last:border-0">
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2563EB" strokeWidth="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <polygon points="10,8 16,12 10,16" fill="#2563EB" stroke="none" />
+                              </svg>
+                              <span className="flex-1">{sec.title} &mdash; Lecture {j + 1}</span>
+                              <span className="text-xs text-[#2563EB] font-semibold cursor-pointer hover:underline">Preview</span>
+                            </div>
+                          ))}
+                          {sec.lectures > 4 && (
+                            <p className="text-xs text-gray-400 pt-2">{sec.lectures - 4} more lectures...</p>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              {/* Requirements */}
+              <section className="bg-white rounded-2xl">
+                <h2 className="text-xl font-bold text-[#1c1d1f] mb-4">Requirements</h2>
+                <ul className="space-y-2.5">
+                  {course.requirements?.map((r, i) => (
+                    <li key={i} className="flex items-start gap-2.5 text-sm text-gray-700">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB] mt-2 flex-shrink-0" />
+                      {r}
+                    </li>
+                  ))}
+                </ul>
+              </section>
+
+              {/* Description */}
+              <section className="bg-white rounded-2xl">
+                <h2 className="text-xl font-bold text-[#1c1d1f] mb-4">Description</h2>
+                <p className="text-sm text-gray-700 leading-relaxed">{course.longDescription}</p>
+              </section>
+
+              {/* Instructor */}
+              <section className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
+                <h2 className="text-xl font-bold text-[#1c1d1f] mb-4">Instructor</h2>
+                <div className="flex items-start gap-4">
+                  <div className="w-16 h-16 rounded-full bg-[#2563EB] flex items-center justify-center text-white text-2xl font-bold flex-shrink-0 shadow-md">
+                    {course.author.charAt(0)}
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-[#2563EB] text-base hover:underline cursor-pointer">{course.author}</h3>
+                    <p className="text-xs text-gray-500 mb-2">{course.category} Expert</p>
+                    <div className="flex items-center gap-3 text-xs text-gray-600">
+                      <StarRow rating="4.7" />
+                      <span>{course.ratingCount}</span>
+                      <span>{course.students} students</span>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+            </div>
+
+            {/* Right Column: Floating Sticky Purchase Card (Follows scroll down the page) */}
+            <div className="hidden lg:block -mt-[310px] relative z-30">
+              <div className="sticky top-[100px] bg-white text-[#1c1d1f] rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
                 {/* Course Image with Play Button */}
                 <div className="relative aspect-[16/9] overflow-hidden bg-gray-100">
                   <img src={course.image} alt={course.title} className="w-full h-full object-cover" />
@@ -142,134 +270,8 @@ export default function CourseDetailPage() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* ── Page Body ── */}
-        <div className="max-w-[1180px] mx-auto px-4 sm:px-6 lg:px-8 py-10 grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-10">
-          <div>
-
-            {/* Mobile Purchase Card */}
-            <div className="lg:hidden bg-white border border-gray-200 rounded-xl shadow-md overflow-hidden mb-8">
-              <div className="relative aspect-[16/9] overflow-hidden">
-                <img src={course.image} alt={course.title} className="w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-black/35 flex items-center justify-center">
-                  <div className="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#1c1d1f"><polygon points="5,3 19,12 5,21" /></svg>
-                  </div>
-                </div>
-              </div>
-              <div className="p-4">
-                <div className="text-2xl font-extrabold mb-3">{course.price}</div>
-                <button className="w-full bg-[#1D4ED8] text-white font-bold py-3 rounded-lg text-sm mb-2 flex items-center justify-center gap-2">
-                  <ShoppingCart className="w-4 h-4" /> Add to cart
-                </button>
-                <button className="w-full border border-[#1D4ED8] text-[#1D4ED8] font-bold py-2.5 rounded-lg text-sm">Enroll Now</button>
-              </div>
-            </div>
-
-            {/* What You'll Learn */}
-            <section className="border border-gray-200 rounded-xl p-6 mb-8">
-              <h2 className="text-xl font-bold text-[#1c1d1f] mb-4">What you'll learn</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {course.bullets.map((b, i) => (
-                  <div key={i} className="flex items-start gap-2 text-sm text-[#1c1d1f]">
-                    <Check className="w-4 h-4 text-[#1c1d1f] mt-0.5 flex-shrink-0" />
-                    <span>{b}</span>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            {/* Course Content */}
-            <section className="mb-8">
-              <h2 className="text-xl font-bold text-[#1c1d1f] mb-2">Course content</h2>
-              <p className="text-sm text-gray-500 mb-4">
-                {course.sections?.length || 0} sections &bull; {totalLectures} lectures &bull; {course.hours}
-              </p>
-              <div className="border border-gray-200 rounded-xl overflow-hidden">
-                {course.sections?.map((sec, i) => (
-                  <div key={i} className="border-b border-gray-200 last:border-0">
-                    <button
-                      onClick={() => toggleSection(i)}
-                      className="w-full flex items-center justify-between px-5 py-4 bg-gray-50 hover:bg-gray-100 text-left transition-colors"
-                    >
-                      <div className="flex items-center gap-3">
-                        {openSections.includes(i) ? (
-                          <ChevronUp className="w-4 h-4 text-gray-500 flex-shrink-0" />
-                        ) : (
-                          <ChevronDown className="w-4 h-4 text-gray-500 flex-shrink-0" />
-                        )}
-                        <span className="font-semibold text-sm text-[#1c1d1f]">{sec.title}</span>
-                      </div>
-                      <span className="text-xs text-gray-500 flex-shrink-0 ml-4">
-                        {sec.lectures} lectures &bull; {sec.duration}
-                      </span>
-                    </button>
-                    {openSections.includes(i) && (
-                      <div className="px-5 py-3 bg-white">
-                        {Array.from({ length: Math.min(sec.lectures, 4) }).map((_, j) => (
-                          <div key={j} className="flex items-center gap-3 py-2.5 text-sm text-gray-700 border-b border-gray-100 last:border-0">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" strokeWidth="2">
-                              <circle cx="12" cy="12" r="10" />
-                              <polygon points="10,8 16,12 10,16" fill="#1D4ED8" stroke="none" />
-                            </svg>
-                            <span className="flex-1">{sec.title} &mdash; Lecture {j + 1}</span>
-                            <span className="text-xs text-[#1D4ED8] font-medium cursor-pointer hover:underline">Preview</span>
-                          </div>
-                        ))}
-                        {sec.lectures > 4 && (
-                          <p className="text-xs text-gray-400 pt-2">{sec.lectures - 4} more lectures...</p>
-                        )}
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            {/* Requirements */}
-            <section className="mb-8">
-              <h2 className="text-xl font-bold text-[#1c1d1f] mb-4">Requirements</h2>
-              <ul className="space-y-2">
-                {course.requirements?.map((r, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
-                    <span className="w-1.5 h-1.5 rounded-full bg-gray-600 mt-2 flex-shrink-0" />
-                    {r}
-                  </li>
-                ))}
-              </ul>
-            </section>
-
-            {/* Description */}
-            <section className="mb-8">
-              <h2 className="text-xl font-bold text-[#1c1d1f] mb-4">Description</h2>
-              <p className="text-sm text-gray-700 leading-relaxed">{course.longDescription}</p>
-            </section>
-
-            {/* Instructor */}
-            <section className="mb-8">
-              <h2 className="text-xl font-bold text-[#1c1d1f] mb-4">Instructor</h2>
-              <div className="flex items-start gap-4">
-                <div className="w-16 h-16 rounded-full bg-[#1D4ED8] flex items-center justify-center text-white text-2xl font-bold flex-shrink-0">
-                  {course.author.charAt(0)}
-                </div>
-                <div>
-                  <h3 className="font-bold text-[#1D4ED8] text-base hover:underline cursor-pointer">{course.author}</h3>
-                  <p className="text-xs text-gray-500 mb-2">{course.category} Expert</p>
-                  <div className="flex items-center gap-3 text-xs text-gray-600">
-                    <StarRow rating="4.7" />
-                    <span>{course.ratingCount}</span>
-                    <span>{course.students} students</span>
-                  </div>
-                </div>
-              </div>
-            </section>
 
           </div>
-
-          {/* Spacer for sticky desktop card */}
-          <div className="hidden lg:block" />
         </div>
 
         {/* ── Related Courses ── */}
