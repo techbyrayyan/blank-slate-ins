@@ -1,6 +1,7 @@
-﻿"use client";
+"use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Star, Check, ShoppingCart } from "lucide-react";
@@ -38,12 +39,12 @@ export default function CourseCard({ course, onOpenApply }) {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={() => setHovered(false)}
     >
-      {/* Main Course Card */}
-      <div
-        onClick={() => onOpenApply && onOpenApply(course.title)}
-        className="cursor-pointer bg-white rounded-2xl border border-gray-200/80 p-4 sm:p-5 flex flex-col justify-between transition-shadow duration-300 min-h-[385px] w-full hover:shadow-lg"
-        style={{ boxShadow: hovered ? "0 8px 30px rgba(0,0,0,0.12)" : undefined }}
-      >
+      {/* Main Course Card — clickable → course detail page */}
+      <Link href={`/courses/${course.id}`} className="block">
+        <div
+          className="cursor-pointer bg-white rounded-2xl border border-gray-200/80 p-4 sm:p-5 flex flex-col justify-between transition-shadow duration-300 min-h-[385px] w-full hover:shadow-lg"
+          style={{ boxShadow: hovered ? "0 8px 30px rgba(0,0,0,0.12)" : undefined }}
+        >
         {/* Top Image + Title + Author */}
         <div>
           <div className="rounded-xl overflow-hidden aspect-[16/9] w-full mb-4 bg-gray-100">
@@ -93,7 +94,8 @@ export default function CourseCard({ course, onOpenApply }) {
             {course.price}
           </div>
         </div>
-      </div>
+        </div>
+      </Link>
 
       {/* Hover Popup (Portal to Body) */}
       <AnimatePresence>
