@@ -6,9 +6,11 @@ import { motion } from "framer-motion";
 export default function CustomCursor() {
   const [mousePosition, setMousePosition] = useState({ x: -100, y: -100 });
   const [cursorMode, setCursorMode] = useState("default"); // "default" | "explore" | "view" | "button"
+  const [mounted, setMounted] = useState(false);
   const [isMobile, setIsMobile] = useState(true);
 
   useEffect(() => {
+    setMounted(true);
     const checkMobile = () => {
       const isTouch = window.matchMedia("(pointer: coarse)").matches || window.innerWidth < 1024;
       setIsMobile(isTouch);
@@ -36,7 +38,7 @@ export default function CustomCursor() {
     };
   }, []);
 
-  if (isMobile) return null;
+  if (!mounted || isMobile) return null;
 
   const cursorVariants = {
     default: {
@@ -44,9 +46,9 @@ export default function CustomCursor() {
       height: 10,
       x: mousePosition.x - 5,
       y: mousePosition.y - 5,
-      backgroundColor: "#B81134",
+      backgroundColor: "#1D4ED8",
       borderRadius: "9999px",
-      boxShadow: "0 0 12px rgba(184, 17, 52, 0.8)",
+      boxShadow: "0 0 12px rgba(29, 78, 216, 0.8)",
       transition: { type: "spring", damping: 30, stiffness: 400, mass: 0.1 },
     },
     explore: {
@@ -55,9 +57,9 @@ export default function CustomCursor() {
       x: mousePosition.x - 40,
       y: mousePosition.y - 40,
       backgroundColor: "#0D0D12",
-      border: "1px solid rgba(184, 17, 52, 0.6)",
+      border: "1px solid rgba(29, 78, 216, 0.6)",
       borderRadius: "9999px",
-      boxShadow: "0 0 20px rgba(184, 17, 52, 0.4)",
+      boxShadow: "0 0 20px rgba(29, 78, 216, 0.4)",
       transition: { type: "spring", damping: 25, stiffness: 350, mass: 0.2 },
     },
     view: {
@@ -68,7 +70,7 @@ export default function CustomCursor() {
       backgroundColor: "#0D0D12",
       border: "1px solid rgba(255, 255, 255, 0.3)",
       borderRadius: "9999px",
-      boxShadow: "0 0 20px rgba(184, 17, 52, 0.3)",
+      boxShadow: "0 0 20px rgba(29, 78, 216, 0.3)",
       transition: { type: "spring", damping: 25, stiffness: 350, mass: 0.2 },
     },
     button: {
@@ -76,8 +78,8 @@ export default function CustomCursor() {
       height: 32,
       x: mousePosition.x - 16,
       y: mousePosition.y - 16,
-      backgroundColor: "rgba(184, 17, 52, 0.3)",
-      border: "1px solid #FF2A4D",
+      backgroundColor: "rgba(29, 78, 216, 0.3)",
+      border: "1px solid #3B82F6",
       borderRadius: "9999px",
       transition: { type: "spring", damping: 28, stiffness: 380, mass: 0.15 },
     },
@@ -90,7 +92,7 @@ export default function CustomCursor() {
       animate={cursorMode}
     >
       {cursorMode === "explore" && <span className="text-[#FFFFFF]">EXPLORE</span>}
-      {cursorMode === "view" && <span className="text-[#FF2A4D]">VIEW</span>}
+      {cursorMode === "view" && <span className="text-[#60A5FA]">VIEW</span>}
     </motion.div>
   );
 }

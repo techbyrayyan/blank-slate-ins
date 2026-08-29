@@ -1,4 +1,4 @@
-﻿import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
@@ -61,8 +61,9 @@ export default function RootLayout({ children }) {
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col font-sans bg-white text-[#1F2328]">
+      <body className="min-h-full flex flex-col font-sans bg-white text-[#1F2328]" suppressHydrationWarning>
         <div id="google_translate_element" style={{ display: "none" }} />
         {children}
         <Script id="google-translate-init" strategy="afterInteractive">
