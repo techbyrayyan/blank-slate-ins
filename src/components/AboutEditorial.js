@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import Link from "next/link";
@@ -46,7 +46,7 @@ export default function AboutEditorial() {
   };
 
   return (
-    <section className="py-16 lg:py-20 bg-white text-[#1c1d1f] relative overflow-hidden" id="about">
+    <section className="py-8 lg:py-10 bg-white text-[#1c1d1f] relative overflow-hidden" id="about">
       
       {/* Eager image preloader for all card graphics */}
       <div className="hidden" aria-hidden="true">

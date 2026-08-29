@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import CourseCard from "./CourseCard";
 
@@ -259,7 +259,7 @@ const trendingCourses12 = [
 
 export default function InteractiveProgramExplorer({ onOpenApply }) {
   return (
-    <section className="py-16 sm:py-20 bg-white text-[#1c1d1f] relative select-none" id="programs">
+    <section className="py-8 sm:py-10 bg-white text-[#1c1d1f] relative select-none" id="programs">
       
       {/* Eager Image Preloader */}
       <div className="hidden" aria-hidden="true">

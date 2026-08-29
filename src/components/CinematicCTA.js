@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function CinematicCTA({ onOpenApply }) {
   return (
-    <section className="py-20 bg-white relative overflow-hidden" id="admissions-banner">
+    <section className="py-8 sm:py-10 bg-white relative overflow-hidden" id="admissions-banner">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }}

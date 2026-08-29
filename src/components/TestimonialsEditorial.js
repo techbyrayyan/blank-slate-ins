@@ -98,7 +98,7 @@ export default function TestimonialsEditorial() {
   };
 
   return (
-    <section className="py-16 sm:py-20 bg-white text-[#1c1d1f] relative select-none" id="testimonials">
+    <section className="py-8 sm:py-10 bg-white text-[#1c1d1f] relative select-none" id="testimonials">
       
       {/* Eager image preloader */}
       <div className="hidden" aria-hidden="true">

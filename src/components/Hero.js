@@ -74,7 +74,7 @@ export default function Hero({ onOpenApply }) {
   };
 
   return (
-    <section className="relative bg-white select-none" id="hero" style={{ paddingTop: "240px", paddingBottom: "60px" }}>
+    <section className="relative bg-white select-none" id="hero" style={{ paddingTop: "230px", paddingBottom: "35px" }}>
       <div className="max-w-[1340px] mx-auto px-4 lg:px-8">
 
         {/* ── 3-panel slider ── */}
