@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -116,8 +116,8 @@ export default function TestimonialsEditorial() {
           </h2>
         </div>
 
-        {/* Main Red Banner Box (Matching Image 2 layout with user's Red background) */}
-        <div className="bg-gradient-to-r from-[#5a0515] via-[#7a0a1e] to-[#4e0412] rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl relative overflow-hidden">
+        {/* Main Wine Red Banner Box */}
+        <div className="bg-gradient-to-r from-[#8B0021] via-[#A81131] to-[#750019] rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl relative overflow-hidden">
           
           {/* Ambient Glow */}
           <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#E50914]/20 rounded-full blur-3xl pointer-events-none" />
