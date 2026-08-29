@@ -46,11 +46,11 @@ export default function HomePage() {
         {/* 6. Skills to transform your career and life (6 Tabs, 4 Cards Grid) */}
         <SkillsCareerTransform onOpenApply={handleOpenApply} />
 
+        {/* 8. Admissions Banner ("Your Next Chapter Starts Here.") */}
+        <CinematicCTA onOpenApply={() => handleOpenApply()} />
         {/* 7. What Our Students Say (Testimonial Quote Card with Stars) */}
         <TestimonialsEditorial />
 
-        {/* 8. Admissions Banner ("Your Next Chapter Starts Here.") */}
-        <CinematicCTA onOpenApply={() => handleOpenApply()} />
       </main>
 
       {/* 11. Footer */}

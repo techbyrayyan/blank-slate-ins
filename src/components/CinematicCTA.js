@@ -28,7 +28,7 @@ export default function CinematicCTA() {
   return (
     <section className="py-10 sm:py-14 bg-white relative select-none" id="certifications-banner">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-[32px] bg-gradient-to-r from-[#0a1f4a] via-[#1D4ED8] to-[#0d2757] text-white p-8 sm:p-12 lg:p-16 shadow-[0_20px_60px_rgba(29,78,216,0.3)] border border-blue-400/20 relative overflow-hidden min-h-[480px] lg:min-h-[520px] flex flex-col justify-center">
+        <div className="rounded-[32px] bg-gradient-to-r from-[#0a1f4a] via-[#1D4ED8] to-[#0d2757] text-white p-8 sm:p-12 lg:p-16 shadow-[0_20px_60px_rgba(29,78,216,0.3)] border border-blue-400/20 relative overflow-hidden min-h-[480px] lg:min-h-[400px] flex flex-col justify-center">
           
           {/* Ambient Lighting Accents */}
           <div className="absolute -top-24 -right-24 w-96 h-96 bg-white/10 rounded-full blur-3xl pointer-events-none" />
