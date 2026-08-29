@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import CustomCursor from "@/components/CustomCursor";
@@ -7,6 +7,7 @@ import Hero from "@/components/Hero";
 import AboutEditorial from "@/components/AboutEditorial";
 import InteractiveProgramExplorer from "@/components/InteractiveProgramExplorer";
 import CampusExperience from "@/components/CampusExperience";
+import SkillsCareerTransform from "@/components/SkillsCareerTransform";
 import TestimonialsEditorial from "@/components/TestimonialsEditorial";
 import CinematicCTA from "@/components/CinematicCTA";
 import EditorialFooter from "@/components/EditorialFooter";
@@ -42,10 +43,13 @@ export default function HomePage() {
         {/* 5. Life at BlankSlate (Campus 4-Photo Masonry) */}
         <CampusExperience />
 
-        {/* 6. What Our Students Say (Testimonial Quote Card with Stars) */}
+        {/* 6. Skills to transform your career and life (6 Tabs, 4 Cards Grid) */}
+        <SkillsCareerTransform onOpenApply={handleOpenApply} />
+
+        {/* 7. What Our Students Say (Testimonial Quote Card with Stars) */}
         <TestimonialsEditorial />
 
-        {/* 7. Admissions Banner ("Your Next Chapter Starts Here.") */}
+        {/* 8. Admissions Banner ("Your Next Chapter Starts Here.") */}
         <CinematicCTA onOpenApply={() => handleOpenApply()} />
       </main>
 

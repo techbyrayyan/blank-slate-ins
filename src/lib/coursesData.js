@@ -1,6 +1,594 @@
+export const topicsList = [
+  {
+    "slug": "ai",
+    "title": "Artificial Intelligence (AI)"
+  },
+  {
+    "slug": "python",
+    "title": "Python"
+  },
+  {
+    "slug": "excel",
+    "title": "Microsoft Excel"
+  },
+  {
+    "slug": "ai-agents",
+    "title": "AI Agents & Agentic AI"
+  },
+  {
+    "slug": "digital-marketing",
+    "title": "Digital Marketing"
+  },
+  {
+    "slug": "amazon-aws",
+    "title": "Amazon AWS"
+  }
+];
+
 export const allCourses = [
   {
-    "id": 1,
+    "id": 101,
+    "topicSlug": "ai",
+    "title": "The AI Engineer Course 2026: Complete AI Engineer Bootcamp",
+    "author": "365 Careers",
+    "image": "/6969217_3976_3.jpg",
+    "badge": "Bestseller",
+    "badgeType": "bestseller",
+    "rating": "4.5",
+    "ratingCount": "24,750 ratings",
+    "price": "$59.99",
+    "updated": "July 2026",
+    "hours": "28 total hours",
+    "level": "All Levels",
+    "category": "Artificial Intelligence (AI)",
+    "students": "57,890",
+    "description": "Become a job-ready AI Engineer. Learn the full AI engineering stack from APIs to deployment.",
+    "longDescription": "A complete bootcamp to transition into AI Engineering. Walk through every layer of the AI engineering stack: LLM APIs, production chatbots, vector databases, prompt engineering, and cloud deployment.",
+    "bullets": [
+      "Work with OpenAI, Anthropic, and open-source model APIs",
+      "Build and deploy RAG chatbots for real business use cases",
+      "Master prompt engineering and LLM evaluation techniques",
+      "Get hands-on with vector databases and AI orchestration"
+    ],
+    "requirements": [
+      "Basic Python knowledge",
+      "Willingness to learn — no AI background required"
+    ],
+    "sections": [
+      {
+        "title": "Introduction to AI Engineering",
+        "lectures": 7,
+        "duration": "1h 30m"
+      },
+      {
+        "title": "Working with LLM APIs",
+        "lectures": 10,
+        "duration": "2h 45m"
+      },
+      {
+        "title": "Prompt Engineering Mastery",
+        "lectures": 9,
+        "duration": "2h 20m"
+      },
+      {
+        "title": "RAG & Vector Databases",
+        "lectures": 11,
+        "duration": "3h 10m"
+      }
+    ]
+  },
+  {
+    "id": 102,
+    "topicSlug": "ai",
+    "title": "AI System Design for Engineers and Interviews",
+    "author": "Aritra Basak",
+    "image": "/6969199_31c3_4.jpg",
+    "badge": "Hot & New",
+    "badgeType": "new",
+    "rating": "4.8",
+    "ratingCount": "18 ratings",
+    "price": "$39.99",
+    "updated": "August 2026",
+    "hours": "12 total hours",
+    "level": "Intermediate",
+    "category": "Artificial Intelligence (AI)",
+    "students": "1,420",
+    "description": "Master AI System Design from first principles. Learn to architect scalable ML pipelines and LLM systems.",
+    "longDescription": "Learn how to architect large-scale AI and ML systems from scratch. Covering data pipelines, inference latency optimization, distributed training, caching, model serving, and preparing for AI System Design technical interviews.",
+    "bullets": [
+      "Design high-throughput, low-latency AI inference architectures",
+      "Architect RAG systems and multi-modal pipeline infrastructure",
+      "Master vector databases at scale, caching, and load balancing",
+      "Pass AI system design interviews at top tech companies"
+    ],
+    "requirements": [
+      "Understanding of software architecture",
+      "Basic knowledge of machine learning workflows"
+    ],
+    "sections": [
+      {
+        "title": "Fundamentals of AI Systems",
+        "lectures": 6,
+        "duration": "1h 45m"
+      },
+      {
+        "title": "Designing Scalable RAG Systems",
+        "lectures": 8,
+        "duration": "2h 30m"
+      },
+      {
+        "title": "Inference Optimization & Caching",
+        "lectures": 7,
+        "duration": "2h 10m"
+      }
+    ]
+  },
+  {
+    "id": 103,
+    "topicSlug": "ai",
+    "title": "Certified AI Consultant",
+    "author": "JayTech AI Academy",
+    "image": "/6969231_51c2_2.jpg",
+    "badge": "Premium",
+    "badgeType": "premium",
+    "rating": "4.7",
+    "ratingCount": "68 ratings",
+    "price": "$19.99",
+    "updated": "August 2026",
+    "hours": "15 total hours",
+    "level": "All Levels",
+    "category": "Artificial Intelligence (AI)",
+    "students": "3,890",
+    "description": "Learn to advise enterprises on generative AI strategy, ROI assessment, implementation roadmap, and governance.",
+    "longDescription": "A practical certification program for professionals wanting to consult businesses on AI adoption. You will learn ROI calculation frameworks, compliance, AI governance, tooling selection, and how to lead enterprise AI transformation projects.",
+    "bullets": [
+      "Formulate high-ROI enterprise Generative AI strategies",
+      "Evaluate commercial vs open-source LLMs for corporate clients",
+      "Create AI governance, security, and compliance blueprints",
+      "Deliver high-value AI readiness audits to clients"
+    ],
+    "requirements": [
+      "No coding required",
+      "Basic familiarity with business strategy and modern AI concepts"
+    ],
+    "sections": [
+      {
+        "title": "AI Consulting Frameworks",
+        "lectures": 6,
+        "duration": "1h 30m"
+      },
+      {
+        "title": "Enterprise AI Strategy & ROI",
+        "lectures": 8,
+        "duration": "2h 15m"
+      },
+      {
+        "title": "Governance & Security",
+        "lectures": 7,
+        "duration": "2h 00m"
+      }
+    ]
+  },
+  {
+    "id": 104,
+    "topicSlug": "ai",
+    "title": "Intro to AI Agents and Agentic AI",
+    "author": "365 Careers",
+    "image": "/6969213_4dde_2.jpg",
+    "badge": "Bestseller",
+    "badgeType": "bestseller",
+    "rating": "4.5",
+    "ratingCount": "79,924 ratings",
+    "price": "$19.99",
+    "updated": "August 2026",
+    "hours": "16 total hours",
+    "level": "Beginner",
+    "category": "Artificial Intelligence (AI)",
+    "students": "120,400",
+    "description": "Discover the world of Autonomous AI Agents. Learn how reasoning, planning, memory, and tool usage empower AI.",
+    "longDescription": "Get started with Agentic AI. Learn the core principles behind autonomous agents, task decomposition, agent memory architectures, reflection patterns, and real-world business applications of autonomous AI.",
+    "bullets": [
+      "Understand agentic workflows and tool-calling paradigms",
+      "Build basic reasoning and planning loops in Python",
+      "Discover multi-agent orchestration patterns",
+      "Implement memory retention and reflection in AI models"
+    ],
+    "requirements": [
+      "Curiosity about AI agents",
+      "Basic computer skills"
+    ],
+    "sections": [
+      {
+        "title": "Welcome to Agentic AI",
+        "lectures": 5,
+        "duration": "1h 15m"
+      },
+      {
+        "title": "Agent Architecture & Tools",
+        "lectures": 8,
+        "duration": "2h 10m"
+      },
+      {
+        "title": "Building Your First Agent",
+        "lectures": 7,
+        "duration": "2h 00m"
+      }
+    ]
+  },
+  {
+    "id": 201,
+    "topicSlug": "python",
+    "title": "100 Days of Code: The Complete Python Pro Bootcamp",
+    "author": "Dr. Angela Yu, Developer and Lead Instructor",
+    "image": "/6969223_f9ac_3.jpg",
+    "badge": "Bestseller",
+    "badgeType": "bestseller",
+    "rating": "4.7",
+    "ratingCount": "434,285 ratings",
+    "price": "$59.99",
+    "updated": "May 2026",
+    "hours": "60 total hours",
+    "level": "Beginner",
+    "category": "Python",
+    "students": "1,200,000",
+    "description": "Master Python by building 100 projects in 100 days. Learn data science, automation, web development, and more.",
+    "longDescription": "The most comprehensive Python course available. Every day for 100 days you will build a real project covering Python fundamentals, automation, web scraping, data science, Flask web development, and cloud deployment.",
+    "bullets": [
+      "Build 100 unique projects from games to data visualizations",
+      "Learn web scraping, automation, and API integration",
+      "Create Flask web apps and deploy them to the cloud",
+      "Master data science with Pandas, NumPy, and Matplotlib"
+    ],
+    "requirements": [
+      "No programming experience needed",
+      "A computer with internet access"
+    ],
+    "sections": [
+      {
+        "title": "Beginner Python (Days 1-14)",
+        "lectures": 14,
+        "duration": "8h 00m"
+      },
+      {
+        "title": "Intermediate Python (Days 15-30)",
+        "lectures": 16,
+        "duration": "9h 30m"
+      },
+      {
+        "title": "Automation & Web Scraping",
+        "lectures": 20,
+        "duration": "12h 00m"
+      }
+    ]
+  },
+  {
+    "id": 202,
+    "topicSlug": "python",
+    "title": "Python Mega Course: Learn Python in 60 Days with 20 Apps",
+    "author": "Ardit Sulce",
+    "image": "/6566789_2e8a_10.jpg",
+    "badge": "Bestseller",
+    "badgeType": "bestseller",
+    "rating": "4.6",
+    "ratingCount": "62,190 ratings",
+    "price": "$49.99",
+    "updated": "June 2026",
+    "hours": "52 total hours",
+    "level": "All Levels",
+    "category": "Python",
+    "students": "290,000",
+    "description": "Go from zero to building 20 real Python applications including web apps, desktop GUI, databases, and web scrapers.",
+    "longDescription": "A practical, project-centric course. Build real GUI apps with PyQt, web applications with Streamlit and Django, SQL database integration, PDF generation tools, and automated email dispatchers.",
+    "bullets": [
+      "Build 20 real-world applications step-by-step",
+      "Master OOP, SQL databases, and file processing in Python",
+      "Create interactive web dashboards using Streamlit",
+      "Deploy production Python apps to the cloud"
+    ],
+    "requirements": [
+      "No prior coding experience required",
+      "A Mac, Windows, or Linux computer"
+    ],
+    "sections": [
+      {
+        "title": "Python Basics & Logic",
+        "lectures": 12,
+        "duration": "4h 30m"
+      },
+      {
+        "title": "Building Desktop GUI Apps",
+        "lectures": 10,
+        "duration": "4h 00m"
+      },
+      {
+        "title": "Web Development with Python",
+        "lectures": 14,
+        "duration": "6h 00m"
+      }
+    ]
+  },
+  {
+    "id": 203,
+    "topicSlug": "python",
+    "title": "Automate the Boring Stuff with Python Programming",
+    "author": "Al Sweigart",
+    "image": "/6100015_1979_5.jpg",
+    "badge": "Bestseller",
+    "badgeType": "bestseller",
+    "rating": "4.7",
+    "ratingCount": "109,420 ratings",
+    "price": "$29.99",
+    "updated": "April 2026",
+    "hours": "12 total hours",
+    "level": "Beginner",
+    "category": "Python",
+    "students": "410,000",
+    "description": "Practical programming for total beginners. Learn to write small programs that do in minutes what takes hours by hand.",
+    "longDescription": "Learn how to automate tedious daily office tasks: parsing Excel files, scraping websites, automating mouse clicks and keystrokes, mass renaming files, and sending customized emails automatically.",
+    "bullets": [
+      "Automate Excel spreadsheet editing and data extraction",
+      "Scrape websites and download information automatically",
+      "Process PDFs, Word documents, and CSV files in bulk",
+      "Control mouse and keyboard to automate repetitive UI tasks"
+    ],
+    "requirements": [
+      "No programming knowledge needed",
+      "Any modern operating system"
+    ],
+    "sections": [
+      {
+        "title": "Python Basics for Automation",
+        "lectures": 8,
+        "duration": "2h 15m"
+      },
+      {
+        "title": "Web Scraping & Extraction",
+        "lectures": 7,
+        "duration": "2h 00m"
+      },
+      {
+        "title": "Working with Excel & PDFs",
+        "lectures": 9,
+        "duration": "2h 45m"
+      }
+    ]
+  },
+  {
+    "id": 204,
+    "topicSlug": "python",
+    "title": "Complete Python Developer in 2026: Zero to Mastery",
+    "author": "Andrei Neagoie",
+    "image": "/6969205_19aa_3.jpg",
+    "badge": "Bestseller",
+    "badgeType": "bestseller",
+    "rating": "4.7",
+    "ratingCount": "78,330 ratings",
+    "price": "$54.99",
+    "updated": "July 2026",
+    "hours": "32 total hours",
+    "level": "All Levels",
+    "category": "Python",
+    "students": "240,000",
+    "description": "Learn Python, Data Science, Machine Learning, Web Development, Automation, and build 12+ portfolio projects.",
+    "longDescription": "Get hired as a Python developer. This comprehensive curriculum covers modern Python syntax, functional programming, OOP, performance tuning, data analysis with Pandas, automation, web development, and machine learning.",
+    "bullets": [
+      "Master modern Python 3.12+ features and best practices",
+      "Build Machine Learning models and web servers",
+      "Understand advanced concepts: decorators, generators, OOP",
+      "Prepare for technical coding interviews and get hired"
+    ],
+    "requirements": [
+      "No prerequisites",
+      "Computer with internet access"
+    ],
+    "sections": [
+      {
+        "title": "Python Foundations",
+        "lectures": 10,
+        "duration": "3h 30m"
+      },
+      {
+        "title": "Advanced Python Concepts",
+        "lectures": 12,
+        "duration": "4h 00m"
+      },
+      {
+        "title": "Building Portfolio Projects",
+        "lectures": 14,
+        "duration": "5h 30m"
+      }
+    ]
+  },
+  {
+    "id": 301,
+    "topicSlug": "excel",
+    "title": "Microsoft Excel - Excel from Beginner to Advanced 2026",
+    "author": "Kyle Pew - 2,000,000+ Students",
+    "image": "/6969229_ff40_2.jpg",
+    "badge": "Bestseller",
+    "badgeType": "bestseller",
+    "rating": "4.7",
+    "ratingCount": "542,229 ratings",
+    "price": "$59.99",
+    "updated": "April 2026",
+    "hours": "19 total hours",
+    "level": "All Levels",
+    "category": "Microsoft Excel",
+    "students": "2,100,000",
+    "description": "Master Microsoft Excel from the basics to advanced formulas, pivot tables, and data visualization.",
+    "longDescription": "The most popular Excel course in the world. From basic data entry to advanced financial modeling, this course covers every feature of Microsoft Excel you will ever need — including VLOOKUP, pivot tables, macros, VBA automation, and Power Query.",
+    "bullets": [
+      "Learn 150+ Excel functions including VLOOKUP, INDEX, MATCH",
+      "Build dynamic dashboards and interactive reports",
+      "Master Pivot Tables and Pivot Charts for data analysis",
+      "Automate repetitive tasks using Excel Macros and VBA"
+    ],
+    "requirements": [
+      "A computer with Microsoft Excel installed",
+      "No prior Excel experience needed"
+    ],
+    "sections": [
+      {
+        "title": "Excel Basics",
+        "lectures": 8,
+        "duration": "2h 30m"
+      },
+      {
+        "title": "Formulas & Functions",
+        "lectures": 10,
+        "duration": "3h 30m"
+      },
+      {
+        "title": "Pivot Tables & Analysis",
+        "lectures": 8,
+        "duration": "3h 00m"
+      },
+      {
+        "title": "Macros & VBA",
+        "lectures": 7,
+        "duration": "2h 30m"
+      }
+    ]
+  },
+  {
+    "id": 302,
+    "topicSlug": "excel",
+    "title": "Excel Essentials: The Complete Excel Series - Level 1, 2 & 3",
+    "author": "Alan Jarvis",
+    "image": "/6100015_1979_5.jpg",
+    "badge": "Bestseller",
+    "badgeType": "bestseller",
+    "rating": "4.6",
+    "ratingCount": "34,810 ratings",
+    "price": "$39.99",
+    "updated": "May 2026",
+    "hours": "28 total hours",
+    "level": "All Levels",
+    "category": "Microsoft Excel",
+    "students": "180,000",
+    "description": "Take your Excel skills from beginner to expert with comprehensive hands-on practice worksheets and real business cases.",
+    "longDescription": "Structured in 3 clear levels: Level 1 covers formatting and basic math; Level 2 covers lookups, conditional logic, and charting; Level 3 covers nested formulas, financial functions, Power Query, and dynamic arrays.",
+    "bullets": [
+      "Master XLOOKUP, FILTER, UNIQUE dynamic array formulas",
+      "Clean messy datasets with Power Query in seconds",
+      "Build corporate-grade charts and visual KPI summaries",
+      "Solve complex business logic with nested conditional formulas"
+    ],
+    "requirements": [
+      "Microsoft Excel 2016, 2019, 2021 or Microsoft 365"
+    ],
+    "sections": [
+      {
+        "title": "Level 1: Excel Foundations",
+        "lectures": 10,
+        "duration": "3h 00m"
+      },
+      {
+        "title": "Level 2: Intermediate Functions",
+        "lectures": 12,
+        "duration": "4h 00m"
+      },
+      {
+        "title": "Level 3: Advanced Power Query",
+        "lectures": 10,
+        "duration": "3h 45m"
+      }
+    ]
+  },
+  {
+    "id": 303,
+    "topicSlug": "excel",
+    "title": "Unlock Excel VBA and Excel Macros [2026 Edition]",
+    "author": "Leila Gharani",
+    "image": "/6969223_f9ac_3.jpg",
+    "badge": "Bestseller",
+    "badgeType": "bestseller",
+    "rating": "4.8",
+    "ratingCount": "49,200 ratings",
+    "price": "$49.99",
+    "updated": "June 2026",
+    "hours": "22 total hours",
+    "level": "Intermediate",
+    "category": "Microsoft Excel",
+    "students": "195,000",
+    "description": "Automate complex reporting tasks in Excel with VBA. Learn to write clean, reusable code that saves hours weekly.",
+    "longDescription": "Transform how you work in Excel. Learn VBA syntax, event handling, userforms, error handling, interacting with other Office applications (Outlook, Word), and building complete automated reporting pipelines.",
+    "bullets": [
+      "Write VBA code to automate entire daily report generation",
+      "Create interactive UserForms with buttons and text boxes",
+      "Connect Excel to Outlook to send bulk customized emails",
+      "Speed up macro execution and handle errors gracefully"
+    ],
+    "requirements": [
+      "Intermediate Excel knowledge (formulas, pivot tables)"
+    ],
+    "sections": [
+      {
+        "title": "Getting Started with VBA",
+        "lectures": 8,
+        "duration": "2h 30m"
+      },
+      {
+        "title": "Loops & Conditionals in VBA",
+        "lectures": 10,
+        "duration": "3h 15m"
+      },
+      {
+        "title": "UserForms & Automation",
+        "lectures": 9,
+        "duration": "3h 00m"
+      }
+    ]
+  },
+  {
+    "id": 304,
+    "topicSlug": "excel",
+    "title": "Microsoft Power BI - The Practical Guide 2026",
+    "author": "Maximilian Schwarzmuller",
+    "image": "/6969217_3976_3.jpg",
+    "badge": "Bestseller",
+    "badgeType": "bestseller",
+    "rating": "4.6",
+    "ratingCount": "48,150 ratings",
+    "price": "$54.99",
+    "updated": "July 2026",
+    "hours": "18 total hours",
+    "level": "Beginner",
+    "category": "Microsoft Excel",
+    "students": "160,000",
+    "description": "Transform Excel and database data into stunning, interactive Power BI business intelligence dashboards.",
+    "longDescription": "Learn Power BI from scratch: connect to multiple data sources, clean and transform data with Power Query, model relationships, write DAX formulas, and design modern interactive executive dashboards.",
+    "bullets": [
+      "Import and combine data from Excel, SQL, and web sources",
+      "Master DAX formulas for complex business calculations",
+      "Design interactive dashboards with filters, drill-downs, and maps",
+      "Publish and share reports with team members securely"
+    ],
+    "requirements": [
+      "Windows computer (Power BI Desktop is Windows-only)",
+      "Basic Excel familiarity"
+    ],
+    "sections": [
+      {
+        "title": "Power BI Fundamentals",
+        "lectures": 8,
+        "duration": "2h 00m"
+      },
+      {
+        "title": "Data Transformation with Power Query",
+        "lectures": 9,
+        "duration": "2h 45m"
+      },
+      {
+        "title": "DAX Calculations",
+        "lectures": 10,
+        "duration": "3h 15m"
+      }
+    ]
+  },
+  {
+    "id": 401,
+    "topicSlug": "ai-agents",
     "title": "AI Engineer Agentic Track: The Complete Agent & MCP Course",
     "author": "Ed Donner, Ligency",
     "image": "/6969213_4dde_2.jpg",
@@ -8,14 +596,14 @@ export const allCourses = [
     "badgeType": "bestseller",
     "rating": "4.7",
     "ratingCount": "46,466 ratings",
-    "price": "PKR 5,500",
+    "price": "$19.99",
     "updated": "July 2026",
     "hours": "21 total hours",
     "level": "Intermediate",
-    "category": "AI & Agents",
+    "category": "AI Agents & Agentic AI",
     "students": "98,432",
     "description": "Master AI Agents in 30 days: build 8 real-world projects with OpenAI Agents SDK, CrewAI, LangGraph, AutoGen and MCP.",
-    "longDescription": "This course is designed for developers who want to master AI agents. You will go through hands-on projects covering OpenAI Agents SDK, CrewAI, LangGraph, AutoGen, and MCP for real-world tool integration.",
+    "longDescription": "This course is designed for developers who want to master AI agents from the ground up. You will go through hands-on projects covering the OpenAI Agents SDK, CrewAI for multi-agent orchestration, LangGraph for stateful workflows, AutoGen for conversational agents, and MCP for real-world tool integration.",
     "bullets": [
       "Build and deploy your own AI Agent as a Career Digital Twin",
       "SDR Agent: create Sales Representatives that send professional emails",
@@ -47,21 +635,12 @@ export const allCourses = [
         "title": "LangGraph for Stateful Agents",
         "lectures": 9,
         "duration": "2h 30m"
-      },
-      {
-        "title": "MCP Protocol Integration",
-        "lectures": 11,
-        "duration": "3h 10m"
-      },
-      {
-        "title": "Production Deployment",
-        "lectures": 6,
-        "duration": "2h 05m"
       }
     ]
   },
   {
-    "id": 2,
+    "id": 402,
+    "topicSlug": "ai-agents",
     "title": "The Complete Claude Code & Claude Cowork Masterclass [2026]",
     "author": "Prof. Ryan Ahmed, PhD, MBA | 1M+ Students",
     "image": "/6969205_19aa_3.jpg",
@@ -69,14 +648,14 @@ export const allCourses = [
     "badgeType": "bestseller",
     "rating": "4.6",
     "ratingCount": "7,799 ratings",
-    "price": "PKR 6,500",
+    "price": "$27.99",
     "updated": "August 2026",
     "hours": "18 total hours",
     "level": "All Levels",
-    "category": "AI & Agents",
+    "category": "AI Agents & Agentic AI",
     "students": "24,110",
     "description": "Master Claude Code and Claude Cowork to automate your entire software development workflow with AI.",
-    "longDescription": "In this course you will master Claude Code platform to transform how you write, review, and deploy software. You will build complete SaaS applications and automate testing pipelines.",
+    "longDescription": "In this course you will master Anthropic Claude Code and Claude Cowork platform to transform how you write, review, and deploy software. You will build complete SaaS applications and automate testing pipelines.",
     "bullets": [
       "Use Claude Code to build full-stack apps from scratch with prompts",
       "Automate code reviews, testing, and deployment with Claude",
@@ -102,81 +681,12 @@ export const allCourses = [
         "title": "Claude Cowork for Teams",
         "lectures": 8,
         "duration": "2h 00m"
-      },
-      {
-        "title": "Automating Testing & CI/CD",
-        "lectures": 7,
-        "duration": "1h 55m"
-      },
-      {
-        "title": "Advanced Prompting for Engineers",
-        "lectures": 9,
-        "duration": "2h 30m"
       }
     ]
   },
   {
-    "id": 3,
-    "title": "AI Engineer Core Track: LLM Engineering, RAG, QLoRA, Agents",
-    "author": "Ligency, Ed Donner",
-    "image": "/6969199_31c3_4.jpg",
-    "badge": "Bestseller",
-    "badgeType": "bestseller",
-    "rating": "4.7",
-    "ratingCount": "40,332 ratings",
-    "price": "PKR 16,000",
-    "updated": "June 2026",
-    "hours": "35 total hours",
-    "level": "Intermediate",
-    "category": "AI & Agents",
-    "students": "86,700",
-    "description": "Go deep into LLM Engineering: build RAG pipelines, fine-tune models with QLoRA, and deploy production AI agents.",
-    "longDescription": "This course covers the complete LLM engineering stack. You will build RAG systems, fine-tune open-source models using QLoRA, and deploy scalable AI agent systems to production cloud infrastructure.",
-    "bullets": [
-      "Build end-to-end RAG systems with LangChain and vector databases",
-      "Fine-tune open-source LLMs using QLoRA on your own data",
-      "Deploy AI agents with memory, tools, and multi-step reasoning",
-      "Master embeddings, chunking strategies, and retrieval optimization"
-    ],
-    "requirements": [
-      "Solid Python skills",
-      "Basic understanding of machine learning concepts"
-    ],
-    "sections": [
-      {
-        "title": "LLM Fundamentals",
-        "lectures": 9,
-        "duration": "2h 20m"
-      },
-      {
-        "title": "RAG Architecture & Implementation",
-        "lectures": 13,
-        "duration": "3h 45m"
-      },
-      {
-        "title": "Vector Databases Deep Dive",
-        "lectures": 8,
-        "duration": "2h 10m"
-      },
-      {
-        "title": "Fine-tuning with QLoRA",
-        "lectures": 11,
-        "duration": "3h 30m"
-      },
-      {
-        "title": "Agent Memory & Tools",
-        "lectures": 10,
-        "duration": "3h 00m"
-      },
-      {
-        "title": "Production Deployment",
-        "lectures": 8,
-        "duration": "2h 25m"
-      }
-    ]
-  },
-  {
-    "id": 4,
+    "id": 403,
+    "topicSlug": "ai-agents",
     "title": "AI Coder: Complete Claude Code & Coding Agents Course",
     "author": "Ligency, Ed Donner",
     "image": "/6969213_4dde_2.jpg",
@@ -184,14 +694,14 @@ export const allCourses = [
     "badgeType": "bestseller",
     "rating": "4.7",
     "ratingCount": "10,340 ratings",
-    "price": "PKR 4,500",
+    "price": "$19.99",
     "updated": "August 2026",
     "hours": "14 total hours",
     "level": "Intermediate",
-    "category": "AI & Agents",
+    "category": "AI Agents & Agentic AI",
     "students": "31,200",
     "description": "Use Claude Code and AI coding agents to ship production-quality software 10x faster.",
-    "longDescription": "Learn to leverage Claude Code and autonomous coding agents to accelerate software development. Build complete applications and create self-testing agents integrated into professional workflows.",
+    "longDescription": "Learn to leverage Claude Code and autonomous coding agents to dramatically accelerate your software development. This hands-on course covers building complete applications, creating self-testing agents, and integrating AI tools into professional development workflows.",
     "bullets": [
       "Build complete applications using Claude Code with zero friction",
       "Create coding agents that write, test, and debug code autonomously",
@@ -217,460 +727,240 @@ export const allCourses = [
         "title": "Building Autonomous Coding Agents",
         "lectures": 9,
         "duration": "2h 50m"
-      },
-      {
-        "title": "Testing & Debugging with AI",
-        "lectures": 7,
-        "duration": "2h 10m"
-      },
-      {
-        "title": "Workflow Integration",
-        "lectures": 6,
-        "duration": "1h 40m"
       }
     ]
   },
   {
-    "id": 5,
-    "title": "The AI Engineer Course 2026: Complete AI Engineer Bootcamp",
-    "author": "365 Careers",
-    "image": "/6969217_3976_3.jpg",
-    "badge": "Bestseller",
-    "badgeType": "bestseller",
-    "rating": "4.5",
-    "ratingCount": "24,715 ratings",
-    "price": "PKR 14,000",
-    "updated": "July 2026",
-    "hours": "28 total hours",
-    "level": "All Levels",
-    "category": "AI & Agents",
-    "students": "57,890",
-    "description": "Become a job-ready AI Engineer. Learn the full AI engineering stack from APIs to deployment.",
-    "longDescription": "A complete bootcamp to transition into AI Engineering. Walk through every layer of the AI engineering stack: LLM APIs, production chatbots, vector databases, prompt engineering, and cloud deployment.",
+    "id": 404,
+    "topicSlug": "ai-agents",
+    "title": "Building Autonomous AI Agents with LangGraph & CrewAI",
+    "author": "Eden Marco",
+    "image": "/6969199_31c3_4.jpg",
+    "badge": "Hot & New",
+    "badgeType": "new",
+    "rating": "4.8",
+    "ratingCount": "8,410 ratings",
+    "price": "$34.99",
+    "updated": "August 2026",
+    "hours": "16 total hours",
+    "level": "Intermediate",
+    "category": "AI Agents & Agentic AI",
+    "students": "26,700",
+    "description": "Build robust, multi-agent systems with human-in-the-loop validation, persistence, and complex state charts.",
+    "longDescription": "Take your agent development to production standards. Master LangGraph for complex cyclical agent graphs, state checkpoints, human-in-the-loop approvals, and CrewAI for autonomous role-playing agent teams.",
     "bullets": [
-      "Work with OpenAI, Anthropic, and open-source model APIs",
-      "Build and deploy RAG chatbots for real business use cases",
-      "Master prompt engineering and LLM evaluation techniques",
-      "Get hands-on with vector databases and AI orchestration"
+      "Architect multi-agent graph workflows with LangGraph",
+      "Implement human-in-the-loop checkpoints and memory persistence",
+      "Build multi-agent teams with specialized roles using CrewAI",
+      "Deploy stateful agents with real-world tool execution"
     ],
     "requirements": [
-      "Basic Python knowledge",
-      "Willingness to learn - no AI background required"
+      "Python proficiency",
+      "Familiarity with LangChain or LLM concepts"
     ],
     "sections": [
       {
-        "title": "Introduction to AI Engineering",
+        "title": "LangGraph State Machines",
         "lectures": 7,
-        "duration": "1h 30m"
+        "duration": "2h 00m"
       },
       {
-        "title": "Working with LLM APIs",
-        "lectures": 10,
+        "title": "Multi-Agent Collaboration",
+        "lectures": 9,
         "duration": "2h 45m"
       },
       {
-        "title": "Prompt Engineering Mastery",
-        "lectures": 9,
-        "duration": "2h 20m"
-      },
-      {
-        "title": "RAG & Vector Databases",
-        "lectures": 11,
-        "duration": "3h 10m"
-      },
-      {
-        "title": "Building Production Chatbots",
-        "lectures": 8,
-        "duration": "2h 30m"
+        "title": "Production Deployment & Tracing",
+        "lectures": 6,
+        "duration": "1h 45m"
       }
     ]
   },
   {
-    "id": 6,
-    "title": "Claude Certified Architect (CCA-F) - 2026 Exam Prep",
-    "author": "Jacob Bushong",
-    "image": "/6969231_51c2_2.jpg",
-    "badge": "Bestseller",
-    "badgeType": "bestseller",
-    "rating": "4.4",
-    "ratingCount": "2,030 ratings",
-    "price": "PKR 5,800",
-    "updated": "August 2026",
-    "hours": "10 total hours",
-    "level": "Intermediate",
-    "category": "AI & Agents",
-    "students": "5,420",
-    "description": "Prepare for the Claude Certified Architect exam. Master Anthropic AI architecture and responsible AI design.",
-    "longDescription": "A focused exam preparation course for the Claude Certified Architect certifications. Covers Constitutional AI methodology, responsible AI design, enterprise workflow architecture, and exam practice questions.",
-    "bullets": [
-      "Understand Claude Constitutional AI training methodology",
-      "Design enterprise AI workflows using Claude APIs and tools",
-      "Learn responsible AI architecture and safety guardrails",
-      "Practice with real CCA-F exam questions and study guides"
-    ],
-    "requirements": [
-      "Experience with AI/ML concepts",
-      "Familiarity with enterprise software architecture"
-    ],
-    "sections": [
-      {
-        "title": "Constitutional AI Foundations",
-        "lectures": 6,
-        "duration": "1h 20m"
-      },
-      {
-        "title": "Claude API Architecture",
-        "lectures": 7,
-        "duration": "1h 50m"
-      },
-      {
-        "title": "Responsible AI Design",
-        "lectures": 5,
-        "duration": "1h 15m"
-      },
-      {
-        "title": "Enterprise Workflow Design",
-        "lectures": 6,
-        "duration": "1h 30m"
-      },
-      {
-        "title": "Exam Practice & Mock Tests",
-        "lectures": 8,
-        "duration": "2h 00m"
-      }
-    ]
-  },
-  {
-    "id": 7,
-    "title": "100 Days of Code: The Complete Python Pro Bootcamp",
-    "author": "Dr. Angela Yu, Developer and Lead Instructor",
+    "id": 501,
+    "topicSlug": "digital-marketing",
+    "title": "The Complete Digital Marketing Course - 12 Courses in 1",
+    "author": "Rob Percival, Daragh Walsh",
     "image": "/6969223_f9ac_3.jpg",
     "badge": "Bestseller",
     "badgeType": "bestseller",
-    "rating": "4.7",
-    "ratingCount": "434,285 ratings",
-    "price": "PKR 14,000",
-    "updated": "May 2026",
-    "hours": "60 total hours",
+    "rating": "4.5",
+    "ratingCount": "203,147 ratings",
+    "price": "$49.99",
+    "updated": "March 2026",
+    "hours": "23 total hours",
     "level": "Beginner",
-    "category": "Programming",
-    "students": "1,200,000",
-    "description": "Master Python by building 100 projects in 100 days. Learn data science, automation, web development, and more.",
-    "longDescription": "Every day for 100 days you will build a real project covering Python fundamentals, automation, web scraping, data science, Flask web development, and cloud deployment.",
+    "category": "Digital Marketing",
+    "students": "750,000",
+    "description": "Master digital marketing with SEO, social media, email marketing, Google Ads, and analytics.",
+    "longDescription": "12 courses packed into one. Learn every major digital marketing discipline including SEO, Google Ads, Facebook Ads, social media marketing, email marketing funnels, content marketing, YouTube marketing, and data analytics.",
     "bullets": [
-      "Build 100 unique projects from games to data visualizations",
-      "Learn web scraping, automation, and API integration",
-      "Create Flask web apps and deploy them to the cloud",
-      "Master data science with Pandas, NumPy, and Matplotlib"
+      "Run profitable Google Ads and Facebook Ads campaigns",
+      "Optimize websites for SEO and rank on Google page 1",
+      "Build email marketing funnels that convert subscribers",
+      "Analyze marketing data with Google Analytics 4"
     ],
     "requirements": [
-      "No programming experience needed",
+      "No marketing experience required",
       "A computer with internet access"
     ],
     "sections": [
       {
-        "title": "Beginner Python (Days 1-14)",
-        "lectures": 14,
-        "duration": "8h 00m"
-      },
-      {
-        "title": "Intermediate Python (Days 15-30)",
-        "lectures": 16,
-        "duration": "9h 30m"
-      },
-      {
-        "title": "Automation & Web Scraping",
-        "lectures": 20,
-        "duration": "12h 00m"
-      },
-      {
-        "title": "Data Science",
-        "lectures": 20,
-        "duration": "11h 00m"
-      },
-      {
-        "title": "Web Development",
-        "lectures": 20,
-        "duration": "10h 30m"
-      }
-    ]
-  },
-  {
-    "id": 8,
-    "title": "The Complete Full-Stack Web Development Bootcamp",
-    "author": "Dr. Angela Yu, Developer and Lead Instructor",
-    "image": "/6566789_2e8a_10.jpg",
-    "badge": "Bestseller",
-    "badgeType": "bestseller",
-    "rating": "4.7",
-    "ratingCount": "473,898 ratings",
-    "price": "PKR 14,000",
-    "updated": "March 2026",
-    "hours": "65 total hours",
-    "level": "Beginner",
-    "category": "Programming",
-    "students": "1,400,000",
-    "description": "Become a full-stack web developer. Learn HTML, CSS, JavaScript, React, Node.js, and databases.",
-    "longDescription": "Go from zero to building production-ready web applications using the entire modern stack: HTML5, CSS3, JavaScript ES6+, React, Node.js, Express, MongoDB, and PostgreSQL.",
-    "bullets": [
-      "Build responsive websites with HTML5, CSS3, and Bootstrap",
-      "Master JavaScript ES6+ and React for front-end development",
-      "Create back-end APIs with Node.js, Express, and MongoDB",
-      "Deploy full-stack apps on cloud platforms"
-    ],
-    "requirements": [
-      "No experience needed",
-      "Basic computer skills"
-    ],
-    "sections": [
-      {
-        "title": "HTML & CSS Foundations",
-        "lectures": 12,
-        "duration": "6h 00m"
-      },
-      {
-        "title": "JavaScript Fundamentals",
-        "lectures": 15,
-        "duration": "8h 30m"
-      },
-      {
-        "title": "React & Front-End",
-        "lectures": 14,
-        "duration": "9h 00m"
-      },
-      {
-        "title": "Node.js & Express",
-        "lectures": 12,
-        "duration": "7h 00m"
-      },
-      {
-        "title": "Databases",
-        "lectures": 10,
-        "duration": "6h 30m"
-      }
-    ]
-  },
-  {
-    "id": 9,
-    "title": "The Complete JavaScript Course 2026: From Zero to Expert!",
-    "author": "Jonas Schmedtmann",
-    "image": "/6969205_19aa_3.jpg",
-    "badge": "Bestseller",
-    "badgeType": "bestseller",
-    "rating": "4.7",
-    "ratingCount": "210,985 ratings",
-    "price": "PKR 12,500",
-    "updated": "June 2026",
-    "hours": "69 total hours",
-    "level": "All Levels",
-    "category": "Programming",
-    "students": "920,000",
-    "description": "The most complete JavaScript course. Master modern JavaScript from the ground up with real projects.",
-    "longDescription": "This course covers everything from JavaScript basics to advanced topics including async/await, closures, prototypes, OOP, and modern ES6+ features, all built through real-world projects.",
-    "bullets": [
-      "Master JavaScript fundamentals, ES6+, OOP, and async code",
-      "Build real-world projects: Mapty, Bankist, Forkify apps",
-      "Understand how JavaScript works behind the scenes",
-      "Learn advanced patterns: closures, prototypal inheritance, modules"
-    ],
-    "requirements": [
-      "Basic HTML and CSS knowledge helpful but not required"
-    ],
-    "sections": [
-      {
-        "title": "JavaScript Fundamentals Part 1",
-        "lectures": 14,
-        "duration": "5h 30m"
-      },
-      {
-        "title": "JavaScript Fundamentals Part 2",
-        "lectures": 12,
-        "duration": "4h 45m"
-      },
-      {
-        "title": "DOM & Events",
-        "lectures": 10,
-        "duration": "4h 00m"
-      },
-      {
-        "title": "OOP with JavaScript",
-        "lectures": 11,
-        "duration": "4h 30m"
-      },
-      {
-        "title": "Async JavaScript",
-        "lectures": 9,
-        "duration": "3h 45m"
-      }
-    ]
-  },
-  {
-    "id": 10,
-    "title": "React - The Complete Guide 2026 (incl. Next.js, Redux)",
-    "author": "Maximilian Schwarzmuller",
-    "image": "/6969199_31c3_4.jpg",
-    "badge": "Bestseller",
-    "badgeType": "bestseller",
-    "rating": "4.6",
-    "ratingCount": "218,431 ratings",
-    "price": "PKR 15,000",
-    "updated": "July 2026",
-    "hours": "68 total hours",
-    "level": "All Levels",
-    "category": "Programming",
-    "students": "810,000",
-    "description": "Dive into React, hooks, Redux, React Router, Next.js, and more to build powerful web apps.",
-    "longDescription": "Learn React from scratch and advance to building full production applications with hooks, Redux Toolkit, React Router, TypeScript, Next.js App Router, and performance optimization.",
-    "bullets": [
-      "Build modern React apps with hooks, context, and Redux",
-      "Create SSR/SSG applications with Next.js",
-      "Master advanced React patterns and performance optimization",
-      "Implement authentication, routing, and state management"
-    ],
-    "requirements": [
-      "JavaScript fundamentals required",
-      "Basic HTML/CSS knowledge"
-    ],
-    "sections": [
-      {
-        "title": "React Basics & JSX",
-        "lectures": 10,
-        "duration": "4h 00m"
-      },
-      {
-        "title": "Components, Props & State",
-        "lectures": 12,
-        "duration": "5h 30m"
-      },
-      {
-        "title": "React Hooks Deep Dive",
-        "lectures": 11,
-        "duration": "4h 45m"
-      },
-      {
-        "title": "Redux & Redux Toolkit",
-        "lectures": 10,
-        "duration": "4h 30m"
-      },
-      {
-        "title": "Next.js App Router",
-        "lectures": 13,
-        "duration": "6h 00m"
-      }
-    ]
-  },
-  {
-    "id": 11,
-    "title": "Complete Data Analyst Bootcamp From Basics To Advanced",
-    "author": "Krish Naik, Jayant Topnani",
-    "image": "/6100015_1979_5.jpg",
-    "badge": "Bestseller",
-    "badgeType": "bestseller",
-    "rating": "4.5",
-    "ratingCount": "21,675 ratings",
-    "price": "PKR 14,000",
-    "updated": "May 2026",
-    "hours": "42 total hours",
-    "level": "Beginner",
-    "category": "Data Science",
-    "students": "65,000",
-    "description": "Become a data analyst from scratch. Learn Excel, SQL, Python, Power BI, and statistics.",
-    "longDescription": "Build proficiency in Excel, SQL, Python with Pandas, data visualization with Power BI and Tableau, and applied statistics through real business datasets and projects.",
-    "bullets": [
-      "Analyze datasets with Python, Pandas, and NumPy",
-      "Write complex SQL queries for real-world business problems",
-      "Build interactive dashboards in Power BI and Tableau",
-      "Apply statistics and probability to data analysis projects"
-    ],
-    "requirements": [
-      "No prior experience needed",
-      "Basic computer skills"
-    ],
-    "sections": [
-      {
-        "title": "Excel for Data Analysis",
-        "lectures": 10,
-        "duration": "4h 30m"
-      },
-      {
-        "title": "SQL Fundamentals",
-        "lectures": 12,
-        "duration": "5h 00m"
-      },
-      {
-        "title": "Python & Pandas",
-        "lectures": 13,
-        "duration": "6h 00m"
-      },
-      {
-        "title": "Statistics & Probability",
-        "lectures": 8,
-        "duration": "3h 30m"
-      },
-      {
-        "title": "Power BI & Tableau",
-        "lectures": 10,
-        "duration": "4h 30m"
-      }
-    ]
-  },
-  {
-    "id": 12,
-    "title": "Machine Learning A-Z: AI, Python & R [2026]",
-    "author": "Kirill Eremenko, Hadelin de Ponteves",
-    "image": "/6969217_3976_3.jpg",
-    "badge": "Bestseller",
-    "badgeType": "bestseller",
-    "rating": "4.5",
-    "ratingCount": "178,562 ratings",
-    "price": "PKR 17,500",
-    "updated": "April 2026",
-    "hours": "44 total hours",
-    "level": "Beginner",
-    "category": "Data Science",
-    "students": "960,000",
-    "description": "Learn to create Machine Learning Algorithms in Python and R from two Data Science experts.",
-    "longDescription": "This course covers all major ML algorithms from linear regression to deep neural networks, implemented in both Python and R, with ChatGPT bonus module for modern AI workflows.",
-    "bullets": [
-      "Master regression, classification, clustering, and NLP",
-      "Build deep learning models with TensorFlow and Keras",
-      "Handle missing data, feature engineering, and model evaluation",
-      "Apply ML to real-world business problems end-to-end"
-    ],
-    "requirements": [
-      "Basic math knowledge",
-      "Python or R basics helpful"
-    ],
-    "sections": [
-      {
-        "title": "Data Preprocessing",
-        "lectures": 8,
-        "duration": "2h 30m"
-      },
-      {
-        "title": "Regression Models",
+        "title": "SEO & Content Marketing",
         "lectures": 10,
         "duration": "3h 30m"
       },
       {
-        "title": "Classification Algorithms",
-        "lectures": 12,
-        "duration": "4h 00m"
-      },
-      {
-        "title": "Clustering & Association",
+        "title": "Google Ads Mastery",
         "lectures": 8,
         "duration": "3h 00m"
       },
       {
-        "title": "Deep Learning",
-        "lectures": 10,
-        "duration": "3h 45m"
+        "title": "Social Media Marketing",
+        "lectures": 9,
+        "duration": "3h 30m"
       }
     ]
   },
   {
-    "id": 13,
+    "id": 502,
+    "topicSlug": "digital-marketing",
+    "title": "Mega Digital Marketing Course A-Z: 12 Courses in 1 + AI",
+    "author": "Pouya Eti",
+    "image": "/6100015_1979_5.jpg",
+    "badge": "Bestseller",
+    "badgeType": "bestseller",
+    "rating": "4.6",
+    "ratingCount": "41,200 ratings",
+    "price": "$44.99",
+    "updated": "June 2026",
+    "hours": "48 total hours",
+    "level": "All Levels",
+    "category": "Digital Marketing",
+    "students": "190,000",
+    "description": "Leverage ChatGPT and AI tools to create ad copy, marketing strategies, SEO articles, and viral social content.",
+    "longDescription": "The modern digital marketing masterclass. Learn how to use AI tools for market research, copywriting, automated social scheduling, video creation with AI, high-converting landing pages, and multi-channel paid ads.",
+    "bullets": [
+      "Use ChatGPT to generate high-converting ad copy and scripts",
+      "Build complete sales funnels with landing pages and automation",
+      "Run profitable TikTok, Instagram, and Facebook ad campaigns",
+      "Master SEO keyword research and AI-assisted content strategy"
+    ],
+    "requirements": [
+      "No prior marketing or design skills needed"
+    ],
+    "sections": [
+      {
+        "title": "AI-Powered Market Research",
+        "lectures": 8,
+        "duration": "2h 15m"
+      },
+      {
+        "title": "Social Media & TikTok Growth",
+        "lectures": 12,
+        "duration": "3h 45m"
+      },
+      {
+        "title": "Paid Ads Across Platforms",
+        "lectures": 14,
+        "duration": "4h 30m"
+      }
+    ]
+  },
+  {
+    "id": 503,
+    "topicSlug": "digital-marketing",
+    "title": "Social Media Marketing MASTERY 2026 | Ads on 10+ Platforms",
+    "author": "COURSE ENVOY",
+    "image": "/6969231_51c2_2.jpg",
+    "badge": "Bestseller",
+    "badgeType": "bestseller",
+    "rating": "4.5",
+    "ratingCount": "32,400 ratings",
+    "price": "$39.99",
+    "updated": "May 2026",
+    "hours": "20 total hours",
+    "level": "Beginner",
+    "category": "Digital Marketing",
+    "students": "145,000",
+    "description": "Master Facebook, Instagram, TikTok, LinkedIn, YouTube, Pinterest, and Twitter/X marketing from scratch.",
+    "longDescription": "Comprehensive social media growth guide. Learn organic reach strategies, monetization, influencer marketing, setting up Meta Pixel for conversion tracking, and scaling paid advertising campaigns on major networks.",
+    "bullets": [
+      "Run targeted ad campaigns on Facebook, Instagram, and TikTok",
+      "Build brand authority and monetize organic followings",
+      "Master conversion tracking, custom audiences, and retargeting",
+      "Leverage viral video formats for maximum engagement"
+    ],
+    "requirements": [
+      "A computer or smartphone with internet connection"
+    ],
+    "sections": [
+      {
+        "title": "Meta Ads (Facebook & Instagram)",
+        "lectures": 10,
+        "duration": "3h 00m"
+      },
+      {
+        "title": "TikTok & Short-Form Video",
+        "lectures": 8,
+        "duration": "2h 30m"
+      },
+      {
+        "title": "LinkedIn B2B Marketing",
+        "lectures": 6,
+        "duration": "1h 45m"
+      }
+    ]
+  },
+  {
+    "id": 504,
+    "topicSlug": "digital-marketing",
+    "title": "Google Ads 2026: How to Drive Sales with Search Ads",
+    "author": "Isaac Rudansky",
+    "image": "/6566789_2e8a_10.jpg",
+    "badge": "Bestseller",
+    "badgeType": "bestseller",
+    "rating": "4.7",
+    "ratingCount": "62,800 ratings",
+    "price": "$54.99",
+    "updated": "July 2026",
+    "hours": "25 total hours",
+    "level": "All Levels",
+    "category": "Digital Marketing",
+    "students": "280,000",
+    "description": "Learn how to set up profitable Google Ads search, display, and performance max campaigns from an agency founder.",
+    "longDescription": "Master Google Ads from an expert agency founder. Learn keyword bidding strategies, ad copy testing, Quality Score optimization, conversion tracking with GA4, and how to scale ad spend profitably.",
+    "bullets": [
+      "Set up high-ROI Google Search and Performance Max campaigns",
+      "Improve Quality Score to lower your cost-per-click",
+      "Master negative keywords and bidding strategies",
+      "Track conversions and calculate exact return on ad spend"
+    ],
+    "requirements": [
+      "A computer with an internet connection",
+      "A small budget to test Google Ads (optional)"
+    ],
+    "sections": [
+      {
+        "title": "Google Ads Account & Structure",
+        "lectures": 8,
+        "duration": "2h 30m"
+      },
+      {
+        "title": "Keyword Research & Bidding",
+        "lectures": 10,
+        "duration": "3h 30m"
+      },
+      {
+        "title": "Ad Copywriting & Extensions",
+        "lectures": 7,
+        "duration": "2h 15m"
+      }
+    ]
+  },
+  {
+    "id": 601,
+    "topicSlug": "amazon-aws",
     "title": "Ultimate AWS Certified Solutions Architect Associate 2026",
     "author": "Stephane Maarek | AWS Certified",
     "image": "/2776760_f176_10.jpg",
@@ -678,14 +968,14 @@ export const allCourses = [
     "badgeType": "bestseller",
     "rating": "4.7",
     "ratingCount": "296,290 ratings",
-    "price": "PKR 18,500",
+    "price": "$79.99",
     "updated": "June 2026",
     "hours": "26 total hours",
     "level": "Intermediate",
-    "category": "Cloud & DevOps",
+    "category": "Amazon AWS",
     "students": "780,000",
     "description": "Pass the AWS Solutions Architect Associate exam and design resilient, high-performing cloud architectures.",
-    "longDescription": "Learn all AWS services tested on the SAA-C03 exam, design high-availability architectures, and practice with 300+ exam-style questions to pass on your first attempt.",
+    "longDescription": "The most popular AWS certification course on the internet. You will learn all AWS services tested on the SAA-C03 exam, design high-availability architectures, and practice with 300+ exam-style questions to pass on your first attempt.",
     "bullets": [
       "Master all AWS core services: EC2, S3, VPC, RDS, Lambda",
       "Design high-availability and fault-tolerant architectures",
@@ -711,36 +1001,27 @@ export const allCourses = [
         "title": "S3 & Storage Services",
         "lectures": 8,
         "duration": "2h 45m"
-      },
-      {
-        "title": "VPC & Networking",
-        "lectures": 9,
-        "duration": "3h 00m"
-      },
-      {
-        "title": "Security & IAM",
-        "lectures": 8,
-        "duration": "2h 45m"
       }
     ]
   },
   {
-    "id": 14,
+    "id": 602,
+    "topicSlug": "amazon-aws",
     "title": "Ultimate AWS Certified Cloud Practitioner CLF-C02 2026",
     "author": "Stephane Maarek | AWS Certified",
-    "image": "/2776760_f176_10.jpg",
+    "image": "/2776760_f176_10 (1).jpg",
     "badge": "Bestseller",
     "badgeType": "bestseller",
     "rating": "4.7",
     "ratingCount": "294,192 ratings",
-    "price": "PKR 18,500",
+    "price": "$79.99",
     "updated": "July 2026",
     "hours": "14 total hours",
     "level": "Beginner",
-    "category": "Cloud & DevOps",
+    "category": "Amazon AWS",
     "students": "650,000",
     "description": "Pass the AWS Cloud Practitioner exam. Learn AWS fundamentals, billing, security, and core cloud concepts.",
-    "longDescription": "Focused course covering every topic on the CLF-C02 exam including cloud concepts, AWS core services, security, pricing, and support models with practice tests included.",
+    "longDescription": "The fastest path to your first AWS certification. This focused course covers every topic on the CLF-C02 exam including cloud concepts, AWS core services, security, pricing, and support models with practice tests included.",
     "bullets": [
       "Understand all AWS core services for the CLF-C02 exam",
       "Learn cloud economics, pricing models, and billing",
@@ -766,346 +1047,98 @@ export const allCourses = [
         "title": "Security & Compliance",
         "lectures": 7,
         "duration": "2h 00m"
+      }
+    ]
+  },
+  {
+    "id": 603,
+    "topicSlug": "amazon-aws",
+    "title": "AWS Certified Developer Associate 2026 (DVA-C02)",
+    "author": "Stephane Maarek | AWS Certified",
+    "image": "/2776760_f176_10 (2).jpg",
+    "badge": "Bestseller",
+    "badgeType": "bestseller",
+    "rating": "4.7",
+    "ratingCount": "135,400 ratings",
+    "price": "$74.99",
+    "updated": "August 2026",
+    "hours": "32 total hours",
+    "level": "Intermediate",
+    "category": "Amazon AWS",
+    "students": "360,000",
+    "description": "Pass the AWS Certified Developer exam. Master serverless, DynamoDB, API Gateway, Lambda, and CI/CD on AWS.",
+    "longDescription": "Comprehensive exam preparation for AWS Certified Developer Associate (DVA-C02). Deep dive into AWS Lambda, DynamoDB, API Gateway, Cognito authentication, SQS, SNS, and CodePipeline CI/CD workflows.",
+    "bullets": [
+      "Master Serverless architectures with AWS Lambda and API Gateway",
+      "Deep dive into DynamoDB data modeling and caching with DAX",
+      "Implement authentication and authorization with AWS Cognito",
+      "Set up automated CI/CD pipelines using AWS CodeSuite"
+    ],
+    "requirements": [
+      "Basic programming knowledge in any language",
+      "Basic familiarity with AWS core concepts"
+    ],
+    "sections": [
+      {
+        "title": "Serverless & AWS Lambda",
+        "lectures": 12,
+        "duration": "3h 30m"
       },
       {
-        "title": "Pricing & Billing",
-        "lectures": 5,
+        "title": "DynamoDB Deep Dive",
+        "lectures": 10,
+        "duration": "3h 00m"
+      },
+      {
+        "title": "CI/CD & Deployment",
+        "lectures": 8,
+        "duration": "2h 15m"
+      }
+    ]
+  },
+  {
+    "id": 604,
+    "topicSlug": "amazon-aws",
+    "title": "AWS Serverless Architecture & Lambda in Practice",
+    "author": "Frank Kane",
+    "image": "/2776760_f176_10 (3).jpg",
+    "badge": "Hot & New",
+    "badgeType": "new",
+    "rating": "4.6",
+    "ratingCount": "14,200 ratings",
+    "price": "$39.99",
+    "updated": "July 2026",
+    "hours": "15 total hours",
+    "level": "Intermediate",
+    "category": "Amazon AWS",
+    "students": "42,000",
+    "description": "Build scalable, event-driven serverless backends on AWS without managing servers. Hands-on real projects.",
+    "longDescription": "Hands-on guide to building full production serverless architectures. You will build REST APIs, event-driven notification systems, image processing pipelines with S3 and Lambda triggers, and manage infrastructure with AWS SAM and Terraform.",
+    "bullets": [
+      "Design cost-effective event-driven architectures with AWS EventBridge",
+      "Trigger automated Lambda functions from S3, SQS, and DynamoDB Streams",
+      "Deploy serverless applications using AWS SAM and CloudFormation",
+      "Monitor serverless performance using Amazon CloudWatch and X-Ray"
+    ],
+    "requirements": [
+      "Basic Python or JavaScript knowledge",
+      "Free tier AWS account"
+    ],
+    "sections": [
+      {
+        "title": "Serverless Fundamentals",
+        "lectures": 6,
         "duration": "1h 30m"
       },
       {
-        "title": "Practice Tests",
-        "lectures": 4,
+        "title": "Event-Driven Architectures",
+        "lectures": 8,
+        "duration": "2h 15m"
+      },
+      {
+        "title": "Monitoring & Scaling",
+        "lectures": 7,
         "duration": "2h 00m"
-      }
-    ]
-  },
-  {
-    "id": 15,
-    "title": "Docker & Kubernetes: The Practical Guide [2026 Edition]",
-    "author": "Maximilian Schwarzmuller",
-    "image": "/6566789_2e8a_10.jpg",
-    "badge": "Bestseller",
-    "badgeType": "bestseller",
-    "rating": "4.7",
-    "ratingCount": "86,234 ratings",
-    "price": "PKR 16,000",
-    "updated": "May 2026",
-    "hours": "23 total hours",
-    "level": "Intermediate",
-    "category": "Cloud & DevOps",
-    "students": "230,000",
-    "description": "Learn Docker and Kubernetes from scratch. Containerize apps, manage clusters, and deploy to the cloud.",
-    "longDescription": "Containerize real applications, orchestrate multi-container setups with Docker Compose, deploy and scale with Kubernetes, and set up automated CI/CD pipelines using GitHub Actions.",
-    "bullets": [
-      "Build and manage Docker containers and multi-container apps",
-      "Deploy and scale applications with Kubernetes",
-      "Set up CI/CD pipelines with Docker and GitHub Actions",
-      "Manage persistent storage, networking, and secrets in K8s"
-    ],
-    "requirements": [
-      "Basic command line knowledge",
-      "Any programming background"
-    ],
-    "sections": [
-      {
-        "title": "Docker Fundamentals",
-        "lectures": 8,
-        "duration": "3h 00m"
-      },
-      {
-        "title": "Docker Compose",
-        "lectures": 7,
-        "duration": "2h 30m"
-      },
-      {
-        "title": "Kubernetes Basics",
-        "lectures": 9,
-        "duration": "3h 30m"
-      },
-      {
-        "title": "Kubernetes Advanced",
-        "lectures": 8,
-        "duration": "3h 00m"
-      },
-      {
-        "title": "CI/CD with GitHub Actions",
-        "lectures": 6,
-        "duration": "2h 30m"
-      }
-    ]
-  },
-  {
-    "id": 16,
-    "title": "Cybersecurity for Beginners: Zero to Hero 2026",
-    "author": "Nathan House",
-    "image": "/6100015_1979_5.jpg",
-    "badge": "New",
-    "badgeType": "new",
-    "rating": "4.6",
-    "ratingCount": "18,340 ratings",
-    "price": "PKR 12,500",
-    "updated": "August 2026",
-    "hours": "32 total hours",
-    "level": "Beginner",
-    "category": "Cloud & DevOps",
-    "students": "45,000",
-    "description": "Learn cybersecurity from scratch. Ethical hacking, penetration testing, and network security fundamentals.",
-    "longDescription": "Complete beginner-to-professional cybersecurity course covering ethical hacking, network security, penetration testing with Kali Linux, and certification preparation for Security+ and CEH.",
-    "bullets": [
-      "Perform ethical hacking and penetration testing on real systems",
-      "Learn network security, firewalls, and intrusion detection",
-      "Use Kali Linux, Metasploit, and Wireshark like a pro",
-      "Prepare for CompTIA Security+ and CEH certifications"
-    ],
-    "requirements": [
-      "Basic computer knowledge",
-      "No hacking experience required"
-    ],
-    "sections": [
-      {
-        "title": "Cybersecurity Fundamentals",
-        "lectures": 8,
-        "duration": "2h 30m"
-      },
-      {
-        "title": "Network Security",
-        "lectures": 10,
-        "duration": "3h 30m"
-      },
-      {
-        "title": "Ethical Hacking with Kali",
-        "lectures": 12,
-        "duration": "4h 30m"
-      },
-      {
-        "title": "Penetration Testing",
-        "lectures": 10,
-        "duration": "4h 00m"
-      },
-      {
-        "title": "Certification Prep",
-        "lectures": 8,
-        "duration": "3h 00m"
-      }
-    ]
-  },
-  {
-    "id": 17,
-    "title": "Microsoft Excel - Excel from Beginner to Advanced 2026",
-    "author": "Kyle Pew - 2,000,000+ Students",
-    "image": "/6969229_ff40_2.jpg",
-    "badge": "Bestseller",
-    "badgeType": "bestseller",
-    "rating": "4.7",
-    "ratingCount": "542,229 ratings",
-    "price": "PKR 14,000",
-    "updated": "April 2026",
-    "hours": "19 total hours",
-    "level": "All Levels",
-    "category": "Business Tools",
-    "students": "2,100,000",
-    "description": "Master Microsoft Excel from the basics to advanced formulas, pivot tables, and data visualization.",
-    "longDescription": "From basic data entry to advanced financial modeling, this course covers every Excel feature: VLOOKUP, pivot tables, macros, VBA automation, and Power Query.",
-    "bullets": [
-      "Learn 150+ Excel functions including VLOOKUP, INDEX, MATCH",
-      "Build dynamic dashboards and interactive reports",
-      "Master Pivot Tables and Pivot Charts for data analysis",
-      "Automate repetitive tasks using Excel Macros and VBA"
-    ],
-    "requirements": [
-      "A computer with Microsoft Excel installed",
-      "No prior Excel experience needed"
-    ],
-    "sections": [
-      {
-        "title": "Excel Basics",
-        "lectures": 8,
-        "duration": "2h 30m"
-      },
-      {
-        "title": "Formulas & Functions",
-        "lectures": 10,
-        "duration": "3h 30m"
-      },
-      {
-        "title": "Charts & Visualization",
-        "lectures": 7,
-        "duration": "2h 30m"
-      },
-      {
-        "title": "Pivot Tables & Analysis",
-        "lectures": 8,
-        "duration": "3h 00m"
-      },
-      {
-        "title": "Macros & VBA",
-        "lectures": 7,
-        "duration": "2h 30m"
-      }
-    ]
-  },
-  {
-    "id": 18,
-    "title": "The Complete Digital Marketing Course - 12 Courses in 1",
-    "author": "Rob Percival, Daragh Walsh",
-    "image": "/6969223_f9ac_3.jpg",
-    "badge": "Bestseller",
-    "badgeType": "bestseller",
-    "rating": "4.5",
-    "ratingCount": "203,147 ratings",
-    "price": "PKR 11,500",
-    "updated": "March 2026",
-    "hours": "23 total hours",
-    "level": "Beginner",
-    "category": "Business Tools",
-    "students": "750,000",
-    "description": "Master digital marketing with SEO, social media, email marketing, Google Ads, and analytics.",
-    "longDescription": "12 courses packed into one covering SEO, Google Ads, Facebook Ads, social media marketing, email marketing funnels, content marketing, and data analytics.",
-    "bullets": [
-      "Run profitable Google Ads and Facebook Ads campaigns",
-      "Optimize websites for SEO and rank on Google",
-      "Build email marketing funnels that convert subscribers",
-      "Analyze marketing data with Google Analytics 4"
-    ],
-    "requirements": [
-      "No marketing experience required",
-      "A computer with internet access"
-    ],
-    "sections": [
-      {
-        "title": "SEO & Content Marketing",
-        "lectures": 10,
-        "duration": "3h 30m"
-      },
-      {
-        "title": "Google Ads Mastery",
-        "lectures": 8,
-        "duration": "3h 00m"
-      },
-      {
-        "title": "Social Media Marketing",
-        "lectures": 9,
-        "duration": "3h 30m"
-      },
-      {
-        "title": "Email Marketing",
-        "lectures": 7,
-        "duration": "2h 30m"
-      },
-      {
-        "title": "Analytics & Reporting",
-        "lectures": 6,
-        "duration": "2h 00m"
-      }
-    ]
-  },
-  {
-    "id": 19,
-    "title": "Graphic Design Masterclass: Learn GREAT Design",
-    "author": "Lindsay Marsh",
-    "image": "/6969231_51c2_2.jpg",
-    "badge": "Bestseller",
-    "badgeType": "bestseller",
-    "rating": "4.7",
-    "ratingCount": "93,421 ratings",
-    "price": "PKR 10,500",
-    "updated": "June 2026",
-    "hours": "27 total hours",
-    "level": "Beginner",
-    "category": "Business Tools",
-    "students": "280,000",
-    "description": "Learn to design logos, social media graphics, posters, and brand identities like a professional.",
-    "longDescription": "Master graphic design covering design theory, typography, color, composition, and hands-on practice in Photoshop, Illustrator, and Canva. Build a complete portfolio by the end.",
-    "bullets": [
-      "Master Photoshop, Illustrator, and Canva for design",
-      "Create professional logos and brand identity systems",
-      "Design social media graphics that drive engagement",
-      "Apply typography, color theory, and composition principles"
-    ],
-    "requirements": [
-      "No design experience needed",
-      "Access to Adobe Creative Cloud (free trial available)"
-    ],
-    "sections": [
-      {
-        "title": "Design Fundamentals",
-        "lectures": 8,
-        "duration": "3h 00m"
-      },
-      {
-        "title": "Typography & Color Theory",
-        "lectures": 7,
-        "duration": "2h 30m"
-      },
-      {
-        "title": "Photoshop Essentials",
-        "lectures": 9,
-        "duration": "3h 30m"
-      },
-      {
-        "title": "Illustrator & Logo Design",
-        "lectures": 8,
-        "duration": "3h 00m"
-      },
-      {
-        "title": "Brand Identity Projects",
-        "lectures": 7,
-        "duration": "3h 00m"
-      }
-    ]
-  },
-  {
-    "id": 20,
-    "title": "iOS & Swift: The Complete iOS App Development Bootcamp",
-    "author": "Dr. Angela Yu, Developer and Lead Instructor",
-    "image": "/6969213_4dde_2.jpg",
-    "badge": "Bestseller",
-    "badgeType": "bestseller",
-    "rating": "4.8",
-    "ratingCount": "98,762 ratings",
-    "price": "PKR 17,500",
-    "updated": "July 2026",
-    "hours": "55 total hours",
-    "level": "Beginner",
-    "category": "Programming",
-    "students": "320,000",
-    "description": "From beginner to iOS developer - learn Swift, SwiftUI, UIKit, and build 25+ real apps.",
-    "longDescription": "Master Swift, SwiftUI, UIKit, Core Data, Firebase, REST APIs, and the App Store submission process. You will build 25+ real apps to add to your portfolio.",
-    "bullets": [
-      "Build real iOS apps with Swift and SwiftUI from scratch",
-      "Master UIKit, navigation, and table views",
-      "Integrate Firebase, REST APIs, and Core Data",
-      "Publish your app to the Apple App Store"
-    ],
-    "requirements": [
-      "A Mac computer with macOS",
-      "No programming experience required"
-    ],
-    "sections": [
-      {
-        "title": "Swift Fundamentals",
-        "lectures": 12,
-        "duration": "5h 00m"
-      },
-      {
-        "title": "SwiftUI Basics",
-        "lectures": 14,
-        "duration": "6h 30m"
-      },
-      {
-        "title": "UIKit & Navigation",
-        "lectures": 12,
-        "duration": "5h 30m"
-      },
-      {
-        "title": "Networking & APIs",
-        "lectures": 10,
-        "duration": "5h 00m"
-      },
-      {
-        "title": "Firebase & Authentication",
-        "lectures": 8,
-        "duration": "4h 00m"
       }
     ]
   }
