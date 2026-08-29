@@ -60,11 +60,11 @@ export default function AboutEditorial() {
           
           {/* Left Column: Heading & Text */}
           <div className="lg:col-span-4 space-y-4">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#1c1d1f] tracking-tight leading-[1.2]">
+            <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-black text-[#1c1d1f] tracking-tight leading-[1.15]">
               Learn <span className="font-serif italic font-medium">essential</span><br />
               career and life skills
             </h2>
-            <p className="text-[#6a6f73] text-sm sm:text-base font-normal leading-relaxed max-w-sm">
+            <p className="text-[#55595d] text-base sm:text-lg font-normal leading-relaxed max-w-sm">
               BlankSlate Institute helps you build in-demand skills fast and advance your career in a changing job market.
             </p>
           </div>

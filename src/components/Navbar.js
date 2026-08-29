@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
@@ -201,8 +201,8 @@ export default function Navbar({ onOpenApply }) {
                   const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
                   return (
                     <Link key={item.name} href={item.href}
-                      className={`relative text-sm font-semibold tracking-wide transition-colors duration-200 pb-1 group ${
-                        isActive ? "text-[#1D4ED8]" : "text-gray-700 hover:text-[#1D4ED8]"
+                      className={`relative text-[15.5px] font-semibold tracking-normal transition-colors duration-200 pb-1 group ${
+                        isActive ? "text-[#1D4ED8]" : "text-gray-800 hover:text-[#1D4ED8]"
                       }`}>
                       {item.name}
                       <span className={`absolute -bottom-3 left-0 right-0 h-0.5 bg-[#1D4ED8] transition-all duration-200 ${

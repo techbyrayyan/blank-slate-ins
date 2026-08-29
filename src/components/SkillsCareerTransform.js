@@ -17,33 +17,33 @@ export default function SkillsCareerTransform({ onOpenApply }) {
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6">
         
         {/* Section Header */}
-        <div className="mb-6">
-          <h2 className="text-2xl sm:text-3xl lg:text-[32px] font-black text-[#1c1d1f] tracking-tight mb-2">
+        <div className="mb-8">
+          <h2 className="text-3xl sm:text-4xl lg:text-[38px] font-black text-[#1c1d1f] tracking-tight mb-3">
             Skills to transform your career and life
           </h2>
-          <p className="text-sm sm:text-base text-gray-600 font-normal">
+          <p className="text-base sm:text-lg text-gray-600 font-normal max-w-3xl">
             From critical skills to technical topics, BlankSlate supports your professional development.
           </p>
         </div>
 
         {/* 6 Tabs Navigation Bar (Matching Image 3) */}
         <div className="border-b border-gray-200 mb-8 overflow-x-auto no-scrollbar">
-          <div className="flex items-center gap-6 sm:gap-8 min-w-max">
+          <div className="flex items-center gap-6 sm:gap-9 min-w-max">
             {topicsList.map((topic) => {
               const isActive = activeTopic === topic.slug;
               return (
                 <button
                   key={topic.slug}
                   onClick={() => setActiveTopic(topic.slug)}
-                  className={`text-sm sm:text-[15px] pb-3 font-semibold transition-all relative whitespace-nowrap ${
+                  className={`text-base sm:text-[17px] pb-3.5 font-bold transition-all relative whitespace-nowrap ${
                     isActive
-                      ? "text-[#1c1d1f] font-bold"
+                      ? "text-[#1c1d1f]"
                       : "text-gray-600 hover:text-[#1c1d1f]"
                   }`}
                 >
                   {topic.title}
                   {isActive && (
-                    <span className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-[#1D4ED8] rounded-full" />
+                    <span className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#1D4ED8] rounded-full" />
                   )}
                 </button>
               );
@@ -52,7 +52,7 @@ export default function SkillsCareerTransform({ onOpenApply }) {
         </div>
 
         {/* 4 Cards Grid (No Slider — Responsive 4-Column Layout) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
           {topicCourses.map((course) => (
             <CourseCard
               key={course.id}
@@ -66,7 +66,7 @@ export default function SkillsCareerTransform({ onOpenApply }) {
         <div className="flex items-center justify-start">
           <Link
             href={`/topic/${activeTopic}`}
-            className="inline-flex items-center gap-2 px-6 py-3 border-2 border-[#1D4ED8] text-[#1D4ED8] hover:bg-[#1D4ED8] hover:text-white rounded-lg text-sm font-bold transition-all duration-200 shadow-sm"
+            className="inline-flex items-center gap-2.5 px-7 py-3.5 border-2 border-[#1D4ED8] text-[#1D4ED8] hover:bg-[#1D4ED8] hover:text-white rounded-xl text-base font-bold transition-all duration-200 shadow-sm hover:shadow-md"
           >
             <span>Show all {currentTopicObj.title} courses</span>
             <ArrowRight className="w-4 h-4" />

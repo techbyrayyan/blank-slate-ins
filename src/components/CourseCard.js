@@ -57,40 +57,40 @@ export default function CourseCard({ course, onOpenApply }) {
             />
           </div>
 
-          <h3 className="font-bold text-[#1c1d1f] group-hover:text-[#2563EB] transition-colors text-base sm:text-[17px] leading-snug tracking-tight mb-1.5 line-clamp-2 min-h-[48px]">
+          <h3 className="font-bold text-[#1c1d1f] group-hover:text-[#2563EB] transition-colors text-[17px] sm:text-[18px] leading-snug tracking-tight mb-2 line-clamp-2 min-h-[52px]">
             {course.title}
           </h3>
 
-          <p className="text-xs sm:text-sm text-[#6a6f73] font-normal truncate">
+          <p className="text-sm sm:text-[15px] text-[#55595d] font-normal truncate mb-2">
             {course.author}
           </p>
         </div>
 
         {/* Bottom: Badges & Price */}
-        <div className="mt-5">
+        <div className="mt-4">
           <div className="flex items-center gap-2 flex-wrap mb-3.5">
             {course.badgeType === "premium" ? (
-              <span className="bg-[#1D4ED8] text-white text-xs font-bold px-2.5 py-1 rounded flex items-center gap-1">
+              <span className="bg-[#1D4ED8] text-white text-xs sm:text-[13px] font-bold px-2.5 py-1 rounded flex items-center gap-1">
                 <Check className="w-3.5 h-3.5" />
                 Premium
               </span>
             ) : (
-              <span className="bg-blue-50 text-[#1D4ED8] border border-blue-200 text-xs font-bold px-2.5 py-1 rounded">
+              <span className="bg-blue-50 text-[#1D4ED8] border border-blue-200 text-xs sm:text-[13px] font-bold px-2.5 py-1 rounded">
                 {course.badge || "Bestseller"}
               </span>
             )}
 
-            <div className="border border-gray-300 rounded px-2.5 py-1 text-xs flex items-center gap-1 font-bold text-[#1c1d1f]">
+            <div className="border border-gray-300 rounded px-2.5 py-1 text-xs sm:text-[13px] flex items-center gap-1 font-bold text-[#1c1d1f]">
               <Star className="w-3.5 h-3.5 fill-[#b4690e] text-[#b4690e]" />
               <span>{course.rating}</span>
             </div>
 
-            <div className="border border-gray-300 rounded px-2.5 py-1 text-xs text-[#6a6f73]">
+            <div className="border border-gray-300 rounded px-2.5 py-1 text-xs sm:text-[13px] text-[#55595d]">
               {course.ratingCount}
             </div>
           </div>
 
-          <div className="font-extrabold text-[#1c1d1f] group-hover:text-[#2563EB] transition-colors text-lg sm:text-xl">
+          <div className="font-black text-[#1c1d1f] group-hover:text-[#2563EB] transition-colors text-xl sm:text-2xl">
             {course.price}
           </div>
         </div>
@@ -112,41 +112,41 @@ export default function CourseCard({ course, onOpenApply }) {
               onMouseLeave={() => setHovered(false)}
             >
               {/* Title */}
-              <h4 className="font-bold text-[#1c1d1f] text-base leading-snug mb-3">
+              <h4 className="font-bold text-[#1c1d1f] text-lg leading-snug mb-3">
                 {course.title}
               </h4>
 
               {/* Badge + Updated */}
-              <div className="flex items-center gap-2 mb-2.5">
+              <div className="flex items-center gap-2 mb-3">
                 {course.badgeType === "premium" ? (
-                  <span className="bg-[#1D4ED8] text-white text-xs font-bold px-2 py-0.5 rounded flex items-center gap-1">
-                    <Check className="w-3 h-3" /> Premium
+                  <span className="bg-[#1D4ED8] text-white text-xs font-bold px-2.5 py-0.5 rounded flex items-center gap-1">
+                    <Check className="w-3.5 h-3.5" /> Premium
                   </span>
                 ) : (
-                  <span className="bg-blue-50 text-[#1D4ED8] border border-blue-200 text-xs font-bold px-2 py-0.5 rounded">
+                  <span className="bg-blue-50 text-[#1D4ED8] border border-blue-200 text-xs font-bold px-2.5 py-0.5 rounded">
                     {course.badge || "Bestseller"}
                   </span>
                 )}
-                <span className="text-xs text-[#1c1d1f]">
+                <span className="text-sm text-[#1c1d1f]">
                   Updated <strong className="text-[#2563EB]">{course.updated}</strong>
                 </span>
               </div>
 
               {/* Meta */}
-              <p className="text-xs text-[#6a6f73] mb-3">
+              <p className="text-sm text-[#55595d] mb-3 font-medium">
                 {course.hours} · {course.level} Level · Subtitles
               </p>
 
               {/* Description */}
-              <p className="text-xs text-[#1c1d1f] mb-4 leading-relaxed">
+              <p className="text-sm text-[#1c1d1f] mb-4 leading-relaxed">
                 {course.description}
               </p>
 
               {/* Bullets */}
-              <ul className="space-y-2 mb-6">
+              <ul className="space-y-2.5 mb-6">
                 {course.bullets?.map((b, i) => (
-                  <li key={i} className="flex items-start gap-2 text-xs text-[#1c1d1f]">
-                    <Check className="w-3.5 h-3.5 text-[#2563EB] mt-0.5 flex-shrink-0" />
+                  <li key={i} className="flex items-start gap-2 text-sm text-[#1c1d1f] leading-snug">
+                    <Check className="w-4 h-4 text-[#2563EB] mt-0.5 flex-shrink-0" />
                     <span>{b}</span>
                   </li>
                 ))}
@@ -155,9 +155,9 @@ export default function CourseCard({ course, onOpenApply }) {
               {/* Add to Cart Button */}
               <button
                 onClick={() => onOpenApply && onOpenApply(course.title)}
-                className="w-full text-white font-bold py-3.5 rounded-lg flex items-center justify-center gap-2 text-sm transition-all duration-200 shadow-md hover:shadow-lg bg-[#2563EB] hover:bg-[#1D4ED8]"
+                className="w-full text-white font-bold py-3.5 rounded-xl flex items-center justify-center gap-2 text-base transition-all duration-200 shadow-md hover:shadow-lg bg-[#2563EB] hover:bg-[#1D4ED8]"
               >
-                <ShoppingCart className="w-4 h-4" />
+                <ShoppingCart className="w-5 h-5" />
                 Add to cart
               </button>
             </motion.div>
