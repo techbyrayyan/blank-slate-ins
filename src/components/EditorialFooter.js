@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import { ArrowRight, MapPin, Phone, Mail, Clock } from "lucide-react";
@@ -12,9 +12,9 @@ export default function EditorialFooter() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-16 border-b border-gray-200">
           {/* Brand Col (4 cols) */}
           <div className="lg:col-span-4 space-y-4">
-            <Logo variant="dark" size="md" />
-            <p className="text-xs text-gray-600 font-medium">
-              Education for what&apos;s next.
+            <Logo variant="dark" size="lg" />
+            <p className="text-sm sm:text-base text-gray-600 font-medium">
+              Education for what&apos;s next. Empowered by innovation.
             </p>
 
             <div className="flex items-center space-x-3 pt-2">
@@ -22,50 +22,50 @@ export default function EditorialFooter() {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-white border border-gray-300 hover:border-[#1D4ED8] hover:bg-[#1D4ED8] flex items-center justify-center text-gray-600 hover:text-white transition-all shadow-sm"
+                className="w-9 h-9 rounded-full bg-white border border-gray-300 hover:border-[#1D4ED8] hover:bg-[#1D4ED8] flex items-center justify-center text-gray-600 hover:text-white transition-all shadow-sm"
                 aria-label="Facebook"
               >
-                <FacebookIcon className="w-3.5 h-3.5" />
+                <FacebookIcon className="w-4 h-4" />
               </a>
               <a
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-white border border-gray-300 hover:border-[#1D4ED8] hover:bg-[#1D4ED8] flex items-center justify-center text-gray-600 hover:text-white transition-all shadow-sm"
+                className="w-9 h-9 rounded-full bg-white border border-gray-300 hover:border-[#1D4ED8] hover:bg-[#1D4ED8] flex items-center justify-center text-gray-600 hover:text-white transition-all shadow-sm"
                 aria-label="Twitter"
               >
-                <TwitterIcon className="w-3.5 h-3.5" />
+                <TwitterIcon className="w-4 h-4" />
               </a>
               <a
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-white border border-gray-300 hover:border-[#1D4ED8] hover:bg-[#1D4ED8] flex items-center justify-center text-gray-600 hover:text-white transition-all shadow-sm"
+                className="w-9 h-9 rounded-full bg-white border border-gray-300 hover:border-[#1D4ED8] hover:bg-[#1D4ED8] flex items-center justify-center text-gray-600 hover:text-white transition-all shadow-sm"
                 aria-label="LinkedIn"
               >
-                <LinkedinIcon className="w-3.5 h-3.5" />
+                <LinkedinIcon className="w-4 h-4" />
               </a>
               <a
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-white border border-gray-300 hover:border-[#1D4ED8] hover:bg-[#1D4ED8] flex items-center justify-center text-gray-600 hover:text-white transition-all shadow-sm"
+                className="w-9 h-9 rounded-full bg-white border border-gray-300 hover:border-[#1D4ED8] hover:bg-[#1D4ED8] flex items-center justify-center text-gray-600 hover:text-white transition-all shadow-sm"
                 aria-label="Instagram"
               >
-                <InstagramIcon className="w-3.5 h-3.5" />
+                <InstagramIcon className="w-4 h-4" />
               </a>
             </div>
           </div>
 
           {/* Quick Links (2 cols) */}
-          <div className="lg:col-span-2 space-y-3">
-            <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-gray-900">
+          <div className="lg:col-span-2 space-y-4">
+            <h3 className="text-sm sm:text-base font-bold uppercase tracking-wider text-gray-900">
               Quick Links
             </h3>
-            <ul className="space-y-2 text-xs text-gray-600">
+            <ul className="space-y-2.5 text-sm sm:text-[15px] font-medium text-gray-600">
               <li><Link href="/" className="hover:text-[#1D4ED8] transition-colors">Home</Link></li>
               <li><Link href="/about" className="hover:text-[#1D4ED8] transition-colors">About</Link></li>
-              <li><Link href="/programs" className="hover:text-[#1D4ED8] transition-colors">Programs</Link></li>
+              <li><Link href="/courses" className="hover:text-[#1D4ED8] transition-colors">Courses</Link></li>
               <li><Link href="/admissions" className="hover:text-[#1D4ED8] transition-colors">Admissions</Link></li>
               <li><Link href="/faculty" className="hover:text-[#1D4ED8] transition-colors">Faculty</Link></li>
               <li><Link href="/events" className="hover:text-[#1D4ED8] transition-colors">Events</Link></li>
@@ -75,78 +75,78 @@ export default function EditorialFooter() {
           </div>
 
           {/* Programs (2 cols) */}
-          <div className="lg:col-span-2 space-y-3">
-            <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-gray-900">
+          <div className="lg:col-span-2 space-y-4">
+            <h3 className="text-sm sm:text-base font-bold uppercase tracking-wider text-gray-900">
               Programs
             </h3>
-            <ul className="space-y-2 text-xs text-gray-600">
-              <li><Link href="/programs/computer-science" className="hover:text-[#1D4ED8] transition-colors">Computer Science</Link></li>
-              <li><Link href="/programs/artificial-intelligence" className="hover:text-[#1D4ED8] transition-colors">Artificial Intelligence</Link></li>
-              <li><Link href="/programs/full-stack-development" className="hover:text-[#1D4ED8] transition-colors">Web Development</Link></li>
-              <li><Link href="/programs/business-management" className="hover:text-[#1D4ED8] transition-colors">Business & Management</Link></li>
-              <li><Link href="/programs/digital-marketing" className="hover:text-[#1D4ED8] transition-colors">Digital Marketing</Link></li>
-              <li><Link href="/programs/uiux-design" className="hover:text-[#1D4ED8] transition-colors">UI/UX Design</Link></li>
+            <ul className="space-y-2.5 text-sm sm:text-[15px] font-medium text-gray-600">
+              <li><Link href="/topic/ai" className="hover:text-[#1D4ED8] transition-colors">Artificial Intelligence</Link></li>
+              <li><Link href="/topic/python" className="hover:text-[#1D4ED8] transition-colors">Python Bootcamp</Link></li>
+              <li><Link href="/topic/ai-agents" className="hover:text-[#1D4ED8] transition-colors">AI Agents & MCP</Link></li>
+              <li><Link href="/topic/excel" className="hover:text-[#1D4ED8] transition-colors">Microsoft Excel</Link></li>
+              <li><Link href="/topic/digital-marketing" className="hover:text-[#1D4ED8] transition-colors">Digital Marketing</Link></li>
+              <li><Link href="/topic/amazon-aws" className="hover:text-[#1D4ED8] transition-colors">Amazon AWS</Link></li>
             </ul>
           </div>
 
           {/* Contact (2 cols) */}
-          <div className="lg:col-span-2 space-y-3">
-            <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-gray-900">
+          <div className="lg:col-span-2 space-y-4">
+            <h3 className="text-sm sm:text-base font-bold uppercase tracking-wider text-gray-900">
               Contact
             </h3>
-            <div className="space-y-2 text-xs text-gray-600">
-              <p className="flex items-start gap-1.5">
-                <MapPin className="w-3.5 h-3.5 text-[#1D4ED8] flex-shrink-0 mt-0.5" />
+            <div className="space-y-3 text-sm sm:text-[15px] text-gray-600 font-medium">
+              <p className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 text-[#1D4ED8] flex-shrink-0 mt-0.5" />
                 <span>123 Education Lane, Lahore, Pakistan</span>
               </p>
-              <p className="flex items-center gap-1.5">
-                <Phone className="w-3.5 h-3.5 text-[#1D4ED8] flex-shrink-0" />
-                <span>+92 42 111 222 333</span>
+              <p className="flex items-center gap-2">
+                <Phone className="w-4 h-4 text-[#1D4ED8] flex-shrink-0" />
+                <span>+92 35746486463</span>
               </p>
-              <p className="flex items-center gap-1.5">
-                <Mail className="w-3.5 h-3.5 text-[#1D4ED8] flex-shrink-0" />
+              <p className="flex items-center gap-2">
+                <Mail className="w-4 h-4 text-[#1D4ED8] flex-shrink-0" />
                 <span>info@blankslate.edu.pk</span>
               </p>
-              <p className="flex items-start gap-1.5 pt-1">
-                <Clock className="w-3.5 h-3.5 text-[#1D4ED8] flex-shrink-0 mt-0.5" />
-                <span>Office Hours: Mon - Fri: 9:00 AM - 5:00 PM</span>
+              <p className="flex items-start gap-2 pt-1">
+                <Clock className="w-4 h-4 text-[#1D4ED8] flex-shrink-0 mt-0.5" />
+                <span>Mon - Fri: 9:00 AM - 5:00 PM</span>
               </p>
             </div>
           </div>
 
           {/* Newsletter (2 cols) */}
-          <div className="lg:col-span-2 space-y-3">
-            <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-gray-900">
+          <div className="lg:col-span-2 space-y-4">
+            <h3 className="text-sm sm:text-base font-bold uppercase tracking-wider text-gray-900">
               Newsletter
             </h3>
-            <p className="text-xs text-gray-600">
+            <p className="text-sm text-gray-600 leading-relaxed font-normal">
               Stay updated with our latest programs, events and news.
             </p>
-            <div className="flex items-center bg-white border border-gray-300 rounded-full p-1 focus-within:border-[#1D4ED8] shadow-sm">
+            <div className="flex items-center bg-white border border-gray-300 rounded-full p-1.5 focus-within:border-[#1D4ED8] shadow-sm">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="w-full bg-transparent px-3 text-xs text-gray-900 placeholder-gray-400 focus:outline-none"
+                className="w-full bg-transparent px-3.5 py-1 text-sm text-gray-900 placeholder-gray-400 focus:outline-none"
               />
               <button
-                className="w-7 h-7 rounded-full bg-[#1D4ED8] text-white flex items-center justify-center hover:bg-[#B91C1C] transition-colors flex-shrink-0"
+                className="w-8 h-8 rounded-full bg-[#1D4ED8] text-white flex items-center justify-center hover:bg-[#1e40af] transition-colors flex-shrink-0 shadow-sm"
                 aria-label="Submit newsletter"
               >
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-4 h-4" />
               </button>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-gray-500">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm font-medium text-gray-600">
           <p>© 2026 BlankSlate Institute. All Rights Reserved.</p>
           <div className="flex items-center space-x-4">
-            <Link href="/privacy" className="hover:text-gray-900">Privacy Policy</Link>
+            <Link href="/privacy" className="hover:text-[#1D4ED8] transition-colors">Privacy Policy</Link>
             <span>•</span>
-            <Link href="/terms" className="hover:text-gray-900">Terms & Conditions</Link>
+            <Link href="/terms" className="hover:text-[#1D4ED8] transition-colors">Terms & Conditions</Link>
             <span>•</span>
-            <Link href="/cookies" className="hover:text-gray-900">Cookie Policy</Link>
+            <Link href="/cookies" className="hover:text-[#1D4ED8] transition-colors">Cookie Policy</Link>
           </div>
         </div>
       </div>
