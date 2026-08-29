@@ -40,24 +40,24 @@ export default function CourseCard({ course, onOpenApply }) {
       onMouseLeave={() => setHovered(false)}
     >
       {/* Main Course Card — clickable → course detail page */}
-      <Link href={`/courses/${course.id}`} className="block">
+      <Link href={`/courses/${course.id}`} className="block group">
         <div
-          className="cursor-pointer bg-white rounded-2xl border border-gray-200/80 p-4 sm:p-5 flex flex-col justify-between transition-shadow duration-300 min-h-[385px] w-full hover:shadow-lg"
-          style={{ boxShadow: hovered ? "0 8px 30px rgba(0,0,0,0.12)" : undefined }}
+          className="cursor-pointer bg-white rounded-2xl border border-gray-200 p-4 sm:p-5 flex flex-col justify-between transition-all duration-300 min-h-[385px] w-full group-hover:border-[#2563EB] group-hover:shadow-[0_12px_36px_rgba(37,99,235,0.18)] group-hover:-translate-y-1"
+          style={{ boxShadow: hovered ? "0 12px 36px rgba(37,99,235,0.18)" : undefined }}
         >
         {/* Top Image + Title + Author */}
         <div>
-          <div className="rounded-xl overflow-hidden aspect-[16/9] w-full mb-4 bg-gray-100">
+          <div className="rounded-xl overflow-hidden aspect-[16/9] w-full mb-4 bg-gray-100 border border-gray-100 group-hover:border-[#2563EB]/30 transition-colors">
             <img
               src={course.image}
               alt={course.title}
               loading="eager"
               decoding="async"
-              className="w-full h-full object-cover object-center"
+              className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
             />
           </div>
 
-          <h3 className="font-bold text-[#1c1d1f] text-base sm:text-[17px] leading-snug tracking-tight mb-1.5 line-clamp-2 min-h-[48px]">
+          <h3 className="font-bold text-[#1c1d1f] group-hover:text-[#2563EB] transition-colors text-base sm:text-[17px] leading-snug tracking-tight mb-1.5 line-clamp-2 min-h-[48px]">
             {course.title}
           </h3>
 
@@ -70,13 +70,13 @@ export default function CourseCard({ course, onOpenApply }) {
         <div className="mt-5">
           <div className="flex items-center gap-2 flex-wrap mb-3.5">
             {course.badgeType === "premium" ? (
-              <span className="bg-[#5022c3] text-white text-xs font-bold px-2.5 py-1 rounded flex items-center gap-1">
+              <span className="bg-[#1D4ED8] text-white text-xs font-bold px-2.5 py-1 rounded flex items-center gap-1">
                 <Check className="w-3.5 h-3.5" />
                 Premium
               </span>
             ) : (
-              <span className="bg-[#ccebfa] text-[#104b46] text-xs font-bold px-2.5 py-1 rounded">
-                {course.badge}
+              <span className="bg-blue-50 text-[#1D4ED8] border border-blue-200 text-xs font-bold px-2.5 py-1 rounded">
+                {course.badge || "Bestseller"}
               </span>
             )}
 
@@ -90,7 +90,7 @@ export default function CourseCard({ course, onOpenApply }) {
             </div>
           </div>
 
-          <div className="font-extrabold text-[#1c1d1f] text-lg sm:text-xl">
+          <div className="font-extrabold text-[#1c1d1f] group-hover:text-[#2563EB] transition-colors text-lg sm:text-xl">
             {course.price}
           </div>
         </div>
@@ -107,7 +107,7 @@ export default function CourseCard({ course, onOpenApply }) {
               exit={{ opacity: 0, scale: 0.97 }}
               transition={{ duration: 0.16, ease: "easeOut" }}
               style={popupStyle}
-              className="bg-white rounded-2xl shadow-2xl border border-gray-200 p-6 pointer-events-auto"
+              className="bg-white rounded-2xl shadow-[0_20px_60px_rgba(37,99,235,0.22)] border-2 border-[#2563EB]/40 p-6 pointer-events-auto"
               onMouseEnter={() => setHovered(true)}
               onMouseLeave={() => setHovered(false)}
             >
@@ -119,16 +119,16 @@ export default function CourseCard({ course, onOpenApply }) {
               {/* Badge + Updated */}
               <div className="flex items-center gap-2 mb-2.5">
                 {course.badgeType === "premium" ? (
-                  <span className="bg-[#5022c3] text-white text-xs font-bold px-2 py-0.5 rounded flex items-center gap-1">
+                  <span className="bg-[#1D4ED8] text-white text-xs font-bold px-2 py-0.5 rounded flex items-center gap-1">
                     <Check className="w-3 h-3" /> Premium
                   </span>
                 ) : (
-                  <span className="bg-[#ccebfa] text-[#104b46] text-xs font-bold px-2 py-0.5 rounded">
-                    {course.badge}
+                  <span className="bg-blue-50 text-[#1D4ED8] border border-blue-200 text-xs font-bold px-2 py-0.5 rounded">
+                    {course.badge || "Bestseller"}
                   </span>
                 )}
                 <span className="text-xs text-[#1c1d1f]">
-                  Updated <strong className="text-[#3c4de7]">{course.updated}</strong>
+                  Updated <strong className="text-[#2563EB]">{course.updated}</strong>
                 </span>
               </div>
 
@@ -144,9 +144,9 @@ export default function CourseCard({ course, onOpenApply }) {
 
               {/* Bullets */}
               <ul className="space-y-2 mb-6">
-                {course.bullets.map((b, i) => (
+                {course.bullets?.map((b, i) => (
                   <li key={i} className="flex items-start gap-2 text-xs text-[#1c1d1f]">
-                    <Check className="w-3.5 h-3.5 text-[#1c1d1f] mt-0.5 flex-shrink-0" />
+                    <Check className="w-3.5 h-3.5 text-[#2563EB] mt-0.5 flex-shrink-0" />
                     <span>{b}</span>
                   </li>
                 ))}
@@ -155,10 +155,7 @@ export default function CourseCard({ course, onOpenApply }) {
               {/* Add to Cart Button */}
               <button
                 onClick={() => onOpenApply && onOpenApply(course.title)}
-                className="w-full text-white font-bold py-3.5 rounded-lg flex items-center justify-center gap-2 text-sm transition-colors"
-                style={{ backgroundColor: "#1D4ED8" }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#1e40af")}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#1D4ED8")}
+                className="w-full text-white font-bold py-3.5 rounded-lg flex items-center justify-center gap-2 text-sm transition-all duration-200 shadow-md hover:shadow-lg bg-[#2563EB] hover:bg-[#1D4ED8]"
               >
                 <ShoppingCart className="w-4 h-4" />
                 Add to cart

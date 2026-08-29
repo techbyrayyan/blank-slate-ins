@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import Link from "next/link";
@@ -88,7 +88,7 @@ export default function AboutEditorial() {
                       <Link
                         key={`${card.title}-${slideIdx}-${cardIdx}`}
                         href={card.link}
-                        className="group relative rounded-3xl overflow-hidden border border-gray-100 bg-gray-50 flex flex-col justify-end transition-all duration-300 hover:border-gray-300 h-[360px] block"
+                        className="group relative rounded-3xl overflow-hidden border border-gray-200 bg-gray-50 flex flex-col justify-end transition-all duration-300 hover:border-[#2563EB] hover:shadow-[0_12px_36px_rgba(37,99,235,0.16)] hover:-translate-y-1 h-[360px] block"
                       >
                         {/* Clean 3D Graphic Image (No opacity fade) */}
                         <img
@@ -100,12 +100,12 @@ export default function AboutEditorial() {
                         />
 
                         {/* Bottom White Pill Card */}
-                        <div className="relative z-10 m-3.5 p-3.5 bg-white rounded-2xl border border-gray-100 shadow-sm flex items-center justify-between gap-2 group-hover:border-gray-200 transition-all">
-                          <span className="font-bold text-gray-900 text-xs sm:text-sm leading-snug">
+                        <div className="relative z-10 m-3.5 p-3.5 bg-white rounded-2xl border border-gray-100 shadow-sm flex items-center justify-between gap-2 group-hover:border-[#2563EB]/40 transition-all">
+                          <span className="font-bold text-gray-900 group-hover:text-[#2563EB] transition-colors text-xs sm:text-sm leading-snug">
                             {card.title}
                           </span>
-                          <div className="w-7 h-7 rounded-full bg-gray-50 group-hover:bg-[#1D4ED8] flex items-center justify-center transition-colors flex-shrink-0">
-                            <ArrowRight className="w-3.5 h-3.5 text-gray-700 group-hover:text-white transition-colors" />
+                          <div className="w-7 h-7 rounded-full bg-blue-50 group-hover:bg-[#2563EB] flex items-center justify-center transition-colors flex-shrink-0">
+                            <ArrowRight className="w-3.5 h-3.5 text-[#2563EB] group-hover:text-white transition-colors" />
                           </div>
                         </div>
                       </Link>
@@ -119,7 +119,7 @@ export default function AboutEditorial() {
             <div className="flex items-center justify-center gap-4 mt-6">
               <button
                 onClick={goPrev}
-                className="w-9 h-9 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-700 hover:border-gray-400 hover:text-black transition-all"
+                className="w-9 h-9 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-700 hover:border-[#2563EB] hover:text-[#2563EB] hover:bg-blue-50 transition-all"
                 aria-label="Previous slide"
               >
                 <ChevronLeft className="w-4 h-4" />
@@ -133,8 +133,8 @@ export default function AboutEditorial() {
                     onClick={() => setCurrentSlide(i)}
                     className={`rounded-full transition-all duration-300 ${
                       i === currentSlide
-                        ? "w-7 h-2 bg-[#1D4ED8]"
-                        : "w-2 h-2 bg-gray-300 hover:bg-gray-400"
+                        ? "w-7 h-2 bg-[#2563EB]"
+                        : "w-2 h-2 bg-gray-300 hover:bg-blue-400"
                     }`}
                     aria-label={`Go to slide ${i + 1}`}
                   />
@@ -143,7 +143,7 @@ export default function AboutEditorial() {
 
               <button
                 onClick={goNext}
-                className="w-9 h-9 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-700 hover:border-gray-400 hover:text-black transition-all"
+                className="w-9 h-9 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-700 hover:border-[#2563EB] hover:text-[#2563EB] hover:bg-blue-50 transition-all"
                 aria-label="Next slide"
               >
                 <ChevronRight className="w-4 h-4" />

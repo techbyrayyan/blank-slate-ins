@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -119,15 +119,12 @@ export default function TestimonialsEditorial() {
         {/* Main Wine Red Banner Box */}
         <div className="bg-gradient-to-r from-[#1e3a8a] via-[#1d4ed8] to-[#1e3a8a] rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl relative overflow-hidden">
           
-          {/* Ambient Glow */}
           <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#1D4ED8]/20 rounded-full blur-3xl pointer-events-none" />
           
           <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-stretch relative z-10">
             
-            {/* ── LEFT: White Google Summary Card (Matching Image 2 & 3 exact) ── */}
-            <div className="w-full lg:w-[310px] xl:w-[330px] bg-white rounded-2xl p-6 sm:p-7 flex flex-col justify-between shadow-xl flex-shrink-0">
+            <div className="w-full lg:w-[310px] xl:w-[330px] bg-white rounded-2xl p-6 sm:p-7 flex flex-col justify-between shadow-xl border border-gray-100 hover:border-[#2563EB]/50 transition-all flex-shrink-0">
               <div>
-                {/* Google Logo */}
                 <div className="mb-4">
                   <img
                     src="/google-logo.webp"
@@ -136,60 +133,40 @@ export default function TestimonialsEditorial() {
                   />
                 </div>
 
-                {/* Title */}
                 <h3 className="text-xl sm:text-2xl font-bold text-[#1c1d1f] leading-snug tracking-tight mb-3">
                   Google AI Professional Certificate
                 </h3>
 
-                {/* Description */}
-                <p className="text-sm text-[#1c1d1f] font-normal leading-relaxed mb-5">
-                  Build your AI fluency and get more done, faster.
-                </p>
-
-                {/* Rating & Meta Pills */}
                 <div className="space-y-2 mb-6">
                   <div className="flex items-center gap-2 flex-wrap">
-                    {/* Rating Pill */}
                     <div className="border border-gray-300 rounded px-2.5 py-1 text-xs flex items-center gap-1 font-bold text-[#1c1d1f]">
                       <Star className="w-3.5 h-3.5 fill-[#b4690e] text-[#b4690e]" />
                       <span>4.6</span>
                     </div>
 
-                    {/* Ratings Count Pill */}
                     <div className="border border-gray-300 rounded px-2.5 py-1 text-xs text-[#6a6f73] font-normal">
                       1,760 ratings
                     </div>
-
-                    {/* Total Hours Pill */}
-                    <div className="border border-gray-300 rounded px-2.5 py-1 text-xs text-[#6a6f73] font-normal">
-                      5 total hours
-                    </div>
                   </div>
 
-                  {/* Courses Count Pill */}
-                  <div>
-                    <span className="inline-block border border-gray-300 rounded px-2.5 py-1 text-xs text-[#6a6f73] font-normal">
-                      7 courses
-                    </span>
-                  </div>
+                  <p className="text-xs text-[#6a6f73]">
+                    7 courses · 5 hours to complete
+                  </p>
                 </div>
               </div>
 
-              {/* Learn More Button -> Redirects to Google Reviews Profile */}
               <a
                 href="https://share.google/Iw4S0onpToPxjiWr0"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full border-2 border-[#7c3aed] text-[#7c3aed] hover:bg-[#7c3aed] hover:text-white font-bold py-3.5 px-4 rounded-xl text-center transition-all duration-200 block text-base shadow-sm hover:shadow"
+                className="w-full py-3 px-4 border border-[#1c1d1f] hover:border-[#2563EB] hover:bg-[#2563EB] hover:text-white rounded-lg text-sm font-bold text-[#1c1d1f] text-center transition-all duration-200 block"
               >
                 Learn more
               </a>
             </div>
 
-            {/* ── RIGHT: Reviews Carousel Track (No Fade / Smooth Continuous Slide) ── */}
             <div className="flex-1 min-w-0 relative flex flex-col justify-center">
               
-              {/* Floating Left Arrow Button */}
               {currentIndex > 0 && (
                 <button
                   onClick={goPrev}

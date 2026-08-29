@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -36,7 +36,7 @@ export default function CampusExperience() {
               <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }} className="inline-block">
                 <Link
                   href="/campus-life"
-                  className="inline-flex items-center gap-2 px-7 py-3.5 bg-gray-100 hover:bg-gray-200 text-gray-900 text-xs font-black uppercase tracking-wider rounded-full border border-gray-300 transition-all shadow-sm"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 bg-gray-100 hover:bg-[#2563EB] hover:text-white text-gray-900 text-xs font-black uppercase tracking-wider rounded-full border border-gray-300 hover:border-[#2563EB] transition-all duration-200 shadow-sm"
                 >
                   <span>Explore Campus</span>
                   <ArrowRight className="w-4 h-4" />
@@ -54,7 +54,7 @@ export default function CampusExperience() {
             className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-4"
           >
             {/* Photo 1: Collaboration */}
-            <div className="rounded-3xl overflow-hidden shadow-md border border-gray-200 bg-gray-100 aspect-[3/4] relative group">
+            <div className="rounded-3xl overflow-hidden shadow-md border border-gray-200 hover:border-[#2563EB] hover:shadow-[0_8px_30px_rgba(37,99,235,0.2)] bg-gray-100 aspect-[3/4] relative group transition-all duration-300">
               <motion.img
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.5 }}
