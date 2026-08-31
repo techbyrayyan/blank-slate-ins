@@ -37,6 +37,10 @@
 }
 
 /* Typography styles */
+.font-serif {
+  font-family: var(--font-playfair), 'Playfair Display', Georgia, Cambria, 'Times New Roman', Times, serif;
+}
+
 .editorial-title {
   letter-spacing: -0.04em;
   line-height: 0.95;

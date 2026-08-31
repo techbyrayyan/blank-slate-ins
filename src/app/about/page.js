@@ -1,8 +1,8 @@
-﻿"use client";
+"use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import EditorialFooter from "@/components/EditorialFooter";
 import CustomCursor from "@/components/CustomCursor";
@@ -22,6 +22,9 @@ import {
   Flag,
   Building,
   Trophy,
+  CheckCircle2,
+  Sparkles,
+  Globe,
 } from "lucide-react";
 import { LinkedinIcon } from "@/components/SocialIcons";
 
@@ -85,6 +88,43 @@ const milestones = [
   },
 ];
 
+function StatCounter({ target, suffix = "" }) {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-40px" });
+
+  useEffect(() => {
+    if (!isInView) return;
+    let startTime = null;
+    let animationFrame;
+    const duration = 2000;
+
+    const animateCount = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+      const elapsed = timestamp - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easeProgress = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(easeProgress * target));
+
+      if (progress < 1) {
+        animationFrame = requestAnimationFrame(animateCount);
+      } else {
+        setCount(target);
+      }
+    };
+
+    animationFrame = requestAnimationFrame(animateCount);
+    return () => cancelAnimationFrame(animationFrame);
+  }, [isInView, target]);
+
+  return (
+    <span ref={ref} className="font-mono tracking-tight tabular-nums">
+      {count}
+      <span className="text-[#1D4ED8]">{suffix}</span>
+    </span>
+  );
+}
+
 export default function AboutPage() {
   const [applyModalOpen, setApplyModalOpen] = useState(false);
 
@@ -94,213 +134,132 @@ export default function AboutPage() {
       <Navbar onOpenApply={() => setApplyModalOpen(true)} />
 
       <main className="flex-1">
-        {/* 1. HERO SECTION WITH SPLIT CAMPUS PHOTO */}
-        <section className="relative pt-32 pb-20 overflow-hidden bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-              {/* Left Column: Heading & 3 Feature Pills */}
+        {/* 1. HERO SECTION ("Welcome to where possibilities begin" - Full Viewport Screen) */}
+        <section className="relative min-h-[calc(100vh-0px)] lg:min-h-screen flex flex-col justify-between pt-28 sm:pt-32 lg:pt-36 pb-8 sm:pb-12 bg-[#F7F9FA] text-[#1C1D1F] overflow-hidden border-b border-gray-200">
+          <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-10 w-full flex-1 flex flex-col justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-4 lg:gap-6 items-center w-full flex-1">
+              
+              {/* Left Column: Strictly 2-Line Headline */}
               <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className="lg:col-span-6 space-y-6"
+                className="md:col-span-6 lg:col-span-6 py-8 sm:py-12 lg:py-16 flex flex-col justify-center"
               >
-                <div className="flex items-center gap-2 text-xs font-mono font-bold tracking-wider text-[#1D4ED8]">
-                  <span>HOME</span>
-                  <span className="text-gray-400">&gt;</span>
-                  <span className="text-gray-600">ABOUT US</span>
-                </div>
-
-                <h1 className="text-4xl sm:text-6xl font-black text-gray-950 tracking-tight leading-[1.05]">
-                  About <br />
-                  <span className="text-[#1D4ED8]">BlankSlate</span> Institute
+                <h1 className="text-4xl sm:text-5xl md:text-[42px] lg:text-[52px] xl:text-[58px] font-bold text-[#1C1D1F] tracking-tight leading-[1.12] font-serif">
+                  <span className="block whitespace-nowrap">Welcome to where</span>
+                  <span className="block whitespace-nowrap">possibilities begin</span>
                 </h1>
-
-                <p className="text-sm sm:text-base text-gray-600 leading-relaxed max-w-lg">
-                  We are more than an institute; we are a community of learners, creators and innovators building the future together.
-                </p>
-
-                {/* 3 Features Stack */}
-                <div className="space-y-4 pt-2">
-                  {[
-                    { icon: GraduationCap, title: "Quality Education", desc: "Industry-focused learning with academic excellence." },
-                    { icon: Users, title: "Expert Mentors", desc: "Learn from experienced professionals and educators." },
-                    { icon: Rocket, title: "Future Ready", desc: "Building skills for tomorrow's opportunities, today." },
-                  ].map((feat, idx) => {
-                    const Icon = feat.icon;
-                    return (
-                      <motion.div
-                        key={feat.title}
-                        initial={{ opacity: 0, y: 15 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.15 * idx }}
-                        whileHover={{ x: 4 }}
-                        className="flex items-start gap-4 cursor-default"
-                      >
-                        <div className="w-10 h-10 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center text-[#1D4ED8] flex-shrink-0 mt-0.5 shadow-sm">
-                          <Icon className="w-5 h-5" />
-                        </div>
-                        <div>
-                          <h3 className="text-sm font-bold text-gray-900">{feat.title}</h3>
-                          <p className="text-xs text-gray-500">{feat.desc}</p>
-                        </div>
-                      </motion.div>
-                    );
-                  })}
-                </div>
               </motion.div>
 
-              {/* Right Column: Split Campus Architecture Graphic */}
+              {/* Right Column: Woman Portrait shifted to the left */}
               <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className="lg:col-span-6 relative"
+                initial={{ opacity: 0, scale: 0.96 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className="md:col-span-6 lg:col-span-6 flex justify-center md:justify-start lg:justify-start items-end self-end h-full"
               >
-                <div className="relative rounded-3xl overflow-hidden shadow-xl border border-gray-200 aspect-[4/3] bg-gray-100 group">
-                  <motion.img
-                    whileHover={{ scale: 1.04 }}
-                    transition={{ duration: 0.6 }}
-                    src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1200&auto=format&fit=crop"
-                    alt="BlankSlate Institute Campus Building"
-                    className="w-full h-full object-cover"
+                <div className="relative w-full max-w-[420px] sm:max-w-[480px] md:max-w-[540px] lg:max-w-[600px] flex justify-center md:justify-start items-end">
+                  <img
+                    src="/about-hero-portrait.png"
+                    alt="Welcome to where possibilities begin"
+                    className="w-full h-auto max-h-[55vh] sm:max-h-[65vh] lg:max-h-[72vh] xl:max-h-[78vh] object-contain object-bottom select-none pointer-events-none"
+                    loading="eager"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-[#1D4ED8]/10 to-transparent pointer-events-none"></div>
-                  <div className="absolute top-6 left-6 px-4 py-2 rounded-xl bg-white/90 backdrop-blur-md border border-gray-200 text-gray-900 flex items-center gap-2 text-xs font-mono font-bold shadow-md">
-                    <span className="w-2 h-2 rounded-full bg-[#1D4ED8] animate-pulse"></span>
-                    <span>BlankSlate Campus</span>
-                  </div>
                 </div>
               </motion.div>
+
             </div>
           </div>
         </section>
 
-        {/* 2. OUR STORY SECTION ("Education That Transforms Lives") */}
-        <section className="py-24 bg-white text-[#09090B] relative border-t border-gray-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-              {/* Left Column: Narrative */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
-                className="lg:col-span-5 space-y-6"
-              >
-                <div className="flex items-center gap-2">
-                  <span className="text-[#1D4ED8] font-mono font-bold text-sm">//</span>
-                  <span className="text-xs uppercase font-mono font-bold tracking-[0.2em] text-gray-500">
-                    OUR STORY
-                  </span>
-                </div>
-
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-950 tracking-tight leading-[1.1]">
-                  Education That <br />
-                  <span className="text-[#1D4ED8]">Transforms</span> Lives
-                </h2>
-
-                <div className="space-y-4 text-xs sm:text-sm text-gray-600 leading-relaxed">
-                  <p>
-                    BlankSlate Institute was founded with a simple belief: education should be practical, relevant and empowering. Our journey began with a vision to bridge the gap between academic learning and real-world skills.
-                  </p>
-                  <p>
-                    Today, we continue to inspire students to think creatively, solve problems and build meaningful careers in a rapidly changing world.
-                  </p>
-                </div>
-
-                <div className="pt-2">
-                  <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }} className="inline-block">
-                    <Link
-                      href="/programs"
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-900 text-xs font-bold rounded-full border border-gray-200 transition-all group"
-                    >
-                      <span>Discover Our Journey</span>
-                      <ArrowRight className="w-4 h-4 text-[#1D4ED8] group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                  </motion.div>
-                </div>
-              </motion.div>
-
-              {/* Right Column: Photo with "Our Story in 2 Minutes" Video Badge */}
+        {/* 2. SECTION 2 (Image on LEFT, Content on RIGHT - Banner Style) */}
+        <section className="relative min-h-[460px] sm:min-h-[500px] lg:min-h-[560px] flex flex-col justify-center py-14 sm:py-16 lg:py-20 bg-white text-[#1C1D1F] overflow-hidden border-b border-gray-200">
+          <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-10 w-full flex-1 flex flex-col justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-center w-full flex-1">
+              
+              {/* Left Column: Cutout Portrait Graphic */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.96 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
-                className="lg:col-span-7 relative"
+                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                className="md:col-span-6 lg:col-span-6 flex justify-center md:justify-start lg:justify-start items-center order-2 md:order-1"
               >
-                <div className="rounded-3xl overflow-hidden shadow-xl border border-gray-200 aspect-[16/10] relative bg-gray-100 group">
-                  <motion.img
-                    whileHover={{ scale: 1.04 }}
-                    transition={{ duration: 0.6 }}
-                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop"
-                    alt="Students in group discussion"
-                    className="w-full h-full object-cover"
+                <div className="relative w-full max-w-[420px] sm:max-w-[480px] md:max-w-[540px] lg:max-w-[600px] flex justify-center md:justify-start items-center">
+                  <img
+                    src="/4de30422-8e35-441f-bfeb-53ca05cbe598.png"
+                    alt="Skills that open doors to what's next"
+                    className="w-full h-auto max-h-[44vh] sm:max-h-[50vh] lg:max-h-[58vh] xl:max-h-[64vh] object-contain object-bottom select-none pointer-events-none"
+                    loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-
-                  {/* Video Badge Overlay */}
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    className="absolute bottom-6 left-6 p-3.5 rounded-2xl bg-white/95 backdrop-blur-md border border-gray-200 shadow-xl flex items-center gap-3.5 cursor-pointer hover:border-[#1D4ED8] transition-colors"
-                  >
-                    <div className="w-10 h-10 rounded-full bg-[#1D4ED8] flex items-center justify-center text-white shadow-lg flex-shrink-0">
-                      <Play className="w-4 h-4 fill-current ml-0.5" />
-                    </div>
-                    <div>
-                      <p className="text-xs font-bold text-gray-900">Our Story in 2 Minutes</p>
-                      <p className="text-[10px] text-gray-500 font-mono">Watch Video</p>
-                    </div>
-                  </motion.div>
                 </div>
               </motion.div>
+
+              {/* Right Column: 2-Line Bold Serif Headline */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className="md:col-span-6 lg:col-span-6 py-6 sm:py-10 lg:py-12 flex flex-col justify-center order-1 md:order-2"
+              >
+                <h2 className="text-4xl sm:text-5xl md:text-[42px] lg:text-[52px] xl:text-[58px] font-bold text-[#1C1D1F] tracking-tight leading-[1.12] font-serif">
+                  <span className="block whitespace-nowrap">Skills that open doors</span>
+                  <span className="block whitespace-nowrap">to what's next</span>
+                </h2>
+              </motion.div>
+
             </div>
           </div>
         </section>
 
-        {/* 3. 5-COLUMN STATS STRIP WITH RED CIRCLE ICONS */}
-        <section className="py-12 bg-gray-50 border-y border-gray-200 text-[#09090B]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 text-center">
-              {[
-                { value: "500+", label: "Students", icon: Users },
-                { value: "20+", label: "Programs", icon: BookOpen },
-                { value: "25+", label: "Expert Faculty", icon: GraduationCap },
-                { value: "95%", label: "Student Satisfaction", icon: Award },
-                { value: "10+", label: "Years of Excellence", icon: Calendar },
-              ].map((stat, idx) => {
-                const Icon = stat.icon;
-                return (
-                  <motion.div
-                    key={stat.label}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: idx * 0.08 }}
-                    whileHover={{ y: -3 }}
-                    className="space-y-2 flex flex-col items-center cursor-default group"
-                  >
-                    <div className="w-10 h-10 rounded-full bg-white border border-gray-200 group-hover:bg-[#1D4ED8] group-hover:border-[#1D4ED8] group-hover:text-white flex items-center justify-center text-[#1D4ED8] transition-all shadow-sm">
-                      <Icon className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <p className="text-3xl sm:text-4xl font-black text-gray-950 font-mono tracking-tight">
-                        {stat.value}
-                      </p>
-                      <p className="text-xs text-gray-500 font-medium">{stat.label}</p>
-                    </div>
-                  </motion.div>
-                );
-              })}
+        {/* 3. SECTION 3 (Content on LEFT, Image on RIGHT - Banner Style) */}
+        <section className="relative min-h-[460px] sm:min-h-[500px] lg:min-h-[560px] flex flex-col justify-center py-14 sm:py-16 lg:py-20 bg-[#F7F9FA] text-[#1C1D1F] overflow-hidden border-b border-gray-200">
+          <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-10 w-full flex-1 flex flex-col justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-center w-full flex-1">
+              
+              {/* Left Column: 2-Line Bold Serif Headline */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                className="md:col-span-6 lg:col-span-6 py-6 sm:py-10 lg:py-12 flex flex-col justify-center"
+              >
+                <h2 className="text-4xl sm:text-5xl md:text-[42px] lg:text-[52px] xl:text-[58px] font-bold text-[#1C1D1F] tracking-tight leading-[1.12] font-serif">
+                  <span className="block whitespace-nowrap">Empowering minds to</span>
+                  <span className="block whitespace-nowrap">shape the future</span>
+                </h2>
+              </motion.div>
+
+              {/* Right Column: Cutout Portrait Graphic with Bottom Breathing Room */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.96 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className="md:col-span-6 lg:col-span-6 flex justify-center md:justify-start lg:justify-start items-center"
+              >
+                <div className="relative w-full max-w-[420px] sm:max-w-[480px] md:max-w-[540px] lg:max-w-[600px] flex justify-center md:justify-start items-center">
+                  <img
+                    src="/1f57762b-5e16-4f0e-b3a9-259eb78b7f5f.png"
+                    alt="Empowering minds to shape the future"
+                    className="w-full h-auto max-h-[44vh] sm:max-h-[50vh] lg:max-h-[58vh] xl:max-h-[64vh] object-contain object-bottom select-none pointer-events-none"
+                    loading="lazy"
+                  />
+                </div>
+              </motion.div>
+
             </div>
           </div>
         </section>
 
-        {/* 4. MISSION, VISION & VALUES */}
-        <section className="py-24 bg-white text-[#09090B] relative">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        {/* 4. MISSION & VISION (2 Cards with Center Spacing) */}
+        <section className="py-20 lg:py-28 bg-white text-[#09090B] relative">
+          <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 xl:gap-14">
               {[
                 {
                   watermark: "01",
@@ -316,13 +275,6 @@ export default function AboutPage() {
                   desc: "We envision a world where quality education is accessible, practical and transformative, shaping leaders and innovators of tomorrow.",
                   icon: Eye,
                 },
-                {
-                  watermark: "03",
-                  tag: "// OUR VALUES",
-                  title: "Integrity. Innovation. Impact.",
-                  desc: "We uphold integrity in everything we do, embrace innovation in our approach and create a lasting impact in students' lives and communities.",
-                  icon: Diamond,
-                },
               ].map((card, idx) => {
                 const Icon = card.icon;
                 return (
@@ -331,26 +283,26 @@ export default function AboutPage() {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: idx * 0.1 }}
-                    whileHover={{ y: -5, borderColor: "#1D4ED8" }}
-                    className="p-8 sm:p-10 rounded-3xl bg-white border border-gray-200 relative overflow-hidden flex flex-col justify-between space-y-8 shadow-sm hover:shadow-xl group transition-all"
+                    transition={{ duration: 0.6, delay: idx * 0.15 }}
+                    whileHover={{ y: -6, borderColor: "#1D4ED8" }}
+                    className="p-8 sm:p-10 lg:p-12 rounded-3xl bg-white border border-gray-200 relative overflow-hidden flex flex-col justify-between min-h-[320px] sm:min-h-[350px] lg:min-h-[380px] shadow-sm hover:shadow-2xl group transition-all"
                   >
-                    <span className="absolute top-2 right-4 text-7xl font-black font-mono text-gray-100 pointer-events-none select-none">
+                    <span className="absolute top-4 right-6 text-7xl lg:text-8xl font-black font-mono text-gray-100 pointer-events-none select-none group-hover:text-blue-50 transition-colors">
                       {card.watermark}
                     </span>
-                    <div className="space-y-4">
-                      <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#1D4ED8]">
+                    <div className="space-y-4 relative z-10">
+                      <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#1D4ED8]">
                         {card.tag}
                       </span>
-                      <h3 className="text-2xl font-black text-gray-950 leading-tight">
+                      <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-950 font-serif leading-tight">
                         {card.title}
                       </h3>
-                      <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                      <p className="text-sm sm:text-base text-gray-600 leading-relaxed max-w-lg">
                         {card.desc}
                       </p>
                     </div>
-                    <div className="w-10 h-10 rounded-xl bg-gray-100 border border-gray-200 flex items-center justify-center text-[#1D4ED8]">
-                      <Icon className="w-5 h-5" />
+                    <div className="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-[#1D4ED8] shadow-sm group-hover:bg-[#1D4ED8] group-hover:text-white transition-colors mt-6">
+                      <Icon className="w-6 h-6" />
                     </div>
                   </motion.div>
                 );
@@ -359,7 +311,65 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* 5. MILESTONES TIMELINE */}
+        {/* 5. OUR VISION SECTION (Heading + Paragraph) */}
+        <section className="py-20 lg:py-28 bg-[#F7F9FA] text-[#09090B] relative border-y border-gray-200">
+          <div className="max-w-4xl mx-auto px-6 sm:px-8 text-center space-y-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="space-y-4"
+            >
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-[#1D4ED8] text-xs font-mono font-bold tracking-wider">
+                <span>// OUR VISION</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-950 font-serif tracking-tight leading-[1.18]">
+                To illuminate potential and shape the future of global innovation
+              </h2>
+            </motion.div>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-base sm:text-lg lg:text-xl text-gray-600 font-sans leading-relaxed max-w-3xl mx-auto"
+            >
+              We envision a world where world-class technology education is accessible, practical, and truly transformative. By cultivating an ecosystem of relentless curiosity, modern tools, and visionary mentorship, we empower aspiring creators, engineers, and leaders to build solutions that redefine industries and improve lives worldwide.
+            </motion.p>
+          </div>
+        </section>
+
+        {/* 6. OUR MISSION SECTION (Heading + Paragraph) */}
+        <section className="py-20 lg:py-28 bg-white text-[#09090B] relative border-b border-gray-200">
+          <div className="max-w-4xl mx-auto px-6 sm:px-8 text-center space-y-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="space-y-4"
+            >
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-[#1D4ED8] text-xs font-mono font-bold tracking-wider">
+                <span>// OUR MISSION</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-950 font-serif tracking-tight leading-[1.18]">
+                To empower learners with real skills, unwavering confidence, and meaningful impact
+              </h2>
+            </motion.div>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-base sm:text-lg lg:text-xl text-gray-600 font-sans leading-relaxed max-w-3xl mx-auto"
+            >
+              Our mission is to bridge the gap between academic theory and real-world tech execution. We deliver project-driven learning, 1-on-1 industry mentorship, and intensive career support designed to help every student build a standout portfolio, master high-demand capabilities, and launch thriving careers in tech.
+            </motion.p>
+          </div>
+        </section>
+
+        {/* 7. MILESTONES TIMELINE */}
         <section className="py-24 bg-white text-[#09090B] relative border-t border-gray-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
@@ -502,6 +512,45 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+
+        {/* 3. 5-COLUMN STATS STRIP WITH ANIMATED COUNTER */}
+        <section className="py-14 lg:py-16 bg-gray-50 border-y border-gray-200 text-[#09090B]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 text-center">
+              {[
+                { target: 500, suffix: "+", label: "Students", icon: Users },
+                { target: 20, suffix: "+", label: "Programs", icon: BookOpen },
+                { target: 25, suffix: "+", label: "Expert Faculty", icon: GraduationCap },
+                { target: 95, suffix: "%", label: "Student Satisfaction", icon: Award },
+                { target: 10, suffix: "+", label: "Years of Excellence", icon: Calendar },
+              ].map((stat, idx) => {
+                const Icon = stat.icon;
+                return (
+                  <motion.div
+                    key={stat.label}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: idx * 0.08 }}
+                    whileHover={{ y: -4 }}
+                    className="space-y-2.5 flex flex-col items-center cursor-default group"
+                  >
+                    <div className="w-11 h-11 rounded-full bg-white border border-gray-200 group-hover:bg-[#1D4ED8] group-hover:border-[#1D4ED8] group-hover:text-white flex items-center justify-center text-[#1D4ED8] transition-all shadow-sm">
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <p className="text-3xl sm:text-4xl lg:text-[40px] font-black text-gray-950 font-mono tracking-tight leading-none">
+                        <StatCounter target={stat.target} suffix={stat.suffix} />
+                      </p>
+                      <p className="text-xs sm:text-sm text-gray-500 font-medium mt-1.5">{stat.label}</p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
 
         {/* 7. PRE-FOOTER ADMISSIONS BANNER */}
         <section className="py-20 bg-white text-white relative">
