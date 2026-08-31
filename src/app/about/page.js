@@ -311,63 +311,9 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* 5. OUR VISION SECTION (Heading + Paragraph) */}
-        <section className="py-20 lg:py-28 bg-[#F7F9FA] text-[#09090B] relative border-y border-gray-200">
-          <div className="max-w-4xl mx-auto px-6 sm:px-8 text-center space-y-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="space-y-4"
-            >
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-[#1D4ED8] text-xs font-mono font-bold tracking-wider">
-                <span>// OUR VISION</span>
-              </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-950 font-serif tracking-tight leading-[1.18]">
-                To illuminate potential and shape the future of global innovation
-              </h2>
-            </motion.div>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-base sm:text-lg lg:text-xl text-gray-600 font-sans leading-relaxed max-w-3xl mx-auto"
-            >
-              We envision a world where world-class technology education is accessible, practical, and truly transformative. By cultivating an ecosystem of relentless curiosity, modern tools, and visionary mentorship, we empower aspiring creators, engineers, and leaders to build solutions that redefine industries and improve lives worldwide.
-            </motion.p>
-          </div>
-        </section>
+        
 
-        {/* 6. OUR MISSION SECTION (Heading + Paragraph) */}
-        <section className="py-20 lg:py-28 bg-white text-[#09090B] relative border-b border-gray-200">
-          <div className="max-w-4xl mx-auto px-6 sm:px-8 text-center space-y-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="space-y-4"
-            >
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-[#1D4ED8] text-xs font-mono font-bold tracking-wider">
-                <span>// OUR MISSION</span>
-              </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-950 font-serif tracking-tight leading-[1.18]">
-                To empower learners with real skills, unwavering confidence, and meaningful impact
-              </h2>
-            </motion.div>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-base sm:text-lg lg:text-xl text-gray-600 font-sans leading-relaxed max-w-3xl mx-auto"
-            >
-              Our mission is to bridge the gap between academic theory and real-world tech execution. We deliver project-driven learning, 1-on-1 industry mentorship, and intensive career support designed to help every student build a standout portfolio, master high-demand capabilities, and launch thriving careers in tech.
-            </motion.p>
-          </div>
-        </section>
+        
 
         {/* 7. MILESTONES TIMELINE */}
         <section className="py-24 bg-white text-[#09090B] relative border-t border-gray-100">
