@@ -89,102 +89,106 @@ export default function Navbar({ onOpenApply }) {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-40 bg-white">
+      <div className="fixed top-0 left-0 right-0 z-40 bg-white">
+        {/* ── HEADER (Top Info Bar + Main Bar) ── */}
+        <header className="bg-white">
 
-        {/* ── ROW 1: Top Info Bar — hidden on scroll ── */}
-        <div className={`bg-[#0f172a] text-gray-300 border-b border-gray-800/80 overflow-hidden transition-all duration-400 ease-in-out ${
-          isScrolled ? "max-h-0 opacity-0 py-0" : "max-h-16 opacity-100"
-        }`}>
-          <div className="max-w-7xl mx-auto px-6 lg:px-10 py-3 flex items-center justify-between gap-4">
-            <div className="flex items-center gap-6 flex-wrap">
-              <a href="mailto:blankslateinstitute1@gmail.com"
-                className="flex items-center gap-2 hover:text-white transition-colors group">
-                <Mail className="w-4 h-4 text-[#1D4ED8] group-hover:scale-110 transition-transform" />
-                <span className="text-sm font-medium hidden sm:inline">blankslateinstitute1@gmail.com</span>
-                <span className="text-sm font-medium sm:hidden">Email Us</span>
-              </a>
-              <span className="hidden sm:inline text-gray-600">|</span>
-              <a href="tel:+9235746486463"
-                className="flex items-center gap-2 hover:text-white transition-colors group">
-                <Phone className="w-4 h-4 text-[#1D4ED8] group-hover:scale-110 transition-transform" />
-                <span className="text-sm font-medium">+92 35746486463</span>
-              </a>
-            </div>
-            <div className="flex items-center gap-3">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
-                className="text-gray-400 hover:text-[#1D4ED8] transition-colors p-1.5" aria-label="Facebook">
-                <FacebookIcon className="w-4 h-4" />
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
-                className="text-gray-400 hover:text-[#1D4ED8] transition-colors p-1.5" aria-label="LinkedIn">
-                <LinkedinIcon className="w-4 h-4" />
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
-                className="text-gray-400 hover:text-[#1D4ED8] transition-colors p-1.5" aria-label="Instagram">
-                <InstagramIcon className="w-4 h-4" />
-              </a>
+          {/* ── ROW 1: Top Info Bar — hidden on scroll ── */}
+          <div className={`bg-[#0f172a] text-gray-300 border-b border-gray-800/80 overflow-hidden transition-all duration-400 ease-in-out ${
+            isScrolled ? "max-h-0 opacity-0 py-0" : "max-h-16 opacity-100"
+          }`}>
+            <div className="max-w-7xl mx-auto px-6 lg:px-10 py-3 flex items-center justify-between gap-4">
+              <div className="flex items-center gap-6 flex-wrap">
+                <a href="mailto:blankslateinstitute1@gmail.com"
+                  className="flex items-center gap-2 hover:text-white transition-colors group">
+                  <Mail className="w-4 h-4 text-[#1D4ED8] group-hover:scale-110 transition-transform" />
+                  <span className="text-sm font-medium hidden sm:inline">blankslateinstitute1@gmail.com</span>
+                  <span className="text-sm font-medium sm:hidden">Email Us</span>
+                </a>
+                <span className="hidden sm:inline text-gray-600">|</span>
+                <a href="tel:+9235746486463"
+                  className="flex items-center gap-2 hover:text-white transition-colors group">
+                  <Phone className="w-4 h-4 text-[#1D4ED8] group-hover:scale-110 transition-transform" />
+                  <span className="text-sm font-medium">+92 35746486463</span>
+                </a>
+              </div>
+              <div className="flex items-center gap-3">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-[#1D4ED8] transition-colors p-1.5" aria-label="Facebook">
+                  <FacebookIcon className="w-4 h-4" />
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-[#1D4ED8] transition-colors p-1.5" aria-label="LinkedIn">
+                  <LinkedinIcon className="w-4 h-4" />
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-[#1D4ED8] transition-colors p-1.5" aria-label="Instagram">
+                  <InstagramIcon className="w-4 h-4" />
+                </a>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* ── ROW 2: Main Bar — hidden on scroll ── */}
-        <div className={`bg-white border-b border-gray-200 overflow-hidden transition-all duration-400 ease-in-out ${
-          isScrolled ? "max-h-0 opacity-0 py-0" : "max-h-28 opacity-100"
-        }`}>
-          <div className="max-w-7xl mx-auto px-6 lg:px-10 py-4 flex items-center gap-6">
-            <div className="flex-shrink-0">
-              <Logo variant="dark" size="lg" />
-            </div>
-            <div className="flex-1 hidden md:flex max-w-2xl">
-              <div className="relative w-full">
-                <div className="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
-                  <Search className="w-5 h-5 text-gray-400" />
+          {/* ── ROW 2: Main Bar — hidden on scroll ── */}
+          <div className={`bg-white border-b border-gray-200 overflow-hidden transition-all duration-400 ease-in-out ${
+            isScrolled ? "max-h-0 opacity-0 py-0" : "max-h-28 opacity-100"
+          }`}>
+            <div className="max-w-7xl mx-auto px-6 lg:px-10 py-4 flex items-center gap-6">
+              <div className="flex-shrink-0">
+                <Logo variant="dark" size="lg" />
+              </div>
+              <div className="flex-1 hidden md:flex max-w-2xl">
+                <div className="relative w-full">
+                  <div className="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
+                    <Search className="w-5 h-5 text-gray-400" />
+                  </div>
+                  <button onClick={() => setSearchModalOpen(true)}
+                    className="w-full pl-12 pr-5 py-3 text-sm bg-gray-50 border border-gray-300 rounded-full text-left text-gray-400 hover:border-gray-500 transition-all">
+                    Search for anything...
+                  </button>
                 </div>
+              </div>
+              <div className="flex items-center gap-3 ml-auto">
+                <Link href="/student-portal"
+                  className="hidden lg:inline-flex text-sm font-semibold text-gray-700 hover:text-[#1D4ED8] transition-colors px-2 whitespace-nowrap">
+                  Student Portal
+                </Link>
                 <button onClick={() => setSearchModalOpen(true)}
-                  className="w-full pl-12 pr-5 py-3 text-sm bg-gray-50 border border-gray-300 rounded-full text-left text-gray-400 hover:border-gray-500 transition-all">
-                  Search for anything...
+                  className="md:hidden p-2.5 text-gray-700 hover:text-[#1D4ED8] transition-colors" aria-label="Search">
+                  <Search className="w-5 h-5" />
+                </button>
+                {/* Log In — slide LEFT → RIGHT */}
+                <Link href="/student-portal"
+                  className="relative hidden sm:inline-flex items-center overflow-hidden px-5 py-2.5 text-sm font-bold border border-[#1D4ED8] rounded whitespace-nowrap group">
+                  <span className="absolute inset-0 bg-[#1D4ED8] -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
+                  <span className="relative z-10 text-[#1D4ED8] group-hover:text-white transition-colors duration-300">Log in</span>
+                </Link>
+                {/* Sign Up — slide RIGHT → LEFT */}
+                <button onClick={onOpenApply}
+                  className="relative hidden sm:inline-flex items-center justify-center overflow-hidden px-5 py-2.5 text-sm font-bold border border-[#1D4ED8] rounded whitespace-nowrap group">
+                  <span className="absolute inset-0 bg-[#1D4ED8]" />
+                  <span className="absolute inset-0 bg-white translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
+                  <span className="relative z-10 text-white group-hover:text-[#1D4ED8] transition-colors duration-300">Sign up</span>
+                </button>
+                {/* Globe */}
+                <button onClick={() => setLangModalOpen((v) => !v)}
+                  className="hidden sm:flex items-center justify-center w-10 h-10 border border-[#1D4ED8] rounded hover:bg-[#1D4ED8] hover:text-white text-[#1D4ED8] transition-all duration-200"
+                  aria-label="Choose language">
+                  <Globe className="w-5 h-5" />
+                </button>
+                {/* Mobile hamburger */}
+                <button onClick={() => setMobileMenuOpen(true)}
+                  className="xl:hidden p-2.5 text-gray-900 hover:text-[#1D4ED8] rounded transition-colors" aria-label="Open menu">
+                  <Menu className="w-6 h-6" />
                 </button>
               </div>
             </div>
-            <div className="flex items-center gap-3 ml-auto">
-              <Link href="/student-portal"
-                className="hidden lg:inline-flex text-sm font-semibold text-gray-700 hover:text-[#1D4ED8] transition-colors px-2 whitespace-nowrap">
-                Student Portal
-              </Link>
-              <button onClick={() => setSearchModalOpen(true)}
-                className="md:hidden p-2.5 text-gray-700 hover:text-[#1D4ED8] transition-colors" aria-label="Search">
-                <Search className="w-5 h-5" />
-              </button>
-              {/* Log In — slide LEFT → RIGHT */}
-              <Link href="/student-portal"
-                className="relative hidden sm:inline-flex items-center overflow-hidden px-5 py-2.5 text-sm font-bold border border-[#1D4ED8] rounded whitespace-nowrap group">
-                <span className="absolute inset-0 bg-[#1D4ED8] -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
-                <span className="relative z-10 text-[#1D4ED8] group-hover:text-white transition-colors duration-300">Log in</span>
-              </Link>
-              {/* Sign Up — slide RIGHT → LEFT */}
-              <button onClick={onOpenApply}
-                className="relative hidden sm:inline-flex items-center justify-center overflow-hidden px-5 py-2.5 text-sm font-bold border border-[#1D4ED8] rounded whitespace-nowrap group">
-                <span className="absolute inset-0 bg-[#1D4ED8]" />
-                <span className="absolute inset-0 bg-white translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
-                <span className="relative z-10 text-white group-hover:text-[#1D4ED8] transition-colors duration-300">Sign up</span>
-              </button>
-              {/* Globe */}
-              <button onClick={() => setLangModalOpen((v) => !v)}
-                className="hidden sm:flex items-center justify-center w-10 h-10 border border-[#1D4ED8] rounded hover:bg-[#1D4ED8] hover:text-white text-[#1D4ED8] transition-all duration-200"
-                aria-label="Choose language">
-                <Globe className="w-5 h-5" />
-              </button>
-              {/* Mobile hamburger */}
-              <button onClick={() => setMobileMenuOpen(true)}
-                className="xl:hidden p-2.5 text-gray-900 hover:text-[#1D4ED8] rounded transition-colors" aria-label="Open menu">
-                <Menu className="w-6 h-6" />
-              </button>
-            </div>
           </div>
-        </div>
 
-        {/* ── ROW 3: Nav Strip — always visible, shows logo on scroll ── */}
-        <div className={`bg-white border-b border-gray-200 transition-shadow duration-300 ${isScrolled ? "shadow-md" : "shadow-sm"}`}>
+        </header>
+
+        {/* ── NAVBAR (Outside <header>): Nav Strip — always visible, shows logo on scroll ── */}
+        <nav className={`bg-white border-b border-gray-200 transition-shadow duration-300 ${isScrolled ? "shadow-md" : "shadow-sm"}`} aria-label="Main Navigation">
           <div className="max-w-7xl mx-auto px-6 lg:px-10">
             <div className="flex items-center py-4 gap-6">
 
@@ -196,7 +200,7 @@ export default function Navbar({ onOpenApply }) {
               </div>
 
               {/* Nav Links — centered */}
-              <nav className="flex-1 hidden xl:flex items-center justify-center gap-8" aria-label="Main Navigation">
+              <div className="flex-1 hidden xl:flex items-center justify-center gap-8">
                 {navLinks.map((item) => {
                   const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
                   return (
@@ -211,7 +215,7 @@ export default function Navbar({ onOpenApply }) {
                     </Link>
                   );
                 })}
-              </nav>
+              </div>
 
               {/* Spacer for symmetry when logo is visible */}
               <div className={`hidden xl:block flex-shrink-0 overflow-hidden transition-all duration-400 ease-in-out ${
@@ -234,9 +238,8 @@ export default function Navbar({ onOpenApply }) {
 
             </div>
           </div>
-        </div>
-
-      </header>
+        </nav>
+      </div>
 
       {/* ── Language Popup Modal ── */}
       {langModalOpen && (
