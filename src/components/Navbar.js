@@ -10,7 +10,7 @@ import { FacebookIcon, LinkedinIcon, InstagramIcon } from "./SocialIcons";
 
 const navLinks = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
+  { name: "Inside BlankSlate", href: "/about" },
   { name: "Programs", href: "/programs" },
   { name: "Faculty", href: "/faculty" },
   { name: "Admissions", href: "/admissions" },
@@ -213,10 +213,16 @@ export default function Navbar({ onOpenApply }) {
                 })}
               </div>
 
-              {/* Spacer for symmetry when logo is visible */}
-              <div className={`hidden xl:block flex-shrink-0 overflow-hidden transition-all duration-400 ease-in-out ${
-                isScrolled ? "max-w-[180px] opacity-100" : "max-w-0 opacity-0"
-              }`} />
+              {/* Right side: Let's Talk CTA button linked to /contact */}
+              <div className="hidden xl:flex items-center flex-shrink-0">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#1D4ED8] hover:bg-blue-700 text-white text-sm font-bold rounded-xl shadow-md shadow-blue-600/25 transition-all group cursor-pointer"
+                >
+                  <span>Let&apos;s Talk</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
 
               {/* Mobile: show logo + hamburger in bottom bar when scrolled */}
               <div className="flex xl:hidden items-center justify-between w-full">
@@ -328,14 +334,15 @@ export default function Navbar({ onOpenApply }) {
               <span>{currentLangName}</span>
             </button>
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
+              <Link href="/contact" onClick={() => setMobileMenuOpen(false)}
+                className="w-full sm:w-auto px-6 py-3 bg-[#1D4ED8] text-white text-sm font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-blue-700 transition-all shadow-md">
+                <span>Let&apos;s Talk</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
               <button onClick={() => { setMobileMenuOpen(false); onOpenApply(); }}
-                className="w-full sm:w-auto px-8 py-3.5 bg-[#1D4ED8] border border-[#1D4ED8] text-white text-sm font-black uppercase tracking-wider rounded hover:bg-white hover:text-[#1D4ED8] transition-all">
+                className="w-full sm:w-auto px-6 py-3 border border-[#1D4ED8] text-[#1D4ED8] text-sm font-bold rounded-xl hover:bg-blue-50 transition-all">
                 Sign Up
               </button>
-              <Link href="/student-portal" onClick={() => setMobileMenuOpen(false)}
-                className="w-full sm:w-auto px-8 py-3.5 border border-[#1D4ED8] text-[#1D4ED8] text-sm font-black uppercase tracking-wider rounded text-center hover:bg-[#1D4ED8] hover:text-white transition-all">
-                Log In
-              </Link>
             </div>
             <p className="text-xs text-gray-400 font-mono pt-2">© 2026 BlankSlate Institute</p>
           </div>
