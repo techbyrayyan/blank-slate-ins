@@ -6,549 +6,714 @@ import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import EditorialFooter from "@/components/EditorialFooter";
 import CustomCursor from "@/components/CustomCursor";
-import ApplicationModal from "@/components/ApplicationModal";
 import {
-  Clock,
-  TrendingUp,
-  Award,
-  Download,
-  ArrowRight,
-  Phone,
-  CheckCircle2,
-  ChevronDown,
-  ChevronUp,
-  Globe,
-  Calendar,
-  Layers,
-  Sparkles,
-  DollarSign,
-  FileText,
+  User,
   Mail,
+  Phone,
+  Calendar,
   MapPin,
+  GraduationCap,
+  BookOpen,
+  Laptop,
+  CheckCircle2,
+  Sparkles,
+  Upload,
+  ArrowRight,
+  ShieldCheck,
+  Building,
+  Award,
+  Clock,
+  HelpCircle,
 } from "lucide-react";
-import { programsData } from "@/data/instituteData";
 
 export default function AdmissionsPage() {
-  const [activeTab, setActiveTab] = useState("Overview");
-  const [openFaqIndex, setOpenFaqIndex] = useState(0);
-  const [applyModalOpen, setApplyModalOpen] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [applicationId, setApplicationId] = useState("");
 
-  const navSections = [
-    "Overview",
-    "How to Apply",
-    "Eligibility",
-    "Tuition & Fees",
-    "Scholarships",
-    "Deadlines",
-    "FAQ",
-  ];
+  const [formData, setFormData] = useState({
+    // 1. Personal Info
+    fullName: "",
+    email: "",
+    phone: "",
+    dob: "",
+    gender: "male",
+    cnic: "",
+    city: "Lahore",
+    address: "",
 
-  const steps = [
-    {
-      num: "01",
-      title: "Submit Online Application",
-      desc: "Complete our quick 3-minute technical application form with your background and target program track.",
-      detail: "No application fee required. You can save and resume your submission anytime.",
-    },
-    {
-      num: "02",
-      title: "Technical Readiness Assessment",
-      desc: "Connect for a 20-minute technical counseling discussion with an admissions mentor to assess program alignment.",
-      detail: "Conducted online via Google Meet or in-person at our Lahore Innovation Campus.",
-    },
-    {
-      num: "03",
-      title: "Receive Decision & Enrollment",
-      desc: "Successful applicants receive their admission offer letter, scholarship grant confirmation, and onboarding kit.",
-      detail: "Decisions dispatched within 48 business hours of assessment.",
-    },
-  ];
+    // 2. Academic Info
+    highestQualification: "Intermediate / A-Level",
+    instituteName: "",
+    passingYear: "2024",
+    fieldOfStudy: "",
+    gradeOrGpa: "",
 
-  const eligibilityCriteria = [
-    "Basic computer literacy and logical problem-solving aptitude",
-    "Intermediate / A-Levels / High School Diploma or equivalent in any discipline",
-    "Passionate commitment to 15–20 hours/week of active building and labs",
-    "No prior computer science or coding degree required for foundation tracks",
-  ];
+    // 3. Program Selection
+    program: "Full Stack Web Development (MERN & Next.js)",
+    learningMode: "On-Campus (Lahore)",
+    preferredShift: "Evening (06:00 PM - 09:00 PM)",
+    scholarshipRequested: "No",
+    scholarshipReason: "",
 
-  const faqs = [
-    {
-      q: "Is there an application fee?",
-      a: "No, submitting an admission inquiry or application for any BlankSlate program is 100% free of charge.",
-    },
-    {
-      q: "Can I pay tuition in monthly installments?",
-      a: "Yes, we provide 0% interest monthly installment plans across all 6-month career tracks.",
-    },
-    {
-      q: "What scholarships are available?",
-      a: "Merit-based scholarships of up to 40% are automatically evaluated based on your background and readiness interview.",
-    },
-    {
-      q: "Are the classes available online or in-person?",
-      a: "All programs offer both on-campus physical sessions at our state-of-the-art labs and interactive live online batches.",
-    },
+    // 4. Experience & Motivation
+    codingExperience: "Beginner (Self-Taught / Basic)",
+    statementOfPurpose: "",
+    referralSource: "Social Media (Instagram / Facebook)",
+    agreedToTerms: false,
+    fileName: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+  };
+
+  const handleFileUpload = (e) => {
+    if (e.target.files && e.target.files[0]) {
+      setFormData((prev) => ({ ...prev, fileName: e.target.files[0].name }));
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!formData.agreedToTerms) {
+      alert("Please accept the terms & conditions to proceed.");
+      return;
+    }
+    setIsSubmitting(true);
+    setTimeout(() => {
+      const generatedId = "BSI-" + Math.floor(100000 + Math.random() * 900000);
+      setApplicationId(generatedId);
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+      window.scrollTo({ top: 120, behavior: "smooth" });
+    }, 1200);
+  };
+
+  const programsList = [
+    "Full Stack Web Development (MERN & Next.js)",
+    "Applied AI & Machine Learning Engineering",
+    "Python & Data Science Bootcamp",
+    "Cloud Computing & DevOps (AWS / Docker / K8s)",
+    "AI Agents & Automation Development",
+    "Digital Marketing & Growth Strategy",
+    "UI/UX Product Design & Prototyping",
+    "Cybersecurity & Ethical Hacking",
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-[#09090B] selection:bg-[#1D4ED8] selection:text-white font-sans">
+    <div className="min-h-screen flex flex-col bg-[#F8FAFC] text-[#09090B] selection:bg-[#1D4ED8] selection:text-white font-sans">
       <CustomCursor />
-      <Navbar onOpenApply={() => setApplyModalOpen(true)} />
+      <Navbar onOpenApply={() => {}} />
 
-      <main className="flex-1">
-        {/* 1. HERO SECTION */}
-        <section className="relative pt-[200px] sm:pt-[220px] lg:pt-[240px] pb-16 bg-white overflow-hidden">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-              {/* Left Column: Title & Feature Badges */}
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className="lg:col-span-7 space-y-6"
-              >
-                {/* Breadcrumb */}
-                <div className="flex items-center gap-2 text-xs font-sans font-semibold text-gray-500">
-                  <Link href="/" className="hover:text-gray-900 transition-colors flex items-center gap-1">
-                    <span>Home</span>
-                  </Link>
-                  <span className="text-gray-400 font-normal">/</span>
-                  <span className="text-[#1D4ED8] font-bold">Admissions 2026</span>
-                </div>
-
-                {/* Main Heading */}
-                <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-gray-950 tracking-tight leading-[1.05]">
-                  Your Next Chapter <br />
-                  <span className="text-[#1D4ED8]">Starts Here.</span>
-                </h1>
-
-                {/* Subtitle */}
-                <p className="text-sm sm:text-base text-gray-600 max-w-xl leading-relaxed">
-                  Join a community of builders, researchers, and innovators. Learn about our streamlined admissions process, tuition plans, and scholarship opportunities.
-                </p>
-
-                {/* 4 Feature Badges Row */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-2">
-                  {[
-                    { icon: Calendar, val: "Fall 2026", label: "Next Intake" },
-                    { icon: TrendingUp, val: "Merit-Based", label: "Selection" },
-                    { icon: Globe, val: "Campus & Online", label: "Learning Mode" },
-                    { icon: Award, val: "Up to 40% Aid", label: "Scholarships" },
-                  ].map((badge, idx) => {
-                    const Icon = badge.icon;
-                    return (
-                      <motion.div
-                        key={badge.label}
-                        initial={{ opacity: 0, y: 15 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.1 * idx }}
-                        whileHover={{ y: -3 }}
-                        className="flex items-center gap-2.5 cursor-default"
-                      >
-                        <div className="w-9 h-9 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center text-[#1D4ED8] shadow-sm">
-                          <Icon className="w-4 h-4" />
-                        </div>
-                        <div>
-                          <p className="text-xs font-bold text-gray-900">{badge.val}</p>
-                          <p className="text-[11px] text-gray-500 font-medium">{badge.label}</p>
-                        </div>
-                      </motion.div>
-                    );
-                  })}
-                </div>
-
-                {/* CTA Action Buttons */}
-                <div className="pt-4 flex flex-wrap items-center gap-4">
-                  <motion.button
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.98 }}
-                    onClick={() => setApplyModalOpen(true)}
-                    className="px-7 py-3.5 bg-[#1D4ED8] hover:bg-[#B91C1C] text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-[0_4px_20px_rgba(229,9,20,0.35)] transition-all flex items-center gap-2"
-                  >
-                    <span>Apply for Next Intake</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </motion.button>
-
-                  <motion.button
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.98 }}
-                    onClick={() => alert("Admissions prospectus download initiated.")}
-                    className="px-7 py-3.5 bg-gray-100 hover:bg-gray-200 text-gray-900 text-xs font-bold uppercase tracking-wider rounded-full border border-gray-200 transition-all flex items-center gap-2"
-                  >
-                    <Download className="w-4 h-4" />
-                    <span>Download Admissions Guide</span>
-                  </motion.button>
-                </div>
-              </motion.div>
-
-              {/* Right Column: Admissions Counseling Photo */}
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className="lg:col-span-5 relative"
-              >
-                <div className="relative rounded-3xl overflow-hidden shadow-xl border border-gray-200 aspect-[4/3] lg:aspect-[5/4] bg-gray-100 group">
-                  <motion.img
-                    whileHover={{ scale: 1.04 }}
-                    transition={{ duration: 0.6 }}
-                    src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200&auto=format&fit=crop"
-                    alt="Students discussing admissions at BlankSlate Institute"
-                    className="w-full h-full object-cover object-center"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
-
-                  {/* Floating Badges */}
-                  <div className="absolute top-4 right-4 px-3.5 py-2 rounded-xl bg-white/95 backdrop-blur-md border border-gray-200 text-[#1D4ED8] flex items-center gap-2 text-xs font-sans font-bold shadow-md">
-                    <Sparkles className="w-3.5 h-3.5 text-[#1D4ED8]" />
-                    <span>Rolling Admissions</span>
-                  </div>
-                  <div className="absolute bottom-6 left-6 px-4 py-3 rounded-2xl bg-white/95 backdrop-blur-md border border-gray-200 text-gray-900 flex items-center gap-3 text-xs font-sans shadow-lg">
-                    <span className="relative flex h-2.5 w-2.5">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-                    </span>
-                    <span className="font-bold text-gray-900">Accepting Fall 2026 Inquiries</span>
-                  </div>
-                </div>
-              </motion.div>
+      {/* Main Content Area - Form Centered with Balanced Margins */}
+      <main className="flex-1 pt-[180px] sm:pt-[200px] lg:pt-[220px] pb-24 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
+        <div className="w-full max-w-4xl mx-auto">
+          
+          {/* Top Breadcrumb & Title Header */}
+          <motion.div
+            initial={{ opacity: 0, y: -15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-10 space-y-3"
+          >
+            {/* Breadcrumb */}
+            <div className="inline-flex items-center gap-2 text-xs font-sans font-semibold text-gray-500 bg-white border border-gray-200 px-4 py-1.5 rounded-full shadow-sm">
+              <Link href="/" className="hover:text-gray-900 transition-colors">
+                Home
+              </Link>
+              <span className="text-gray-300">/</span>
+              <span className="text-[#1D4ED8] font-bold">Online Admission Application</span>
             </div>
-          </div>
-        </section>
 
-        {/* 2. IN-PAGE STICKY NAVIGATION BAR */}
-        <div className="sticky top-[68px] z-30 bg-white/95 backdrop-blur-md border-y border-gray-200 py-3 overflow-x-auto no-scrollbar shadow-sm">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center space-x-6 min-w-max">
-              {navSections.map((tab) => {
-                const isActive = activeTab === tab;
-                return (
-                  <button
-                    key={tab}
-                    onClick={() => setActiveTab(tab)}
-                    className={`text-xs font-semibold uppercase tracking-wider py-1.5 transition-colors relative ${
-                      isActive ? "text-[#1D4ED8] font-bold" : "text-gray-600 hover:text-black"
-                    }`}
-                  >
-                    <span>{tab}</span>
-                    {isActive && (
-                      <motion.span
-                        layoutId="activeAdmissionsTab"
-                        className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#1D4ED8]"
-                      ></motion.span>
-                    )}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-        </div>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-950 tracking-tight font-serif">
+              Admissions Application <span className="text-[#1D4ED8]">2026</span>
+            </h1>
+            <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              Fill out the official application form below to apply for upcoming batches. Our admissions committee reviews all submissions within 48 hours.
+            </p>
+          </motion.div>
 
-        {/* 3. MAIN CONTENT GRID */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            {/* LEFT COLUMN */}
-            <div className="lg:col-span-8 space-y-16">
-              {/* SECTION 1: How to Apply */}
+          {/* Form Container / Card */}
+          <AnimatePresence mode="wait">
+            {!isSubmitted ? (
               <motion.div
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                key="admission-form"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.6 }}
-                className="space-y-6"
+                className="bg-white rounded-3xl border border-gray-200 shadow-xl overflow-hidden"
               >
-                <div className="space-y-2">
-                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#1D4ED8]">
-                    ADMISSION PROCESS
-                  </span>
-                  <h2 className="text-2xl sm:text-3xl font-black text-gray-950">How to Apply</h2>
+                {/* Header Banner Inside Card */}
+                <div className="bg-gradient-to-r from-[#0f172a] via-[#1e3a8a] to-[#0f172a] text-white px-6 sm:px-10 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-blue-600/30 border border-blue-400/30 flex items-center justify-center text-blue-300 flex-shrink-0">
+                      <GraduationCap className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h2 className="text-base sm:text-lg font-bold">Student Enrollment Portal</h2>
+                      <p className="text-xs text-blue-200">Fall 2026 Intake · Regular & Scholarship Seats Open</p>
+                    </div>
+                  </div>
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-semibold">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                    <span>Live Admissions</span>
+                  </div>
                 </div>
 
-                <div className="space-y-4">
-                  {steps.map((step, idx) => (
-                    <motion.div
-                      key={step.num}
-                      initial={{ opacity: 0, y: 15 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: idx * 0.1 }}
-                      whileHover={{ y: -3, borderColor: "#1D4ED8" }}
-                      className="p-6 rounded-2xl bg-white border border-gray-200 space-y-2 transition-all shadow-sm hover:shadow-md cursor-default"
-                    >
-                      <div className="flex items-center gap-3">
-                        <span className="w-8 h-8 rounded-full bg-[#1D4ED8] text-white flex items-center justify-center text-xs font-mono font-black shadow-sm">
-                          {step.num}
-                        </span>
-                        <h3 className="text-base font-bold text-gray-950">{step.title}</h3>
+                {/* Form Fields */}
+                <form onSubmit={handleSubmit} className="p-6 sm:p-10 lg:p-12 space-y-12">
+                  
+                  {/* CATEGORY 1: PERSONAL DETAILS */}
+                  <div className="space-y-6">
+                    <div className="flex items-center gap-3 pb-3 border-b border-gray-200">
+                      <div className="w-8 h-8 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center text-[#1D4ED8]">
+                        <User className="w-4 h-4" />
                       </div>
-                      <p className="text-xs sm:text-sm text-gray-600 pl-11 leading-relaxed">{step.desc}</p>
-                      <p className="text-[11px] font-mono text-gray-500 pl-11">{step.detail}</p>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
+                      <div>
+                        <h3 className="text-base sm:text-lg font-bold text-gray-950">1. Personal Information</h3>
+                        <p className="text-xs text-gray-500">Provide your official contact and identification details.</p>
+                      </div>
+                    </div>
 
-              {/* SECTION 2: Eligibility & Prerequisites */}
-              <motion.div
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="space-y-6"
-              >
-                <div className="space-y-2">
-                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#1D4ED8]">
-                    REQUIREMENTS
-                  </span>
-                  <h2 className="text-2xl sm:text-3xl font-black text-gray-950">Eligibility & Prerequisites</h2>
-                </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                      {/* Full Name */}
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-bold text-gray-800 flex items-center gap-1">
+                          Full Name <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                          type="text"
+                          name="fullName"
+                          required
+                          value={formData.fullName}
+                          onChange={handleChange}
+                          placeholder="e.g. Muhammad Hamza"
+                          className="w-full px-4 py-3 text-sm bg-gray-50/80 border border-gray-200 rounded-xl focus:bg-white focus:border-[#1D4ED8] focus:ring-2 focus:ring-[#1D4ED8]/10 transition-all outline-none"
+                        />
+                      </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {eligibilityCriteria.map((item, idx) => (
-                    <motion.div
-                      key={idx}
-                      initial={{ opacity: 0, y: 15 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.4, delay: idx * 0.05 }}
-                      whileHover={{ y: -3 }}
-                      className="p-4 rounded-2xl bg-gray-50 border border-gray-200 flex items-start gap-2.5 cursor-default shadow-sm"
-                    >
-                      <CheckCircle2 className="w-4 h-4 text-[#1D4ED8] flex-shrink-0 mt-0.5" />
-                      <span className="text-xs text-gray-700 font-medium leading-snug">{item}</span>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
+                      {/* Email */}
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-bold text-gray-800 flex items-center gap-1">
+                          Email Address <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                          type="email"
+                          name="email"
+                          required
+                          value={formData.email}
+                          onChange={handleChange}
+                          placeholder="hamza@example.com"
+                          className="w-full px-4 py-3 text-sm bg-gray-50/80 border border-gray-200 rounded-xl focus:bg-white focus:border-[#1D4ED8] focus:ring-2 focus:ring-[#1D4ED8]/10 transition-all outline-none"
+                        />
+                      </div>
 
-              {/* SECTION 3: Tuition & Fee Schedules */}
-              <motion.div
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="space-y-6"
-              >
-                <div className="space-y-2">
-                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#1D4ED8]">
-                    TRANSPARENT TUITION
-                  </span>
-                  <h2 className="text-2xl sm:text-3xl font-black text-gray-950">Tuition & Installment Plans</h2>
-                </div>
+                      {/* Phone / WhatsApp */}
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-bold text-gray-800 flex items-center gap-1">
+                          Phone / WhatsApp Number <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                          type="tel"
+                          name="phone"
+                          required
+                          value={formData.phone}
+                          onChange={handleChange}
+                          placeholder="+92 300 1234567"
+                          className="w-full px-4 py-3 text-sm bg-gray-50/80 border border-gray-200 rounded-xl focus:bg-white focus:border-[#1D4ED8] focus:ring-2 focus:ring-[#1D4ED8]/10 transition-all outline-none"
+                        />
+                      </div>
 
-                <div className="overflow-x-auto rounded-2xl border border-gray-200 bg-white shadow-sm">
-                  <table className="w-full text-left text-xs">
-                    <thead className="bg-gray-50 text-gray-900 font-mono text-[11px] uppercase tracking-wider border-b border-gray-200">
-                      <tr>
-                        <th className="p-4">Program Track</th>
-                        <th className="p-4">Duration</th>
-                        <th className="p-4">Total Tuition</th>
-                        <th className="p-4">Monthly Plan</th>
-                        <th className="p-4 text-right">Action</th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-gray-100">
-                      {programsData.slice(0, 5).map((prog) => (
-                        <tr key={prog.slug} className="hover:bg-gray-50 transition-colors">
-                          <td className="p-4 font-bold text-gray-900">{prog.title}</td>
-                          <td className="p-4 text-gray-500 font-mono">{prog.duration}</td>
-                          <td className="p-4 font-mono font-black text-[#1D4ED8]">{prog.tuition}</td>
-                          <td className="p-4 text-gray-600 font-mono">0% Interest</td>
-                          <td className="p-4 text-right">
-                            <motion.button
-                              whileHover={{ scale: 1.05 }}
-                              whileTap={{ scale: 0.95 }}
-                              onClick={() => setApplyModalOpen(true)}
-                              className="px-3.5 py-1.5 bg-[#1D4ED8] hover:bg-[#B91C1C] text-white rounded-lg font-bold text-xs shadow-sm transition-all"
-                            >
-                              Apply
-                            </motion.button>
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </motion.div>
+                      {/* Date of Birth */}
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-bold text-gray-800 flex items-center gap-1">
+                          Date of Birth <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                          type="date"
+                          name="dob"
+                          required
+                          value={formData.dob}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 text-sm bg-gray-50/80 border border-gray-200 rounded-xl focus:bg-white focus:border-[#1D4ED8] focus:ring-2 focus:ring-[#1D4ED8]/10 transition-all outline-none"
+                        />
+                      </div>
 
-              {/* SECTION 4: Admissions FAQs */}
-              <motion.div
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="space-y-6"
-              >
-                <div className="space-y-2">
-                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#1D4ED8]">
-                    COMMON INQUIRIES
-                  </span>
-                  <h2 className="text-2xl sm:text-3xl font-black text-gray-950">Frequently Asked Questions</h2>
-                </div>
-
-                <div className="space-y-3">
-                  {faqs.map((faq, idx) => {
-                    const isOpen = openFaqIndex === idx;
-                    return (
-                      <div
-                        key={idx}
-                        className="rounded-2xl bg-white border border-gray-200 overflow-hidden transition-all shadow-sm"
-                      >
-                        <button
-                          onClick={() => setOpenFaqIndex(isOpen ? -1 : idx)}
-                          className="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-xs sm:text-sm text-gray-900 hover:text-[#1D4ED8] transition-colors"
+                      {/* Gender */}
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-bold text-gray-800">
+                          Gender
+                        </label>
+                        <select
+                          name="gender"
+                          value={formData.gender}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 text-sm bg-gray-50/80 border border-gray-200 rounded-xl focus:bg-white focus:border-[#1D4ED8] focus:ring-2 focus:ring-[#1D4ED8]/10 transition-all outline-none cursor-pointer"
                         >
-                          <span>{faq.q}</span>
-                          {isOpen ? (
-                            <ChevronUp className="w-4 h-4 text-[#1D4ED8]" />
-                          ) : (
-                            <ChevronDown className="w-4 h-4 text-gray-400" />
-                          )}
-                        </button>
-
-                        <AnimatePresence>
-                          {isOpen && (
-                            <motion.div
-                              initial={{ opacity: 0, height: 0 }}
-                              animate={{ opacity: 1, height: "auto" }}
-                              exit={{ opacity: 0, height: 0 }}
-                              transition={{ duration: 0.3 }}
-                              className="px-5 pb-5 pt-1 text-xs text-gray-600 leading-relaxed border-t border-gray-100 bg-gray-50"
-                            >
-                              {faq.a}
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
+                          <option value="male">Male</option>
+                          <option value="female">Female</option>
+                          <option value="other">Prefer not to say</option>
+                        </select>
                       </div>
-                    );
-                  })}
+
+                      {/* City */}
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-bold text-gray-800 flex items-center gap-1">
+                          City of Residence <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                          type="text"
+                          name="city"
+                          required
+                          value={formData.city}
+                          onChange={handleChange}
+                          placeholder="e.g. Lahore, Karachi, Islamabad"
+                          className="w-full px-4 py-3 text-sm bg-gray-50/80 border border-gray-200 rounded-xl focus:bg-white focus:border-[#1D4ED8] focus:ring-2 focus:ring-[#1D4ED8]/10 transition-all outline-none"
+                        />
+                      </div>
+
+                      {/* Address (Full Span) */}
+                      <div className="sm:col-span-2 space-y-1.5">
+                        <label className="text-xs font-bold text-gray-800">
+                          Residential Address
+                        </label>
+                        <input
+                          type="text"
+                          name="address"
+                          value={formData.address}
+                          onChange={handleChange}
+                          placeholder="House / Street / Area address"
+                          className="w-full px-4 py-3 text-sm bg-gray-50/80 border border-gray-200 rounded-xl focus:bg-white focus:border-[#1D4ED8] focus:ring-2 focus:ring-[#1D4ED8]/10 transition-all outline-none"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+
+                  {/* CATEGORY 2: ACADEMIC QUALIFICATIONS */}
+                  <div className="space-y-6">
+                    <div className="flex items-center gap-3 pb-3 border-b border-gray-200">
+                      <div className="w-8 h-8 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center text-[#1D4ED8]">
+                        <BookOpen className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <h3 className="text-base sm:text-lg font-bold text-gray-950">2. Academic Background</h3>
+                        <p className="text-xs text-gray-500">Your recent or current educational qualification.</p>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                      {/* Highest Qualification */}
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-bold text-gray-800">
+                          Highest Qualification <span className="text-red-500">*</span>
+                        </label>
+                        <select
+                          name="highestQualification"
+                          value={formData.highestQualification}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 text-sm bg-gray-50/80 border border-gray-200 rounded-xl focus:bg-white focus:border-[#1D4ED8] focus:ring-2 focus:ring-[#1D4ED8]/10 transition-all outline-none cursor-pointer"
+                        >
+                          <option value="Matriculation / O-Levels">Matriculation / O-Levels</option>
+                          <option value="Intermediate / A-Level">Intermediate / A-Level / FSc / ICS</option>
+                          <option value="Bachelor's Degree (Ongoing)">Bachelor&apos;s Degree (Currently Enrolled)</option>
+                          <option value="Bachelor's Degree (Completed)">Bachelor&apos;s Degree (Completed)</option>
+                          <option value="Master's / Postgrad">Master&apos;s / Postgraduate</option>
+                          <option value="Self-Taught / Other">Self-Taught / Working Professional</option>
+                        </select>
+                      </div>
+
+                      {/* Field of Study */}
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-bold text-gray-800">
+                          Major / Field of Study
+                        </label>
+                        <input
+                          type="text"
+                          name="fieldOfStudy"
+                          value={formData.fieldOfStudy}
+                          onChange={handleChange}
+                          placeholder="e.g. Computer Science, Pre-Engineering, Business"
+                          className="w-full px-4 py-3 text-sm bg-gray-50/80 border border-gray-200 rounded-xl focus:bg-white focus:border-[#1D4ED8] focus:ring-2 focus:ring-[#1D4ED8]/10 transition-all outline-none"
+                        />
+                      </div>
+
+                      {/* Institute Name */}
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-bold text-gray-800 flex items-center gap-1">
+                          School / College / University Name <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                          type="text"
+                          name="instituteName"
+                          required
+                          value={formData.instituteName}
+                          onChange={handleChange}
+                          placeholder="e.g. Punjab University, FAST, Beaconhouse"
+                          className="w-full px-4 py-3 text-sm bg-gray-50/80 border border-gray-200 rounded-xl focus:bg-white focus:border-[#1D4ED8] focus:ring-2 focus:ring-[#1D4ED8]/10 transition-all outline-none"
+                        />
+                      </div>
+
+                      {/* Passing Year / Grade */}
+                      <div className="grid grid-cols-2 gap-3">
+                        <div className="space-y-1.5">
+                          <label className="text-xs font-bold text-gray-800">Year</label>
+                          <input
+                            type="text"
+                            name="passingYear"
+                            value={formData.passingYear}
+                            onChange={handleChange}
+                            placeholder="e.g. 2024"
+                            className="w-full px-4 py-3 text-sm bg-gray-50/80 border border-gray-200 rounded-xl focus:bg-white focus:border-[#1D4ED8] focus:ring-2 focus:ring-[#1D4ED8]/10 transition-all outline-none"
+                          />
+                        </div>
+                        <div className="space-y-1.5">
+                          <label className="text-xs font-bold text-gray-800">Grade / GPA</label>
+                          <input
+                            type="text"
+                            name="gradeOrGpa"
+                            value={formData.gradeOrGpa}
+                            onChange={handleChange}
+                            placeholder="e.g. 3.4 / A+"
+                            className="w-full px-4 py-3 text-sm bg-gray-50/80 border border-gray-200 rounded-xl focus:bg-white focus:border-[#1D4ED8] focus:ring-2 focus:ring-[#1D4ED8]/10 transition-all outline-none"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  {/* CATEGORY 3: PROGRAM & ENROLLMENT PREFERENCES */}
+                  <div className="space-y-6">
+                    <div className="flex items-center gap-3 pb-3 border-b border-gray-200">
+                      <div className="w-8 h-8 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center text-[#1D4ED8]">
+                        <Laptop className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <h3 className="text-base sm:text-lg font-bold text-gray-950">3. Program & Track Selection</h3>
+                        <p className="text-xs text-gray-500">Choose your targeted career bootcamp and delivery mode.</p>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                      {/* Desired Program (Full Span) */}
+                      <div className="sm:col-span-2 space-y-1.5">
+                        <label className="text-xs font-bold text-gray-800 flex items-center gap-1">
+                          Desired Program Track <span className="text-red-500">*</span>
+                        </label>
+                        <select
+                          name="program"
+                          required
+                          value={formData.program}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3.5 text-sm bg-blue-50/40 border border-blue-200 text-gray-900 rounded-xl font-semibold focus:bg-white focus:border-[#1D4ED8] focus:ring-2 focus:ring-[#1D4ED8]/10 transition-all outline-none cursor-pointer"
+                        >
+                          {programsList.map((prog) => (
+                            <option key={prog} value={prog}>
+                              {prog}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+
+                      {/* Learning Mode */}
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-bold text-gray-800">
+                          Preferred Learning Mode
+                        </label>
+                        <select
+                          name="learningMode"
+                          value={formData.learningMode}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 text-sm bg-gray-50/80 border border-gray-200 rounded-xl focus:bg-white focus:border-[#1D4ED8] focus:ring-2 focus:ring-[#1D4ED8]/10 transition-all outline-none cursor-pointer"
+                        >
+                          <option value="On-Campus (Lahore)">Physical / On-Campus (Lahore Hub)</option>
+                          <option value="Online Live Interactive">Online Live Interactive (Zoom & LMS)</option>
+                          <option value="Hybrid (Campus Labs + Online)">Hybrid (Campus Labs + Remote)</option>
+                        </select>
+                      </div>
+
+                      {/* Batch Timing */}
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-bold text-gray-800">
+                          Preferred Batch Timing
+                        </label>
+                        <select
+                          name="preferredShift"
+                          value={formData.preferredShift}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 text-sm bg-gray-50/80 border border-gray-200 rounded-xl focus:bg-white focus:border-[#1D4ED8] focus:ring-2 focus:ring-[#1D4ED8]/10 transition-all outline-none cursor-pointer"
+                        >
+                          <option value="Morning (10:00 AM - 01:00 PM)">Morning Batch (10:00 AM - 01:00 PM)</option>
+                          <option value="Afternoon (02:00 PM - 05:00 PM)">Afternoon Batch (02:00 PM - 05:00 PM)</option>
+                          <option value="Evening (06:00 PM - 09:00 PM)">Evening Batch (06:00 PM - 09:00 PM)</option>
+                          <option value="Weekend Intensive (Sat & Sun)">Weekend Intensive (Sat & Sun)</option>
+                        </select>
+                      </div>
+
+                      {/* Scholarship Checkbox / Choice */}
+                      <div className="sm:col-span-2 space-y-1.5">
+                        <label className="text-xs font-bold text-gray-800 flex items-center gap-1">
+                          Are you applying for Merit / Need-Based Financial Aid (Up to 40%)?
+                        </label>
+                        <select
+                          name="scholarshipRequested"
+                          value={formData.scholarshipRequested}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 text-sm bg-gray-50/80 border border-gray-200 rounded-xl focus:bg-white focus:border-[#1D4ED8] focus:ring-2 focus:ring-[#1D4ED8]/10 transition-all outline-none cursor-pointer"
+                        >
+                          <option value="No">No, applying under standard tuition</option>
+                          <option value="Yes - Merit Based">Yes, applying for Merit-Based Scholarship</option>
+                          <option value="Yes - Need Based">Yes, applying for Need-Based Financial Aid</option>
+                          <option value="Yes - Female in Tech Grant">Yes, applying for Women-In-Tech Grant</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  {/* CATEGORY 4: TECHNICAL BACKGROUND & STATEMENT */}
+                  <div className="space-y-6">
+                    <div className="flex items-center gap-3 pb-3 border-b border-gray-200">
+                      <div className="w-8 h-8 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center text-[#1D4ED8]">
+                        <Sparkles className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <h3 className="text-base sm:text-lg font-bold text-gray-950">4. Experience & Motivation</h3>
+                        <p className="text-xs text-gray-500">Help us assess your starting point and learning goals.</p>
+                      </div>
+                    </div>
+
+                    <div className="space-y-5">
+                      {/* Prior Experience */}
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-bold text-gray-800">
+                          Prior Programming / Tech Experience
+                        </label>
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                          {[
+                            { val: "Total Beginner", label: "Zero Prior Coding", desc: "Starting completely fresh" },
+                            { val: "Beginner / Self-Taught", label: "Basic Knowledge", desc: "HTML/CSS or basic tutorials" },
+                            { val: "Intermediate / Pro", label: "Experienced", desc: "Building small projects / CS background" },
+                          ].map((item) => (
+                            <label
+                              key={item.val}
+                              className={`p-3.5 rounded-xl border text-left cursor-pointer transition-all flex flex-col justify-between ${
+                                formData.codingExperience === item.val
+                                  ? "border-[#1D4ED8] bg-blue-50/50 ring-1 ring-[#1D4ED8]"
+                                  : "border-gray-200 hover:border-gray-300 bg-white"
+                              }`}
+                            >
+                              <div className="flex items-center justify-between">
+                                <span className="text-xs font-bold text-gray-900">{item.label}</span>
+                                <input
+                                  type="radio"
+                                  name="codingExperience"
+                                  value={item.val}
+                                  checked={formData.codingExperience === item.val}
+                                  onChange={handleChange}
+                                  className="text-[#1D4ED8]"
+                                />
+                              </div>
+                              <span className="text-[11px] text-gray-500 mt-1">{item.desc}</span>
+                            </label>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Statement of Purpose */}
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-bold text-gray-800">
+                          Why do you want to join BlankSlate Institute? (Short Statement)
+                        </label>
+                        <textarea
+                          rows={3}
+                          name="statementOfPurpose"
+                          value={formData.statementOfPurpose}
+                          onChange={handleChange}
+                          placeholder="Tell us about your career ambition, goals, or what inspired you to apply..."
+                          className="w-full px-4 py-3 text-sm bg-gray-50/80 border border-gray-200 rounded-xl focus:bg-white focus:border-[#1D4ED8] focus:ring-2 focus:ring-[#1D4ED8]/10 transition-all outline-none resize-none"
+                        />
+                      </div>
+
+                      {/* File / CV Upload Area */}
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-bold text-gray-800">
+                          Attach Transcript / CV (Optional)
+                        </label>
+                        <div className="border-2 border-dashed border-gray-200 hover:border-[#1D4ED8] rounded-2xl p-6 text-center bg-gray-50/50 hover:bg-blue-50/30 transition-all relative">
+                          <input
+                            type="file"
+                            onChange={handleFileUpload}
+                            className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                            accept=".pdf,.doc,.docx,.png,.jpg"
+                          />
+                          <Upload className="w-6 h-6 text-gray-400 mx-auto mb-2" />
+                          <p className="text-xs font-bold text-gray-800">
+                            {formData.fileName ? formData.fileName : "Click or drag & drop file here"}
+                          </p>
+                          <p className="text-[11px] text-gray-400 mt-1">PDF, DOCX, or PNG up to 10MB</p>
+                        </div>
+                      </div>
+
+                      {/* How did you hear about us */}
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-bold text-gray-800">
+                          How did you hear about us?
+                        </label>
+                        <select
+                          name="referralSource"
+                          value={formData.referralSource}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 text-sm bg-gray-50/80 border border-gray-200 rounded-xl focus:bg-white focus:border-[#1D4ED8] focus:ring-2 focus:ring-[#1D4ED8]/10 transition-all outline-none cursor-pointer"
+                        >
+                          <option value="Social Media (Instagram / Facebook / LinkedIn)">Social Media (Instagram / Facebook / LinkedIn)</option>
+                          <option value="Google Search">Google Search</option>
+                          <option value="Friend or Alumni Recommendation">Friend or Alumni Recommendation</option>
+                          <option value="University / Campus Event">University / Campus Event</option>
+                          <option value="Other">Other</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  {/* CATEGORY 5: TERMS & SUBMIT */}
+                  <div className="space-y-6 pt-4 border-t border-gray-200">
+                    <label className="flex items-start gap-3 cursor-pointer select-none">
+                      <input
+                        type="checkbox"
+                        name="agreedToTerms"
+                        checked={formData.agreedToTerms}
+                        onChange={handleChange}
+                        className="mt-1 w-4 h-4 text-[#1D4ED8] rounded border-gray-300 focus:ring-[#1D4ED8]"
+                      />
+                      <span className="text-xs text-gray-600 leading-relaxed">
+                        I certify that all information provided in this admission application is true and correct to the best of my knowledge. I agree to abide by the academic integrity and institute enrollment policies of BlankSlate Institute.
+                      </span>
+                    </label>
+
+                    {/* Submit Button */}
+                    <div className="pt-2">
+                      <motion.button
+                        whileHover={{ scale: 1.01 }}
+                        whileTap={{ scale: 0.99 }}
+                        disabled={isSubmitting}
+                        type="submit"
+                        className="w-full py-4 px-8 bg-[#1D4ED8] hover:bg-blue-700 text-white text-sm sm:text-base font-bold rounded-2xl shadow-lg shadow-blue-600/30 flex items-center justify-center gap-3 transition-all disabled:opacity-70 cursor-pointer"
+                      >
+                        {isSubmitting ? (
+                          <>
+                            <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                            <span>Processing Application...</span>
+                          </>
+                        ) : (
+                          <>
+                            <span>Submit Official Admission Application</span>
+                            <ArrowRight className="w-4 h-4" />
+                          </>
+                        )}
+                      </motion.button>
+                    </div>
+
+                    <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-gray-500 pt-2">
+                      <span className="flex items-center gap-1.5">
+                        <ShieldCheck className="w-4 h-4 text-emerald-600" /> 100% Free Application
+                      </span>
+                      <span className="flex items-center gap-1.5">
+                        <Clock className="w-4 h-4 text-[#1D4ED8]" /> Decision within 48 Hours
+                      </span>
+                      <span className="flex items-center gap-1.5">
+                        <Award className="w-4 h-4 text-amber-500" /> Merit Aid Available
+                      </span>
+                    </div>
+                  </div>
+
+                </form>
+              </motion.div>
+            ) : (
+              /* SUCCESS CONFIRMATION SCREEN */
+              <motion.div
+                key="success-screen"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6 }}
+                className="bg-white rounded-3xl border border-gray-200 shadow-2xl p-8 sm:p-14 text-center space-y-6"
+              >
+                <div className="w-20 h-20 rounded-full bg-emerald-50 border-2 border-emerald-200 text-emerald-600 flex items-center justify-center mx-auto shadow-sm">
+                  <CheckCircle2 className="w-10 h-10" />
+                </div>
+
+                <div className="space-y-2 max-w-xl mx-auto">
+                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+                    Application Successfully Submitted
+                  </span>
+                  <h2 className="text-3xl sm:text-4xl font-black text-gray-950 font-serif">
+                    Welcome to BlankSlate Institute!
+                  </h2>
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed pt-2">
+                    Thank you, <strong className="text-gray-950">{formData.fullName}</strong>. Your admission application for{" "}
+                    <strong className="text-[#1D4ED8]">{formData.program}</strong> has been registered.
+                  </p>
+                </div>
+
+                {/* Application Details Summary Card */}
+                <div className="max-w-md mx-auto p-5 rounded-2xl bg-gray-50 border border-gray-200 text-left space-y-2.5 text-xs">
+                  <div className="flex justify-between py-1 border-b border-gray-200">
+                    <span className="text-gray-500">Application Tracking ID:</span>
+                    <span className="font-mono font-bold text-[#1D4ED8]">{applicationId}</span>
+                  </div>
+                  <div className="flex justify-between py-1 border-b border-gray-200">
+                    <span className="text-gray-500">Applicant Email:</span>
+                    <span className="font-semibold text-gray-900">{formData.email}</span>
+                  </div>
+                  <div className="flex justify-between py-1 border-b border-gray-200">
+                    <span className="text-gray-500">Mode & Timing:</span>
+                    <span className="font-semibold text-gray-900">{formData.learningMode}</span>
+                  </div>
+                  <div className="flex justify-between py-1">
+                    <span className="text-gray-500">Status:</span>
+                    <span className="font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
+                      Under Academic Review
+                    </span>
+                  </div>
+                </div>
+
+                <div className="p-4 rounded-xl bg-blue-50 border border-blue-100 text-xs text-blue-900 max-w-md mx-auto leading-relaxed">
+                  Our admissions counseling office will contact you via WhatsApp and Email at <strong>{formData.phone}</strong> within 24–48 hours for technical alignment & enrollment verification.
+                </div>
+
+                <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
+                  <Link
+                    href="/"
+                    className="px-8 py-3.5 bg-gray-950 hover:bg-[#1D4ED8] text-white text-xs font-bold rounded-full transition-all shadow-md"
+                  >
+                    Return to Home
+                  </Link>
+                  <button
+                    onClick={() => {
+                      setIsSubmitted(false);
+                      setFormData((prev) => ({ ...prev, fullName: "", email: "", phone: "", agreedToTerms: false }));
+                    }}
+                    className="px-6 py-3.5 bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-bold rounded-full transition-all"
+                  >
+                    Submit Another Application
+                  </button>
                 </div>
               </motion.div>
-            </div>
+            )}
+          </AnimatePresence>
 
-            {/* RIGHT COLUMN SIDEBAR */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-              className="lg:col-span-4 space-y-8"
-            >
-              {/* CARD 1: Priority Deadlines */}
-              <div className="p-6 sm:p-8 rounded-3xl bg-white border border-gray-200 space-y-6 shadow-md">
-                <h3 className="text-xl font-black text-gray-950">Cohort Deadlines</h3>
-
-                <div className="space-y-4 text-xs">
-                  <div className="p-4 rounded-xl bg-gray-50 border border-gray-200 space-y-1">
-                    <span className="text-[10px] font-mono text-[#1D4ED8] font-bold uppercase">
-                      Early Decision Deadline
-                    </span>
-                    <p className="text-base font-black text-gray-950">October 15, 2026</p>
-                    <p className="text-[10px] text-gray-500 font-mono">Priority scholarship evaluation</p>
-                  </div>
-
-                  <div className="p-4 rounded-xl bg-gray-50 border border-gray-200 space-y-1">
-                    <span className="text-[10px] font-mono text-gray-500 font-bold uppercase">
-                      Regular Decision Deadline
-                    </span>
-                    <p className="text-base font-black text-gray-950">November 01, 2026</p>
-                    <p className="text-[10px] text-gray-500 font-mono">Final seat allocation</p>
-                  </div>
-                </div>
-
-                <motion.button
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.98 }}
-                  onClick={() => setApplyModalOpen(true)}
-                  className="w-full py-3.5 bg-[#1D4ED8] hover:bg-[#B91C1C] text-white text-xs font-bold uppercase tracking-wider rounded-xl shadow-[0_4px_15px_rgba(229,9,20,0.35)] transition-all flex items-center justify-center gap-2"
-                >
-                  <span>Apply Now</span>
-                  <ArrowRight className="w-4 h-4" />
-                </motion.button>
-              </div>
-
-              {/* CARD 2: Merit Scholarships */}
-              <div className="p-6 sm:p-8 rounded-3xl bg-white border border-gray-200 space-y-4 shadow-md">
-                <div className="w-10 h-10 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center text-[#1D4ED8]">
-                  <Award className="w-5 h-5" />
-                </div>
-                <h3 className="text-lg font-black text-gray-950">Merit Aid Scholarships</h3>
-                <p className="text-xs text-gray-600 leading-relaxed">
-                  We award merit-based tuition reductions of up to 40% to promising developers, researchers, and female tech leaders.
-                </p>
-                <div className="pt-2 text-xs font-mono text-[#1D4ED8] font-bold">
-                  ✓ Automatically evaluated upon applying
-                </div>
-              </div>
-
-              {/* CARD 3: Admissions Office Contact */}
-              <div className="p-6 sm:p-8 rounded-3xl bg-white border border-gray-200 space-y-4 shadow-md text-xs">
-                <h3 className="text-lg font-black text-gray-950">Admissions Desk</h3>
-                <div className="space-y-3 text-gray-700">
-                  <div className="flex items-start gap-2.5">
-                    <MapPin className="w-4 h-4 text-[#1D4ED8] flex-shrink-0 mt-0.5" />
-                    <span>123 Education Lane, Lahore, Pakistan</span>
-                  </div>
-                  <div className="flex items-center gap-2.5">
-                    <Phone className="w-4 h-4 text-[#1D4ED8] flex-shrink-0" />
-                    <span>+92 42 111 222 333</span>
-                  </div>
-                  <div className="flex items-center gap-2.5">
-                    <Mail className="w-4 h-4 text-[#1D4ED8] flex-shrink-0" />
-                    <span>admissions@blankslate.edu.pk</span>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
         </div>
-
-        {/* 4. HELP BANNER */}
-        <section className="py-12 bg-white text-gray-900">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.96 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-              className="p-8 sm:p-12 rounded-3xl bg-gray-950 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden"
-            >
-              <div className="space-y-1 relative z-10">
-                <span className="text-[11px] font-mono text-blue-300 uppercase">Still have questions?</span>
-                <h3 className="text-2xl sm:text-3xl font-black text-white">We&apos;re here to help.</h3>
-                <p className="text-xs text-gray-300">Talk to our admissions team and start your journey with BlankSlate Institute.</p>
-              </div>
-
-              <div className="flex flex-wrap items-center gap-3 relative z-10">
-                <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
-                  <Link
-                    href="/contact"
-                    className="px-6 py-3 bg-white/10 hover:bg-white/20 text-white text-xs font-bold rounded-full border border-white/20 transition-all flex items-center gap-2"
-                  >
-                    <span>Contact Admissions</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </motion.div>
-
-                <motion.a
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.98 }}
-                  href="https://wa.me/923121234567"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-6 py-3 bg-[#1D4ED8] hover:bg-[#B91C1C] text-white text-xs font-bold rounded-full shadow-lg transition-all flex items-center gap-2"
-                >
-                  <Phone className="w-3.5 h-3.5" />
-                  <span>+92 312 1234567</span>
-                </motion.a>
-              </div>
-            </motion.div>
-          </div>
-        </section>
       </main>
 
       <EditorialFooter />
-      <ApplicationModal isOpen={applyModalOpen} onClose={() => setApplyModalOpen(false)} />
     </div>
   );
 }
