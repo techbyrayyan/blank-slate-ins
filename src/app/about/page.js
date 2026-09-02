@@ -135,7 +135,7 @@ export default function AboutPage() {
 
       <main className="flex-1">
         {/* 1. HERO SECTION ("Welcome to where possibilities begin" - Full Viewport Screen) */}
-        <section className="relative min-h-[calc(100vh-0px)] lg:min-h-screen flex flex-col justify-between pt-28 sm:pt-32 lg:pt-36 pb-8 sm:pb-12 bg-[#F7F9FA] text-[#1C1D1F] overflow-hidden border-b border-gray-200">
+        <section className="relative min-h-screen flex flex-col justify-between pt-[210px] sm:pt-[230px] lg:pt-[250px] pb-8 sm:pb-12 bg-[#F7F9FA] text-[#1C1D1F] overflow-hidden border-b border-gray-200">
           <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-10 w-full flex-1 flex flex-col justify-center">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-4 lg:gap-6 items-center w-full flex-1">
               
