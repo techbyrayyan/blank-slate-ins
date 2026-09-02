@@ -70,7 +70,7 @@ export default function CampusExperience() {
                     <p className="text-xs font-bold leading-tight">Watch Recap</p>
                     <p className="text-[10px] text-gray-300 font-mono">8 Events</p>
                   </div>
-                  <div className="w-8 h-8 rounded-full bg-[#1D4ED8] flex items-center justify-center text-white shadow-lg">
+                  <div className="w-8 h-8 rounded-full bg-gradient-to-r from-[#0f172a] via-[#1e3a8a] to-[#0f172a] flex items-center justify-center text-white shadow-lg">
                     <Play className="w-3.5 h-3.5 fill-current ml-0.5" />
                   </div>
                 </div>

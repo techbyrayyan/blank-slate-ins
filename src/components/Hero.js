@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, useCallback } from "react";
 import Link from "next/link";
@@ -75,7 +75,7 @@ export default function Hero({ onOpenApply }) {
 
   return (
     <section className="relative bg-white select-none" id="hero" style={{ paddingTop: "230px", paddingBottom: "35px" }}>
-      <div className="max-w-[1340px] mx-auto px-4 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* ── 3-panel slider ── */}
         <div className="flex items-stretch gap-3 mt-2 mb-3" style={{ height: "400px" }}>
@@ -157,8 +157,7 @@ export default function Hero({ onOpenApply }) {
                   <div className="pt-1">
                     <Link
                       href={slides[current].ctaLink}
-                      className="inline-flex items-center px-6 py-3 text-sm sm:text-base font-bold text-white rounded-lg transition-opacity hover:opacity-90 active:scale-95"
-                      style={{ backgroundColor: slides[current].btnBg }}
+                      className="inline-flex items-center px-6 py-3 text-sm sm:text-base font-bold text-white rounded-lg bg-gradient-to-r from-[#0f172a] via-[#1e3a8a] to-[#0f172a] hover:opacity-90 active:scale-95 transition-all"
                     >
                       {slides[current].cta}
                     </Link>
@@ -219,7 +218,7 @@ export default function Hero({ onOpenApply }) {
               onClick={() => goToDot(i)}
               className={`rounded-full transition-all duration-300 ${
                 i === current
-                  ? "w-8 h-3 bg-[#1D4ED8]"
+                  ? "w-8 h-3 bg-gradient-to-r from-[#0f172a] via-[#1e3a8a] to-[#0f172a]"
                   : "w-3 h-3 bg-gray-300 hover:bg-gray-400"
               }`}
               aria-label={`Go to slide ${i + 1}`}

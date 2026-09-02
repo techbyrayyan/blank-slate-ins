@@ -410,7 +410,7 @@ export default function AdmissionsPage() {
                                 isCompleted
                                   ? "bg-emerald-500 text-white"
                                   : isCurrent
-                                  ? "bg-[#1D4ED8] text-white"
+                                  ? "bg-gradient-to-r from-[#0f172a] via-[#1e3a8a] to-[#0f172a] text-white"
                                   : "bg-gray-200 text-gray-700"
                               }`}
                             >
@@ -423,7 +423,7 @@ export default function AdmissionsPage() {
                           <div className="w-full mt-2 h-1 bg-gray-200 rounded-full overflow-hidden">
                             <div
                               className={`h-full transition-all duration-300 ${
-                                isCompleted || isCurrent ? "bg-[#1D4ED8]" : "bg-transparent"
+                                isCompleted || isCurrent ? "bg-gradient-to-r from-[#0f172a] via-[#1e3a8a] to-[#0f172a]" : "bg-transparent"
                               }`}
                             />
                           </div>
@@ -1039,7 +1039,7 @@ export default function AdmissionsPage() {
                       <button
                         type="button"
                         onClick={handleNextStep}
-                        className="w-full sm:w-auto px-8 py-3.5 bg-[#1D4ED8] hover:bg-blue-700 text-white text-xs sm:text-sm font-bold rounded-xl shadow-lg shadow-blue-600/30 flex items-center justify-center gap-2 transition-all cursor-pointer font-sans ml-auto"
+                        className="w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-[#0f172a] via-[#1e3a8a] to-[#0f172a] hover:opacity-90 text-white text-xs sm:text-sm font-bold rounded-xl shadow-lg flex items-center justify-center gap-2 transition-all cursor-pointer font-sans ml-auto"
                       >
                         <span>Next: {stepsConfig[currentStep].label}</span>
                         <ArrowRight className="w-4 h-4" />
@@ -1179,7 +1179,7 @@ export default function AdmissionsPage() {
 
                   <Link
                     href="/"
-                    className="px-8 py-3.5 bg-[#1D4ED8] hover:bg-blue-700 text-white text-xs font-bold rounded-full transition-all shadow-md"
+                    className="px-8 py-3.5 bg-gradient-to-r from-[#0f172a] via-[#1e3a8a] to-[#0f172a] hover:opacity-90 text-white text-xs font-bold rounded-full transition-all shadow-md"
                   >
                     Return to Home
                   </Link>

@@ -70,7 +70,7 @@ export default function CourseCard({ course, onOpenApply }) {
         <div className="mt-4">
           <div className="flex items-center gap-2 flex-wrap mb-3.5">
             {course.badgeType === "premium" ? (
-              <span className="bg-[#1D4ED8] text-white text-xs sm:text-[13px] font-bold px-2.5 py-1 rounded flex items-center gap-1">
+              <span className="bg-gradient-to-r from-[#0f172a] via-[#1e3a8a] to-[#0f172a] text-white text-xs sm:text-[13px] font-bold px-2.5 py-1 rounded flex items-center gap-1">
                 <Check className="w-3.5 h-3.5" />
                 Premium
               </span>
@@ -119,7 +119,7 @@ export default function CourseCard({ course, onOpenApply }) {
               {/* Badge + Updated */}
               <div className="flex items-center gap-2 mb-3">
                 {course.badgeType === "premium" ? (
-                  <span className="bg-[#1D4ED8] text-white text-xs font-bold px-2.5 py-0.5 rounded flex items-center gap-1">
+                  <span className="bg-gradient-to-r from-[#0f172a] via-[#1e3a8a] to-[#0f172a] text-white text-xs font-bold px-2.5 py-0.5 rounded flex items-center gap-1">
                     <Check className="w-3.5 h-3.5" /> Premium
                   </span>
                 ) : (
@@ -155,7 +155,7 @@ export default function CourseCard({ course, onOpenApply }) {
               {/* Add to Cart Button */}
               <button
                 onClick={() => onOpenApply && onOpenApply(course.title)}
-                className="w-full text-white font-bold py-3.5 rounded-xl flex items-center justify-center gap-2 text-base transition-all duration-200 shadow-md hover:shadow-lg bg-[#2563EB] hover:bg-[#1D4ED8]"
+                className="w-full text-white font-bold py-3.5 rounded-xl flex items-center justify-center gap-2 text-base transition-all duration-200 shadow-md hover:shadow-lg bg-gradient-to-r from-[#0f172a] via-[#1e3a8a] to-[#0f172a] hover:opacity-90"
               >
                 <ShoppingCart className="w-5 h-5" />
                 Add to cart

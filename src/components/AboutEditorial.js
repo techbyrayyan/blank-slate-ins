@@ -133,7 +133,7 @@ export default function AboutEditorial() {
                     onClick={() => setCurrentSlide(i)}
                     className={`rounded-full transition-all duration-300 ${
                       i === currentSlide
-                        ? "w-7 h-2 bg-[#2563EB]"
+                        ? "w-7 h-2 bg-gradient-to-r from-[#0f172a] via-[#1e3a8a] to-[#0f172a]"
                         : "w-2 h-2 bg-gray-300 hover:bg-blue-400"
                     }`}
                     aria-label={`Go to slide ${i + 1}`}

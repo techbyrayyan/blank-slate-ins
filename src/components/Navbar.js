@@ -161,8 +161,8 @@ export default function Navbar({ onOpenApply }) {
                 </Link>
                 {/* Sign Up — slide RIGHT → LEFT */}
                 <button onClick={onOpenApply}
-                  className="relative hidden sm:inline-flex items-center justify-center overflow-hidden px-5 py-2.5 text-sm font-bold border border-[#1D4ED8] rounded whitespace-nowrap group">
-                  <span className="absolute inset-0 bg-[#1D4ED8]" />
+                  className="relative hidden sm:inline-flex items-center justify-center overflow-hidden px-5 py-2.5 text-sm font-bold border border-[#1e3a8a] rounded whitespace-nowrap group">
+                  <span className="absolute inset-0 bg-gradient-to-r from-[#0f172a] via-[#1e3a8a] to-[#0f172a]" />
                   <span className="absolute inset-0 bg-white translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
                   <span className="relative z-10 text-white group-hover:text-[#1D4ED8] transition-colors duration-300">Sign up</span>
                 </button>
@@ -217,7 +217,7 @@ export default function Navbar({ onOpenApply }) {
               <div className="hidden xl:flex items-center flex-shrink-0">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#1D4ED8] hover:bg-blue-700 text-white text-sm font-bold rounded-xl shadow-md shadow-blue-600/25 transition-all group cursor-pointer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#0f172a] via-[#1e3a8a] to-[#0f172a] hover:opacity-90 text-white text-sm font-bold rounded-xl shadow-md transition-all group cursor-pointer"
                 >
                   <span>Let&apos;s Talk</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -335,7 +335,7 @@ export default function Navbar({ onOpenApply }) {
             </button>
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               <Link href="/contact" onClick={() => setMobileMenuOpen(false)}
-                className="w-full sm:w-auto px-6 py-3 bg-[#1D4ED8] text-white text-sm font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-blue-700 transition-all shadow-md">
+                className="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-[#0f172a] via-[#1e3a8a] to-[#0f172a] text-white text-sm font-bold rounded-xl flex items-center justify-center gap-2 hover:opacity-90 transition-all shadow-md">
                 <span>Let&apos;s Talk</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
