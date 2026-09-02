@@ -13,11 +13,7 @@ const navLinks = [
   { name: "About", href: "/about" },
   { name: "Programs", href: "/programs" },
   { name: "Admissions", href: "/admissions" },
-  { name: "Campus", href: "/campus-life" },
   { name: "Faculty", href: "/faculty" },
-  { name: "Events", href: "/events" },
-  { name: "Blog", href: "/blog" },
-  { name: "Contact", href: "/contact" },
 ];
 
 const languages = [
