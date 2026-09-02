@@ -114,23 +114,14 @@ export default function AdmissionsPage() {
       <main className="flex-1 pt-[180px] sm:pt-[200px] lg:pt-[220px] pb-24 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
         <div className="w-full max-w-4xl mx-auto">
           
-          {/* Top Breadcrumb & Title Header */}
+          {/* Top Title Header */}
           <motion.div
             initial={{ opacity: 0, y: -15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="text-center mb-10 space-y-3"
           >
-            {/* Breadcrumb */}
-            <div className="inline-flex items-center gap-2 text-xs font-sans font-semibold text-gray-500 bg-white border border-gray-200 px-4 py-1.5 rounded-full shadow-sm">
-              <Link href="/" className="hover:text-gray-900 transition-colors">
-                Home
-              </Link>
-              <span className="text-gray-300">/</span>
-              <span className="text-[#1D4ED8] font-bold">Online Admission Application</span>
-            </div>
-
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-950 tracking-tight font-serif">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-gray-950 tracking-tight font-sans">
               Admissions Application <span className="text-[#1D4ED8]">2026</span>
             </h1>
             <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto leading-relaxed">
@@ -654,7 +645,7 @@ export default function AdmissionsPage() {
                   <span className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
                     Application Successfully Submitted
                   </span>
-                  <h2 className="text-3xl sm:text-4xl font-black text-gray-950 font-serif">
+                  <h2 className="text-3xl sm:text-4xl font-black text-gray-950 font-sans tracking-tight">
                     Welcome to BlankSlate Institute!
                   </h2>
                   <p className="text-sm sm:text-base text-gray-600 leading-relaxed pt-2">
