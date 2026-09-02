@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -31,7 +31,7 @@ export default function FacultyPage() {
       <CustomCursor />
       <Navbar onOpenApply={() => setApplyModalOpen(true)} />
 
-      <main className="flex-1 pt-32 pb-24">
+      <main className="flex-1 pt-[200px] sm:pt-[220px] lg:pt-[240px] pb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <motion.div

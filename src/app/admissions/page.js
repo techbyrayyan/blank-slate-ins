@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import Link from "next/link";
@@ -97,7 +97,7 @@ export default function AdmissionsPage() {
 
       <main className="flex-1">
         {/* 1. HERO SECTION */}
-        <section className="relative pt-32 pb-16 bg-white overflow-hidden">
+        <section className="relative pt-[200px] sm:pt-[220px] lg:pt-[240px] pb-16 bg-white overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               {/* Left Column: Title & Feature Badges */}
