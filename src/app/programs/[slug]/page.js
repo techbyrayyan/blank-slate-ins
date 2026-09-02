@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { use, useState } from "react";
 import Link from "next/link";
@@ -132,16 +132,16 @@ export default function ProgramDetailPage({ params }) {
                 className="lg:col-span-7 space-y-6"
               >
                 {/* Breadcrumb */}
-                <div className="flex items-center gap-2 text-xs font-mono font-bold text-gray-500">
-                  <Link href="/" className="hover:text-black">
+                <div className="flex items-center gap-2 text-xs font-sans font-semibold text-gray-500">
+                  <Link href="/" className="hover:text-gray-900 transition-colors">
                     Home
                   </Link>
-                  <span>&gt;</span>
-                  <Link href="/programs" className="hover:text-black">
+                  <span className="text-gray-400 font-normal">/</span>
+                  <Link href="/programs" className="hover:text-gray-900 transition-colors">
                     Programs
                   </Link>
-                  <span>&gt;</span>
-                  <span className="text-[#1D4ED8]">{currentProgram.title}</span>
+                  <span className="text-gray-400 font-normal">/</span>
+                  <span className="text-[#1D4ED8] font-bold">{currentProgram.title}</span>
                 </div>
 
                 {/* Main Heading */}

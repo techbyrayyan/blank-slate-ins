@@ -108,12 +108,12 @@ export default function AdmissionsPage() {
                 className="lg:col-span-7 space-y-6"
               >
                 {/* Breadcrumb */}
-                <div className="flex items-center gap-2 text-xs font-mono font-bold text-gray-500">
-                  <Link href="/" className="hover:text-black flex items-center gap-1">
+                <div className="flex items-center gap-2 text-xs font-sans font-semibold text-gray-500">
+                  <Link href="/" className="hover:text-gray-900 transition-colors flex items-center gap-1">
                     <span>Home</span>
                   </Link>
-                  <span>&gt;</span>
-                  <span className="text-[#1D4ED8]">Admissions 2026</span>
+                  <span className="text-gray-400 font-normal">/</span>
+                  <span className="text-[#1D4ED8] font-bold">Admissions 2026</span>
                 </div>
 
                 {/* Main Heading */}
