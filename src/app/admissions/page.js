@@ -338,7 +338,7 @@ export default function AdmissionsPage() {
 
               {/* WhatsApp Support Desk */}
               <a
-                href="https://wa.me/9235746486463"
+                href="https://api.whatsapp.com/send?phone=+92%2035746486463&text=Hello%20BlankSlate%20Institute,%20I%20need%20assistance%20regarding%20Admissions%202026."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-3.5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-sans font-bold rounded-xl flex items-center gap-1.5 transition-all shadow-sm"
