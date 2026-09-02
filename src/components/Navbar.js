@@ -86,10 +86,7 @@ export default function Navbar({ onOpenApply }) {
   return (
     <>
       <div className="fixed top-0 left-0 right-0 z-40 bg-white">
-        {/* ── HEADER (Top Info Bar + Main Bar) ── */}
         <header className="bg-white">
-
-          {/* ── ROW 1: Top Info Bar — hidden on scroll ── */}
           <div className={`bg-gradient-to-r from-[#0f172a] via-[#1e3a8a] to-[#0f172a] text-gray-200 border-b border-blue-900/50 overflow-hidden transition-all duration-400 ease-in-out ${
             isScrolled ? "max-h-0 opacity-0 py-0" : "max-h-16 opacity-100"
           }`}>
@@ -125,7 +122,6 @@ export default function Navbar({ onOpenApply }) {
             </div>
           </div>
 
-          {/* ── ROW 2: Main Bar — hidden on scroll ── */}
           <div className={`bg-white border-b border-gray-200 overflow-hidden transition-all duration-400 ease-in-out ${
             isScrolled ? "max-h-0 opacity-0 py-0" : "max-h-28 opacity-100"
           }`}>
@@ -146,85 +142,67 @@ export default function Navbar({ onOpenApply }) {
               </div>
               <div className="flex items-center gap-3 ml-auto">
                 <Link href="/student-portal"
-                  className="hidden lg:inline-flex text-sm font-semibold text-gray-700 hover:text-[#1D4ED8] transition-colors px-2 whitespace-nowrap">
+                  className="hidden lg:inline-flex text-sm font-semibold text-gray-700 hover:text-[#1e3a8a] transition-colors px-2 whitespace-nowrap">
                   Student Portal
                 </Link>
                 <button onClick={() => setSearchModalOpen(true)}
-                  className="md:hidden p-2.5 text-gray-700 hover:text-[#1D4ED8] transition-colors" aria-label="Search">
+                  className="md:hidden p-2.5 text-gray-700 hover:text-[#1e3a8a] transition-colors" aria-label="Search">
                   <Search className="w-5 h-5" />
                 </button>
-                {/* Log In — slide LEFT → RIGHT */}
                 <Link href="/student-portal"
-                  className="relative hidden sm:inline-flex items-center overflow-hidden px-5 py-2.5 text-sm font-bold border border-[#1D4ED8] rounded whitespace-nowrap group">
-                  <span className="absolute inset-0 bg-[#1D4ED8] -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
-                  <span className="relative z-10 text-[#1D4ED8] group-hover:text-white transition-colors duration-300">Log in</span>
+                  className="relative hidden sm:inline-flex items-center overflow-hidden px-5 py-2.5 text-sm font-bold border border-[#1e3a8a] rounded whitespace-nowrap group">
+                  <span className="absolute inset-0 bg-[#1e3a8a] -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
+                  <span className="relative z-10 text-[#1e3a8a] group-hover:text-white transition-colors duration-300">Log in</span>
                 </Link>
-                {/* Sign Up — slide RIGHT → LEFT */}
                 <button onClick={onOpenApply}
                   className="relative hidden sm:inline-flex items-center justify-center overflow-hidden px-5 py-2.5 text-sm font-bold border border-[#1e3a8a] rounded whitespace-nowrap group">
-                  <span className="absolute inset-0 bg-gradient-to-r from-[#0f172a] via-[#1e3a8a] to-[#0f172a]" />
+                  <span className="absolute inset-0 bg-[#1e3a8a]" />
                   <span className="absolute inset-0 bg-white translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
-                  <span className="relative z-10 text-white group-hover:text-[#1D4ED8] transition-colors duration-300">Sign up</span>
+                  <span className="relative z-10 text-white group-hover:text-[#1e3a8a] transition-colors duration-300">Sign up</span>
                 </button>
-                {/* Globe */}
                 <button onClick={() => setLangModalOpen((v) => !v)}
-                  className="hidden sm:flex items-center justify-center w-10 h-10 border border-[#1D4ED8] rounded hover:bg-[#1D4ED8] hover:text-white text-[#1D4ED8] transition-all duration-200"
+                  className="hidden sm:flex items-center justify-center w-10 h-10 border border-[#1e3a8a] rounded hover:bg-[#1e3a8a] hover:text-white text-[#1e3a8a] transition-all duration-200"
                   aria-label="Choose language">
                   <Globe className="w-5 h-5" />
                 </button>
-                {/* Mobile hamburger */}
                 <button onClick={() => setMobileMenuOpen(true)}
-                  className="xl:hidden p-2.5 text-gray-900 hover:text-[#1D4ED8] rounded transition-colors" aria-label="Open menu">
+                  className="xl:hidden p-2.5 text-gray-900 hover:text-[#1e3a8a] rounded transition-colors" aria-label="Open menu">
                   <Menu className="w-6 h-6" />
                 </button>
               </div>
             </div>
           </div>
 
-        </header>
-
-        {/* ── NAVBAR (Outside <header>): Nav Strip — always visible, shows logo on scroll ── */}
-        <nav className={`bg-white border-b border-gray-200 transition-shadow duration-300 ${isScrolled ? "shadow-md" : "shadow-sm"}`} aria-label="Main Navigation">
-          <div className="max-w-7xl mx-auto px-6 lg:px-10">
-            <div className="flex items-center py-4 gap-6">
-
-              {/* Logo — slides in from left on scroll (desktop only) */}
-              <div className={`hidden xl:flex flex-shrink-0 overflow-hidden transition-all duration-400 ease-in-out ${
-                isScrolled ? "max-w-[180px] opacity-100 mr-2" : "max-w-0 opacity-0 mr-0"
-              }`}>
-                <Logo variant="dark" size="md" />
-              </div>
-
-              {/* Nav Links — centered */}
-              <div className="flex-1 hidden xl:flex items-center justify-center gap-8">
-                {navLinks.map((item) => {
-                  const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
+          <nav className="bg-white border-b border-gray-200">
+            <div className="max-w-7xl mx-auto px-6 lg:px-10 py-2.5 flex items-center justify-between gap-4">
+              <div className="hidden xl:flex items-center gap-1 flex-wrap">
+                {navLinks.map((link) => {
+                  const isActive = pathname === link.href;
                   return (
-                    <Link key={item.name} href={item.href}
-                      className={`relative text-[15.5px] font-semibold tracking-normal transition-colors duration-200 pb-1 group ${
-                        isActive ? "text-[#1D4ED8]" : "text-gray-800 hover:text-[#1D4ED8]"
-                      }`}>
-                      {item.name}
-                      <span className={`absolute -bottom-3 left-0 right-0 h-0.5 bg-[#1D4ED8] transition-all duration-200 ${
-                        isActive ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100"
-                      }`} />
+                    <Link
+                      key={link.name}
+                      href={link.href}
+                      className={`px-3.5 py-2 text-sm font-semibold rounded-lg transition-all whitespace-nowrap ${
+                        isActive
+                          ? "text-[#1e3a8a] bg-blue-50 font-bold"
+                          : "text-gray-700 hover:text-[#1e3a8a] hover:bg-gray-50"
+                      }`}
+                    >
+                      {link.name}
                     </Link>
                   );
                 })}
               </div>
-
-              {/* Right side: Let's Talk CTA button linked to /contact */}
               <div className="hidden xl:flex items-center flex-shrink-0">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#0f172a] via-[#1e3a8a] to-[#0f172a] hover:opacity-90 text-white text-sm font-bold rounded-xl shadow-md transition-all group cursor-pointer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#1e3a8a] hover:bg-[#152e72] text-white text-sm font-bold rounded-xl shadow-md transition-all group cursor-pointer"
                 >
                   <span>Let&apos;s Talk</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
 
-              {/* Mobile: show logo + hamburger in bottom bar when scrolled */}
               <div className="flex xl:hidden items-center justify-between w-full">
                 <div className={`overflow-hidden transition-all duration-300 ${isScrolled ? "max-w-[160px] opacity-100" : "max-w-0 opacity-0"}`}>
                   <Logo variant="dark" size="sm" />
@@ -233,14 +211,13 @@ export default function Navbar({ onOpenApply }) {
                   <Logo variant="dark" size="sm" />
                 </div>
                 <button onClick={() => setMobileMenuOpen(true)}
-                  className="p-2.5 text-gray-900 hover:text-[#1D4ED8] rounded transition-colors" aria-label="Open menu">
+                  className="p-2 text-gray-900 hover:text-[#1e3a8a] rounded" aria-label="Open navigation menu">
                   <Menu className="w-6 h-6" />
                 </button>
               </div>
-
             </div>
-          </div>
-        </nav>
+          </nav>
+        </header>
       </div>
 
       {/* ── Language Popup Modal ── */}
@@ -335,7 +312,7 @@ export default function Navbar({ onOpenApply }) {
             </button>
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               <Link href="/contact" onClick={() => setMobileMenuOpen(false)}
-                className="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-[#0f172a] via-[#1e3a8a] to-[#0f172a] text-white text-sm font-bold rounded-xl flex items-center justify-center gap-2 hover:opacity-90 transition-all shadow-md">
+                className="w-full sm:w-auto px-6 py-3 bg-[#1e3a8a] text-white text-sm font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-[#152e72] transition-all shadow-md">
                 <span>Let&apos;s Talk</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>

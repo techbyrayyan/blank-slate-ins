@@ -70,12 +70,12 @@ export default function CourseCard({ course, onOpenApply }) {
         <div className="mt-4">
           <div className="flex items-center gap-2 flex-wrap mb-3.5">
             {course.badgeType === "premium" ? (
-              <span className="bg-gradient-to-r from-[#0f172a] via-[#1e3a8a] to-[#0f172a] text-white text-xs sm:text-[13px] font-bold px-2.5 py-1 rounded flex items-center gap-1">
+              <span className="bg-[#1e3a8a] text-white text-xs sm:text-[13px] font-bold px-2.5 py-1 rounded flex items-center gap-1">
                 <Check className="w-3.5 h-3.5" />
                 Premium
               </span>
             ) : (
-              <span className="bg-blue-50 text-[#1D4ED8] border border-blue-200 text-xs sm:text-[13px] font-bold px-2.5 py-1 rounded">
+              <span className="bg-blue-50 text-[#1e3a8a] border border-blue-200 text-xs sm:text-[13px] font-bold px-2.5 py-1 rounded">
                 {course.badge || "Bestseller"}
               </span>
             )}
@@ -90,7 +90,7 @@ export default function CourseCard({ course, onOpenApply }) {
             </div>
           </div>
 
-          <div className="font-black text-[#1c1d1f] group-hover:text-[#2563EB] transition-colors text-xl sm:text-2xl">
+          <div className="font-black text-[#1c1d1f] group-hover:text-[#1e3a8a] transition-colors text-xl sm:text-2xl">
             {course.price}
           </div>
         </div>
@@ -107,7 +107,7 @@ export default function CourseCard({ course, onOpenApply }) {
               exit={{ opacity: 0, scale: 0.97 }}
               transition={{ duration: 0.16, ease: "easeOut" }}
               style={popupStyle}
-              className="bg-white rounded-2xl shadow-[0_20px_60px_rgba(37,99,235,0.22)] border-2 border-[#2563EB]/40 p-6 pointer-events-auto"
+              className="bg-white rounded-2xl shadow-[0_20px_60px_rgba(30,58,138,0.22)] border-2 border-[#1e3a8a]/40 p-6 pointer-events-auto"
               onMouseEnter={() => setHovered(true)}
               onMouseLeave={() => setHovered(false)}
             >
@@ -119,16 +119,16 @@ export default function CourseCard({ course, onOpenApply }) {
               {/* Badge + Updated */}
               <div className="flex items-center gap-2 mb-3">
                 {course.badgeType === "premium" ? (
-                  <span className="bg-gradient-to-r from-[#0f172a] via-[#1e3a8a] to-[#0f172a] text-white text-xs font-bold px-2.5 py-0.5 rounded flex items-center gap-1">
+                  <span className="bg-[#1e3a8a] text-white text-xs font-bold px-2.5 py-0.5 rounded flex items-center gap-1">
                     <Check className="w-3.5 h-3.5" /> Premium
                   </span>
                 ) : (
-                  <span className="bg-blue-50 text-[#1D4ED8] border border-blue-200 text-xs font-bold px-2.5 py-0.5 rounded">
+                  <span className="bg-blue-50 text-[#1e3a8a] border border-blue-200 text-xs font-bold px-2.5 py-0.5 rounded">
                     {course.badge || "Bestseller"}
                   </span>
                 )}
                 <span className="text-sm text-[#1c1d1f]">
-                  Updated <strong className="text-[#2563EB]">{course.updated}</strong>
+                  Updated <strong className="text-[#1e3a8a]">{course.updated}</strong>
                 </span>
               </div>
 
@@ -146,7 +146,7 @@ export default function CourseCard({ course, onOpenApply }) {
               <ul className="space-y-2.5 mb-6">
                 {course.bullets?.map((b, i) => (
                   <li key={i} className="flex items-start gap-2 text-sm text-[#1c1d1f] leading-snug">
-                    <Check className="w-4 h-4 text-[#2563EB] mt-0.5 flex-shrink-0" />
+                    <Check className="w-4 h-4 text-[#1e3a8a] mt-0.5 flex-shrink-0" />
                     <span>{b}</span>
                   </li>
                 ))}
@@ -155,7 +155,7 @@ export default function CourseCard({ course, onOpenApply }) {
               {/* Add to Cart Button */}
               <button
                 onClick={() => onOpenApply && onOpenApply(course.title)}
-                className="w-full text-white font-bold py-3.5 rounded-xl flex items-center justify-center gap-2 text-base transition-all duration-200 shadow-md hover:shadow-lg bg-gradient-to-r from-[#0f172a] via-[#1e3a8a] to-[#0f172a] hover:opacity-90"
+                className="w-full text-white font-bold py-3.5 rounded-xl flex items-center justify-center gap-2 text-base transition-all duration-200 shadow-md hover:shadow-lg bg-[#1e3a8a] hover:bg-[#152e72]"
               >
                 <ShoppingCart className="w-5 h-5" />
                 Add to cart

@@ -25,7 +25,7 @@ export default function InteractiveProgramExplorer({ onOpenApply }) {
           </h2>
           <Link
             href="/courses"
-            className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#0f172a] via-[#1e3a8a] to-[#0f172a] hover:opacity-90 text-white text-base font-bold rounded-lg transition-all duration-200 shadow-sm hover:shadow-md"
+            className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-[#1e3a8a] hover:bg-[#152e72] text-white text-base font-bold rounded-lg transition-all duration-200 shadow-sm hover:shadow-md"
           >
             <span>View More Courses</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>

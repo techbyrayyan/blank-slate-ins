@@ -43,7 +43,7 @@ export default function SkillsCareerTransform({ onOpenApply }) {
                 >
                   {topic.title}
                   {isActive && (
-                    <span className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#0f172a] via-[#1e3a8a] to-[#0f172a] rounded-full" />
+                    <span className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#1e3a8a] rounded-full" />
                   )}
                 </button>
               );
@@ -66,7 +66,7 @@ export default function SkillsCareerTransform({ onOpenApply }) {
         <div className="flex items-center justify-start">
           <Link
             href={`/topic/${activeTopic}`}
-            className="inline-flex items-center gap-2.5 px-7 py-3.5 border-2 border-[#1e3a8a] text-[#1D4ED8] hover:bg-gradient-to-r hover:from-[#0f172a] hover:via-[#1e3a8a] hover:to-[#0f172a] hover:text-white hover:border-transparent rounded-xl text-base font-bold transition-all duration-200 shadow-sm hover:shadow-md"
+            className="inline-flex items-center gap-2.5 px-7 py-3.5 border-2 border-[#1e3a8a] text-[#1e3a8a] hover:bg-[#1e3a8a] hover:text-white rounded-xl text-base font-bold transition-all duration-200 shadow-sm hover:shadow-md"
           >
             <span>Show all {currentTopicObj.title} courses</span>
             <ArrowRight className="w-4 h-4" />

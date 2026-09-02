@@ -368,40 +368,32 @@ export default function AdmissionsPage() {
                       <GraduationCap className="w-5 h-5" />
                     </div>
                     <div>
-                      <h2 className="text-base sm:text-lg font-bold font-sans">Student Enrollment Portal</h2>
-                      <p className="text-xs text-blue-200 font-sans">Fall 2026 Intake · Step {currentStep} of 4</p>
+                      <h2 className="text-xl sm:text-2xl font-black tracking-tight font-serif">Online Student Application</h2>
+                      <p className="text-xs sm:text-sm text-blue-200/80 font-sans">Fill out all 4 sections below to register for 2026 admissions.</p>
                     </div>
                   </div>
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-semibold font-sans">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                    <span>Live Admissions</span>
+                  <div className="flex items-center gap-2 bg-white/10 px-3.5 py-1.5 rounded-full border border-white/20 font-sans">
+                    <Sparkles className="w-4 h-4 text-amber-300" />
+                    <span className="text-xs font-bold tracking-wide uppercase text-amber-200">Step {currentStep} of 4</span>
                   </div>
                 </div>
 
-                {/* Multi-Step Progress Stepper Bar */}
-                <div className="px-6 sm:px-10 pt-6 pb-2 border-b border-gray-100 bg-gray-50/70">
-                  <div className="grid grid-cols-4 gap-2 sm:gap-4">
+                {/* Step Wizard Progress Bar */}
+                <div className="bg-gray-50 border-b border-gray-200 px-6 sm:px-10 py-4">
+                  <div className="grid grid-cols-4 gap-2 sm:gap-4 max-w-4xl mx-auto">
                     {stepsConfig.map((step) => {
-                      const Icon = step.icon;
                       const isCompleted = currentStep > step.id;
                       const isCurrent = currentStep === step.id;
+
                       return (
                         <button
                           key={step.id}
                           type="button"
                           onClick={() => {
-                            if (step.id < currentStep) {
-                              setDirection(-1);
-                              setCurrentStep(step.id);
-                            }
+                            if (step.id < currentStep) setCurrentStep(step.id);
                           }}
-                          disabled={step.id > currentStep}
-                          className={`flex flex-col items-center sm:items-start text-left p-2 rounded-xl transition-all ${
-                            isCurrent
-                              ? "bg-white border border-blue-200 shadow-sm"
-                              : isCompleted
-                              ? "opacity-90 hover:bg-white/60 cursor-pointer"
-                              : "opacity-40 cursor-not-allowed"
+                          className={`flex flex-col items-center sm:items-start text-left transition-all ${
+                            step.id <= currentStep ? "cursor-pointer" : "cursor-not-allowed opacity-60"
                           }`}
                         >
                           <div className="flex items-center gap-2">
@@ -410,7 +402,7 @@ export default function AdmissionsPage() {
                                 isCompleted
                                   ? "bg-emerald-500 text-white"
                                   : isCurrent
-                                  ? "bg-gradient-to-r from-[#0f172a] via-[#1e3a8a] to-[#0f172a] text-white"
+                                  ? "bg-[#1e3a8a] text-white"
                                   : "bg-gray-200 text-gray-700"
                               }`}
                             >
@@ -423,7 +415,7 @@ export default function AdmissionsPage() {
                           <div className="w-full mt-2 h-1 bg-gray-200 rounded-full overflow-hidden">
                             <div
                               className={`h-full transition-all duration-300 ${
-                                isCompleted || isCurrent ? "bg-gradient-to-r from-[#0f172a] via-[#1e3a8a] to-[#0f172a]" : "bg-transparent"
+                                isCompleted || isCurrent ? "bg-[#1e3a8a]" : "bg-transparent"
                               }`}
                             />
                           </div>
@@ -1039,7 +1031,7 @@ export default function AdmissionsPage() {
                       <button
                         type="button"
                         onClick={handleNextStep}
-                        className="w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-[#0f172a] via-[#1e3a8a] to-[#0f172a] hover:opacity-90 text-white text-xs sm:text-sm font-bold rounded-xl shadow-lg flex items-center justify-center gap-2 transition-all cursor-pointer font-sans ml-auto"
+                        className="w-full sm:w-auto px-8 py-3.5 bg-[#1e3a8a] hover:bg-[#152e72] text-white text-xs sm:text-sm font-bold rounded-xl shadow-lg flex items-center justify-center gap-2 transition-all cursor-pointer font-sans ml-auto"
                       >
                         <span>Next: {stepsConfig[currentStep].label}</span>
                         <ArrowRight className="w-4 h-4" />
@@ -1179,7 +1171,7 @@ export default function AdmissionsPage() {
 
                   <Link
                     href="/"
-                    className="px-8 py-3.5 bg-gradient-to-r from-[#0f172a] via-[#1e3a8a] to-[#0f172a] hover:opacity-90 text-white text-xs font-bold rounded-full transition-all shadow-md"
+                    className="px-8 py-3.5 bg-[#1e3a8a] hover:bg-[#152e72] text-white text-xs font-bold rounded-full transition-all shadow-md"
                   >
                     Return to Home
                   </Link>

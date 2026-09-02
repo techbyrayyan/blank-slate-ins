@@ -157,7 +157,7 @@ export default function Hero({ onOpenApply }) {
                   <div className="pt-1">
                     <Link
                       href={slides[current].ctaLink}
-                      className="inline-flex items-center px-6 py-3 text-sm sm:text-base font-bold text-white rounded-lg bg-gradient-to-r from-[#0f172a] via-[#1e3a8a] to-[#0f172a] hover:opacity-90 active:scale-95 transition-all"
+                      className="inline-flex items-center px-6 py-3 text-sm sm:text-base font-bold text-white rounded-lg bg-[#1e3a8a] hover:bg-[#152e72] active:scale-95 transition-all"
                     >
                       {slides[current].cta}
                     </Link>
@@ -218,7 +218,7 @@ export default function Hero({ onOpenApply }) {
               onClick={() => goToDot(i)}
               className={`rounded-full transition-all duration-300 ${
                 i === current
-                  ? "w-8 h-3 bg-gradient-to-r from-[#0f172a] via-[#1e3a8a] to-[#0f172a]"
+                  ? "w-8 h-3 bg-[#1e3a8a]"
                   : "w-3 h-3 bg-gray-300 hover:bg-gray-400"
               }`}
               aria-label={`Go to slide ${i + 1}`}

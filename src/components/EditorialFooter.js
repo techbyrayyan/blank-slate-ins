@@ -129,7 +129,7 @@ export default function EditorialFooter() {
                 className="w-full bg-transparent px-3.5 py-1 text-sm text-gray-900 placeholder-gray-400 focus:outline-none"
               />
               <button
-                className="w-8 h-8 rounded-full bg-gradient-to-r from-[#0f172a] via-[#1e3a8a] to-[#0f172a] text-white flex items-center justify-center hover:opacity-90 transition-all flex-shrink-0 shadow-sm"
+                className="w-8 h-8 rounded-full bg-[#1e3a8a] text-white flex items-center justify-center hover:bg-[#152e72] transition-all flex-shrink-0 shadow-sm"
                 aria-label="Submit newsletter"
               >
                 <ArrowRight className="w-4 h-4" />
