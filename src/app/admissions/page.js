@@ -150,7 +150,7 @@ export default function AdmissionsPage() {
                         </div>
                         <div>
                           <p className="text-xs font-bold text-gray-900">{badge.val}</p>
-                          <p className="text-[10px] text-gray-500 font-mono">{badge.label}</p>
+                          <p className="text-[11px] text-gray-500 font-medium">{badge.label}</p>
                         </div>
                       </motion.div>
                     );
@@ -199,12 +199,16 @@ export default function AdmissionsPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
 
                   {/* Floating Badges */}
-                  <div className="absolute top-4 right-4 p-2.5 rounded-xl bg-white/95 backdrop-blur-md border border-gray-200 text-[#1D4ED8] flex items-center gap-1.5 text-xs font-mono font-bold shadow-md">
-                    <Sparkles className="w-3.5 h-3.5" /> Rolling Admissions
+                  <div className="absolute top-4 right-4 px-3.5 py-2 rounded-xl bg-white/95 backdrop-blur-md border border-gray-200 text-[#1D4ED8] flex items-center gap-2 text-xs font-sans font-bold shadow-md">
+                    <Sparkles className="w-3.5 h-3.5 text-[#1D4ED8]" />
+                    <span>Rolling Admissions</span>
                   </div>
-                  <div className="absolute bottom-6 left-6 p-3 rounded-2xl bg-white/95 backdrop-blur-md border border-gray-200 text-gray-900 flex items-center gap-3 text-xs font-mono shadow-lg">
-                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
-                    <span className="font-bold">Accepting Fall 2026 Inquiries</span>
+                  <div className="absolute bottom-6 left-6 px-4 py-3 rounded-2xl bg-white/95 backdrop-blur-md border border-gray-200 text-gray-900 flex items-center gap-3 text-xs font-sans shadow-lg">
+                    <span className="relative flex h-2.5 w-2.5">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                    </span>
+                    <span className="font-bold text-gray-900">Accepting Fall 2026 Inquiries</span>
                   </div>
                 </div>
               </motion.div>
