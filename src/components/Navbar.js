@@ -12,8 +12,8 @@ const navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Programs", href: "/programs" },
-  { name: "Admissions", href: "/admissions" },
   { name: "Faculty", href: "/faculty" },
+  { name: "Admissions", href: "/admissions" },
 ];
 
 const languages = [
@@ -90,36 +90,36 @@ export default function Navbar({ onOpenApply }) {
         <header className="bg-white">
 
           {/* ── ROW 1: Top Info Bar — hidden on scroll ── */}
-          <div className={`bg-[#0f172a] text-gray-300 border-b border-gray-800/80 overflow-hidden transition-all duration-400 ease-in-out ${
+          <div className={`bg-gradient-to-r from-[#0f172a] via-[#1e3a8a] to-[#0f172a] text-gray-200 border-b border-blue-900/50 overflow-hidden transition-all duration-400 ease-in-out ${
             isScrolled ? "max-h-0 opacity-0 py-0" : "max-h-16 opacity-100"
           }`}>
             <div className="max-w-7xl mx-auto px-6 lg:px-10 py-3 flex items-center justify-between gap-4">
               <div className="flex items-center gap-6 flex-wrap">
                 <a href="mailto:blankslateinstitute1@gmail.com"
-                  className="flex items-center gap-2 hover:text-white transition-colors group">
-                  <Mail className="w-4 h-4 text-[#1D4ED8] group-hover:scale-110 transition-transform" />
+                  className="flex items-center gap-2 text-gray-200 hover:text-white transition-colors group">
+                  <Mail className="w-4 h-4 text-blue-400 group-hover:scale-110 transition-transform" />
                   <span className="text-sm font-medium hidden sm:inline">blankslateinstitute1@gmail.com</span>
                   <span className="text-sm font-medium sm:hidden">Email Us</span>
                 </a>
-                <span className="hidden sm:inline text-gray-600">|</span>
+                <span className="hidden sm:inline text-blue-400/40">|</span>
                 <a href="tel:+9235746486463"
-                  className="flex items-center gap-2 hover:text-white transition-colors group">
-                  <Phone className="w-4 h-4 text-[#1D4ED8] group-hover:scale-110 transition-transform" />
+                  className="flex items-center gap-2 text-gray-200 hover:text-white transition-colors group">
+                  <Phone className="w-4 h-4 text-blue-400 group-hover:scale-110 transition-transform" />
                   <span className="text-sm font-medium">+92 35746486463</span>
                 </a>
               </div>
               <div className="flex items-center gap-3">
                 <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-[#1D4ED8] transition-colors p-1.5" aria-label="Facebook">
-                  <FacebookIcon className="w-4 h-4" />
+                  className="text-white hover:text-blue-300 transition-colors p-1.5" aria-label="Facebook">
+                  <FacebookIcon className="w-4 h-4 text-white" />
                 </a>
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-[#1D4ED8] transition-colors p-1.5" aria-label="LinkedIn">
-                  <LinkedinIcon className="w-4 h-4" />
+                  className="text-white hover:text-blue-300 transition-colors p-1.5" aria-label="LinkedIn">
+                  <LinkedinIcon className="w-4 h-4 text-white" />
                 </a>
                 <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-[#1D4ED8] transition-colors p-1.5" aria-label="Instagram">
-                  <InstagramIcon className="w-4 h-4" />
+                  className="text-white hover:text-blue-300 transition-colors p-1.5" aria-label="Instagram">
+                  <InstagramIcon className="w-4 h-4 text-white" />
                 </a>
               </div>
             </div>
