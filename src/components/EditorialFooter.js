@@ -97,19 +97,23 @@ export default function EditorialFooter() {
             <div className="space-y-3 text-sm sm:text-[15px] text-gray-600 font-medium">
               <p className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-[#1D4ED8] flex-shrink-0 mt-0.5" />
-                <span>123 Education Lane, Lahore, Pakistan</span>
+                <span>First Floor: 236 Badar Block Allama Iqbal Town Main Multan Road Lahore.</span>
               </p>
               <p className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-[#1D4ED8] flex-shrink-0" />
-                <span>+92 35746486463</span>
+                <a href="tel:+923320901442" className="hover:text-[#1D4ED8] transition-colors">
+                  +92 332 0901442
+                </a>
               </p>
               <p className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-[#1D4ED8] flex-shrink-0" />
-                <span>info@blankslate.edu.pk</span>
+                <a href="mailto:info@blankslateinstitute.pk" className="hover:text-[#1D4ED8] transition-colors">
+                  info@blankslateinstitute.pk
+                </a>
               </p>
               <p className="flex items-start gap-2 pt-1">
                 <Clock className="w-4 h-4 text-[#1D4ED8] flex-shrink-0 mt-0.5" />
-                <span>Mon - Fri: 9:00 AM - 5:00 PM</span>
+                <span>Mon - Sat: 9:00 AM - 6:00 PM</span>
               </p>
             </div>
           </div>

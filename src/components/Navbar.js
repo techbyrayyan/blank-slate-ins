@@ -136,17 +136,17 @@ export default function Navbar({ onOpenApply }) {
           }`}>
             <div className="max-w-7xl mx-auto px-6 lg:px-10 py-3 flex items-center justify-between gap-4">
               <div className="flex items-center gap-6 flex-wrap">
-                <a href="mailto:blankslateinstitute1@gmail.com"
+                <a href="mailto:info@blankslateinstitute.pk"
                   className="flex items-center gap-2 text-gray-200 hover:text-white transition-colors group">
                   <Mail className="w-4 h-4 text-blue-400 group-hover:scale-110 transition-transform" />
-                  <span className="text-sm font-medium hidden sm:inline">blankslateinstitute1@gmail.com</span>
+                  <span className="text-sm font-medium hidden sm:inline">info@blankslateinstitute.pk</span>
                   <span className="text-sm font-medium sm:hidden">Email Us</span>
                 </a>
                 <span className="hidden sm:inline text-blue-400/40">|</span>
-                <a href="tel:+9235746486463"
+                <a href="tel:+923320901442"
                   className="flex items-center gap-2 text-gray-200 hover:text-white transition-colors group">
                   <Phone className="w-4 h-4 text-blue-400 group-hover:scale-110 transition-transform" />
-                  <span className="text-sm font-medium">+92 35746486463</span>
+                  <span className="text-sm font-medium">+92 332 0901442</span>
                 </a>
               </div>
               <div className="flex items-center gap-3">
@@ -338,15 +338,15 @@ export default function Navbar({ onOpenApply }) {
           </nav>
           <div className="pt-6 border-t border-gray-200 space-y-4 mt-6">
             <div className="flex flex-col gap-3 text-sm text-gray-600 font-medium">
-              <a href="mailto:blankslateinstitute1@gmail.com"
+              <a href="mailto:info@blankslateinstitute.pk"
                 className="flex items-center gap-2 text-gray-700 hover:text-[#1D4ED8] transition-colors">
                 <Mail className="w-4 h-4 text-[#1D4ED8]" />
-                <span>blankslateinstitute1@gmail.com</span>
+                <span>info@blankslateinstitute.pk</span>
               </a>
-              <a href="tel:+9235746486463"
+              <a href="tel:+923320901442"
                 className="flex items-center gap-2 text-gray-700 hover:text-[#1D4ED8] transition-colors">
                 <Phone className="w-4 h-4 text-[#1D4ED8]" />
-                <span>+92 35746486463</span>
+                <span>+92 332 0901442</span>
               </a>
             </div>
             <div className="flex items-center gap-3">

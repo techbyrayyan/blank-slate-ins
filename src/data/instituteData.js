@@ -6,11 +6,12 @@ export const instituteInfo = {
   description:
     "Empowering the next generation of engineers and tech founders with production-grade AI, Full-Stack, and Computing mastery.",
   foundedYear: 2016,
-  address: "742 Innovation Parkway, Tech District, Metro City, 90210",
-  phone: "+1 (800) 555-SLATE",
-  email: "admissions@blankslate.edu",
-  supportEmail: "contact@blankslate.edu",
-  officeHours: "Monday – Friday: 8:30 AM – 6:30 PM (EST)",
+  address: "First Floor: 236 Badar Block Allama Iqbal Town Main Multan Road Lahore.",
+  phone: "+92 332 0901442",
+  admissionsPhone: "+92 332 0901442",
+  email: "info@blankslateinstitute.pk",
+  supportEmail: "info@blankslateinstitute.pk",
+  officeHours: "Monday – Saturday: 9:00 AM – 6:00 PM (PKT)",
   stats: [
     { label: "Students Enrolled", value: "500+", suffix: "+" },
     { label: "Active Programs", value: "20+", suffix: "+" },

@@ -469,7 +469,7 @@ export default function ProgramDetailPage({ params }) {
                   <motion.a
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.98 }}
-                    href="tel:+923121234567"
+                    href="tel:+923320901442"
                     className="w-full py-3 bg-gray-100 hover:bg-gray-200 text-gray-900 text-xs font-bold rounded-xl border border-gray-200 transition-all flex items-center justify-center gap-2"
                   >
                     <Phone className="w-3.5 h-3.5" />
