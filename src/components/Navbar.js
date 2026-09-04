@@ -74,9 +74,17 @@ export default function Navbar({ onOpenApply }) {
     setCurrentLang(code);
     setLangModalOpen(false);
     if (code === "en") {
+      document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      if (typeof window !== "undefined" && window.location.hostname) {
+        document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.${window.location.hostname};`;
+      }
       const select = document.querySelector(".goog-te-combo");
       if (select) { select.value = ""; select.dispatchEvent(new Event("change")); }
       return;
+    }
+    document.cookie = `googtrans=/en/${code}; path=/;`;
+    if (typeof window !== "undefined" && window.location.hostname) {
+      document.cookie = `googtrans=/en/${code}; path=/; domain=.${window.location.hostname};`;
     }
     const select = document.querySelector(".goog-te-combo");
     if (select) { select.value = code; select.dispatchEvent(new Event("change")); }

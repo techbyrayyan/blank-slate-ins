@@ -77,7 +77,7 @@ export default function RootLayout({ children }) {
             window.googleTranslateElementInit = function() {
               new google.translate.TranslateElement({
                 pageLanguage: 'en',
-                includedLanguages: 'ar,de,es,fr,id,it,ja,ko,nl,pl,pt,ro,ru,th,tr,vi,zh-CN,zh-TW',
+                includedLanguages: 'ur,ar,de,es,fr,id,it,ja,ko,nl,pl,pt,ro,ru,th,tr,vi,zh-CN,zh-TW',
                 autoDisplay: false
               }, 'google_translate_element');
             };
