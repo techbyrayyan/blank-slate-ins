@@ -5,10 +5,128 @@ import { ArrowRight, MapPin, Phone, Mail, Clock } from "lucide-react";
 import Logo from "./Logo";
 import { FacebookIcon, TwitterIcon, LinkedinIcon, InstagramIcon } from "./SocialIcons";
 
+const SKILLS_DIRECTORY = [
+  {
+    title: "In-demand Careers",
+    items: [
+      { name: "Data Scientist", href: "/topic/data-science" },
+      { name: "Full Stack Web Developer", href: "/topic/full-stack" },
+      { name: "Cloud Engineer", href: "/topic/amazon-aws" },
+      { name: "Project Manager", href: "/courses" },
+      { name: "Game Developer", href: "/courses" },
+      { name: "All Career Accelerators", href: "/courses" },
+    ],
+  },
+  {
+    title: "Web Development",
+    items: [
+      { name: "Web Development", href: "/topic/full-stack" },
+      { name: "JavaScript", href: "/topic/full-stack" },
+      { name: "React JS", href: "/topic/full-stack" },
+      { name: "Angular", href: "/topic/full-stack" },
+      { name: "Java", href: "/topic/full-stack" },
+    ],
+  },
+  {
+    title: "IT Certifications",
+    items: [
+      { name: "Amazon AWS", href: "/topic/amazon-aws" },
+      { name: "AWS Certified Cloud Practitioner", href: "/topic/amazon-aws" },
+      { name: "AZ-900: Microsoft Azure Fundamentals", href: "/topic/amazon-aws" },
+      { name: "AWS Certified Solutions Architect - Associate", href: "/topic/amazon-aws" },
+      { name: "Kubernetes", href: "/topic/amazon-aws" },
+    ],
+  },
+  {
+    title: "Leadership",
+    items: [
+      { name: "Leadership", href: "/courses" },
+      { name: "Management Skills", href: "/courses" },
+      { name: "Project Management", href: "/courses" },
+      { name: "Personal Productivity", href: "/courses" },
+      { name: "Emotional Intelligence", href: "/courses" },
+    ],
+  },
+  {
+    title: "Certifications by Skill",
+    items: [
+      { name: "Cybersecurity Certification", href: "/courses" },
+      { name: "Project Management Certification", href: "/courses" },
+      { name: "Cloud Certification", href: "/topic/amazon-aws" },
+      { name: "Data Analytics Certification", href: "/topic/data-science" },
+      { name: "HR Management Certification", href: "/courses" },
+      { name: "See all Certifications", href: "/courses" },
+    ],
+  },
+  {
+    title: "Data Science",
+    items: [
+      { name: "Data Science", href: "/topic/data-science" },
+      { name: "Python", href: "/topic/python" },
+      { name: "Machine Learning", href: "/topic/ai-agents" },
+      { name: "ChatGPT", href: "/topic/ai-agents" },
+      { name: "Deep Learning", href: "/topic/ai-agents" },
+    ],
+  },
+  {
+    title: "Communication",
+    items: [
+      { name: "Communication Skills", href: "/courses" },
+      { name: "Presentation Skills", href: "/courses" },
+      { name: "Public Speaking", href: "/courses" },
+      { name: "Writing", href: "/courses" },
+      { name: "PowerPoint", href: "/courses" },
+    ],
+  },
+  {
+    title: "Business Analytics & Intelligence",
+    items: [
+      { name: "Microsoft Excel", href: "/topic/excel" },
+      { name: "SQL", href: "/topic/data-science" },
+      { name: "Microsoft Power BI", href: "/topic/data-science" },
+      { name: "Data Analysis", href: "/topic/data-science" },
+      { name: "Business Analysis", href: "/courses" },
+    ],
+  },
+];
+
 export default function EditorialFooter() {
   return (
-    <footer className="bg-gray-50 text-gray-900 border-t border-gray-200 pt-16 pb-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-gray-50 text-gray-900 border-t border-gray-200">
+      {/* ── TOP PRE-FOOTER: Explore Top Skills and Certifications (Udemy Style Directory) ── */}
+      <section className="bg-[#1c1d1f] text-white py-14 sm:py-16 border-b border-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-xl sm:text-2xl font-bold text-white mb-8 sm:mb-10 tracking-tight">
+            Explore top skills and certifications
+          </h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 lg:gap-x-12 lg:gap-y-12">
+            {SKILLS_DIRECTORY.map((col, idx) => (
+              <div key={idx} className="space-y-3">
+                <h3 className="text-[15px] font-bold text-white tracking-tight">
+                  {col.title}
+                </h3>
+                <ul className="space-y-2 text-xs sm:text-[13px] text-gray-300">
+                  {col.items.map((item, itemIdx) => (
+                    <li key={itemIdx}>
+                      <Link
+                        href={item.href}
+                        className="hover:text-white hover:underline transition-colors block leading-relaxed"
+                      >
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── MAIN FOOTER ── */}
+      <div className="pt-16 pb-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-16 border-b border-gray-200">
           {/* Brand Col (4 cols) */}
           <div className="lg:col-span-4 space-y-4">
@@ -154,6 +272,7 @@ export default function EditorialFooter() {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </div>
+  </footer>
+);
 }
