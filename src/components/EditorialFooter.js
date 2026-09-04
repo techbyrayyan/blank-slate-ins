@@ -203,13 +203,13 @@ export default function EditorialFooter() {
                 <img
                   src="/new logo.png"
                   alt="BlankSlate - Empowered by Innovation"
-                  className="h-10 sm:h-12 w-auto object-contain"
+                  className="h-14  w-auto object-contain"
                 />
               </Link>
             </div>
 
             {/* Center: Copyright */}
-            <div className="text-center text-sm sm:text-base font-medium text-gray-400">
+            <div className="text-center text-sm sm:text-base font-semibold text-white">
               <p>© 2026 BlankSlate Institute. All Rights Reserved.</p>
             </div>
 
