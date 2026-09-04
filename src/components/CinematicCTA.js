@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
-import { useRef, useState } from "react";
+import { useState } from "react";
+
 
 const certCards = [
   {
@@ -38,17 +39,12 @@ const certCards = [
 ];
 
 export default function CinematicCTA() {
-  const trackRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const CARD_WIDTH = 216; // card width (200) + gap (16)
 
   function scrollTo(index) {
-    const clamped = Math.max(0, Math.min(index, certCards.length - 1));
-    setActiveIndex(clamped);
-    if (trackRef.current) {
-      trackRef.current.scrollTo({ left: clamped * CARD_WIDTH, behavior: "smooth" });
-    }
+    setActiveIndex(Math.max(0, Math.min(index, certCards.length - 1)));
   }
+
 
   return (
     <section className="py-10 sm:py-14 bg-white relative select-none" id="certifications-banner">
@@ -85,33 +81,34 @@ export default function CinematicCTA() {
             {/* Right Column: Slider */}
             <div className="lg:col-span-7 flex flex-col gap-4">
 
-              {/* Scrollable Track */}
-              <div
-                ref={trackRef}
-                className="flex gap-4 overflow-x-auto pb-1 snap-x snap-mandatory"
-                style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-              >
-                {certCards.map((card) => (
-                  <Link
-                    key={card.title}
-                    href={card.link}
-                    className="flex-shrink-0 w-[200px] snap-start bg-[#0b1b36]/85 hover:bg-[#0e2448] backdrop-blur-md rounded-2xl p-4 border border-white/15 hover:border-white/50 transition-all duration-300 group block shadow-lg hover:shadow-2xl hover:-translate-y-1.5"
-                  >
-                    <div className="rounded-xl overflow-hidden aspect-[4/3] w-full mb-3 bg-black/30 border border-white/10">
-                      <img
-                        src={card.image}
-                        alt={card.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-                    <h3 className="font-black text-base text-white group-hover:text-blue-200 transition-colors mb-1">
-                      {card.title}
-                    </h3>
-                    <p className="text-xs text-blue-100 font-normal leading-snug">
-                      {card.subtitle}
-                    </p>
-                  </Link>
-                ))}
+              {/* Sliding Track Wrapper — clips overflow so cards slide in/out */}
+              <div className="overflow-hidden rounded-2xl">
+                <div
+                  className="flex gap-4 transition-transform duration-500 ease-in-out"
+                  style={{ transform: `translateX(calc(-${activeIndex} * (200px + 16px)))` }}
+                >
+                  {certCards.map((card) => (
+                    <Link
+                      key={card.title}
+                      href={card.link}
+                      className="flex-shrink-0 w-[200px] bg-[#0b1b36]/85 hover:bg-[#0e2448] backdrop-blur-md rounded-2xl p-4 border border-white/15 hover:border-white/50 transition-colors duration-300 group block shadow-lg hover:shadow-2xl hover:-translate-y-1.5"
+                    >
+                      <div className="rounded-xl overflow-hidden aspect-[4/3] w-full mb-3 bg-black/30 border border-white/10">
+                        <img
+                          src={card.image}
+                          alt={card.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                      <h3 className="font-black text-base text-white group-hover:text-blue-200 transition-colors mb-1">
+                        {card.title}
+                      </h3>
+                      <p className="text-xs text-blue-100 font-normal leading-snug">
+                        {card.subtitle}
+                      </p>
+                    </Link>
+                  ))}
+                </div>
               </div>
 
               {/* Arrows + Dots */}
