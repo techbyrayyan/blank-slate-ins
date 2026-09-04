@@ -94,7 +94,7 @@ export default function EditorialFooter() {
   return (
     <footer className="bg-gray-50 text-gray-900 border-t border-gray-200">
       {/* ── TOP PRE-FOOTER: Explore Top Skills and Certifications (Udemy Style Directory) ── */}
-      <section className="bg-[#1c1d1f] text-white py-14 sm:py-16 border-b border-gray-800">
+      <section className="bg-[#2a2b3f] text-white py-14 sm:py-16 border-b border-[#3b3c54]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-xl sm:text-2xl font-bold text-white mb-8 sm:mb-10 tracking-tight">
             Explore top skills and certifications
