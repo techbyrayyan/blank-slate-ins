@@ -179,9 +179,9 @@ export default function Navbar({ onOpenApply }) {
               {/* Left side: Logo on scroll only (hidden by default when not scrolled) */}
               <div className="hidden xl:flex items-center flex-shrink-0">
                 <div className={`overflow-hidden transition-all duration-400 ease-in-out ${
-                  isScrolled ? "max-w-[180px] opacity-100 mr-2" : "max-w-0 opacity-0 pointer-events-none mr-0"
+                  isScrolled ? "max-w-[260px] opacity-100 mr-4" : "max-w-0 opacity-0 pointer-events-none mr-0"
                 }`}>
-                  <Logo variant="dark" size="sm" />
+                  <Logo variant="dark" size="lg" />
                 </div>
               </div>
 
