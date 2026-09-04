@@ -1,51 +1,74 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { useRef, useState } from "react";
+
+const certCards = [
+  {
+    title: "CompTIA",
+    subtitle: "Cloud, Networking, Cybersecurity",
+    image: "/comptia-thumbnail.png",
+    link: "/courses?search=CompTIA",
+  },
+  {
+    title: "AWS",
+    subtitle: "Cloud, AI, Coding, Networking",
+    image: "/aws-thumbnail.png",
+    link: "/topic/amazon-aws",
+  },
+  {
+    title: "PMI",
+    subtitle: "Project & Program Management",
+    image: "/pmi-thumbnail.png",
+    link: "/courses?search=PMI",
+  },
+  {
+    title: "Microsoft",
+    subtitle: "Excel, Azure, Power BI, Office",
+    image: "/microsoft-excel.png",
+    link: "/courses?search=Microsoft",
+  },
+  {
+    title: "Data Science",
+    subtitle: "Python, ML, Deep Learning, AI",
+    image: "/data-science.png",
+    link: "/topic/data-science",
+  },
+];
 
 export default function CinematicCTA() {
-  const certCards = [
-    {
-      title: "CompTIA",
-      subtitle: "Cloud, Networking, Cybersecurity",
-      image: "/comptia-thumbnail.png",
-      link: "/courses?search=CompTIA",
-    },
-    {
-      title: "AWS",
-      subtitle: "Cloud, AI, Coding, Networking",
-      image: "/aws-thumbnail.png",
-      link: "/topic/amazon-aws",
-    },
-    {
-      title: "PMI",
-      subtitle: "Project & Program Management",
-      image: "/pmi-thumbnail.png",
-      link: "/courses?search=PMI",
-    },
-  ];
+  const trackRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const CARD_WIDTH = 216; // card width (200) + gap (16)
+
+  function scrollTo(index) {
+    const clamped = Math.max(0, Math.min(index, certCards.length - 1));
+    setActiveIndex(clamped);
+    if (trackRef.current) {
+      trackRef.current.scrollTo({ left: clamped * CARD_WIDTH, behavior: "smooth" });
+    }
+  }
 
   return (
     <section className="py-10 sm:py-14 bg-white relative select-none" id="certifications-banner">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="rounded-[32px] bg-gradient-to-r from-[#0a1f4a] via-[#1D4ED8] to-[#0d2757] text-white p-8 sm:p-12 lg:p-16 shadow-[0_20px_60px_rgba(29,78,216,0.3)] border border-blue-400/20 relative overflow-hidden min-h-[480px] lg:min-h-[400px] flex flex-col justify-center">
-          
+
           {/* Ambient Lighting Accents */}
           <div className="absolute -top-24 -right-24 w-96 h-96 bg-white/10 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-400/15 rounded-full blur-3xl pointer-events-none" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
-            
+
             {/* Left Column: Heading & Description */}
             <div className="lg:col-span-5 space-y-6">
               <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-black text-white leading-[1.15] tracking-tight">
                 Get certified and get ahead in your career
               </h2>
-
               <p className="text-base sm:text-lg text-blue-100 font-normal leading-relaxed max-w-lg">
                 Prep for certifications with comprehensive courses, practice tests, and special offers on exam vouchers.
               </p>
-
               <div className="pt-2">
                 <Link
                   href="/courses"
@@ -59,34 +82,73 @@ export default function CinematicCTA() {
               </div>
             </div>
 
-            {/* Right Column: 3 Certification Cards (CompTIA, AWS, PMI) */}
-            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-5 lg:gap-6">
-              {certCards.map((card) => (
-                <Link
-                  key={card.title}
-                  href={card.link}
-                  className="bg-[#0b1b36]/85 hover:bg-[#0e2448] backdrop-blur-md rounded-2xl p-4 sm:p-5 border border-white/15 hover:border-white/50 transition-all duration-300 group block shadow-lg hover:shadow-2xl hover:-translate-y-1.5"
+            {/* Right Column: Slider */}
+            <div className="lg:col-span-7 flex flex-col gap-4">
+
+              {/* Scrollable Track */}
+              <div
+                ref={trackRef}
+                className="flex gap-4 overflow-x-auto pb-1 snap-x snap-mandatory"
+                style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+              >
+                {certCards.map((card) => (
+                  <Link
+                    key={card.title}
+                    href={card.link}
+                    className="flex-shrink-0 w-[200px] snap-start bg-[#0b1b36]/85 hover:bg-[#0e2448] backdrop-blur-md rounded-2xl p-4 border border-white/15 hover:border-white/50 transition-all duration-300 group block shadow-lg hover:shadow-2xl hover:-translate-y-1.5"
+                  >
+                    <div className="rounded-xl overflow-hidden aspect-[4/3] w-full mb-3 bg-black/30 border border-white/10">
+                      <img
+                        src={card.image}
+                        alt={card.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                    <h3 className="font-black text-base text-white group-hover:text-blue-200 transition-colors mb-1">
+                      {card.title}
+                    </h3>
+                    <p className="text-xs text-blue-100 font-normal leading-snug">
+                      {card.subtitle}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+
+              {/* Arrows + Dots */}
+              <div className="flex items-center gap-3">
+                <button
+                  onClick={() => scrollTo(activeIndex - 1)}
+                  disabled={activeIndex === 0}
+                  aria-label="Previous"
+                  className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/25 border border-white/20 flex items-center justify-center text-white transition-all disabled:opacity-30 disabled:cursor-not-allowed flex-shrink-0"
                 >
-                  {/* Badge Thumbnails Graphic */}
-                  <div className="rounded-xl overflow-hidden aspect-[16/11] w-full mb-4 bg-black/30 border border-white/10">
-                    <img
-                      src={card.image}
-                      alt={card.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+
+                <div className="flex gap-2">
+                  {certCards.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => scrollTo(i)}
+                      aria-label={`Go to slide ${i + 1}`}
+                      className={`h-2 rounded-full transition-all duration-300 ${
+                        i === activeIndex ? "w-6 bg-white" : "w-2 bg-white/40 hover:bg-white/70"
+                      }`}
                     />
-                  </div>
+                  ))}
+                </div>
 
-                  {/* Title & Subtitle */}
-                  <h3 className="font-black text-lg sm:text-xl text-white group-hover:text-blue-200 transition-colors mb-1.5">
-                    {card.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-blue-100 font-normal leading-snug">
-                    {card.subtitle}
-                  </p>
-                </Link>
-              ))}
+                <button
+                  onClick={() => scrollTo(activeIndex + 1)}
+                  disabled={activeIndex === certCards.length - 1}
+                  aria-label="Next"
+                  className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/25 border border-white/20 flex items-center justify-center text-white transition-all disabled:opacity-30 disabled:cursor-not-allowed flex-shrink-0"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </div>
+
             </div>
-
           </div>
         </div>
       </div>
