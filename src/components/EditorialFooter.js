@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { ArrowRight, MapPin, Phone, Mail, Clock } from "lucide-react";
-import Logo from "./Logo";
 import { FacebookIcon, TwitterIcon, LinkedinIcon, InstagramIcon } from "./SocialIcons";
 
 const SKILLS_DIRECTORY = [
@@ -93,27 +92,6 @@ const SKILLS_DIRECTORY = [
 export default function EditorialFooter() {
   return (
     <footer className="bg-gray-50 text-gray-900 border-t border-gray-200">
-      {/* ── LOGO + SOCIAL BAR (above skills directory) ── */}
-      <div className="bg-white border-b border-gray-200 py-5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          <Logo variant="dark" size="lg" />
-          <div className="flex items-center space-x-3">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
-              className="w-9 h-9 rounded-full bg-gray-50 border border-gray-200 hover:border-[#1e3a8a] hover:bg-[#1e3a8a] flex items-center justify-center text-gray-600 hover:text-white transition-all shadow-sm"
-              aria-label="Facebook"><FacebookIcon className="w-4 h-4" /></a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"
-              className="w-9 h-9 rounded-full bg-gray-50 border border-gray-200 hover:border-[#1e3a8a] hover:bg-[#1e3a8a] flex items-center justify-center text-gray-600 hover:text-white transition-all shadow-sm"
-              aria-label="Twitter"><TwitterIcon className="w-4 h-4" /></a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
-              className="w-9 h-9 rounded-full bg-gray-50 border border-gray-200 hover:border-[#1e3a8a] hover:bg-[#1e3a8a] flex items-center justify-center text-gray-600 hover:text-white transition-all shadow-sm"
-              aria-label="LinkedIn"><LinkedinIcon className="w-4 h-4" /></a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
-              className="w-9 h-9 rounded-full bg-gray-50 border border-gray-200 hover:border-[#1e3a8a] hover:bg-[#1e3a8a] flex items-center justify-center text-gray-600 hover:text-white transition-all shadow-sm"
-              aria-label="Instagram"><InstagramIcon className="w-4 h-4" /></a>
-          </div>
-        </div>
-      </div>
-
       {/* ── TOP PRE-FOOTER: Explore Top Skills and Certifications (Udemy Style Directory) ── */}
       <section className="bg-[#2a2b3f] text-white py-14 sm:py-16 border-b border-[#3b3c54]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -217,9 +195,63 @@ export default function EditorialFooter() {
 
           </div>
 
-          {/* Bottom Bar */}
-          <div className="pt-8 text-center text-sm sm:text-base font-medium text-gray-400">
-            <p>© 2026 BlankSlate Institute. All Rights Reserved.</p>
+          {/* Bottom Bar: Logo (Left), Copyright (Center), Social Icons (Right) */}
+          <div className="pt-8 grid grid-cols-1 md:grid-cols-3 items-center gap-6">
+            {/* Left: Logo */}
+            <div className="flex items-center justify-center md:justify-start">
+              <Link href="/" className="inline-flex items-center hover:opacity-90 transition-opacity">
+                <img
+                  src="/new logo.png"
+                  alt="BlankSlate - Empowered by Innovation"
+                  className="h-10 sm:h-12 w-auto object-contain"
+                />
+              </Link>
+            </div>
+
+            {/* Center: Copyright */}
+            <div className="text-center text-sm sm:text-base font-medium text-gray-400">
+              <p>© 2026 BlankSlate Institute. All Rights Reserved.</p>
+            </div>
+
+            {/* Right: Social Media Icons */}
+            <div className="flex items-center justify-center md:justify-end space-x-3">
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 flex items-center justify-center text-white transition-all shadow-sm"
+                aria-label="Facebook"
+              >
+                <FacebookIcon className="w-4 h-4" />
+              </a>
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 flex items-center justify-center text-white transition-all shadow-sm"
+                aria-label="Twitter"
+              >
+                <TwitterIcon className="w-4 h-4" />
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 flex items-center justify-center text-white transition-all shadow-sm"
+                aria-label="LinkedIn"
+              >
+                <LinkedinIcon className="w-4 h-4" />
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 flex items-center justify-center text-white transition-all shadow-sm"
+                aria-label="Instagram"
+              >
+                <InstagramIcon className="w-4 h-4" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
