@@ -186,8 +186,8 @@ export default function EditorialFooter() {
                 <li><Link href="/about" className="hover:text-[#1e3a8a] transition-colors block">Careers</Link></li>
                 <li><Link href="/contact" className="hover:text-[#1e3a8a] transition-colors block">Contact us</Link></li>
                 <li><Link href="/blog" className="hover:text-[#1e3a8a] transition-colors block">Blog</Link></li>
-                <li><Link href="/about" className="hover:text-[#1e3a8a] transition-colors block">Investors</Link></li>
-                <li><Link href="/courses" className="hover:text-[#1e3a8a] transition-colors block">Find more on BlankSlate</Link></li>
+                {/* <li><Link href="/about" className="hover:text-[#1e3a8a] transition-colors block">Investors</Link></li> */}
+                {/* <li><Link href="/courses" className="hover:text-[#1e3a8a] transition-colors block">Find more on BlankSlate</Link></li> */}
               </ul>
             </div>
 
@@ -261,10 +261,10 @@ export default function EditorialFooter() {
           </div>
 
           {/* Bottom Bar */}
-          <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm font-medium text-gray-600">
-            <div className="hidden sm:flex flex-1" />
-            <p className="flex-shrink-0">© 2026 BlankSlate Institute. All Rights Reserved.</p>
-            <div className="flex flex-1 items-center justify-end space-x-4">
+          <div className="pt-8 grid grid-cols-1 sm:grid-cols-3 items-center gap-4 text-xs sm:text-sm font-medium text-gray-600">
+            <div className="hidden sm:block" />
+            <p className="text-center">© 2026 BlankSlate Institute. All Rights Reserved.</p>
+            <div className="flex items-center justify-center sm:justify-end space-x-4">
               <Link href="/privacy" className="hover:text-[#1e3a8a] transition-colors">Privacy Policy</Link>
               <span>•</span>
               <Link href="/cookies" className="hover:text-[#1e3a8a] transition-colors">Cookie Policy</Link>
