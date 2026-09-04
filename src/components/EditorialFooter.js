@@ -117,17 +117,17 @@ export default function EditorialFooter() {
       {/* ── TOP PRE-FOOTER: Explore Top Skills and Certifications (Udemy Style Directory) ── */}
       <section className="bg-[#2a2b3f] text-white py-14 sm:py-16 border-b border-[#3b3c54]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-xl sm:text-2xl font-bold text-white mb-8 sm:mb-10 tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-8 sm:mb-10 tracking-tight">
             Explore top skills and certifications
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 lg:gap-x-12 lg:gap-y-12">
             {SKILLS_DIRECTORY.map((col, idx) => (
-              <div key={idx} className="space-y-3">
-                <h3 className="text-[15px] font-bold text-white tracking-tight">
+              <div key={idx} className="space-y-3.5">
+                <h3 className="text-base sm:text-lg font-bold text-white tracking-tight">
                   {col.title}
                 </h3>
-                <ul className="space-y-2 text-xs sm:text-[13px] text-gray-300">
+                <ul className="space-y-2.5 text-sm sm:text-[15px] text-gray-200 font-medium">
                   {col.items.map((item, itemIdx) => (
                     <li key={itemIdx}>
                       <Link
@@ -151,65 +151,65 @@ export default function EditorialFooter() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 pb-16 border-b border-white/10">
 
             {/* 1. ABOUT */}
-            <div className="space-y-3">
-              <h3 className="text-sm sm:text-base font-bold text-white">About</h3>
-              <ul className="space-y-2 text-xs sm:text-sm font-medium text-gray-400">
-                <li><Link href="/about" className="hover:text-blue-300 transition-colors block">About us</Link></li>
-                <li><Link href="/about" className="hover:text-blue-300 transition-colors block">Careers</Link></li>
-                <li><Link href="/contact" className="hover:text-blue-300 transition-colors block">Contact us</Link></li>
-                <li><Link href="/blog" className="hover:text-blue-300 transition-colors block">Blog</Link></li>
+            <div className="space-y-4">
+              <h3 className="text-base sm:text-lg font-bold text-white">About</h3>
+              <ul className="space-y-3 text-sm sm:text-[15px] font-medium text-gray-300">
+                <li><Link href="/about" className="hover:text-white transition-colors block">About us</Link></li>
+                <li><Link href="/about" className="hover:text-white transition-colors block">Careers</Link></li>
+                <li><Link href="/contact" className="hover:text-white transition-colors block">Contact us</Link></li>
+                <li><Link href="/blog" className="hover:text-white transition-colors block">Blog</Link></li>
               </ul>
             </div>
 
             {/* 2. DISCOVER BLANKSLATE */}
-            <div className="space-y-3">
-              <h3 className="text-sm sm:text-base font-bold text-white">Discover BlankSlate</h3>
-              <ul className="space-y-2 text-xs sm:text-sm font-medium text-gray-400">
-                <li><Link href="/courses" className="hover:text-blue-300 transition-colors block">Get the app</Link></li>
-                <li><Link href="/contact" className="hover:text-blue-300 transition-colors block">Teach on BlankSlate</Link></li>
-                <li><Link href="/courses" className="hover:text-blue-300 transition-colors block">Plans and Pricing</Link></li>
-                <li><Link href="/about" className="hover:text-blue-300 transition-colors block">Affiliate</Link></li>
-                <li><Link href="/contact" className="hover:text-blue-300 transition-colors block">Help and Support</Link></li>
+            <div className="space-y-4">
+              <h3 className="text-base sm:text-lg font-bold text-white">Discover BlankSlate</h3>
+              <ul className="space-y-3 text-sm sm:text-[15px] font-medium text-gray-300">
+                <li><Link href="/courses" className="hover:text-white transition-colors block">Get the app</Link></li>
+                <li><Link href="/contact" className="hover:text-white transition-colors block">Teach on BlankSlate</Link></li>
+                <li><Link href="/courses" className="hover:text-white transition-colors block">Plans and Pricing</Link></li>
+                <li><Link href="/about" className="hover:text-white transition-colors block">Affiliate</Link></li>
+                <li><Link href="/contact" className="hover:text-white transition-colors block">Help and Support</Link></li>
               </ul>
             </div>
 
             {/* 3. BUSINESS & LEGAL */}
             <div className="space-y-6">
               <div className="space-y-3">
-                <h3 className="text-sm sm:text-base font-bold text-white">BlankSlate for Business</h3>
-                <ul className="space-y-2 text-xs sm:text-sm font-medium text-gray-400">
-                  <li><Link href="/courses" className="hover:text-blue-300 transition-colors block">BlankSlate Business</Link></li>
+                <h3 className="text-base sm:text-lg font-bold text-white">BlankSlate for Business</h3>
+                <ul className="space-y-2.5 text-sm sm:text-[15px] font-medium text-gray-300">
+                  <li><Link href="/courses" className="hover:text-white transition-colors block">BlankSlate Business</Link></li>
                 </ul>
               </div>
               <div className="space-y-3">
-                <h3 className="text-sm sm:text-base font-bold text-white">Legal &amp; Accessibility</h3>
-                <ul className="space-y-2 text-xs sm:text-sm font-medium text-gray-400">
-                  <li><Link href="/terms" className="hover:text-blue-300 transition-colors block">Accessibility statement</Link></li>
-                  <li><Link href="/privacy" className="hover:text-blue-300 transition-colors block">Privacy policy</Link></li>
-                  <li><Link href="/courses" className="hover:text-blue-300 transition-colors block">Sitemap</Link></li>
-                  <li><Link href="/terms" className="hover:text-blue-300 transition-colors block">Terms</Link></li>
+                <h3 className="text-base sm:text-lg font-bold text-white">Legal &amp; Accessibility</h3>
+                <ul className="space-y-2.5 text-sm sm:text-[15px] font-medium text-gray-300">
+                  <li><Link href="/terms" className="hover:text-white transition-colors block">Accessibility statement</Link></li>
+                  <li><Link href="/privacy" className="hover:text-white transition-colors block">Privacy policy</Link></li>
+                  <li><Link href="/courses" className="hover:text-white transition-colors block">Sitemap</Link></li>
+                  <li><Link href="/terms" className="hover:text-white transition-colors block">Terms</Link></li>
                 </ul>
               </div>
             </div>
 
             {/* 4. CONTACT */}
             <div className="space-y-4">
-              <h3 className="text-sm sm:text-base font-bold text-white">Contact</h3>
-              <div className="space-y-3 text-xs sm:text-sm text-gray-400 font-medium">
-                <p className="flex items-start gap-2.5">
-                  <MapPin className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />
+              <h3 className="text-base sm:text-lg font-bold text-white">Contact</h3>
+              <div className="space-y-3.5 text-sm sm:text-[15px] text-gray-300 font-medium">
+                <p className="flex items-start gap-3">
+                  <MapPin className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
                   <span className="leading-relaxed">First Floor: 236 Badar Block Allama Iqbal Town Main Multan Road Lahore.</span>
                 </p>
-                <p className="flex items-center gap-2.5">
-                  <Phone className="w-4 h-4 text-blue-400 flex-shrink-0" />
-                  <a href="tel:+923320901442" className="hover:text-blue-300 transition-colors">+92 332 0901442</a>
+                <p className="flex items-center gap-3">
+                  <Phone className="w-5 h-5 text-blue-400 flex-shrink-0" />
+                  <a href="tel:+923320901442" className="hover:text-white transition-colors">+92 332 0901442</a>
                 </p>
-                <p className="flex items-center gap-2.5">
-                  <Mail className="w-4 h-4 text-blue-400 flex-shrink-0" />
-                  <a href="mailto:info@blankslateinstitute.pk" className="hover:text-blue-300 transition-colors">info@blankslateinstitute.pk</a>
+                <p className="flex items-center gap-3">
+                  <Mail className="w-5 h-5 text-blue-400 flex-shrink-0" />
+                  <a href="mailto:info@blankslateinstitute.pk" className="hover:text-white transition-colors">info@blankslateinstitute.pk</a>
                 </p>
-                <p className="flex items-start gap-2.5 pt-1">
-                  <Clock className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />
+                <p className="flex items-start gap-3 pt-1">
+                  <Clock className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
                   <span>Mon - Sat: 9:00 AM - 6:00 PM</span>
                 </p>
               </div>
@@ -218,7 +218,7 @@ export default function EditorialFooter() {
           </div>
 
           {/* Bottom Bar */}
-          <div className="pt-8 text-center text-xs sm:text-sm font-medium text-gray-500">
+          <div className="pt-8 text-center text-sm sm:text-base font-medium text-gray-400">
             <p>© 2026 BlankSlate Institute. All Rights Reserved.</p>
           </div>
         </div>
