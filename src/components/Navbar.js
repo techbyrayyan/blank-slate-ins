@@ -18,6 +18,7 @@ const navLinks = [
 
 const languages = [
   { name: "English",          code: "en"    },
+  { name: "اردو",             code: "ur"    },
   { name: "العربية",          code: "ar"    },
   { name: "Deutsch",          code: "de"    },
   { name: "Español",          code: "es"    },
