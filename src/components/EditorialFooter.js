@@ -262,11 +262,10 @@ export default function EditorialFooter() {
 
           {/* Bottom Bar */}
           <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm font-medium text-gray-600">
-            <p>© 2026 BlankSlate Institute. All Rights Reserved.</p>
-            <div className="flex items-center space-x-4">
+            <div className="hidden sm:flex flex-1" />
+            <p className="flex-shrink-0">© 2026 BlankSlate Institute. All Rights Reserved.</p>
+            <div className="flex flex-1 items-center justify-end space-x-4">
               <Link href="/privacy" className="hover:text-[#1e3a8a] transition-colors">Privacy Policy</Link>
-              <span>•</span>
-              <Link href="/terms" className="hover:text-[#1e3a8a] transition-colors">Terms & Conditions</Link>
               <span>•</span>
               <Link href="/cookies" className="hover:text-[#1e3a8a] transition-colors">Cookie Policy</Link>
             </div>
