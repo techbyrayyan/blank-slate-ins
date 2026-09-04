@@ -175,14 +175,25 @@ export default function Navbar({ onOpenApply }) {
 
           <nav className="bg-white border-b border-gray-200">
             <div className="max-w-7xl mx-auto px-6 lg:px-10 py-2.5 flex items-center justify-between gap-4">
-              <div className="hidden xl:flex items-center gap-1 flex-wrap">
+              
+              {/* Left side: Logo on scroll only (hidden by default when not scrolled) */}
+              <div className="hidden xl:flex items-center flex-shrink-0">
+                <div className={`overflow-hidden transition-all duration-400 ease-in-out ${
+                  isScrolled ? "max-w-[180px] opacity-100 mr-2" : "max-w-0 opacity-0 pointer-events-none mr-0"
+                }`}>
+                  <Logo variant="dark" size="sm" />
+                </div>
+              </div>
+
+              {/* Center: Nav links */}
+              <div className="hidden xl:flex flex-1 items-center justify-center gap-2 flex-wrap">
                 {navLinks.map((link) => {
                   const isActive = pathname === link.href;
                   return (
                     <Link
                       key={link.name}
                       href={link.href}
-                      className={`px-3.5 py-2 text-sm font-semibold rounded-lg transition-all whitespace-nowrap ${
+                      className={`px-4 py-2 text-sm font-semibold rounded-lg transition-all whitespace-nowrap ${
                         isActive
                           ? "text-[#1e3a8a] bg-blue-50 font-bold"
                           : "text-gray-700 hover:text-[#1e3a8a] hover:bg-gray-50"
@@ -193,6 +204,8 @@ export default function Navbar({ onOpenApply }) {
                   );
                 })}
               </div>
+
+              {/* Right side: Let's Talk CTA button */}
               <div className="hidden xl:flex items-center flex-shrink-0">
                 <Link
                   href="/contact"
@@ -203,6 +216,7 @@ export default function Navbar({ onOpenApply }) {
                 </Link>
               </div>
 
+              {/* Mobile: logo + menu button */}
               <div className="flex xl:hidden items-center justify-between w-full">
                 <div className={`overflow-hidden transition-all duration-300 ${isScrolled ? "max-w-[160px] opacity-100" : "max-w-0 opacity-0"}`}>
                   <Logo variant="dark" size="sm" />
