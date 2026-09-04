@@ -93,6 +93,27 @@ const SKILLS_DIRECTORY = [
 export default function EditorialFooter() {
   return (
     <footer className="bg-gray-50 text-gray-900 border-t border-gray-200">
+      {/* ── LOGO + SOCIAL BAR (above skills directory) ── */}
+      <div className="bg-white border-b border-gray-200 py-5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+          <Logo variant="dark" size="lg" />
+          <div className="flex items-center space-x-3">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+              className="w-9 h-9 rounded-full bg-gray-50 border border-gray-200 hover:border-[#1e3a8a] hover:bg-[#1e3a8a] flex items-center justify-center text-gray-600 hover:text-white transition-all shadow-sm"
+              aria-label="Facebook"><FacebookIcon className="w-4 h-4" /></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"
+              className="w-9 h-9 rounded-full bg-gray-50 border border-gray-200 hover:border-[#1e3a8a] hover:bg-[#1e3a8a] flex items-center justify-center text-gray-600 hover:text-white transition-all shadow-sm"
+              aria-label="Twitter"><TwitterIcon className="w-4 h-4" /></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+              className="w-9 h-9 rounded-full bg-gray-50 border border-gray-200 hover:border-[#1e3a8a] hover:bg-[#1e3a8a] flex items-center justify-center text-gray-600 hover:text-white transition-all shadow-sm"
+              aria-label="LinkedIn"><LinkedinIcon className="w-4 h-4" /></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+              className="w-9 h-9 rounded-full bg-gray-50 border border-gray-200 hover:border-[#1e3a8a] hover:bg-[#1e3a8a] flex items-center justify-center text-gray-600 hover:text-white transition-all shadow-sm"
+              aria-label="Instagram"><InstagramIcon className="w-4 h-4" /></a>
+          </div>
+        </div>
+      </div>
+
       {/* ── TOP PRE-FOOTER: Explore Top Skills and Certifications (Udemy Style Directory) ── */}
       <section className="bg-[#2a2b3f] text-white py-14 sm:py-16 border-b border-[#3b3c54]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -127,57 +148,10 @@ export default function EditorialFooter() {
       {/* ── MAIN FOOTER (White Background, Image 1 structure + Circled Brand & Contact) ── */}
       <div className="bg-white text-gray-900 pt-16 pb-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 pb-16 border-b border-gray-200">
-            
-            {/* 1. BRAND COL (Circled in Image 2) */}
-            <div className="lg:col-span-3 space-y-4">
-              <Logo variant="dark" size="lg" />
-              <p className="text-sm text-gray-600 font-medium leading-relaxed">
-                Education for what&apos;s next. Empowered by innovation.
-              </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 pb-16 border-b border-gray-200">
 
-              <div className="flex items-center space-x-3 pt-2">
-                <a
-                  href="https://facebook.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-full bg-gray-50 border border-gray-200 hover:border-[#1e3a8a] hover:bg-[#1e3a8a] flex items-center justify-center text-gray-600 hover:text-white transition-all shadow-sm"
-                  aria-label="Facebook"
-                >
-                  <FacebookIcon className="w-4 h-4" />
-                </a>
-                <a
-                  href="https://twitter.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-full bg-gray-50 border border-gray-200 hover:border-[#1e3a8a] hover:bg-[#1e3a8a] flex items-center justify-center text-gray-600 hover:text-white transition-all shadow-sm"
-                  aria-label="Twitter"
-                >
-                  <TwitterIcon className="w-4 h-4" />
-                </a>
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-full bg-gray-50 border border-gray-200 hover:border-[#1e3a8a] hover:bg-[#1e3a8a] flex items-center justify-center text-gray-600 hover:text-white transition-all shadow-sm"
-                  aria-label="LinkedIn"
-                >
-                  <LinkedinIcon className="w-4 h-4" />
-                </a>
-                <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-full bg-gray-50 border border-gray-200 hover:border-[#1e3a8a] hover:bg-[#1e3a8a] flex items-center justify-center text-gray-600 hover:text-white transition-all shadow-sm"
-                  aria-label="Instagram"
-                >
-                  <InstagramIcon className="w-4 h-4" />
-                </a>
-              </div>
-            </div>
-
-            {/* 2. ABOUT (Image 1 Col 1) */}
-            <div className="lg:col-span-2 space-y-3">
+            {/* 1. ABOUT */}
+            <div className="space-y-3">
               <h3 className="text-sm sm:text-base font-bold text-gray-900">
                 About
               </h3>
@@ -191,8 +165,8 @@ export default function EditorialFooter() {
               </ul>
             </div>
 
-            {/* 3. DISCOVER BLANKSLATE (Image 1 Col 2) */}
-            <div className="lg:col-span-2 space-y-3">
+            {/* 2. DISCOVER BLANKSLATE */}
+            <div className="space-y-3">
               <h3 className="text-sm sm:text-base font-bold text-gray-900">
                 Discover BlankSlate
               </h3>
@@ -205,21 +179,16 @@ export default function EditorialFooter() {
               </ul>
             </div>
 
-            {/* 4. BUSINESS & LEGAL (Image 1 Col 3 & 4) */}
-            <div className="lg:col-span-2 space-y-6">
+            {/* 3. BUSINESS & LEGAL */}
+            <div className="space-y-6">
               <div className="space-y-3">
-                <h3 className="text-sm sm:text-base font-bold text-gray-900">
-                  BlankSlate for Business
-                </h3>
+                <h3 className="text-sm sm:text-base font-bold text-gray-900">BlankSlate for Business</h3>
                 <ul className="space-y-2 text-xs sm:text-sm font-medium text-gray-600">
                   <li><Link href="/courses" className="hover:text-[#1e3a8a] transition-colors block">BlankSlate Business</Link></li>
                 </ul>
               </div>
-
               <div className="space-y-3">
-                <h3 className="text-sm sm:text-base font-bold text-gray-900">
-                  Legal & Accessibility
-                </h3>
+                <h3 className="text-sm sm:text-base font-bold text-gray-900">Legal &amp; Accessibility</h3>
                 <ul className="space-y-2 text-xs sm:text-sm font-medium text-gray-600">
                   <li><Link href="/terms" className="hover:text-[#1e3a8a] transition-colors block">Accessibility statement</Link></li>
                   <li><Link href="/privacy" className="hover:text-[#1e3a8a] transition-colors block">Privacy policy</Link></li>
@@ -229,8 +198,8 @@ export default function EditorialFooter() {
               </div>
             </div>
 
-            {/* 5. CONTACT (Circled in Image 2) */}
-            <div className="lg:col-span-3 space-y-4">
+            {/* 4. CONTACT */}
+            <div className="space-y-4">
               <h3 className="text-sm sm:text-base font-bold text-gray-900">
                 Contact
               </h3>
