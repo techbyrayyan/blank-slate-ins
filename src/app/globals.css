@@ -135,3 +135,13 @@ body {
 #goog-gt-tt {
   display: none !important;
 }
+
+/* Hide Next.js Dev Indicator ("N" button) */
+nextjs-portal,
+[data-nextjs-dev-tools],
+[data-nextjs-toast-wrapper],
+#nextjs-dev-tools,
+[data-nextjs-portal] {
+  display: none !important;
+}
+
