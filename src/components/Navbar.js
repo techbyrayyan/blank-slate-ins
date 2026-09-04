@@ -50,6 +50,16 @@ export default function Navbar({ onOpenApply }) {
 
   useEffect(() => { setMobileMenuOpen(false); }, [pathname]);
 
+  // Read active language from cookie on mount
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      const match = document.cookie.match(/googtrans=\/en\/([a-zA-Z\-]+)/);
+      if (match && match[1]) {
+        setCurrentLang(match[1]);
+      }
+    }
+  }, []);
+
   // Scroll detection
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 60);
@@ -73,21 +83,46 @@ export default function Navbar({ onOpenApply }) {
   const changeLang = (code) => {
     setCurrentLang(code);
     setLangModalOpen(false);
-    if (code === "en") {
-      document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-      if (typeof window !== "undefined" && window.location.hostname) {
-        document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.${window.location.hostname};`;
+
+    const hostname = typeof window !== "undefined" ? window.location.hostname : "";
+
+    const setCookie = (name, value, days) => {
+      let expires = "";
+      if (days !== undefined) {
+        const d = new Date();
+        d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
+        expires = "; expires=" + d.toUTCString();
       }
+      document.cookie = `${name}=${value}${expires}; path=/;`;
+      if (hostname) {
+        document.cookie = `${name}=${value}${expires}; path=/; domain=${hostname};`;
+        document.cookie = `${name}=${value}${expires}; path=/; domain=.${hostname};`;
+      }
+    };
+
+    if (code === "en") {
+      setCookie("googtrans", "", -1);
       const select = document.querySelector(".goog-te-combo");
-      if (select) { select.value = ""; select.dispatchEvent(new Event("change")); }
+      if (select) {
+        select.value = "";
+        select.dispatchEvent(new Event("change", { bubbles: true }));
+        select.dispatchEvent(new Event("input", { bubbles: true }));
+      } else {
+        window.location.reload();
+      }
       return;
     }
-    document.cookie = `googtrans=/en/${code}; path=/;`;
-    if (typeof window !== "undefined" && window.location.hostname) {
-      document.cookie = `googtrans=/en/${code}; path=/; domain=.${window.location.hostname};`;
-    }
+
+    setCookie("googtrans", `/en/${code}`, 365);
+
     const select = document.querySelector(".goog-te-combo");
-    if (select) { select.value = code; select.dispatchEvent(new Event("change")); }
+    if (select) {
+      select.value = code;
+      select.dispatchEvent(new Event("change", { bubbles: true }));
+      select.dispatchEvent(new Event("input", { bubbles: true }));
+    } else {
+      window.location.reload();
+    }
   };
 
   const currentLangName = languages.find(l => l.code === currentLang)?.name || "English";

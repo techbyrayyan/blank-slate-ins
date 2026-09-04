@@ -69,22 +69,40 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} h-full antialiased scroll-smooth`}
       suppressHydrationWarning
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.googleTranslateElementInit = function() {
+                if (window.google && window.google.translate) {
+                  new window.google.translate.TranslateElement({
+                    pageLanguage: 'en',
+                    includedLanguages: 'ur,ar,de,es,fr,id,it,ja,ko,nl,pl,pt,ro,ru,th,tr,vi,zh-CN,zh-TW',
+                    autoDisplay: false
+                  }, 'google_translate_element');
+                }
+              };
+            `,
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col font-sans bg-white text-[#1F2328]" suppressHydrationWarning>
-        <div id="google_translate_element" style={{ display: "none" }} />
+        <div
+          id="google_translate_element"
+          style={{
+            position: "absolute",
+            left: "-9999px",
+            top: "-9999px",
+            width: "1px",
+            height: "1px",
+            overflow: "hidden",
+            opacity: 0,
+            pointerEvents: "none",
+          }}
+        />
         {children}
-        <Script id="google-translate-init" strategy="afterInteractive">
-          {`
-            window.googleTranslateElementInit = function() {
-              new google.translate.TranslateElement({
-                pageLanguage: 'en',
-                includedLanguages: 'ur,ar,de,es,fr,id,it,ja,ko,nl,pl,pt,ro,ru,th,tr,vi,zh-CN,zh-TW',
-                autoDisplay: false
-              }, 'google_translate_element');
-            };
-          `}
-        </Script>
         <Script
-          src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+          src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
           strategy="afterInteractive"
         />
       </body>
