@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle2, MessageSquare } from "lucide-react";
@@ -18,16 +18,28 @@ export default function ContactSection() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSending(true);
-    await new Promise((resolve) => setTimeout(resolve, 800));
-    setIsSending(false);
-    setIsSent(true);
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      subject: "General Inquiry",
-      message: "",
-    });
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...formData, source: "home_section" }),
+      });
+      const data = await res.json();
+      if (!data.success) throw new Error(data.error || "Unknown error");
+      setIsSent(true);
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        subject: "General Inquiry",
+        message: "",
+      });
+    } catch (err) {
+      console.error("Form submit error:", err);
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (

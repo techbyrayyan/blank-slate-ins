@@ -34,16 +34,28 @@ export default function ContactPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSending(true);
-    await new Promise((resolve) => setTimeout(resolve, 800));
-    setIsSending(false);
-    setIsSent(true);
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      subject: "Admissions & Enrollment",
-      message: "",
-    });
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...formData, source: "contact_page" }),
+      });
+      const data = await res.json();
+      if (!data.success) throw new Error(data.error || "Unknown error");
+      setIsSent(true);
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        subject: "Admissions & Enrollment",
+        message: "",
+      });
+    } catch (err) {
+      console.error("Form submit error:", err);
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
