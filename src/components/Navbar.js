@@ -260,12 +260,9 @@ export default function Navbar({ onOpenApply }) {
                 </Link>
               </div>
 
-              {/* Mobile: logo + menu button */}
+              {/* Mobile: logo on scroll only + menu button */}
               <div className="flex xl:hidden items-center justify-between w-full">
-                <div className={`overflow-hidden transition-all duration-300 ${isScrolled ? "max-w-[160px] opacity-100" : "max-w-0 opacity-0"}`}>
-                  <Logo variant="dark" size="sm" />
-                </div>
-                <div className={`overflow-hidden transition-all duration-300 ${!isScrolled ? "max-w-[160px] opacity-100" : "max-w-0 opacity-0"}`}>
+                <div className={`overflow-hidden transition-all duration-300 ${isScrolled ? "max-w-[160px] opacity-100" : "max-w-0 opacity-0 pointer-events-none"}`}>
                   <Logo variant="dark" size="sm" />
                 </div>
                 <button onClick={() => setMobileMenuOpen(true)}
