@@ -218,26 +218,26 @@ export default function Navbar({ onOpenApply }) {
           </div>
 
           <nav className="bg-white border-b border-gray-200">
-            <div className="max-w-7xl mx-auto px-6 lg:px-10 py-2.5 flex items-center justify-between gap-4">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-2.5 flex items-center justify-between gap-3">
               
-              {/* Left side: Logo on scroll only (hidden by default when not scrolled) */}
-              <div className="hidden xl:flex items-center flex-shrink-0">
+              {/* Left side: Logo on scroll only across all devices (hidden by default when not scrolled) */}
+              <div className="flex items-center flex-shrink-0">
                 <div className={`overflow-hidden transition-all duration-400 ease-in-out ${
-                  isScrolled ? "max-w-[260px] opacity-100 mr-4" : "max-w-0 opacity-0 pointer-events-none mr-0"
+                  isScrolled ? "max-w-[170px] sm:max-w-[220px] lg:max-w-[260px] opacity-100 mr-2 sm:mr-4" : "max-w-0 opacity-0 pointer-events-none mr-0"
                 }`}>
                   <Logo variant="dark" size="lg" />
                 </div>
               </div>
 
-              {/* Center: Nav links */}
-              <div className="hidden xl:flex flex-1 items-center justify-center gap-2 flex-wrap">
+              {/* Center: Nav links (Visible on mobile, tablet & desktop) */}
+              <div className="flex-1 flex items-center justify-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar py-0.5">
                 {navLinks.map((link) => {
                   const isActive = pathname === link.href;
                   return (
                     <Link
                       key={link.name}
                       href={link.href}
-                      className={`px-4 py-2 text-sm font-semibold rounded-lg transition-all whitespace-nowrap ${
+                      className={`px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all whitespace-nowrap flex-shrink-0 ${
                         isActive
                           ? "text-[#1e3a8a] bg-blue-50 font-bold"
                           : "text-gray-700 hover:text-[#1e3a8a] hover:bg-gray-50"
@@ -249,25 +249,25 @@ export default function Navbar({ onOpenApply }) {
                 })}
               </div>
 
-              {/* Right side: Let's Talk CTA button */}
-              <div className="hidden xl:flex items-center flex-shrink-0">
+              {/* Right side: Let's Talk CTA button (tablet & desktop) */}
+              <div className="hidden md:flex items-center flex-shrink-0">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#1e3a8a] hover:bg-[#152e72] text-white text-sm font-bold rounded-xl shadow-md transition-all group cursor-pointer"
+                  className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 bg-[#1e3a8a] hover:bg-[#152e72] text-white text-xs sm:text-sm font-bold rounded-xl shadow-md transition-all group cursor-pointer"
                 >
                   <span>Let&apos;s Talk</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-3.5 sm:w-4 h-3.5 sm:h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
 
-              {/* Mobile: logo on scroll only + menu button */}
-              <div className="flex xl:hidden items-center justify-between w-full">
-                <div className={`overflow-hidden transition-all duration-300 ${isScrolled ? "max-w-[160px] opacity-100" : "max-w-0 opacity-0 pointer-events-none"}`}>
-                  <Logo variant="dark" size="sm" />
-                </div>
-                <button onClick={() => setMobileMenuOpen(true)}
-                  className="p-2 text-gray-900 hover:text-[#1e3a8a] rounded" aria-label="Open navigation menu">
-                  <Menu className="w-6 h-6" />
+              {/* Mobile menu trigger when scrolled (so user can still open menu on mobile when middle bar is collapsed) */}
+              <div className="flex md:hidden items-center flex-shrink-0">
+                <button
+                  onClick={() => setMobileMenuOpen(true)}
+                  className="p-1.5 text-gray-900 hover:text-[#1e3a8a] rounded"
+                  aria-label="Open navigation menu"
+                >
+                  <Menu className="w-5 h-5" />
                 </button>
               </div>
             </div>
