@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -14,6 +14,7 @@ import {
   Send,
   CheckCircle2,
   Sparkles,
+  ExternalLink,
 } from "lucide-react";
 import { instituteInfo } from "@/data/instituteData";
 
@@ -71,68 +72,73 @@ export default function ContactPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-            {/* Left Col: Contact Info */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
+            {/* Left Col: Contact Info (Equal height to form card) */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, delay: 0.15 }}
-              className="lg:col-span-5 space-y-6"
+              className="lg:col-span-5 h-full flex flex-col"
             >
-              <div className="p-8 sm:p-10 rounded-3xl bg-white border border-gray-200 text-gray-900 space-y-6 shadow-md">
-                <h3 className="text-2xl font-black text-gray-950">Campus Information</h3>
+              <div className="h-full p-8 sm:p-10 rounded-3xl bg-white border border-gray-200 text-gray-900 shadow-md flex flex-col justify-between">
+                <div>
+                  <h3 className="text-2xl font-black text-gray-950 mb-8">Campus Information</h3>
 
-                <div className="space-y-5 text-xs sm:text-sm text-gray-700">
-                  <div className="flex items-start gap-3.5">
-                    <div className="w-10 h-10 rounded-xl bg-gray-100 text-[#1D4ED8] border border-gray-200 flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-5 h-5" />
+                  <div className="space-y-6 text-xs sm:text-sm text-gray-700">
+                    <div className="flex items-start gap-4">
+                      <div className="w-11 h-11 rounded-2xl bg-blue-50 text-[#1e3a8a] border border-blue-100 flex items-center justify-center flex-shrink-0">
+                        <MapPin className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <p className="font-bold text-gray-950 text-sm sm:text-base">Physical Location</p>
+                        <p className="text-gray-600 mt-1 leading-relaxed">{instituteInfo.address}</p>
+                      </div>
                     </div>
-                    <div>
-                      <p className="font-bold text-gray-900">Physical Location</p>
-                      <p className="text-gray-500 mt-0.5">{instituteInfo.address}</p>
-                    </div>
-                  </div>
 
-                  <div className="flex items-start gap-3.5">
-                    <div className="w-10 h-10 rounded-xl bg-gray-100 text-[#1D4ED8] border border-gray-200 flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-5 h-5" />
+                    <div className="flex items-start gap-4">
+                      <div className="w-11 h-11 rounded-2xl bg-blue-50 text-[#1e3a8a] border border-blue-100 flex items-center justify-center flex-shrink-0">
+                        <Phone className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <p className="font-bold text-gray-950 text-sm sm:text-base">Admissions Hotline</p>
+                        <a href={`tel:${instituteInfo.phone}`} className="text-gray-600 hover:text-[#1e3a8a] mt-1 inline-block font-medium transition-colors">
+                          {instituteInfo.phone}
+                        </a>
+                      </div>
                     </div>
-                    <div>
-                      <p className="font-bold text-gray-900">Admissions Hotline</p>
-                      <p className="text-gray-500 mt-0.5">{instituteInfo.phone}</p>
-                    </div>
-                  </div>
 
-                  <div className="flex items-start gap-3.5">
-                    <div className="w-10 h-10 rounded-xl bg-gray-100 text-[#1D4ED8] border border-gray-200 flex items-center justify-center flex-shrink-0">
-                      <Mail className="w-5 h-5" />
+                    <div className="flex items-start gap-4">
+                      <div className="w-11 h-11 rounded-2xl bg-blue-50 text-[#1e3a8a] border border-blue-100 flex items-center justify-center flex-shrink-0">
+                        <Mail className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <p className="font-bold text-gray-950 text-sm sm:text-base">Inquiry Email</p>
+                        <a href={`mailto:${instituteInfo.email}`} className="text-gray-600 hover:text-[#1e3a8a] mt-1 inline-block font-medium transition-colors">
+                          {instituteInfo.email}
+                        </a>
+                      </div>
                     </div>
-                    <div>
-                      <p className="font-bold text-gray-900">Inquiry Email</p>
-                      <p className="text-gray-500 mt-0.5">{instituteInfo.email}</p>
-                    </div>
-                  </div>
 
-                  <div className="flex items-start gap-3.5">
-                    <div className="w-10 h-10 rounded-xl bg-gray-100 text-[#1D4ED8] border border-gray-200 flex items-center justify-center flex-shrink-0">
-                      <Clock className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <p className="font-bold text-gray-900">Admissions Desk Hours</p>
-                      <p className="text-gray-500 mt-0.5">{instituteInfo.officeHours}</p>
+                    <div className="flex items-start gap-4">
+                      <div className="w-11 h-11 rounded-2xl bg-blue-50 text-[#1e3a8a] border border-blue-100 flex items-center justify-center flex-shrink-0">
+                        <Clock className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <p className="font-bold text-gray-950 text-sm sm:text-base">Admissions Desk Hours</p>
+                        <p className="text-gray-600 mt-1">{instituteInfo.officeHours}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Map container */}
-              <div className="rounded-3xl overflow-hidden border border-gray-200 shadow-md h-56 bg-gray-100 relative">
-                <iframe
-                  title="BlankSlate Campus Map"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d144.9537363153163!3d-37.816279742021665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d6a32f913d0!2sInnovation%20Hub!5e0!3m2!1sen!2sus!4v1600000000000!5m2!1sen!2sus"
-                  className="w-full h-full border-0"
-                  loading="lazy"
-                ></iframe>
+                {/* Bottom Status Indicator inside Left Card */}
+                <div className="pt-6 mt-8 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500 font-medium">
+                  <span className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    Campus Open for Admissions &amp; Tours
+                  </span>
+                  <span className="text-gray-400">Lahore, PK</span>
+                </div>
               </div>
             </motion.div>
 
@@ -141,10 +147,10 @@ export default function ContactPage() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, delay: 0.15 }}
-              className="lg:col-span-7 p-8 sm:p-10 rounded-3xl bg-white border border-gray-200 shadow-md"
+              className="lg:col-span-7 h-full p-8 sm:p-10 rounded-3xl bg-white border border-gray-200 shadow-md flex flex-col justify-between"
             >
               {isSent ? (
-                <div className="py-12 text-center space-y-4">
+                <div className="py-12 my-auto text-center space-y-4">
                   <div className="w-16 h-16 bg-emerald-50 text-emerald-600 border border-emerald-200 rounded-full flex items-center justify-center mx-auto">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
@@ -154,102 +160,151 @@ export default function ContactPage() {
                   </p>
                   <button
                     onClick={() => setIsSent(false)}
-                    className="px-6 py-2.5 bg-[#1D4ED8] text-white text-xs font-bold rounded-full uppercase"
+                    className="px-6 py-2.5 bg-[#1e3a8a] hover:bg-[#152e72] text-white text-xs font-bold rounded-full uppercase transition-colors"
                   >
                     Send Another Inquiry
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <form onSubmit={handleSubmit} className="space-y-5 flex-1 flex flex-col justify-between">
+                  <div className="space-y-5">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-gray-700 mb-1.5">
+                          Your Full Name *
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          value={formData.name}
+                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                          placeholder="e.g. Rayyan Ansari"
+                          className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#1e3a8a]"
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-gray-700 mb-1.5">
+                          Email Address *
+                        </label>
+                        <input
+                          type="email"
+                          required
+                          value={formData.email}
+                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                          placeholder="you@domain.com"
+                          className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#1e3a8a]"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-gray-700 mb-1.5">
+                          Phone Number
+                        </label>
+                        <input
+                          type="tel"
+                          value={formData.phone}
+                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                          placeholder="+1 (555) 000-0000"
+                          className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#1e3a8a]"
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-gray-700 mb-1.5">
+                          Inquiry Topic
+                        </label>
+                        <select
+                          value={formData.subject}
+                          onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                          className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm text-gray-900 focus:outline-none focus:border-[#1e3a8a]"
+                        >
+                          <option value="Admissions & Enrollment">Admissions & Enrollment</option>
+                          <option value="Curriculum & Prerequisites">Curriculum & Prerequisites</option>
+                          <option value="Campus Visit & Tours">Campus Visit & Tours</option>
+                          <option value="Scholarship Inquiries">Scholarship Inquiries</option>
+                        </select>
+                      </div>
+                    </div>
+
                     <div>
                       <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-gray-700 mb-1.5">
-                        Your Full Name *
+                        Your Message *
                       </label>
-                      <input
-                        type="text"
+                      <textarea
+                        rows="4"
                         required
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        placeholder="e.g. Rayyan Ansari"
-                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#1D4ED8]"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-gray-700 mb-1.5">
-                        Email Address *
-                      </label>
-                      <input
-                        type="email"
-                        required
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        placeholder="you@domain.com"
-                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#1D4ED8]"
-                      />
+                        value={formData.message}
+                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                        placeholder="How can our admissions and advisory team help you?"
+                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#1e3a8a]"
+                      ></textarea>
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-gray-700 mb-1.5">
-                        Phone Number
-                      </label>
-                      <input
-                        type="tel"
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="+1 (555) 000-0000"
-                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#1D4ED8]"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-gray-700 mb-1.5">
-                        Inquiry Topic
-                      </label>
-                      <select
-                        value={formData.subject}
-                        onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm text-gray-900 focus:outline-none focus:border-[#1D4ED8]"
-                      >
-                        <option value="Admissions & Enrollment">Admissions & Enrollment</option>
-                        <option value="Curriculum & Prerequisites">Curriculum & Prerequisites</option>
-                        <option value="Campus Visit & Tours">Campus Visit & Tours</option>
-                        <option value="Scholarship Inquiries">Scholarship Inquiries</option>
-                      </select>
-                    </div>
+                  <div className="pt-2">
+                    <motion.button
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      type="submit"
+                      disabled={isSending}
+                      className="w-full sm:w-auto px-8 py-4 bg-[#1e3a8a] hover:bg-[#152e72] text-white text-xs font-black uppercase tracking-widest rounded-full shadow-lg flex items-center justify-center gap-2 transition-all"
+                    >
+                      <Send className="w-3.5 h-3.5" />
+                      <span>{isSending ? "Transmitting..." : "Send Message to Admissions"}</span>
+                    </motion.button>
                   </div>
-
-                  <div>
-                    <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-gray-700 mb-1.5">
-                      Your Message *
-                    </label>
-                    <textarea
-                      rows="4"
-                      required
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="How can our admissions and advisory team help you?"
-                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#1D4ED8]"
-                    ></textarea>
-                  </div>
-
-                  <motion.button
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    type="submit"
-                    disabled={isSending}
-                    className="w-full sm:w-auto px-8 py-4 bg-[#1D4ED8] hover:bg-[#B91C1C] text-white text-xs font-black uppercase tracking-widest rounded-full shadow-lg flex items-center justify-center gap-2 transition-all"
-                  >
-                    <Send className="w-3.5 h-3.5" />
-                    <span>{isSending ? "Transmitting..." : "Send Message to Admissions"}</span>
-                  </motion.button>
                 </form>
               )}
             </motion.div>
           </div>
+
+          {/* Full Width Google Map Section Below Both Cards */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.25 }}
+            className="mt-12 sm:mt-16"
+          >
+            <div className="rounded-3xl overflow-hidden border border-gray-200 shadow-xl bg-white relative">
+              <div className="p-5 sm:p-6 border-b border-gray-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-gradient-to-r from-gray-50 via-white to-gray-50">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#1e3a8a] flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-black text-gray-950 text-base sm:text-lg tracking-tight">
+                      Campus Location on Google Maps
+                    </h3>
+                    <p className="text-xs sm:text-sm text-gray-500">
+                      {instituteInfo.address}
+                    </p>
+                  </div>
+                </div>
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(instituteInfo.address)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full bg-[#1e3a8a] hover:bg-[#152e72] text-white text-xs font-bold transition-colors shadow-sm self-start sm:self-auto"
+                >
+                  <span>Open in Google Maps</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              </div>
+
+              <div className="w-full h-[400px] sm:h-[480px] lg:h-[540px] bg-gray-100">
+                <iframe
+                  title="BlankSlate Campus Map"
+                  src={`https://maps.google.com/maps?q=${encodeURIComponent(instituteInfo.address)}&t=&z=16&ie=UTF8&iwloc=&output=embed`}
+                  className="w-full h-full border-0"
+                  loading="lazy"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </main>
 
