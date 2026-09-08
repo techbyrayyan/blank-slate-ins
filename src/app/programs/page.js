@@ -9,6 +9,7 @@ import CustomCursor from "@/components/CustomCursor";
 import ApplicationModal from "@/components/ApplicationModal";
 import { Search, Sparkles, CheckCircle2 } from "lucide-react";
 import { programsData } from "@/data/instituteData";
+import InteractiveProgramExplorer from "@/components/InteractiveProgramExplorer";
 
 const categories = ["All Tracks", "Web & Software", "AI & Data", "Core Computing", "Design & Creative", "Business & Strategy"];
 
@@ -167,7 +168,14 @@ export default function ProgramsPage() {
               ))}
             </AnimatePresence>
           </div>
-        </div>
+
+        {/* Divider */}
+        <div className="mt-20 mb-2 border-t border-gray-100" />
+      </div>
+
+      {/* Trending Courses Section */}
+      <InteractiveProgramExplorer onOpenApply={() => handleApply("Full Stack Development")} />
+
       </main>
 
       <EditorialFooter />
