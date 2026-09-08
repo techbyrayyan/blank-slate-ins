@@ -252,7 +252,7 @@ export default function AdmissionsPage() {
       <Navbar onOpenApply={() => {}} />
 
       {/* Main Content Area - Form Centered with Balanced Margins */}
-      <main className="flex-1 pt-[180px] sm:pt-[200px] lg:pt-[220px] pb-24 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
+      <main className="flex-1 pt-[190px] sm:pt-[210px] lg:pt-[230px] pb-24 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
         <div className="w-full max-w-4xl mx-auto">
           
           {/* Top Title Header */}

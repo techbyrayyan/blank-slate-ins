@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
@@ -31,7 +31,7 @@ export default function StudentPortalPage() {
       <CustomCursor />
       <Navbar />
 
-      <main className="flex-1 pt-32 pb-24">
+      <main className="flex-1 pt-[190px] sm:pt-[210px] lg:pt-[230px] pb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Student Welcome Header */}
           <div className="p-8 sm:p-10 rounded-3xl bg-white border border-gray-200 text-gray-900 shadow-md mb-10 flex flex-col sm:flex-row items-center justify-between gap-6">

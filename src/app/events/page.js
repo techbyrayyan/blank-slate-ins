@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -23,7 +23,7 @@ export default function EventsPage() {
       <CustomCursor />
       <Navbar onOpenApply={() => setApplyModalOpen(true)} />
 
-      <main className="flex-1 pt-32 pb-24">
+      <main className="flex-1 pt-[190px] sm:pt-[210px] lg:pt-[230px] pb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <motion.div

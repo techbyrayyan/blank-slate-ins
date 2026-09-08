@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { use, useState } from "react";
 import { notFound } from "next/navigation";
@@ -36,7 +36,7 @@ export default function BlogArticlePage({ params }) {
       <CustomCursor />
       <Navbar onOpenApply={() => setApplyModalOpen(true)} />
 
-      <main className="flex-1 pt-32 pb-24">
+      <main className="flex-1 pt-[190px] sm:pt-[210px] lg:pt-[230px] pb-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Back link */}
           <motion.div

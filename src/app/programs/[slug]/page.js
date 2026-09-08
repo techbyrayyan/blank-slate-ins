@@ -121,7 +121,7 @@ export default function ProgramDetailPage({ params }) {
 
       <main className="flex-1">
         {/* 1. HERO SECTION */}
-        <section className="relative pt-32 pb-16 bg-white overflow-hidden">
+        <section className="relative pt-[190px] sm:pt-[210px] lg:pt-[230px] pb-16 bg-white overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               {/* Left Column: Breadcrumb, Title & Badges */}
