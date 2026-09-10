@@ -135,7 +135,7 @@ export default function AboutPage() {
 
       <main className="flex-1">
         {/* 1. HERO SECTION ("Welcome to where possibilities begin" - Full Viewport Screen) */}
-        <section className="relative min-h-screen flex flex-col justify-between pt-[210px] sm:pt-[230px] lg:pt-[250px] pb-8 sm:pb-12 bg-[#F7F9FA] text-[#1C1D1F] overflow-hidden border-b border-gray-200">
+        <section className="relative min-h-screen flex flex-col justify-between pt-[180px]  pb-8 sm:pb-12 bg-[#F7F9FA] text-[#1C1D1F] overflow-hidden border-b border-gray-200">
           <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-10 w-full flex-1 flex flex-col justify-center">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-4 lg:gap-6 items-center w-full flex-1">
               
@@ -157,13 +157,13 @@ export default function AboutPage() {
                 initial={{ opacity: 0, scale: 0.96 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="md:col-span-6 lg:col-span-6 flex justify-center md:justify-start lg:justify-start items-end self-end h-full"
+                className="md:col-span-6 flex justify-center md:justify-start lg:justify-start items-end self-end h-full"
               >
-                <div className="relative w-full max-w-[420px] sm:max-w-[480px] md:max-w-[540px] lg:max-w-[600px] flex justify-center md:justify-start items-end">
+                <div className="relative w-full max-w-[420px] sm:max-w-[480px] md:max-w-[540px] lg:max-w-[600px] flex justify-center md:justify-start top-20 items-end">
                   <img
-                    src="/about-hero-portrait.png"
+                    src="/mughal.png"
                     alt="Welcome to where possibilities begin"
-                    className="w-full h-auto max-h-[55vh] sm:max-h-[65vh] lg:max-h-[72vh] xl:max-h-[78vh] object-contain object-bottom select-none pointer-events-none"
+                    className="w-full h-auto max-h-[55vh] sm:max-h-[65vh] lg:max-h-[72vh] xl:max-h-[85vh] object-contain object-bottom select-none pointer-events-none"
                     loading="eager"
                   />
                 </div>
@@ -174,7 +174,7 @@ export default function AboutPage() {
         </section>
 
         {/* 2. SECTION 2 (Image on LEFT, Content on RIGHT - Banner Style) */}
-        <section className="relative min-h-[460px] sm:min-h-[500px] lg:min-h-[560px] flex flex-col justify-center py-14 sm:py-16 lg:py-20 bg-white text-[#1C1D1F] overflow-hidden border-b border-gray-200">
+        <section className="relative min-h-[400px]  flex flex-col justify-center py-14 sm:py-16 lg:py-20 bg-white text-[#1C1D1F] overflow-hidden border-b border-gray-200">
           <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-10 w-full flex-1 flex flex-col justify-center">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-center w-full flex-1">
               
@@ -186,7 +186,7 @@ export default function AboutPage() {
                 transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                 className="md:col-span-6 lg:col-span-6 flex justify-center md:justify-start lg:justify-start items-center order-2 md:order-1"
               >
-                <div className="relative w-full max-w-[420px] sm:max-w-[480px] md:max-w-[540px] lg:max-w-[600px] flex justify-center md:justify-start items-center">
+                <div className="relative w-full max-w-[420px] sm:max-w-[480px] md:max-w-[540px] lg:max-w-[600px] flex justify-center md:justify-start items-center top-23">
                   <img
                     src="/4de30422-8e35-441f-bfeb-53ca05cbe598.png"
                     alt="Skills that open doors to what's next"
@@ -241,7 +241,7 @@ export default function AboutPage() {
                 transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                 className="md:col-span-6 lg:col-span-6 flex justify-center md:justify-start lg:justify-start items-center"
               >
-                <div className="relative w-full max-w-[420px] sm:max-w-[480px] md:max-w-[540px] lg:max-w-[600px] flex justify-center md:justify-start items-center">
+                <div className="relative w-full max-w-[420px] sm:max-w-[480px] md:max-w-[540px] lg:max-w-[600px] flex justify-center md:justify-start items-center top-24">
                   <img
                     src="/1f57762b-5e16-4f0e-b3a9-259eb78b7f5f.png"
                     alt="Empowering minds to shape the future"
