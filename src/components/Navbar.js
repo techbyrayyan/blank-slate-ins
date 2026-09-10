@@ -217,7 +217,7 @@ export default function Navbar({ onOpenApply }) {
             </div>
           </div>
 
-          <nav className="hidden md:block bg-white border-b border-gray-200">
+          <nav className="bg-white border-b border-gray-200">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-2.5 flex items-center justify-between gap-3">
               
               {/* Left side: Logo on scroll only across all devices (hidden by default when not scrolled) */}

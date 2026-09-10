@@ -63,7 +63,7 @@ export default function ContactPage() {
       <CustomCursor />
       <Navbar onOpenApply={() => setApplyModalOpen(true)} />
 
-      <main className="flex-1 pt-[95px] md:pt-[190px] sm:pt-[210px] lg:pt-[230px] pb-24">
+      <main className="flex-1 pt-[145px] md:pt-[190px] sm:pt-[210px] lg:pt-[230px] pb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <motion.div

@@ -21,7 +21,7 @@ export default function ProgramsPage() {
       <CustomCursor />
       <Navbar onOpenApply={() => handleApply("Full Stack Development")} />
 
-      <main className="flex-1 pt-[95px] md:pt-[200px] sm:pt-[220px] lg:pt-[240px] pb-24">
+      <main className="flex-1 pt-[150px] md:pt-[200px] sm:pt-[220px] lg:pt-[240px] pb-24">
         <InteractiveProgramExplorer onOpenApply={handleApply} />
       </main>
 
