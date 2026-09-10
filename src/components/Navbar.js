@@ -131,7 +131,7 @@ export default function Navbar({ onOpenApply }) {
     <>
       <div className="fixed top-0 left-0 right-0 z-40 bg-white">
         <header className="bg-white">
-          <div className={`bg-gradient-to-r from-[#0f172a] via-[#1e3a8a] to-[#0f172a] text-gray-200 border-b border-blue-900/50 overflow-hidden transition-all duration-400 ease-in-out ${
+          <div className={`hidden md:block bg-gradient-to-r from-[#0f172a] via-[#1e3a8a] to-[#0f172a] text-gray-200 border-b border-blue-900/50 overflow-hidden transition-all duration-400 ease-in-out ${
             isScrolled ? "max-h-0 opacity-0 py-0" : "max-h-16 opacity-100"
           }`}>
             <div className="max-w-7xl mx-auto px-6 lg:px-10 py-3 flex items-center justify-between gap-4">
@@ -217,7 +217,7 @@ export default function Navbar({ onOpenApply }) {
             </div>
           </div>
 
-          <nav className="bg-white border-b border-gray-200">
+          <nav className="hidden md:block bg-white border-b border-gray-200">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-2.5 flex items-center justify-between gap-3">
               
               {/* Left side: Logo on scroll only across all devices (hidden by default when not scrolled) */}
