@@ -169,9 +169,10 @@ export default function Navbar({ onOpenApply }) {
           <div className={`bg-white border-b border-gray-200 overflow-hidden transition-all duration-400 ease-in-out ${
             isScrolled ? "max-h-0 opacity-0 py-0" : "max-h-28 opacity-100"
           }`}>
-            <div className="max-w-7xl mx-auto px-6 lg:px-10 py-4 flex items-center gap-6">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-3 sm:py-4 flex items-center justify-between gap-2 sm:gap-6">
               <div className="flex-shrink-0">
-                <Logo variant="dark" size="lg" />
+                <Logo variant="dark" size="md" className="sm:hidden" />
+                <Logo variant="dark" size="lg" className="hidden sm:inline-flex" />
               </div>
               <div className="flex-1 hidden md:flex max-w-2xl">
                 <div className="relative w-full">
@@ -184,13 +185,13 @@ export default function Navbar({ onOpenApply }) {
                   </button>
                 </div>
               </div>
-              <div className="flex items-center gap-3 ml-auto">
+              <div className="flex items-center gap-1.5 sm:gap-3 ml-auto flex-shrink-0">
                 <Link href="/student-portal"
                   className="hidden lg:inline-flex text-sm font-semibold text-gray-700 hover:text-[#1e3a8a] transition-colors px-2 whitespace-nowrap">
                   Student Portal
                 </Link>
                 <button onClick={() => setSearchModalOpen(true)}
-                  className="md:hidden p-2.5 text-gray-700 hover:text-[#1e3a8a] transition-colors" aria-label="Search">
+                  className="md:hidden p-2 text-gray-700 hover:text-[#1e3a8a] transition-colors" aria-label="Search">
                   <Search className="w-5 h-5" />
                 </button>
                 <Link href="/student-portal"
@@ -210,7 +211,7 @@ export default function Navbar({ onOpenApply }) {
                   <Globe className="w-5 h-5" />
                 </button>
                 <button onClick={() => setMobileMenuOpen(true)}
-                  className="xl:hidden p-2.5 text-gray-900 hover:text-[#1e3a8a] rounded transition-colors" aria-label="Open menu">
+                  className="xl:hidden p-2 text-gray-900 hover:text-[#1e3a8a] rounded transition-colors flex items-center justify-center" aria-label="Open menu">
                   <Menu className="w-6 h-6" />
                 </button>
               </div>
