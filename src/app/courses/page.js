@@ -11,13 +11,21 @@ export default function CoursesPage() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [search, setSearch] = useState("");
 
-  const categories = ["All", ...topicsList.map((t) => t.title)];
+  const categories = [
+    "All",
+    "3-Month Skill Courses",
+    "6-Month Career Programs",
+    "1-Year Professional Diplomas",
+    "2-Year Advanced Diplomas",
+    ...topicsList.map((t) => t.title),
+  ];
 
   const filtered = allCourses.filter((c) => {
     const matchCat =
       activeCategory === "All" ||
       c.category === activeCategory ||
-      c.category.toLowerCase().includes(activeCategory.toLowerCase());
+      (c.programType && c.programType === activeCategory) ||
+      (c.category && c.category.toLowerCase().includes(activeCategory.toLowerCase()));
     const matchSearch =
       search.trim() === "" ||
       c.title.toLowerCase().includes(search.toLowerCase()) ||

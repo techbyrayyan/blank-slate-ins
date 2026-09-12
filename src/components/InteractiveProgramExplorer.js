@@ -5,13 +5,13 @@ import CourseCard from "./CourseCard";
 import { allCourses } from "@/lib/coursesData";
 
 export default function InteractiveProgramExplorer({ onOpenApply, showViewMoreButton = true }) {
-  const trendingCourses12 = allCourses.slice(0, 12);
+  const displayedCourses = showViewMoreButton ? allCourses.slice(0, 12) : allCourses;
   return (
     <section className="py-8 sm:py-10 bg-white text-[#1c1d1f] relative select-none" id="programs">
       
       {/* Eager Image Preloader */}
       <div className="hidden" aria-hidden="true">
-        {trendingCourses12.map((c) => (
+        {displayedCourses.slice(0, 12).map((c) => (
           <img key={c.id} src={c.image} alt="" loading="eager" decoding="async" />
         ))}
       </div>
@@ -34,9 +34,9 @@ export default function InteractiveProgramExplorer({ onOpenApply, showViewMoreBu
           )}
         </div>
 
-        {/* 4-column Grid System (3 rows x 4 columns = 12 cards total) */}
+        {/* 4-column Grid System */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {trendingCourses12.map((course) => (
+          {displayedCourses.map((course) => (
             <CourseCard
               key={course.id}
               course={course}

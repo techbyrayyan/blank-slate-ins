@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, CheckCircle2, ArrowRight, Sparkles, AlertCircle, Lock } from "lucide-react";
 import { coursesData } from "@/data/instituteData";
+import { allCourses } from "@/lib/coursesData";
 import { useAuth } from "@/context/AuthContext";
 
 export default function ApplicationModal({ isOpen, onClose, preselectedCourse = "" }) {
@@ -275,9 +276,9 @@ export default function ApplicationModal({ isOpen, onClose, preselectedCourse = 
                         onChange={handleChange}
                         className="w-full px-3.5 py-2.5 bg-[#14141B] border border-white/10 rounded-xl text-sm text-white focus:outline-none focus:border-[#1D4ED8]"
                       >
-                        {coursesData.map((c) => (
-                          <option key={c.slug || c.id} value={c.title}>
-                            {c.title} ({c.duration})
+                        {allCourses.map((c) => (
+                          <option key={c.id} value={c.title}>
+                            {c.title} ({c.duration || c.hours})
                           </option>
                         ))}
                       </select>

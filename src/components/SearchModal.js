@@ -1,10 +1,10 @@
-﻿"use client";
+"use client";
 
 import { useState, useEffect } from "react";
 import { Search, X, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { coursesData } from "@/data/instituteData";
+import { allCourses } from "@/lib/coursesData";
 
 export default function SearchModal({ isOpen, onClose }) {
   const [query, setQuery] = useState("");
@@ -28,11 +28,11 @@ export default function SearchModal({ isOpen, onClose }) {
   const normalizedQuery = query.toLowerCase().trim();
 
   const filteredCourses = query
-    ? coursesData.filter(
+    ? allCourses.filter(
         (c) =>
           c.title.toLowerCase().includes(normalizedQuery) ||
-          c.shortDesc.toLowerCase().includes(normalizedQuery) ||
-          c.category.toLowerCase().includes(normalizedQuery)
+          (c.category && c.category.toLowerCase().includes(normalizedQuery)) ||
+          (c.description && c.description.toLowerCase().includes(normalizedQuery))
       )
     : [];
 
@@ -94,8 +94,8 @@ export default function SearchModal({ isOpen, onClose }) {
               <div className="space-y-1.5">
                 {filteredCourses.map((c) => (
                   <Link
-                    key={c.slug || c.id}
-                    href={`/programs/${c.slug || "full-stack-development"}`}
+                    key={c.id}
+                    href={`/courses/${c.id}`}
                     onClick={onClose}
                     className="flex items-center justify-between p-3 rounded-2xl hover:bg-white/5 transition-colors group"
                   >
@@ -103,10 +103,10 @@ export default function SearchModal({ isOpen, onClose }) {
                       <p className="text-sm font-bold text-white group-hover:text-[#1D4ED8] transition-colors">
                         {c.title}
                       </p>
-                      <p className="text-xs text-gray-400 line-clamp-1">{c.shortDesc}</p>
+                      <p className="text-xs text-gray-400 line-clamp-1">{c.description || c.shortDesc}</p>
                     </div>
                     <span className="text-xs font-bold text-[#1D4ED8] flex items-center gap-1 flex-shrink-0">
-                      {c.duration} <ArrowRight className="w-3.5 h-3.5" />
+                      {c.duration || c.hours} <ArrowRight className="w-3.5 h-3.5" />
                     </span>
                   </Link>
                 ))}

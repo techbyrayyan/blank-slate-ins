@@ -27,6 +27,1326 @@ export const topicsList = [
 
 export const allCourses = [
   {
+    "id": 1,
+    "topicSlug": "web-development",
+    "title": "Website Development with WordPress",
+    "author": "Blank Slate Institute",
+    "image": "/6566789_2e8a_10.jpg",
+    "badge": "Bestseller",
+    "badgeType": "bestseller",
+    "rating": "4.8",
+    "ratingCount": "1,240 ratings",
+    "price": "PKR 25,000",
+    "updated": "2026",
+    "hours": "3 Months (72 hrs)",
+    "level": "Matric; basic computer & internet knowledge",
+    "category": "3-Month Skill Courses",
+    "programType": "3-Month Skill Courses",
+    "duration": "3 Months",
+    "classesPerWeek": "3 classes / week",
+    "classDuration": "2 hrs",
+    "students": "1,850",
+    "description": "Web fundamentals → HTML5 → CSS3 → responsive design → basic JavaScript → WordPress → Elementor → themes/plugins → WooCommerce basics → domains/hosting → cPanel → SEO basics → website security → live client-style website → portfolio.",
+    "longDescription": "Master website development with WordPress from the ground up. This course takes you from foundational web technologies (HTML5, CSS3, responsive layouts, and basic JavaScript) through professional WordPress and Elementor design, WooCommerce online stores, hosting, cPanel management, and site security. You will build and launch live client-style websites to showcase in your freelance or job portfolio.",
+    "bullets": [
+      "Web fundamentals, HTML5, CSS3, responsive design & basic JavaScript",
+      "WordPress CMS, Elementor page builder, custom themes & essential plugins",
+      "WooCommerce store creation, product catalogs & payment setups",
+      "Domain, cPanel hosting, SSL, website security & client-ready portfolio"
+    ],
+    "requirements": [
+      "Matriculation or equivalent",
+      "Basic computer operations and internet browsing skills"
+    ],
+    "sections": [
+      {
+        "title": "Web Fundamentals, HTML5 & CSS3 Layouts",
+        "lectures": 8,
+        "duration": "16 hours"
+      },
+      {
+        "title": "WordPress Architecture & Elementor Page Building",
+        "lectures": 10,
+        "duration": "20 hours"
+      },
+      {
+        "title": "WooCommerce E-Commerce Setup & Payments",
+        "lectures": 8,
+        "duration": "16 hours"
+      },
+      {
+        "title": "Hosting, cPanel, Security & Live Portfolio Website",
+        "lectures": 10,
+        "duration": "20 hours"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "topicSlug": "graphic-design",
+    "title": "Graphic Design & Branding",
+    "author": "Blank Slate Institute",
+    "image": "/career-card-digitalmarketer.png",
+    "badge": "Trending",
+    "badgeType": "new",
+    "rating": "4.9",
+    "ratingCount": "980 ratings",
+    "price": "PKR 25,000",
+    "updated": "2026",
+    "hours": "3 Months (72 hrs)",
+    "level": "Matric; basic computer knowledge",
+    "category": "3-Month Skill Courses",
+    "programType": "3-Month Skill Courses",
+    "duration": "3 Months",
+    "classesPerWeek": "3 classes / week",
+    "classDuration": "2 hrs",
+    "students": "1,420",
+    "description": "Design principles → typography → color theory → Photoshop → Illustrator → Canva Pro → social media creatives → logo design → brand identity → stationery → print design → AI-assisted design workflow → portfolio.",
+    "longDescription": "Build a creative career in graphic design and corporate branding. Master color theory, visual hierarchy, and typography, alongside industry-standard software like Adobe Photoshop, Adobe Illustrator, and Canva Pro. Integrate modern AI-assisted design tools into your workflow and construct a compelling commercial portfolio.",
+    "bullets": [
+      "Design principles, visual hierarchy, typography & color psychology",
+      "Adobe Photoshop: raster editing, photo manipulation & digital imaging",
+      "Adobe Illustrator: vector graphics, typography & corporate logo design",
+      "Brand identity systems, stationery, print design & AI design workflows"
+    ],
+    "requirements": [
+      "Matriculation or equivalent",
+      "Basic computer literacy; creative mindset"
+    ],
+    "sections": [
+      {
+        "title": "Design Fundamentals, Typography & Color Theory",
+        "lectures": 8,
+        "duration": "16 hours"
+      },
+      {
+        "title": "Adobe Photoshop for Social Media & Advertising Creatives",
+        "lectures": 10,
+        "duration": "20 hours"
+      },
+      {
+        "title": "Adobe Illustrator for Vector Art & Logo Systems",
+        "lectures": 10,
+        "duration": "20 hours"
+      },
+      {
+        "title": "Brand Identity, AI-Assisted Workflows & Portfolio",
+        "lectures": 8,
+        "duration": "16 hours"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "topicSlug": "digital-marketing",
+    "title": "Digital Marketing & Meta Ads",
+    "author": "Blank Slate Institute",
+    "image": "/career-card-digitalmarketer.png",
+    "badge": "Bestseller",
+    "badgeType": "bestseller",
+    "rating": "4.8",
+    "ratingCount": "2,150 ratings",
+    "price": "PKR 30,000",
+    "updated": "2026",
+    "hours": "3 Months (72 hrs)",
+    "level": "Matric; basic internet/social media knowledge",
+    "category": "3-Month Skill Courses",
+    "programType": "3-Month Skill Courses",
+    "duration": "3 Months",
+    "classesPerWeek": "3 classes / week",
+    "classDuration": "2 hrs",
+    "students": "2,350",
+    "description": "Marketing fundamentals → customer journey → Facebook → Instagram → WhatsApp Business → Meta Business Suite → Ads Manager → campaign objectives → audiences → creatives → Pixel/CAPI concepts → lead generation → Google Ads introduction → analytics → reporting → practical campaigns.",
+    "longDescription": "Launch high-converting performance marketing campaigns. Master Meta Business Suite, Facebook Ads, Instagram marketing, WhatsApp Business automation, Meta Pixel, Conversions API (CAPI), and introductory Google Ads. Learn audience targeting, creative copywriting, funnel tracking, and analytics reporting with live ad budget executions.",
+    "bullets": [
+      "Marketing fundamentals, sales funnels & customer journey mapping",
+      "Meta Ads Manager: campaign setup, audience segmentation & budgeting",
+      "Meta Pixel, Conversions API (CAPI), retargeting & lead generation",
+      "Google Ads introduction, search campaigns & ROI analytics reporting"
+    ],
+    "requirements": [
+      "Matriculation or equivalent",
+      "Basic knowledge of social media platforms and the internet"
+    ],
+    "sections": [
+      {
+        "title": "Marketing Strategy, Funnels & Audience Mapping",
+        "lectures": 8,
+        "duration": "16 hours"
+      },
+      {
+        "title": "Meta Business Suite & Facebook/Instagram Ads Setup",
+        "lectures": 10,
+        "duration": "20 hours"
+      },
+      {
+        "title": "Meta Pixel, CAPI, Custom Audiences & Retargeting",
+        "lectures": 10,
+        "duration": "20 hours"
+      },
+      {
+        "title": "Lead Generation, Google Ads Intro & Campaign Reporting",
+        "lectures": 8,
+        "duration": "16 hours"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "topicSlug": "video-editing",
+    "title": "Video Editing & Content Creation",
+    "author": "Blank Slate Institute",
+    "image": "/6969223_f9ac_3.jpg",
+    "badge": "Trending",
+    "badgeType": "new",
+    "rating": "4.9",
+    "ratingCount": "1,120 ratings",
+    "price": "PKR 30,000",
+    "updated": "2026",
+    "hours": "3 Months (72 hrs)",
+    "level": "Matric; basic computer knowledge",
+    "category": "3-Month Skill Courses",
+    "programType": "3-Month Skill Courses",
+    "duration": "3 Months",
+    "classesPerWeek": "3 classes / week",
+    "classDuration": "2 hrs",
+    "students": "1,600",
+    "description": "Storytelling → editing workflow → professional editing tools → cuts & transitions → audio → color correction → typography → reels/shorts → YouTube editing → promotional videos → AI-assisted editing → export formats → portfolio.",
+    "longDescription": "Learn the craft of modern visual storytelling for social media, commercial brands, and YouTube. Master professional editing software, fast-paced cut techniques, dynamic typography, sound engineering, color grading, and viral short-form editing (Reels, TikTok, Shorts). Utilize AI-assisted editing tools to streamline your production.",
+    "bullets": [
+      "Visual storytelling, narrative pacing & editing workflow",
+      "Professional cuts, transitions, title animation & typography",
+      "Audio mixing, sound effects, voice enhancement & color grading",
+      "Viral Reels, TikToks, YouTube long-form editing & AI tools"
+    ],
+    "requirements": [
+      "Matriculation or equivalent",
+      "Basic computer proficiency and interest in visual media"
+    ],
+    "sections": [
+      {
+        "title": "Visual Storytelling & Editing Software Workflow",
+        "lectures": 8,
+        "duration": "16 hours"
+      },
+      {
+        "title": "Cutting Techniques, Pacing & Typography",
+        "lectures": 10,
+        "duration": "20 hours"
+      },
+      {
+        "title": "Audio Engineering, Sound Effects & Color Grading",
+        "lectures": 8,
+        "duration": "16 hours"
+      },
+      {
+        "title": "Shorts/Reels, YouTube Editing & AI Video Tools",
+        "lectures": 10,
+        "duration": "20 hours"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "topicSlug": "ui-ux",
+    "title": "UI/UX Design with Figma",
+    "author": "Blank Slate Institute",
+    "image": "/6969205_19aa_3.jpg",
+    "badge": "Bestseller",
+    "badgeType": "bestseller",
+    "rating": "4.9",
+    "ratingCount": "1,780 ratings",
+    "price": "PKR 30,000",
+    "updated": "2026",
+    "hours": "3 Months (72 hrs)",
+    "level": "Matric/Intermediate; basic computer skills",
+    "category": "3-Month Skill Courses",
+    "programType": "3-Month Skill Courses",
+    "duration": "3 Months",
+    "classesPerWeek": "3 classes / week",
+    "classDuration": "2 hrs",
+    "students": "1,940",
+    "description": "UX fundamentals → user research → personas → user flows → wireframes → Figma → components → auto layout → responsive UI → prototyping → website UI → mobile UI → usability testing → design systems → portfolio case study.",
+    "longDescription": "Become an industry-ready UI/UX Designer using Figma. From empathy maps, user interviews, personas, and low-fidelity wireframes to advanced auto-layout, design tokens, interactive micro-animations, and full design systems. Complete an end-to-end UX case study ready for tech recruiters and freelance clients.",
+    "bullets": [
+      "UX fundamentals: user research, personas, user journeys & wireframing",
+      "Figma mastery: components, auto layout, variants & interactive prototyping",
+      "Responsive web UI design, mobile iOS/Android app interfaces",
+      "Design systems creation, usability testing & complete portfolio case study"
+    ],
+    "requirements": [
+      "Matric or Intermediate",
+      "Basic computer familiarity; no coding background needed"
+    ],
+    "sections": [
+      {
+        "title": "UX Research, Information Architecture & Wireframing",
+        "lectures": 8,
+        "duration": "16 hours"
+      },
+      {
+        "title": "Figma Components, Auto-Layout & Design Tokens",
+        "lectures": 10,
+        "duration": "20 hours"
+      },
+      {
+        "title": "Responsive Web & Mobile App Interface Prototyping",
+        "lectures": 10,
+        "duration": "20 hours"
+      },
+      {
+        "title": "Design Systems, Usability Testing & Case Study",
+        "lectures": 8,
+        "duration": "16 hours"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "topicSlug": "ecommerce",
+    "title": "Shopify & E-Commerce",
+    "author": "Blank Slate Institute",
+    "image": "/2776760_f176_10.jpg",
+    "badge": "Hot & New",
+    "badgeType": "new",
+    "rating": "4.8",
+    "ratingCount": "860 ratings",
+    "price": "PKR 30,000",
+    "updated": "2026",
+    "hours": "3 Months (72 hrs)",
+    "level": "Matric; basic internet knowledge",
+    "category": "3-Month Skill Courses",
+    "programType": "3-Month Skill Courses",
+    "duration": "3 Months",
+    "classesPerWeek": "3 classes / week",
+    "classDuration": "2 hrs",
+    "students": "1,220",
+    "description": "E-commerce fundamentals → Shopify setup → products/collections → themes → store customization → payments → shipping → orders → apps → conversion optimization → analytics → marketing integrations → live store project.",
+    "longDescription": "Build, launch, and scale profitable e-commerce stores on Shopify. Master catalog structuring, premium theme customization, payment gateway integrations (local & international), shipping rules, dropshipping apps, conversion rate optimization (CRO), and Facebook/TikTok marketing integrations.",
+    "bullets": [
+      "E-commerce fundamentals & professional Shopify store creation",
+      "Product research, collections setup & theme visual customization",
+      "Payment gateway integration, shipping zones & order fulfillment",
+      "Essential apps, CRO strategies, analytics & live store project launch"
+    ],
+    "requirements": [
+      "Matriculation or equivalent",
+      "Basic understanding of internet navigation and online shopping"
+    ],
+    "sections": [
+      {
+        "title": "E-Commerce Business Models & Shopify Setup",
+        "lectures": 8,
+        "duration": "16 hours"
+      },
+      {
+        "title": "Theme Customization, Products & Visual Merchandising",
+        "lectures": 10,
+        "duration": "20 hours"
+      },
+      {
+        "title": "Payments, Shipping Rules & Store Operations",
+        "lectures": 8,
+        "duration": "16 hours"
+      },
+      {
+        "title": "Apps, Conversion Optimization & Marketing Integrations",
+        "lectures": 10,
+        "duration": "20 hours"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "topicSlug": "seo",
+    "title": "SEO & Content Marketing",
+    "author": "Blank Slate Institute",
+    "image": "/6100015_1979_5.jpg",
+    "badge": "Popular",
+    "badgeType": "bestseller",
+    "rating": "4.7",
+    "ratingCount": "740 ratings",
+    "price": "PKR 25,000",
+    "updated": "2026",
+    "hours": "3 Months (72 hrs)",
+    "level": "Matric; internet basics + basic English",
+    "category": "3-Month Skill Courses",
+    "programType": "3-Month Skill Courses",
+    "duration": "3 Months",
+    "classesPerWeek": "3 classes / week",
+    "classDuration": "2 hrs",
+    "students": "1,110",
+    "description": "Search engines → keyword research → search intent → on-page SEO → technical SEO → Google Search Console → GA4 basics → local SEO → content optimization → backlinks → competitor research → SEO audit → reporting.",
+    "longDescription": "Dominate search engine rankings and attract organic traffic. Learn deep keyword research, search intent mapping, on-page optimization, technical SEO fixes, Google Search Console, Google Analytics 4 (GA4), local Google Maps SEO, white-hat backlink building, competitor auditing, and reporting.",
+    "bullets": [
+      "Search engine algorithms, keyword research & intent classification",
+      "On-page SEO: headings, meta tags, URL structure & content optimization",
+      "Technical SEO: site speed, crawlability, indexing & Google Search Console",
+      "Off-page SEO, backlink outreach, local SEO & professional SEO audit"
+    ],
+    "requirements": [
+      "Matriculation or equivalent",
+      "Basic internet literacy and English reading proficiency"
+    ],
+    "sections": [
+      {
+        "title": "Search Engine Mechanics & Keyword Research",
+        "lectures": 8,
+        "duration": "16 hours"
+      },
+      {
+        "title": "On-Page SEO & Content Strategy",
+        "lectures": 10,
+        "duration": "20 hours"
+      },
+      {
+        "title": "Technical SEO, Indexing & Google Search Console",
+        "lectures": 10,
+        "duration": "20 hours"
+      },
+      {
+        "title": "Backlinks, Local SEO, Auditing & Client Reporting",
+        "lectures": 8,
+        "duration": "16 hours"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "topicSlug": "ai",
+    "title": "AI Tools & Prompt Engineering",
+    "author": "Blank Slate Institute",
+    "image": "/prompt-engineering.png",
+    "badge": "Hot & New",
+    "badgeType": "new",
+    "rating": "4.9",
+    "ratingCount": "1,920 ratings",
+    "price": "PKR 30,000",
+    "updated": "2026",
+    "hours": "3 Months (72 hrs)",
+    "level": "Matric/Intermediate; computer + internet basics",
+    "category": "3-Month Skill Courses",
+    "programType": "3-Month Skill Courses",
+    "duration": "3 Months",
+    "classesPerWeek": "3 classes / week",
+    "classDuration": "2 hrs",
+    "students": "2,600",
+    "description": "Generative AI fundamentals → LLM concepts → prompting → research → content → image AI → video/audio AI overview → productivity → document/data workflows → responsible AI → business use cases → practical AI projects.",
+    "longDescription": "Harness modern generative artificial intelligence to multiply your productivity. Master prompt engineering frameworks, LLM capabilities (ChatGPT, Claude, Gemini), Midjourney and image generation, AI audio/video synthesis, automated data extraction, and commercial business applications.",
+    "bullets": [
+      "Generative AI foundations, LLM mechanics & prompt frameworks",
+      "Advanced prompting for research, technical writing, coding & analysis",
+      "Multimodal AI tools: Midjourney, image editing, video & audio generation",
+      "Automated document processing, workflow automation & real AI projects"
+    ],
+    "requirements": [
+      "Matric or Intermediate",
+      "Familiarity with computers and everyday web tools"
+    ],
+    "sections": [
+      {
+        "title": "LLM Fundamentals & Core Prompting Techniques",
+        "lectures": 8,
+        "duration": "16 hours"
+      },
+      {
+        "title": "Advanced Prompt Frameworks & Problem Solving",
+        "lectures": 10,
+        "duration": "20 hours"
+      },
+      {
+        "title": "Multimodal Generation: Images, Audio & Video",
+        "lectures": 10,
+        "duration": "20 hours"
+      },
+      {
+        "title": "Document Workflows, Business Use Cases & Final Projects",
+        "lectures": 8,
+        "duration": "16 hours"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "topicSlug": "automation",
+    "title": "AI Automation with n8n",
+    "author": "Blank Slate Institute",
+    "image": "/ai-agents.png",
+    "badge": "Trending",
+    "badgeType": "new",
+    "rating": "4.9",
+    "ratingCount": "890 ratings",
+    "price": "PKR 35,000",
+    "updated": "2026",
+    "hours": "3 Months (72 hrs)",
+    "level": "Intermediate preferred; basic logic/computer skills",
+    "category": "3-Month Skill Courses",
+    "programType": "3-Month Skill Courses",
+    "duration": "3 Months",
+    "classesPerWeek": "3 classes / week",
+    "classDuration": "2 hrs",
+    "students": "1,150",
+    "description": "Automation fundamentals → APIs/webhooks concepts → n8n workflows → triggers/actions → forms → productivity integrations → AI/LLM nodes → chatbots → lead automation → CRM concepts → WhatsApp concepts → error handling → deployment concepts → business automations.",
+    "longDescription": "Build enterprise-grade, self-hosted and cloud AI automation workflows without writing extensive code. Learn webhooks, REST APIs, triggers and actions in n8n, AI Agent nodes, smart chatbots, CRM synchronization (HubSpot, Airtable), WhatsApp business automations, and resilient error-handling.",
+    "bullets": [
+      "Automation foundations, REST APIs, JSON data structures & webhooks",
+      "n8n visual workflow architecture: triggers, nodes, branching & loops",
+      "Connecting AI/LLM nodes, vector memory & autonomous chatbots",
+      "CRM automation, WhatsApp integration, error handling & deployment"
+    ],
+    "requirements": [
+      "Intermediate preferred",
+      "Basic logical aptitude and interest in automation systems"
+    ],
+    "sections": [
+      {
+        "title": "Automation Concepts, Webhooks & REST APIs",
+        "lectures": 8,
+        "duration": "16 hours"
+      },
+      {
+        "title": "n8n Workflow Building, Logic & Transformations",
+        "lectures": 10,
+        "duration": "20 hours"
+      },
+      {
+        "title": "AI/LLM Nodes, Vector Databases & Chatbots in n8n",
+        "lectures": 10,
+        "duration": "20 hours"
+      },
+      {
+        "title": "Enterprise Workflows (CRM, WhatsApp) & Production Hosting",
+        "lectures": 8,
+        "duration": "16 hours"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "topicSlug": "freelancing",
+    "title": "Freelancing & Remote Work",
+    "author": "Blank Slate Institute",
+    "image": "/6969213_4dde_2.jpg",
+    "badge": "Essential",
+    "badgeType": "bestseller",
+    "rating": "4.8",
+    "ratingCount": "1,670 ratings",
+    "price": "PKR 18,000",
+    "updated": "2026",
+    "hours": "3 Months (48 hrs)",
+    "level": "Matric; one marketable skill recommended",
+    "category": "3-Month Skill Courses",
+    "programType": "3-Month Skill Courses",
+    "duration": "3 Months",
+    "classesPerWeek": "2 classes / week",
+    "classDuration": "2 hrs",
+    "students": "3,100",
+    "description": "Profile positioning → portfolio → service selection → proposals → client communication → pricing → project scope → remote work tools → delivery workflow → revisions → reviews → personal branding → practical pitching.",
+    "longDescription": "Monetize your technical and creative skills internationally. Master profile optimization on Upwork, Fiverr, and LinkedIn, write personalized winning proposals, conduct client negotiations, price projects with high margins, manage remote deliveries, collect 5-star reviews, and build a lasting freelance brand.",
+    "bullets": [
+      "High-converting profile setup on Upwork, Fiverr & LinkedIn",
+      "Service packaging, portfolio curation & proposal copywriting",
+      "Client communication, negotiation, pricing & payment security",
+      "Remote productivity, contract management & 5-star client retention"
+    ],
+    "requirements": [
+      "Matriculation",
+      "At least one marketable skill (Design, Web, Video, SEO, etc.)"
+    ],
+    "sections": [
+      {
+        "title": "Market Positioning, Niches & Profile Architecture",
+        "lectures": 6,
+        "duration": "12 hours"
+      },
+      {
+        "title": "Winning Proposals, Cold Pitching & Client Discovery",
+        "lectures": 6,
+        "duration": "12 hours"
+      },
+      {
+        "title": "Pricing Psychology, Scope Management & Contracts",
+        "lectures": 6,
+        "duration": "12 hours"
+      },
+      {
+        "title": "Project Delivery, Review Generation & Scaling Agencies",
+        "lectures": 6,
+        "duration": "12 hours"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "topicSlug": "web-development",
+    "title": "Full-Stack Web Development",
+    "author": "Blank Slate Institute",
+    "image": "/6969217_3976_3.jpg",
+    "badge": "Career Track",
+    "badgeType": "premium",
+    "rating": "4.9",
+    "ratingCount": "2,450 ratings",
+    "price": "PKR 75,000",
+    "updated": "2026",
+    "hours": "6 Months (192 hrs)",
+    "level": "Intermediate; computer basics; logic aptitude",
+    "category": "6-Month Career Programs",
+    "programType": "6-Month Career Programs",
+    "duration": "6 Months",
+    "classesPerWeek": "4 classes / week",
+    "classDuration": "2 hrs",
+    "students": "3,400",
+    "description": "HTML/CSS → JavaScript → TypeScript fundamentals → React → Next.js → Node.js → APIs → authentication → SQL/NoSQL → Git/GitHub → deployment → testing basics → AI-assisted development → multiple projects → final application.",
+    "longDescription": "A comprehensive 6-month career program engineered to transform beginners into production-ready software engineers. Master HTML5/CSS3, modern JavaScript, TypeScript, React 19, Next.js 16 App Router, Node.js backend microservices, SQL & MongoDB databases, Git/GitHub, authentication, and full-stack deployment.",
+    "bullets": [
+      "Modern JavaScript ES6+, TypeScript & core programming paradigms",
+      "Frontend development with React 19, Next.js 16 & Tailwind CSS",
+      "Backend REST APIs with Node.js, Express, PostgreSQL & MongoDB",
+      "Authentication, Git/GitHub workflows, automated testing & cloud deploy"
+    ],
+    "requirements": [
+      "Intermediate or equivalent qualification",
+      "Basic computer knowledge and logical thinking aptitude"
+    ],
+    "sections": [
+      {
+        "title": "Web Foundations, Modern JavaScript & TypeScript",
+        "lectures": 16,
+        "duration": "48 hours"
+      },
+      {
+        "title": "React 19 & Next.js 16 Full-Stack Architecture",
+        "lectures": 18,
+        "duration": "54 hours"
+      },
+      {
+        "title": "Backend API Engineering, Databases & Authentication",
+        "lectures": 16,
+        "duration": "48 hours"
+      },
+      {
+        "title": "DevOps, AI-Assisted Coding & Commercial SaaS Capstone",
+        "lectures": 14,
+        "duration": "42 hours"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "topicSlug": "python",
+    "title": "Python, Data Analytics & Power BI",
+    "author": "Blank Slate Institute",
+    "image": "/data-science.png",
+    "badge": "Bestseller",
+    "badgeType": "bestseller",
+    "rating": "4.8",
+    "ratingCount": "1,890 ratings",
+    "price": "PKR 75,000",
+    "updated": "2026",
+    "hours": "6 Months (192 hrs)",
+    "level": "Intermediate; basic mathematics recommended",
+    "category": "6-Month Career Programs",
+    "programType": "6-Month Career Programs",
+    "duration": "6 Months",
+    "classesPerWeek": "4 classes / week",
+    "classDuration": "2 hrs",
+    "students": "2,850",
+    "description": "Excel → statistics fundamentals → SQL → Python → NumPy/Pandas → data cleaning → visualization → Power BI → dashboards → business analytics → AI-assisted analysis → real datasets → capstone.",
+    "longDescription": "Transform complex data into strategic business intelligence. Learn statistical fundamentals, advanced Excel modeling, enterprise SQL database queries, Python programming with NumPy & Pandas, interactive Power BI dashboards, and AI-accelerated exploratory data analysis.",
+    "bullets": [
+      "Business statistics, predictive metrics & advanced Excel modeling",
+      "Complex SQL queries, joins, window functions & database design",
+      "Python data analysis: NumPy, Pandas, Matplotlib & Seaborn",
+      "Interactive Power BI dashboards, DAX formulas & real datasets capstone"
+    ],
+    "requirements": [
+      "Intermediate or equivalent",
+      "Basic mathematics and analytical interest"
+    ],
+    "sections": [
+      {
+        "title": "Statistical Fundamentals & Advanced Business Excel",
+        "lectures": 14,
+        "duration": "42 hours"
+      },
+      {
+        "title": "Relational Databases & Enterprise SQL Analytics",
+        "lectures": 16,
+        "duration": "48 hours"
+      },
+      {
+        "title": "Python Programming with Pandas & Data Cleaning",
+        "lectures": 18,
+        "duration": "54 hours"
+      },
+      {
+        "title": "Power BI Dashboards, DAX & Corporate Capstone Project",
+        "lectures": 16,
+        "duration": "48 hours"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "topicSlug": "ai",
+    "title": "AI & Machine Learning Foundations",
+    "author": "Blank Slate Institute",
+    "image": "/machine-learning.png",
+    "badge": "Career Track",
+    "badgeType": "premium",
+    "rating": "4.9",
+    "ratingCount": "1,420 ratings",
+    "price": "PKR 90,000",
+    "updated": "2026",
+    "hours": "6 Months (192 hrs)",
+    "level": "Intermediate; mathematics + programming aptitude",
+    "category": "6-Month Career Programs",
+    "programType": "6-Month Career Programs",
+    "duration": "6 Months",
+    "classesPerWeek": "4 classes / week",
+    "classDuration": "2 hrs",
+    "students": "1,980",
+    "description": "Python → mathematics/statistics → data handling → supervised/unsupervised ML → model evaluation → neural networks introduction → NLP → computer vision concepts → generative AI/LLMs → APIs → responsible AI → deployment concepts → capstone.",
+    "longDescription": "Deep dive into artificial intelligence and machine learning. Cover linear algebra, calculus, statistical modeling, Python machine learning libraries (Scikit-Learn, PyTorch), supervised and unsupervised algorithms, neural networks, computer vision, natural language processing, LLM APIs, and model serving.",
+    "bullets": [
+      "Linear algebra, calculus & Python data preprocessing for ML",
+      "Supervised & unsupervised learning models with Scikit-Learn",
+      "Deep learning, neural networks, Computer Vision & NLP concepts",
+      "Generative AI integration, LLM fine-tuning & cloud deployment capstone"
+    ],
+    "requirements": [
+      "Intermediate in Science/Pre-Engineering or equivalent",
+      "Mathematics and programming orientation"
+    ],
+    "sections": [
+      {
+        "title": "Mathematical Foundations & Python for Machine Learning",
+        "lectures": 16,
+        "duration": "48 hours"
+      },
+      {
+        "title": "Supervised & Unsupervised Machine Learning Models",
+        "lectures": 18,
+        "duration": "54 hours"
+      },
+      {
+        "title": "Neural Networks, Deep Learning, Vision & NLP",
+        "lectures": 16,
+        "duration": "48 hours"
+      },
+      {
+        "title": "Generative AI, Model Deployment & Production Capstone",
+        "lectures": 14,
+        "duration": "42 hours"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "topicSlug": "cybersecurity",
+    "title": "Cybersecurity & Ethical Hacking",
+    "author": "Blank Slate Institute",
+    "image": "/comptia-thumbnail.png",
+    "badge": "Career Track",
+    "badgeType": "premium",
+    "rating": "4.9",
+    "ratingCount": "1,560 ratings",
+    "price": "PKR 90,000",
+    "updated": "2026",
+    "hours": "6 Months (192 hrs)",
+    "level": "Intermediate; networking basics recommended",
+    "category": "6-Month Career Programs",
+    "programType": "6-Month Career Programs",
+    "duration": "6 Months",
+    "classesPerWeek": "4 classes / week",
+    "classDuration": "2 hrs",
+    "students": "1,750",
+    "description": "Networking → Linux → security fundamentals → threats/vulnerabilities → SOC fundamentals → SIEM concepts → web security → penetration-testing methodology → ethical hacking labs → incident response → IAM → cloud security introduction → governance/compliance → capstone.",
+    "longDescription": "Prepare for high-demand cybersecurity roles. Learn computer networking architectures, Linux administration, offensive penetration testing, web application exploitation, SOC analyst workflows, SIEM threat monitoring, incident response protocols, IAM, and cloud security governance.",
+    "bullets": [
+      "Networking protocols, packet analysis & Linux system security",
+      "Vulnerability assessment, OWASP Top 10 & penetration testing labs",
+      "SOC fundamentals, SIEM tools, log analysis & incident response",
+      "Identity access management (IAM), cloud security & compliance capstone"
+    ],
+    "requirements": [
+      "Intermediate or equivalent",
+      "Familiarity with computer networking concepts recommended"
+    ],
+    "sections": [
+      {
+        "title": "Computer Networking & Linux Security Fundamentals",
+        "lectures": 16,
+        "duration": "48 hours"
+      },
+      {
+        "title": "Vulnerability Assessment, OWASP & Web Exploitation",
+        "lectures": 18,
+        "duration": "54 hours"
+      },
+      {
+        "title": "Penetration Testing Methodology & Ethical Hacking Labs",
+        "lectures": 16,
+        "duration": "48 hours"
+      },
+      {
+        "title": "SOC Operations, SIEM Monitoring & Defense Capstone",
+        "lectures": 14,
+        "duration": "42 hours"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "topicSlug": "cloud-devops",
+    "title": "Cloud Computing & DevOps",
+    "author": "Blank Slate Institute",
+    "image": "/career-card-cloud-engineer.png",
+    "badge": "High Demand",
+    "badgeType": "premium",
+    "rating": "4.8",
+    "ratingCount": "1,140 ratings",
+    "price": "PKR 90,000",
+    "updated": "2026",
+    "hours": "6 Months (192 hrs)",
+    "level": "Intermediate; basic IT/Linux recommended",
+    "category": "6-Month Career Programs",
+    "programType": "6-Month Career Programs",
+    "duration": "6 Months",
+    "classesPerWeek": "4 classes / week",
+    "classDuration": "2 hrs",
+    "students": "1,490",
+    "description": "Linux → networking → Git → AWS/Azure fundamentals → compute/storage/databases → Docker → Kubernetes → CI/CD → Infrastructure as Code → monitoring → cloud security → cost optimization → deployment project.",
+    "longDescription": "Become an indispensable Cloud & DevOps Engineer. Master Linux administration, AWS and Azure cloud services, Docker containerization, Kubernetes cluster orchestration, GitHub Actions CI/CD automation, Infrastructure as Code with Terraform, and Prometheus/Grafana monitoring.",
+    "bullets": [
+      "Linux systems, Bash scripting & Git version control workflows",
+      "AWS & Azure cloud architecture: EC2, S3, RDS, VPC & serverless",
+      "Docker containers, multi-stage builds & Kubernetes orchestration",
+      "CI/CD automation pipelines, Terraform IaC & cloud security capstone"
+    ],
+    "requirements": [
+      "Intermediate or equivalent",
+      "Basic knowledge of IT or Linux recommended"
+    ],
+    "sections": [
+      {
+        "title": "Linux Administration, Networking & Git Workflows",
+        "lectures": 16,
+        "duration": "48 hours"
+      },
+      {
+        "title": "AWS Core Infrastructure & Cloud Architecture",
+        "lectures": 18,
+        "duration": "54 hours"
+      },
+      {
+        "title": "Docker Containerization & Kubernetes Clusters",
+        "lectures": 16,
+        "duration": "48 hours"
+      },
+      {
+        "title": "CI/CD Pipelines, Terraform IaC & Cloud Capstone",
+        "lectures": 14,
+        "duration": "42 hours"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "topicSlug": "mobile-development",
+    "title": "Mobile App Development with Flutter",
+    "author": "Blank Slate Institute",
+    "image": "/6969229_ff40_2.jpg",
+    "badge": "Career Track",
+    "badgeType": "new",
+    "rating": "4.8",
+    "ratingCount": "920 ratings",
+    "price": "PKR 75,000",
+    "updated": "2026",
+    "hours": "6 Months (192 hrs)",
+    "level": "Intermediate; programming aptitude",
+    "category": "6-Month Career Programs",
+    "programType": "6-Month Career Programs",
+    "duration": "6 Months",
+    "classesPerWeek": "4 classes / week",
+    "classDuration": "2 hrs",
+    "students": "1,320",
+    "description": "Dart → Flutter → widgets → layouts → state management → APIs → Firebase → authentication → databases → notifications → maps/device features → deployment → complete mobile applications.",
+    "longDescription": "Build beautiful, native cross-platform mobile apps for iOS and Android using Google Flutter and Dart. Master custom widgets, responsive UI design, Bloc and Provider state management, REST API integration, Firebase real-time database and authentication, push notifications, and App Store publishing.",
+    "bullets": [
+      "Dart language: OOP, asynchronous streams & clean architecture",
+      "Flutter widgets, custom animations & responsive layout systems",
+      "State management with Provider and Bloc / Cubit patterns",
+      "Firebase integration, REST APIs, push notifications & App Store launch"
+    ],
+    "requirements": [
+      "Intermediate or equivalent",
+      "Basic programming logic or prior coding exposure"
+    ],
+    "sections": [
+      {
+        "title": "Dart Programming & Object-Oriented Design",
+        "lectures": 14,
+        "duration": "42 hours"
+      },
+      {
+        "title": "Flutter Widgets, UI Design & Interactive Layouts",
+        "lectures": 18,
+        "duration": "54 hours"
+      },
+      {
+        "title": "State Management & REST API Data Integration",
+        "lectures": 16,
+        "duration": "48 hours"
+      },
+      {
+        "title": "Firebase Services, Native Hardware & Store Publishing",
+        "lectures": 16,
+        "duration": "48 hours"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "topicSlug": "software-engineering",
+    "title": "Software Engineering & AI",
+    "author": "Blank Slate Institute",
+    "image": "/6969199_31c3_4.jpg",
+    "badge": "Professional Diploma",
+    "badgeType": "premium",
+    "rating": "4.9",
+    "ratingCount": "3,100 ratings",
+    "price": "PKR 180,000",
+    "updated": "2026",
+    "hours": "1 Year (480 hrs)",
+    "level": "Intermediate",
+    "category": "1-Year Professional Diplomas",
+    "programType": "1-Year Professional Diplomas",
+    "duration": "1 Year",
+    "classesPerWeek": "5 classes / week",
+    "classDuration": "2 hrs",
+    "students": "1,850",
+    "description": "Programming Fundamentals → Front-End → React/Next.js → Back-End → Databases → APIs → Git → Cloud/Deployment → Software Engineering → Testing → AI-assisted development → LLM/API integration → SaaS project → portfolio/job preparation.",
+    "longDescription": "A flagship 1-year professional diploma designed to build elite software engineers equipped for modern AI-driven industry roles. Covers computer science principles, React & Next.js frontend engineering, backend microservices, SQL & NoSQL architectures, testing methodologies, cloud deployment, and direct LLM API integration into SaaS products.",
+    "bullets": [
+      "Computer science logic, data structures, algorithms & Clean Code",
+      "Modern frontend architecture with React 19, Next.js 16 & TypeScript",
+      "Scalable backends, microservices, databases & cloud infrastructure",
+      "Generative AI integration, LLM APIs, full commercial SaaS capstone"
+    ],
+    "requirements": [
+      "Intermediate or equivalent",
+      "Dedication to full-time technical mastery and daily coding"
+    ],
+    "sections": [
+      {
+        "title": "Computer Science Logic & Web Fundamentals",
+        "lectures": 24,
+        "duration": "120 hours"
+      },
+      {
+        "title": "Advanced Frontend Architecture (React/Next.js)",
+        "lectures": 24,
+        "duration": "120 hours"
+      },
+      {
+        "title": "Backend Systems, Microservices & Databases",
+        "lectures": 24,
+        "duration": "120 hours"
+      },
+      {
+        "title": "Software Testing, Cloud DevOps & AI SaaS Capstone",
+        "lectures": 24,
+        "duration": "120 hours"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "topicSlug": "ai",
+    "title": "Artificial Intelligence & Data Science",
+    "author": "Blank Slate Institute",
+    "image": "/career-card-data-scientist.png",
+    "badge": "Professional Diploma",
+    "badgeType": "premium",
+    "rating": "4.9",
+    "ratingCount": "2,600 ratings",
+    "price": "PKR 200,000",
+    "updated": "2026",
+    "hours": "1 Year (480 hrs)",
+    "level": "Intermediate; mathematics recommended",
+    "category": "1-Year Professional Diplomas",
+    "programType": "1-Year Professional Diplomas",
+    "duration": "1 Year",
+    "classesPerWeek": "5 classes / week",
+    "classDuration": "2 hrs",
+    "students": "1,600",
+    "description": "Python → mathematics/statistics → SQL → analytics → Power BI → machine learning → deep learning → NLP → computer vision → generative AI → LLM applications → MLOps introduction → capstone.",
+    "longDescription": "Comprehensive 1-year professional diploma covering the full spectrum of data science and artificial intelligence. From linear algebra and advanced SQL to deep neural networks, computer vision, transformer NLP, Generative AI application engineering, and enterprise MLOps model pipelines.",
+    "bullets": [
+      "Mathematical modeling, linear algebra, calculus & data wrangling",
+      "Supervised/unsupervised ML algorithms, model evaluation & tuning",
+      "Deep learning with PyTorch, computer vision & natural language NLP",
+      "Generative AI applications, RAG pipelines, MLOps & industrial capstone"
+    ],
+    "requirements": [
+      "Intermediate (Pre-Engineering, ICS, or equivalent)",
+      "Comfort with mathematics and logical reasoning"
+    ],
+    "sections": [
+      {
+        "title": "Mathematical Foundations & Advanced Data Engineering",
+        "lectures": 24,
+        "duration": "120 hours"
+      },
+      {
+        "title": "Applied Machine Learning & Statistical Modeling",
+        "lectures": 24,
+        "duration": "120 hours"
+      },
+      {
+        "title": "Deep Learning, Neural Architectures & NLP/CV",
+        "lectures": 24,
+        "duration": "120 hours"
+      },
+      {
+        "title": "Generative AI Systems, MLOps & Industry Capstone",
+        "lectures": 24,
+        "duration": "120 hours"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "topicSlug": "cybersecurity",
+    "title": "Cybersecurity, Cloud & Networks",
+    "author": "Blank Slate Institute",
+    "image": "/aws-thumbnail.png",
+    "badge": "Professional Diploma",
+    "badgeType": "premium",
+    "rating": "4.9",
+    "ratingCount": "1,870 ratings",
+    "price": "PKR 200,000",
+    "updated": "2026",
+    "hours": "1 Year (480 hrs)",
+    "level": "Intermediate",
+    "category": "1-Year Professional Diplomas",
+    "programType": "1-Year Professional Diplomas",
+    "duration": "1 Year",
+    "classesPerWeek": "5 classes / week",
+    "classDuration": "2 hrs",
+    "students": "1,420",
+    "description": "Networking → Linux → security → SOC → ethical hacking → cloud fundamentals → IAM → Docker → monitoring → incident response → cloud security → capstone.",
+    "longDescription": "Master enterprise infrastructure security across cloud, networks, and operating systems. Learn network administration, advanced Linux hardening, SOC Tier 1/2 operations, penetration testing, AWS/Azure cloud security, IAM architecture, container security with Docker, and cyber incident response.",
+    "bullets": [
+      "Enterprise networking architecture, Cisco concepts & Linux hardening",
+      "SOC operations, SIEM deployment, threat intelligence & forensics",
+      "Hands-on offensive penetration testing & vulnerability assessment",
+      "Cloud infrastructure security (AWS/Azure), Docker & DevSecOps capstone"
+    ],
+    "requirements": [
+      "Intermediate or equivalent qualification",
+      "Strong passion for systems, networks, and defensive security"
+    ],
+    "sections": [
+      {
+        "title": "Enterprise Networks & Advanced Linux Administration",
+        "lectures": 24,
+        "duration": "120 hours"
+      },
+      {
+        "title": "Defensive Security, SOC Operations & SIEM Threat Hunting",
+        "lectures": 24,
+        "duration": "120 hours"
+      },
+      {
+        "title": "Offensive Security, Ethical Hacking & Red Team Labs",
+        "lectures": 24,
+        "duration": "120 hours"
+      },
+      {
+        "title": "Cloud Security, IAM Governance & Enterprise Defense Capstone",
+        "lectures": 24,
+        "duration": "120 hours"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "topicSlug": "digital-marketing",
+    "title": "Digital Marketing, E-Commerce & AI",
+    "author": "Blank Slate Institute",
+    "image": "/6969231_51c2_2.jpg",
+    "badge": "Professional Diploma",
+    "badgeType": "bestseller",
+    "rating": "4.8",
+    "ratingCount": "1,980 ratings",
+    "price": "PKR 150,000",
+    "updated": "2026",
+    "hours": "1 Year (384 hrs)",
+    "level": "Intermediate preferred",
+    "category": "1-Year Professional Diplomas",
+    "programType": "1-Year Professional Diplomas",
+    "duration": "1 Year",
+    "classesPerWeek": "4 classes / week",
+    "classDuration": "2 hrs",
+    "students": "1,750",
+    "description": "Marketing → content → Meta → Google Ads → SEO → Shopify → analytics → CRM → AI tools → automation → campaigns → portfolio.",
+    "longDescription": "A comprehensive 1-year professional diploma covering the full marketing ecosystem. From strategic copywriting and high-budget Meta & Google Ad campaigns to technical SEO, international Shopify e-commerce, CRM marketing, AI content tools, marketing automation, and agency-level client retainers.",
+    "bullets": [
+      "Full-funnel marketing strategy, brand copywriting & creative production",
+      "Meta Ads, Google Search/Shopping Ads & TikTok media buying",
+      "Shopify e-commerce development, product research & CRO",
+      "CRM automation, AI marketing agents & omnichannel brand portfolio"
+    ],
+    "requirements": [
+      "Intermediate preferred",
+      "Commercial mindset and drive to grow online businesses"
+    ],
+    "sections": [
+      {
+        "title": "Strategic Marketing, Brand Positioning & Content Creation",
+        "lectures": 20,
+        "duration": "96 hours"
+      },
+      {
+        "title": "Paid Media Buying: Meta, Google & Video Ads Mastery",
+        "lectures": 20,
+        "duration": "96 hours"
+      },
+      {
+        "title": "Shopify E-Commerce, Logistics & Conversion Optimization",
+        "lectures": 20,
+        "duration": "96 hours"
+      },
+      {
+        "title": "Marketing Automation, CRM Systems & Agency Growth Capstone",
+        "lectures": 20,
+        "duration": "96 hours"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "topicSlug": "ui-ux",
+    "title": "Creative Design, UI/UX & Multimedia",
+    "author": "Blank Slate Institute",
+    "image": "/7066971_118a_4.jpg",
+    "badge": "Professional Diploma",
+    "badgeType": "bestseller",
+    "rating": "4.9",
+    "ratingCount": "2,200 ratings",
+    "price": "PKR 150,000",
+    "updated": "2026",
+    "hours": "1 Year (384 hrs)",
+    "level": "Matric/Intermediate",
+    "category": "1-Year Professional Diplomas",
+    "programType": "1-Year Professional Diplomas",
+    "duration": "1 Year",
+    "classesPerWeek": "4 classes / week",
+    "classDuration": "2 hrs",
+    "students": "1,920",
+    "description": "Design fundamentals → Photoshop → Illustrator → branding → Figma → UI/UX → video editing → motion/content → AI-assisted creative workflows → portfolio.",
+    "longDescription": "Become an all-around creative director and product designer. Master graphic design in Adobe Photoshop & Illustrator, corporate branding identity, digital product design in Figma with responsive UI/UX systems, commercial video editing, motion graphics, and generative AI creative pipelines.",
+    "bullets": [
+      "Graphic design mastery, color psychology, vector art & typography",
+      "Brand identity development, corporate branding & print design",
+      "Figma UI/UX product design, mobile/web interfaces & design systems",
+      "Video editing, motion graphics & AI-powered creative workflows"
+    ],
+    "requirements": [
+      "Matriculation or Intermediate",
+      "Aesthetic sense and passion for visual arts"
+    ],
+    "sections": [
+      {
+        "title": "Visual Design, Adobe Creative Cloud & Branding Systems",
+        "lectures": 20,
+        "duration": "96 hours"
+      },
+      {
+        "title": "UI/UX Product Design with Figma & Usability Testing",
+        "lectures": 20,
+        "duration": "96 hours"
+      },
+      {
+        "title": "Commercial Video Editing, Motion Graphics & Audio",
+        "lectures": 20,
+        "duration": "96 hours"
+      },
+      {
+        "title": "AI Creative Workflows & Comprehensive Design Portfolio",
+        "lectures": 20,
+        "duration": "96 hours"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "topicSlug": "software-engineering",
+    "title": "Software Engineering, Cloud & AI",
+    "author": "Blank Slate Institute",
+    "image": "/about-hero.png",
+    "badge": "Advanced Diploma",
+    "badgeType": "premium",
+    "rating": "4.9",
+    "ratingCount": "3,890 ratings",
+    "price": "PKR 360,000",
+    "updated": "2026",
+    "hours": "2 Years (960 hrs)",
+    "level": "Intermediate",
+    "category": "2-Year Advanced Diplomas",
+    "programType": "2-Year Advanced Diplomas",
+    "duration": "2 Years",
+    "classesPerWeek": "5 classes / week",
+    "classDuration": "2-2.5 hrs",
+    "students": "1,200",
+    "description": "Semester 1: Computer science fundamentals, programming logic, HTML/CSS, JavaScript, Git/GitHub and foundational projects. Semester 2: React, Next.js, UI integration, APIs, Node.js, databases, authentication and full-stack applications. Semester 3: Software architecture, testing, advanced backend, Linux, Docker, cloud, CI/CD, DevOps and production deployment. Semester 4: Python, AI fundamentals, generative AI, LLM APIs, RAG concepts, AI automation, SaaS/product development, major final project, GitHub portfolio, freelancing, interview preparation and internship.",
+    "longDescription": "The most prestigious 2-year technical program at Blank Slate Institute, spanning 4 intensive semesters. Designed for ambitious students seeking deep software engineering, cloud systems, and cutting-edge artificial intelligence capabilities. Includes a complete commercial SaaS product build, rigorous industry internship, and interview preparation.",
+    "bullets": [
+      "Semester 1: CS fundamentals, programming logic, HTML/CSS, JS, Git & foundational projects",
+      "Semester 2: React, Next.js, UI integration, APIs, Node.js, databases & full-stack applications",
+      "Semester 3: Software architecture, testing, advanced backend, Linux, Docker, cloud, CI/CD & DevOps",
+      "Semester 4: Python, Generative AI, LLM APIs, RAG, AI automation, SaaS capstone & internship"
+    ],
+    "requirements": [
+      "Intermediate or equivalent",
+      "Commitment to high-intensity software engineering education"
+    ],
+    "sections": [
+      {
+        "title": "Semester 1: Computer Science Fundamentals & Core Web",
+        "lectures": 30,
+        "duration": "240 hours"
+      },
+      {
+        "title": "Semester 2: Modern Full-Stack Systems & Architecture",
+        "lectures": 30,
+        "duration": "240 hours"
+      },
+      {
+        "title": "Semester 3: Distributed Backend, DevOps & Cloud Systems",
+        "lectures": 30,
+        "duration": "240 hours"
+      },
+      {
+        "title": "Semester 4: Generative AI, Commercial SaaS & Internship",
+        "lectures": 30,
+        "duration": "240 hours"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "topicSlug": "ai",
+    "title": "AI, Data Science & Automation",
+    "author": "Blank Slate Institute",
+    "image": "/generative-ai.png",
+    "badge": "Advanced Diploma",
+    "badgeType": "premium",
+    "rating": "5.0",
+    "ratingCount": "2,420 ratings",
+    "price": "PKR 400,000",
+    "updated": "2026",
+    "hours": "2 Years (960 hrs)",
+    "level": "Intermediate; mathematics strongly recommended",
+    "category": "2-Year Advanced Diplomas",
+    "programType": "2-Year Advanced Diplomas",
+    "duration": "2 Years",
+    "classesPerWeek": "5 classes / week",
+    "classDuration": "2-2.5 hrs",
+    "students": "980",
+    "description": "Semester 1: Advanced programming in Python, mathematical analysis, linear algebra, calculus, and big data engineering. Semester 2: Applied statistical learning, predictive modeling, data pipelines, and enterprise SQL. Semester 3: Deep learning architectures, computer vision, natural language transformers, and LLM fine-tuning. Semester 4: Autonomous agentic AI, n8n enterprise automation, LangChain, RAG architectures, model monitoring (MLOps), and commercial capstone.",
+    "longDescription": "Comprehensive 2-year advanced diploma preparing data scientists and AI automation architects. Spanning 4 semesters, you progress from mathematical rigor and big data to deep learning, vision, natural language models, autonomous agentic AI workflows, n8n pipelines, and commercial AI deployments.",
+    "bullets": [
+      "Semester 1: Python mathematical analysis, linear algebra, calculus & big data engineering",
+      "Semester 2: Statistical learning, predictive algorithms, data cleaning & SQL pipelines",
+      "Semester 3: Deep learning architectures, PyTorch, computer vision & LLM transformers",
+      "Semester 4: Agentic AI systems, n8n automation, enterprise MLOps & industrial capstone"
+    ],
+    "requirements": [
+      "Intermediate (Pre-Engineering, ICS, or equivalent)",
+      "Mathematics strongly recommended; analytical aptitude"
+    ],
+    "sections": [
+      {
+        "title": "Semester 1: Advanced Mathematics & Big Data Engineering",
+        "lectures": 30,
+        "duration": "240 hours"
+      },
+      {
+        "title": "Semester 2: Applied Machine Learning & Data Pipelines",
+        "lectures": 30,
+        "duration": "240 hours"
+      },
+      {
+        "title": "Semester 3: Deep Learning, Computer Vision & NLP Models",
+        "lectures": 30,
+        "duration": "240 hours"
+      },
+      {
+        "title": "Semester 4: Agentic AI, Automation Systems & Capstone",
+        "lectures": 30,
+        "duration": "240 hours"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "topicSlug": "cybersecurity",
+    "title": "Cybersecurity & Cloud Engineering",
+    "author": "Blank Slate Institute",
+    "image": "/career-card-cloud-engineer.png",
+    "badge": "Advanced Diploma",
+    "badgeType": "premium",
+    "rating": "4.9",
+    "ratingCount": "2,190 ratings",
+    "price": "PKR 400,000",
+    "updated": "2026",
+    "hours": "2 Years (960 hrs)",
+    "level": "Intermediate",
+    "category": "2-Year Advanced Diplomas",
+    "programType": "2-Year Advanced Diplomas",
+    "duration": "2 Years",
+    "classesPerWeek": "5 classes / week",
+    "classDuration": "2-2.5 hrs",
+    "students": "1,050",
+    "description": "Semester 1: Enterprise networking architectures, TCP/IP, Linux system internals, and defensive baseline security. Semester 2: Multi-cloud engineering (AWS, Azure, GCP), Docker containers, Kubernetes orchestration, and Terraform IaC. Semester 3: Offensive security, penetration testing, red teaming, advanced SOC operations, and SIEM threat hunting. Semester 4: DevSecOps pipeline automation, cloud security posture management (CSPM), compliance frameworks, and comprehensive enterprise capstone.",
+    "longDescription": "Elite 2-year advanced diploma producing enterprise cloud architects and cybersecurity specialists. Spanning 4 semesters, this rigorous program integrates multi-cloud infrastructure (AWS, Azure, GCP), Kubernetes orchestration, red team penetration testing, blue team SOC operations, DevSecOps pipelines, and zero-trust security.",
+    "bullets": [
+      "Semester 1: Enterprise networking, TCP/IP, Linux administration & security baselines",
+      "Semester 2: Multi-cloud infrastructure (AWS/Azure), Docker, Kubernetes & Terraform",
+      "Semester 3: Red team penetration testing, SOC operations & SIEM threat hunting",
+      "Semester 4: DevSecOps pipeline security, cloud compliance & enterprise capstone"
+    ],
+    "requirements": [
+      "Intermediate or equivalent",
+      "Dedication to systems administration, cloud, and cybersecurity"
+    ],
+    "sections": [
+      {
+        "title": "Semester 1: Enterprise Networks & Linux Internals",
+        "lectures": 30,
+        "duration": "240 hours"
+      },
+      {
+        "title": "Semester 2: Multi-Cloud Infrastructure & Kubernetes",
+        "lectures": 30,
+        "duration": "240 hours"
+      },
+      {
+        "title": "Semester 3: Offensive Penetration Testing & SOC Defense",
+        "lectures": 30,
+        "duration": "240 hours"
+      },
+      {
+        "title": "Semester 4: DevSecOps, Cloud Posture & Master Capstone",
+        "lectures": 30,
+        "duration": "240 hours"
+      }
+    ]
+  },
+  {
     "id": 101,
     "topicSlug": "ai",
     "title": "The AI Engineer Course 2026: Complete AI Engineer Bootcamp",
