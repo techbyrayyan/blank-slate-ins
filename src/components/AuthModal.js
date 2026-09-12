@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -468,59 +468,6 @@ export default function AuthModal() {
             {/* ── SIGN UP FORM ── */}
             {authModalMode === "signup" && (
               <form onSubmit={handleSignupSubmit} className="space-y-3.5">
-                {/* ── PROFILE PHOTO UPLOAD CATEGORY ── */}
-                <div className="p-3 bg-blue-50/50 border border-blue-100 rounded-2xl flex items-center gap-4">
-                  <div className="relative flex-shrink-0">
-                    {signupData.avatar ? (
-                      <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-[#1D4ED8] shadow-sm">
-                        <img
-                          src={signupData.avatar}
-                          alt="Profile preview"
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    ) : (
-                      <div className="w-16 h-16 rounded-full bg-blue-100 border-2 border-dashed border-blue-300 flex flex-col items-center justify-center text-blue-600">
-                        <Camera className="w-6 h-6" />
-                      </div>
-                    )}
-                    {signupData.avatar && (
-                      <button
-                        type="button"
-                        onClick={removeAvatar}
-                        className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 hover:bg-red-600 text-white rounded-full flex items-center justify-center shadow transition-colors cursor-pointer"
-                        title="Remove photo"
-                      >
-                        <X className="w-3 h-3" />
-                      </button>
-                    )}
-                  </div>
-
-                  <div className="flex-1">
-                    <p className="text-xs font-bold text-gray-800">
-                      Profile Picture <span className="text-gray-400 font-normal">(Optional)</span>
-                    </p>
-                    <p className="text-[11px] text-gray-500 mb-2">
-                      Upload your photo to personalize your student badge
-                    </p>
-                    <input
-                      ref={fileInputRef}
-                      type="file"
-                      accept="image/*"
-                      onChange={handleImageUpload}
-                      className="hidden"
-                      id="auth-avatar-input"
-                    />
-                    <label
-                      htmlFor="auth-avatar-input"
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-blue-200 hover:border-[#1D4ED8] text-[#1e3a8a] text-xs font-bold rounded-lg cursor-pointer transition-all shadow-2xs hover:bg-blue-50/50"
-                    >
-                      <Upload className="w-3.5 h-3.5" />
-                      <span>{signupData.avatar ? "Change Photo" : "Upload Photo"}</span>
-                    </label>
-                  </div>
-                </div>
-
                 {/* First & Last Name */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div>
@@ -697,6 +644,59 @@ export default function AuthModal() {
                         )}
                       </button>
                     </div>
+                  </div>
+                </div>
+
+                {/* ── PROFILE PHOTO UPLOAD CATEGORY (AFTER CONFIRM PASSWORD) ── */}
+                <div className="p-3 bg-blue-50/60 border border-blue-100 rounded-2xl flex items-center gap-4">
+                  <div className="relative flex-shrink-0">
+                    {signupData.avatar ? (
+                      <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-[#1D4ED8] shadow-sm">
+                        <img
+                          src={signupData.avatar}
+                          alt="Profile preview"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    ) : (
+                      <div className="w-14 h-14 rounded-full bg-blue-100 border-2 border-dashed border-blue-300 flex flex-col items-center justify-center text-blue-600">
+                        <Camera className="w-5 h-5" />
+                      </div>
+                    )}
+                    {signupData.avatar && (
+                      <button
+                        type="button"
+                        onClick={removeAvatar}
+                        className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 hover:bg-red-600 text-white rounded-full flex items-center justify-center shadow transition-colors cursor-pointer"
+                        title="Remove photo"
+                      >
+                        <X className="w-3 h-3" />
+                      </button>
+                    )}
+                  </div>
+
+                  <div className="flex-1">
+                    <p className="text-xs font-bold text-gray-800">
+                      Profile Picture <span className="text-gray-400 font-normal">(Optional)</span>
+                    </p>
+                    <p className="text-[11px] text-gray-500 mb-2">
+                      Upload your photo to display on your profile & navbar badge
+                    </p>
+                    <input
+                      ref={fileInputRef}
+                      type="file"
+                      accept="image/*"
+                      onChange={handleImageUpload}
+                      className="hidden"
+                      id="auth-avatar-input"
+                    />
+                    <label
+                      htmlFor="auth-avatar-input"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-blue-200 hover:border-[#1D4ED8] text-[#1e3a8a] text-xs font-bold rounded-lg cursor-pointer transition-all shadow-2xs hover:bg-blue-50/50"
+                    >
+                      <Upload className="w-3.5 h-3.5" />
+                      <span>{signupData.avatar ? "Change Photo" : "Upload Photo"}</span>
+                    </label>
                   </div>
                 </div>
 
