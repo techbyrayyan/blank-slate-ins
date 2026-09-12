@@ -24,7 +24,10 @@ async function dbConnect() {
 
   if (!cached.promise) {
     cached.promise = mongoose
-      .connect(MONGODB_URI, { bufferCommands: false })
+      .connect(MONGODB_URI, {
+        bufferCommands: false,
+        dbName: "blank_login",
+      })
       .then((m) => m);
   }
 

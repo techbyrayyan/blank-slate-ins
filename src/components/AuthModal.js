@@ -101,35 +101,45 @@ export default function AuthModal() {
 
     const reader = new FileReader();
     reader.onload = (event) => {
+      const rawDataUrl = event.target.result;
       const img = new Image();
       img.onload = () => {
-        // Resize to maximum 240x240 for avatar thumbnail
-        const canvas = document.createElement("canvas");
-        const maxSize = 240;
-        let width = img.width;
-        let height = img.height;
+        try {
+          // Resize to maximum 240x240 for avatar thumbnail
+          const canvas = document.createElement("canvas");
+          const maxSize = 240;
+          let width = img.width;
+          let height = img.height;
 
-        if (width > height) {
-          if (width > maxSize) {
-            height = Math.round((height * maxSize) / width);
-            width = maxSize;
+          if (width > height) {
+            if (width > maxSize) {
+              height = Math.round((height * maxSize) / width);
+              width = maxSize;
+            }
+          } else {
+            if (height > maxSize) {
+              width = Math.round((width * maxSize) / height);
+              height = maxSize;
+            }
           }
-        } else {
-          if (height > maxSize) {
-            width = Math.round((width * maxSize) / height);
-            height = maxSize;
-          }
+
+          canvas.width = width;
+          canvas.height = height;
+          const ctx = canvas.getContext("2d");
+          ctx.drawImage(img, 0, 0, width, height);
+          const dataUrl = canvas.toDataURL("image/jpeg", 0.85);
+          setSignupData((prev) => ({ ...prev, avatar: dataUrl }));
+          setErrorMsg("");
+        } catch (err) {
+          setSignupData((prev) => ({ ...prev, avatar: rawDataUrl }));
+          setErrorMsg("");
         }
-
-        canvas.width = width;
-        canvas.height = height;
-        const ctx = canvas.getContext("2d");
-        ctx.drawImage(img, 0, 0, width, height);
-        const dataUrl = canvas.toDataURL("image/jpeg", 0.85);
-        setSignupData((prev) => ({ ...prev, avatar: dataUrl }));
+      };
+      img.onerror = () => {
+        setSignupData((prev) => ({ ...prev, avatar: rawDataUrl }));
         setErrorMsg("");
       };
-      img.src = event.target.result;
+      img.src = rawDataUrl;
     };
     reader.readAsDataURL(file);
   };
@@ -649,9 +659,13 @@ export default function AuthModal() {
 
                 {/* ── PROFILE PHOTO UPLOAD CATEGORY (AFTER CONFIRM PASSWORD) ── */}
                 <div className="p-3 bg-blue-50/60 border border-blue-100 rounded-2xl flex items-center gap-4">
-                  <div className="relative flex-shrink-0">
+                  <div
+                    onClick={() => fileInputRef.current?.click()}
+                    className="relative flex-shrink-0 cursor-pointer group"
+                    title="Click to choose photo"
+                  >
                     {signupData.avatar ? (
-                      <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-[#1D4ED8] shadow-sm">
+                      <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-[#1D4ED8] shadow-sm group-hover:opacity-80 transition-opacity">
                         <img
                           src={signupData.avatar}
                           alt="Profile preview"
@@ -659,7 +673,7 @@ export default function AuthModal() {
                         />
                       </div>
                     ) : (
-                      <div className="w-14 h-14 rounded-full bg-blue-100 border-2 border-dashed border-blue-300 flex flex-col items-center justify-center text-blue-600">
+                      <div className="w-14 h-14 rounded-full bg-blue-100 border-2 border-dashed border-blue-300 flex flex-col items-center justify-center text-blue-600 group-hover:bg-blue-200/70 group-hover:border-[#1D4ED8] transition-all">
                         <Camera className="w-5 h-5" />
                       </div>
                     )}

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { createContext, useContext, useState, useEffect } from "react";
 
@@ -61,6 +61,22 @@ export function AuthProvider({ children }) {
     }
   };
 
+  const updateUserAvatar = async (newAvatar) => {
+    if (!user || !user.email) return;
+    const updated = { ...user, avatar: newAvatar };
+    setUser(updated);
+    try {
+      localStorage.setItem("bs_auth_user", JSON.stringify(updated));
+      await fetch("/api/auth/update-avatar", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: user.email, avatar: newAvatar }),
+      });
+    } catch (e) {
+      console.error("Failed to sync avatar update:", e);
+    }
+  };
+
   /**
    * Opens the auth modal.
    * If hasSignedUpBefore is true and mode isn't explicitly forced, defaults to "login".
@@ -119,6 +135,7 @@ export function AuthProvider({ children }) {
         loginUser,
         signupUser,
         logout,
+        updateUserAvatar,
         handleAuthSuccess,
         isLoaded,
       }}
