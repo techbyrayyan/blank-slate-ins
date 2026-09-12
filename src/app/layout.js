@@ -62,6 +62,9 @@ export const metadata = {
   },
 };
 
+import { AuthProvider } from "@/context/AuthContext";
+import AuthModal from "@/components/AuthModal";
+
 export default function RootLayout({ children }) {
   return (
     <html
@@ -100,7 +103,10 @@ export default function RootLayout({ children }) {
             pointerEvents: "none",
           }}
         />
-        {children}
+        <AuthProvider>
+          {children}
+          <AuthModal />
+        </AuthProvider>
         <Script
           src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
           strategy="afterInteractive"

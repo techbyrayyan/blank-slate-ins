@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import EditorialFooter from "@/components/EditorialFooter";
@@ -15,12 +15,14 @@ import {
   CheckCircle2,
   Sparkles,
   ExternalLink,
+  Lock,
 } from "lucide-react";
 import { instituteInfo } from "@/data/instituteData";
+import { useAuth } from "@/context/AuthContext";
 
 export default function ContactPage() {
+  const { user, isLoggedIn, openAuthModal } = useAuth();
   const [applyModalOpen, setApplyModalOpen] = useState(false);
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -31,8 +33,24 @@ export default function ContactPage() {
   const [isSending, setIsSending] = useState(false);
   const [isSent, setIsSent] = useState(false);
 
+  // Auto-fill user details when logged in
+  useEffect(() => {
+    if (user) {
+      setFormData((prev) => ({
+        ...prev,
+        name: prev.name || `${user.firstName} ${user.lastName}`.trim(),
+        email: prev.email || user.email || "",
+        phone: prev.phone || user.phone || "",
+      }));
+    }
+  }, [user]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!isLoggedIn) {
+      openAuthModal();
+      return;
+    }
     setIsSending(true);
     try {
       const res = await fetch("/api/contact", {
@@ -44,9 +62,9 @@ export default function ContactPage() {
       if (!data.success) throw new Error(data.error || "Unknown error");
       setIsSent(true);
       setFormData({
-        name: "",
-        email: "",
-        phone: "",
+        name: user ? `${user.firstName} ${user.lastName}`.trim() : "",
+        email: user ? user.email : "",
+        phone: user ? user.phone : "",
         subject: "Admissions & Enrollment",
         message: "",
       });
@@ -180,6 +198,23 @@ export default function ContactPage() {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5 flex-1 flex flex-col justify-between">
                   <div className="space-y-5">
+                    {!isLoggedIn && (
+                      <div className="p-3.5 bg-blue-50 border border-blue-200 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                        <div className="flex items-center gap-2.5">
+                          <Lock className="w-4 h-4 text-[#1D4ED8] flex-shrink-0" />
+                          <span className="text-xs font-semibold text-[#1e3a8a]">
+                            Sign up or log in to submit your inquiry.
+                          </span>
+                        </div>
+                        <button
+                          type="button"
+                          onClick={() => openAuthModal()}
+                          className="px-3.5 py-1.5 bg-[#1e3a8a] text-white text-xs font-bold rounded-xl hover:bg-[#152e72] transition-colors whitespace-nowrap cursor-pointer shadow-sm"
+                        >
+                          Log In / Sign Up
+                        </button>
+                      </div>
+                    )}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-gray-700 mb-1.5">

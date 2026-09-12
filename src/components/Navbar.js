@@ -7,6 +7,7 @@ import { ArrowRight, Menu, X, Search, Mail, Phone, Globe } from "lucide-react";
 import Logo from "./Logo";
 import SearchModal from "./SearchModal";
 import { FacebookIcon, LinkedinIcon, InstagramIcon } from "./SocialIcons";
+import { useAuth } from "@/context/AuthContext";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -41,6 +42,7 @@ const languages = [
 
 export default function Navbar({ onOpenApply }) {
   const pathname = usePathname();
+  const { user, isLoggedIn, openAuthModal, logout } = useAuth();
   const [mobileMenuOpen, setMobileMenuOpen]   = useState(false);
   const [searchModalOpen, setSearchModalOpen] = useState(false);
   const [langModalOpen, setLangModalOpen]     = useState(false);
@@ -194,17 +196,36 @@ export default function Navbar({ onOpenApply }) {
                   className="md:hidden p-2 text-gray-700 hover:text-[#1e3a8a] transition-colors" aria-label="Search">
                   <Search className="w-5 h-5" />
                 </button>
-                <Link href="/student-portal"
-                  className="relative hidden sm:inline-flex items-center overflow-hidden px-5 py-2.5 text-sm font-bold border border-[#1e3a8a] rounded whitespace-nowrap group">
-                  <span className="absolute inset-0 bg-[#1e3a8a] -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
-                  <span className="relative z-10 text-[#1e3a8a] group-hover:text-white transition-colors duration-300">Log in</span>
-                </Link>
-                <button onClick={onOpenApply}
-                  className="relative hidden sm:inline-flex items-center justify-center overflow-hidden px-5 py-2.5 text-sm font-bold border border-[#1e3a8a] rounded whitespace-nowrap group">
-                  <span className="absolute inset-0 bg-[#1e3a8a]" />
-                  <span className="absolute inset-0 bg-white translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
-                  <span className="relative z-10 text-white group-hover:text-[#1e3a8a] transition-colors duration-300">Sign up</span>
-                </button>
+                {isLoggedIn ? (
+                  <div className="hidden sm:inline-flex items-center gap-2 px-3.5 py-2 bg-blue-50 border border-blue-200 rounded-lg text-xs font-bold text-[#1e3a8a]">
+                    <span>Hi, {user.firstName}</span>
+                    <button
+                      onClick={logout}
+                      className="text-gray-500 hover:text-red-600 font-semibold ml-1 cursor-pointer transition-colors"
+                      title="Log out"
+                    >
+                      Logout
+                    </button>
+                  </div>
+                ) : (
+                  <>
+                    <button
+                      onClick={() => openAuthModal({ mode: "login" })}
+                      className="relative hidden sm:inline-flex items-center overflow-hidden px-5 py-2.5 text-sm font-bold border border-[#1e3a8a] rounded whitespace-nowrap group cursor-pointer"
+                    >
+                      <span className="absolute inset-0 bg-[#1e3a8a] -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
+                      <span className="relative z-10 text-[#1e3a8a] group-hover:text-white transition-colors duration-300">Log in</span>
+                    </button>
+                    <button
+                      onClick={() => openAuthModal({ mode: "signup" })}
+                      className="relative hidden sm:inline-flex items-center justify-center overflow-hidden px-5 py-2.5 text-sm font-bold border border-[#1e3a8a] rounded whitespace-nowrap group cursor-pointer"
+                    >
+                      <span className="absolute inset-0 bg-[#1e3a8a]" />
+                      <span className="absolute inset-0 bg-white translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
+                      <span className="relative z-10 text-white group-hover:text-[#1e3a8a] transition-colors duration-300">Sign up</span>
+                    </button>
+                  </>
+                )}
                 <button onClick={() => setLangModalOpen((v) => !v)}
                   className="hidden sm:flex items-center justify-center w-10 h-10 border border-[#1e3a8a] rounded hover:bg-[#1e3a8a] hover:text-white text-[#1e3a8a] transition-all duration-200"
                   aria-label="Choose language">
@@ -366,6 +387,35 @@ export default function Navbar({ onOpenApply }) {
               <Globe className="w-4 h-4" />
               <span>{currentLangName}</span>
             </button>
+            {isLoggedIn ? (
+              <div className="p-3 bg-blue-50 border border-blue-200 rounded-xl flex items-center justify-between">
+                <div>
+                  <p className="text-xs text-gray-500 font-medium">Logged in as</p>
+                  <p className="text-sm font-bold text-[#1e3a8a]">{user.firstName} {user.lastName}</p>
+                </div>
+                <button
+                  onClick={() => { setMobileMenuOpen(false); logout(); }}
+                  className="px-3 py-1.5 bg-white border border-red-200 text-red-600 text-xs font-bold rounded-lg hover:bg-red-50 transition-colors"
+                >
+                  Log out
+                </button>
+              </div>
+            ) : (
+              <div className="grid grid-cols-2 gap-2 pt-1">
+                <button
+                  onClick={() => { setMobileMenuOpen(false); openAuthModal({ mode: "login" }); }}
+                  className="py-2.5 px-4 bg-gray-100 text-gray-800 text-xs font-bold rounded-xl text-center hover:bg-gray-200 transition-colors"
+                >
+                  Log In
+                </button>
+                <button
+                  onClick={() => { setMobileMenuOpen(false); openAuthModal({ mode: "signup" }); }}
+                  className="py-2.5 px-4 bg-[#1e3a8a] text-white text-xs font-bold rounded-xl text-center hover:bg-[#152e72] transition-colors"
+                >
+                  Sign Up
+                </button>
+              </div>
+            )}
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               <Link href="/contact" onClick={() => setMobileMenuOpen(false)}
                 className="w-full sm:w-auto px-6 py-3 bg-[#1e3a8a] text-white text-sm font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-[#152e72] transition-all shadow-md">
@@ -374,7 +424,7 @@ export default function Navbar({ onOpenApply }) {
               </Link>
               <button onClick={() => { setMobileMenuOpen(false); onOpenApply(); }}
                 className="w-full sm:w-auto px-6 py-3 border border-[#1D4ED8] text-[#1D4ED8] text-sm font-bold rounded-xl hover:bg-blue-50 transition-all">
-                Sign Up
+                Apply Now
               </button>
             </div>
             <p className="text-xs text-gray-400 font-mono pt-2">© 2026 BlankSlate Institute</p>

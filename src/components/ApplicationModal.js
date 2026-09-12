@@ -1,11 +1,13 @@
-﻿"use client";
+"use client";
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, CheckCircle2, ArrowRight, Sparkles, AlertCircle } from "lucide-react";
+import { X, CheckCircle2, ArrowRight, Sparkles, AlertCircle, Lock } from "lucide-react";
 import { coursesData } from "@/data/instituteData";
+import { useAuth } from "@/context/AuthContext";
 
 export default function ApplicationModal({ isOpen, onClose, preselectedCourse = "" }) {
+  const { user, isLoggedIn, openAuthModal } = useAuth();
   const [step, setStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -21,6 +23,25 @@ export default function ApplicationModal({ isOpen, onClose, preselectedCourse = 
     mode: "On Campus",
     message: "",
   });
+
+  // Auto-fill user details once logged in
+  useEffect(() => {
+    if (user) {
+      setFormData((prev) => ({
+        ...prev,
+        fullName: prev.fullName || `${user.firstName} ${user.lastName}`.trim(),
+        email: prev.email || user.email || "",
+        phone: prev.phone || user.phone || "",
+      }));
+    }
+  }, [user]);
+
+  // Prompt login/signup if unauthenticated
+  useEffect(() => {
+    if (isOpen && !isLoggedIn) {
+      openAuthModal();
+    }
+  }, [isOpen, isLoggedIn, openAuthModal]);
 
   useEffect(() => {
     if (preselectedCourse) {
@@ -63,9 +84,13 @@ export default function ApplicationModal({ isOpen, onClose, preselectedCourse = 
   };
 
   const handleNext = () => {
+    if (!isLoggedIn) {
+      openAuthModal();
+      return;
+    }
     if (step === 1) {
-      if (!formData.fullName.trim() || !formData.email.trim() || !formData.phone.trim()) {
-        setErrorMsg("Please provide your Full Name, Email, and Phone number.");
+      if (!formData.fullName || !formData.email || !formData.phone) {
+        setErrorMsg("Please fill out all required fields.");
         return;
       }
       if (!formData.email.includes("@")) {
@@ -78,6 +103,10 @@ export default function ApplicationModal({ isOpen, onClose, preselectedCourse = 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!isLoggedIn) {
+      openAuthModal();
+      return;
+    }
     setIsSubmitting(true);
     setErrorMsg("");
 

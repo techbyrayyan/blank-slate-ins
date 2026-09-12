@@ -34,9 +34,12 @@ import {
   FileText,
   PartyPopper,
   CheckCircle,
+  Lock,
 } from "lucide-react";
+import { useAuth } from "@/context/AuthContext";
 
 export default function AdmissionsPage() {
+  const { user, isLoggedIn, openAuthModal } = useAuth();
   const [currentStep, setCurrentStep] = useState(1);
   const [direction, setDirection] = useState(1); // 1 = next, -1 = prev
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -86,6 +89,18 @@ export default function AdmissionsPage() {
   };
 
   const [formData, setFormData] = useState(initialFormState);
+
+  // Auto-fill user details when logged in
+  useEffect(() => {
+    if (user) {
+      setFormData((prev) => ({
+        ...prev,
+        fullName: prev.fullName || `${user.firstName} ${user.lastName}`.trim(),
+        email: prev.email || user.email || "",
+        phone: prev.phone || user.phone || "",
+      }));
+    }
+  }, [user]);
 
   const stepsConfig = [
     { id: 1, label: "Personal Info", icon: User },
@@ -160,6 +175,10 @@ export default function AdmissionsPage() {
   };
 
   const handleNextStep = () => {
+    if (!isLoggedIn) {
+      openAuthModal();
+      return;
+    }
     const error = validateStep(currentStep);
     if (error) {
       setValidationError(error);
@@ -204,6 +223,10 @@ export default function AdmissionsPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!isLoggedIn) {
+      openAuthModal();
+      return;
+    }
     if (!formData.agreedToTerms) {
       setValidationError("Please accept the terms & conditions to submit your application.");
       return;
@@ -268,6 +291,23 @@ export default function AdmissionsPage() {
             <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto leading-relaxed font-sans font-medium">
               Fill out the 4-step official application form below to apply for upcoming batches. Our admissions committee reviews all submissions within 48 hours.
             </p>
+            {!isLoggedIn && (
+              <div className="mt-4 p-3.5 bg-blue-50 border border-blue-200 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-3 text-left max-w-xl mx-auto">
+                <div className="flex items-center gap-2.5">
+                  <Lock className="w-4 h-4 text-[#1D4ED8] flex-shrink-0" />
+                  <span className="text-xs font-semibold text-[#1e3a8a]">
+                    Please sign up or log in to submit your admissions application.
+                  </span>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => openAuthModal()}
+                  className="px-3.5 py-1.5 bg-[#1e3a8a] text-white text-xs font-bold rounded-xl hover:bg-[#152e72] transition-colors whitespace-nowrap cursor-pointer shadow-sm"
+                >
+                  Log In / Sign Up
+                </button>
+              </div>
+            )}
           </motion.div>
 
           {/* External Utility Action Buttons Toolbar (Outside Form) */}
