@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ArrowRight, Menu, X, Search, Mail, Phone, Globe, Camera } from "lucide-react";
+import { ArrowRight, Menu, X, Search, Mail, Phone, Globe } from "lucide-react";
 import Logo from "./Logo";
 import SearchModal from "./SearchModal";
 import { FacebookIcon, LinkedinIcon, InstagramIcon } from "./SocialIcons";
@@ -42,8 +42,7 @@ const languages = [
 
 export default function Navbar({ onOpenApply }) {
   const pathname = usePathname();
-  const { user, isLoggedIn, openAuthModal, logout, updateUserAvatar } = useAuth();
-  const avatarInputRef = useRef(null);
+  const { user, isLoggedIn, openAuthModal, logout } = useAuth();
   const [mobileMenuOpen, setMobileMenuOpen]   = useState(false);
   const [searchModalOpen, setSearchModalOpen] = useState(false);
   const [langModalOpen, setLangModalOpen]     = useState(false);
@@ -82,48 +81,6 @@ export default function Navbar({ onOpenApply }) {
     document.addEventListener("mousedown", handler);
     return () => document.removeEventListener("mousedown", handler);
   }, [langModalOpen]);
-
-  const handleAvatarUpload = (e) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      const rawDataUrl = event.target.result;
-      const img = new Image();
-      img.onload = () => {
-        try {
-          const canvas = document.createElement("canvas");
-          const maxSize = 240;
-          let width = img.width;
-          let height = img.height;
-          if (width > height) {
-            if (width > maxSize) {
-              height = Math.round((height * maxSize) / width);
-              width = maxSize;
-            }
-          } else {
-            if (height > maxSize) {
-              width = Math.round((width * maxSize) / height);
-              height = maxSize;
-            }
-          }
-          canvas.width = width;
-          canvas.height = height;
-          const ctx = canvas.getContext("2d");
-          ctx.drawImage(img, 0, 0, width, height);
-          const dataUrl = canvas.toDataURL("image/jpeg", 0.85);
-          updateUserAvatar(dataUrl);
-        } catch (err) {
-          updateUserAvatar(rawDataUrl);
-        }
-      };
-      img.onerror = () => {
-        updateUserAvatar(rawDataUrl);
-      };
-      img.src = rawDataUrl;
-    };
-    reader.readAsDataURL(file);
-  };
 
   const changeLang = (code) => {
     setCurrentLang(code);
@@ -240,36 +197,18 @@ export default function Navbar({ onOpenApply }) {
                   <Search className="w-5 h-5" />
                 </button>
                 {isLoggedIn ? (
-                  <div className="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 bg-blue-50 border border-blue-200 rounded-lg text-xs font-bold text-[#1e3a8a]">
-                    <input
-                      ref={avatarInputRef}
-                      type="file"
-                      accept="image/*"
-                      onChange={handleAvatarUpload}
-                      className="hidden"
-                      id="navbar-avatar-input"
-                    />
-                    <button
-                      type="button"
-                      onClick={() => avatarInputRef.current?.click()}
-                      className="relative group cursor-pointer focus:outline-none flex-shrink-0"
-                      title="Click to upload or change profile photo"
-                    >
-                      {user?.avatar ? (
-                        <img
-                          src={user.avatar}
-                          alt={user.firstName || "User"}
-                          className="w-7 h-7 rounded-full object-cover border border-blue-300 group-hover:opacity-80 transition-opacity"
-                        />
-                      ) : (
-                        <div className="w-7 h-7 rounded-full bg-[#1e3a8a] text-white flex items-center justify-center text-[10px] font-bold uppercase group-hover:bg-[#152e72] transition-colors">
-                          {user?.firstName ? user.firstName.charAt(0) : "U"}
-                        </div>
-                      )}
-                      <span className="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-blue-600 text-white rounded-full flex items-center justify-center shadow-xs opacity-80 group-hover:opacity-100 transition-opacity">
-                        <Camera className="w-2 h-2" />
-                      </span>
-                    </button>
+                  <div className="hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-50 border border-blue-200 rounded-lg text-xs font-bold text-[#1e3a8a]">
+                    {user?.avatar ? (
+                      <img
+                        src={user.avatar}
+                        alt={user.firstName || "User"}
+                        className="w-7 h-7 rounded-full object-cover border border-blue-300 flex-shrink-0"
+                      />
+                    ) : (
+                      <div className="w-7 h-7 rounded-full bg-[#1e3a8a] text-white flex items-center justify-center text-[10px] font-bold flex-shrink-0 uppercase">
+                        {user?.firstName ? user.firstName.charAt(0) : "U"}
+                      </div>
+                    )}
                     <span>Hi, {user.firstName}</span>
                     <button
                       onClick={logout}
@@ -462,37 +401,20 @@ export default function Navbar({ onOpenApply }) {
             {isLoggedIn ? (
               <div className="p-3 bg-blue-50 border border-blue-200 rounded-xl flex items-center justify-between gap-3">
                 <div className="flex items-center gap-3">
-                  <button
-                    type="button"
-                    onClick={() => avatarInputRef.current?.click()}
-                    className="relative group cursor-pointer focus:outline-none flex-shrink-0"
-                    title="Click to upload or change photo"
-                  >
-                    {user?.avatar ? (
-                      <img
-                        src={user.avatar}
-                        alt={user.firstName || "User"}
-                        className="w-10 h-10 rounded-full object-cover border-2 border-blue-300 group-hover:opacity-80 transition-opacity"
-                      />
-                    ) : (
-                      <div className="w-10 h-10 rounded-full bg-[#1e3a8a] text-white flex items-center justify-center text-sm font-bold uppercase group-hover:bg-[#152e72] transition-colors">
-                        {user?.firstName ? user.firstName.charAt(0) : "U"}
-                      </div>
-                    )}
-                    <span className="absolute -bottom-1 -right-1 w-4 h-4 bg-blue-600 text-white rounded-full flex items-center justify-center shadow-xs">
-                      <Camera className="w-2.5 h-2.5" />
-                    </span>
-                  </button>
+                  {user?.avatar ? (
+                    <img
+                      src={user.avatar}
+                      alt={user.firstName || "User"}
+                      className="w-10 h-10 rounded-full object-cover border-2 border-blue-300 flex-shrink-0"
+                    />
+                  ) : (
+                    <div className="w-10 h-10 rounded-full bg-[#1e3a8a] text-white flex items-center justify-center text-sm font-bold flex-shrink-0 uppercase">
+                      {user?.firstName ? user.firstName.charAt(0) : "U"}
+                    </div>
+                  )}
                   <div>
                     <p className="text-xs text-gray-500 font-medium">Logged in as</p>
                     <p className="text-sm font-bold text-[#1e3a8a]">{user.firstName} {user.lastName}</p>
-                    <button
-                      type="button"
-                      onClick={() => avatarInputRef.current?.click()}
-                      className="text-[11px] text-blue-600 hover:underline font-semibold"
-                    >
-                      {user?.avatar ? "Change photo" : "Upload photo"}
-                    </button>
                   </div>
                 </div>
                 <button
