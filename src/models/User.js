@@ -42,5 +42,10 @@ const UserSchema = new mongoose.Schema(
   }
 );
 
-// Prevent model recompilation in dev
+if (mongoose.models && mongoose.models.User) {
+  if (!mongoose.models.User.schema.path("avatar")) {
+    delete mongoose.models.User;
+  }
+}
+
 export default mongoose.models.User || mongoose.model("User", UserSchema);

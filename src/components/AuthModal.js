@@ -89,13 +89,18 @@ export default function AuthModal() {
     const file = e.target.files?.[0];
     if (!file) return;
 
-    if (!file.type.startsWith("image/")) {
+    const isImage =
+      !file.type ||
+      file.type.startsWith("image/") ||
+      /\.(jpe?g|png|webp|gif|bmp|heic|heif)$/i.test(file.name);
+
+    if (!isImage) {
       setErrorMsg("Please select a valid image file.");
       return;
     }
 
-    if (file.size > 5 * 1024 * 1024) {
-      setErrorMsg("Image size should be under 5MB.");
+    if (file.size > 25 * 1024 * 1024) {
+      setErrorMsg("Image size should be under 25MB.");
       return;
     }
 
@@ -690,11 +695,24 @@ export default function AuthModal() {
                   </div>
 
                   <div className="flex-1">
-                    <p className="text-xs font-bold text-gray-800">
-                      Profile Picture <span className="text-gray-400 font-normal">(Optional)</span>
-                    </p>
-                    <p className="text-[11px] text-gray-500 mb-2">
-                      Upload your photo to display on your profile & navbar badge
+                    <div className="flex items-center justify-between mb-1">
+                      <p className="text-xs font-bold text-gray-800">
+                        Profile Picture
+                      </p>
+                      {signupData.avatar ? (
+                        <span className="text-[10px] font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-full border border-green-200">
+                          ✓ Photo Selected
+                        </span>
+                      ) : (
+                        <span className="text-[10px] text-gray-400 font-medium">
+                          Optional
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-[11px] text-gray-500 mb-2.5">
+                      {signupData.avatar
+                        ? "Your photo is attached and will be saved to your profile."
+                        : "Upload your photo to show your face on the navbar badge."}
                     </p>
                     <input
                       ref={fileInputRef}
@@ -709,7 +727,7 @@ export default function AuthModal() {
                       className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-blue-200 hover:border-[#1D4ED8] text-[#1e3a8a] text-xs font-bold rounded-lg cursor-pointer transition-all shadow-2xs hover:bg-blue-50/50"
                     >
                       <Upload className="w-3.5 h-3.5" />
-                      <span>{signupData.avatar ? "Change Photo" : "Upload Photo"}</span>
+                      <span>{signupData.avatar ? "Change Selected Photo" : "Select Photo from Device"}</span>
                     </label>
                   </div>
                 </div>

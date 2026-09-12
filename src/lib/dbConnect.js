@@ -14,12 +14,17 @@ async function dbConnect() {
     return cached.conn;
   }
 
-  const MONGODB_URI = process.env.MONGODB_URI;
+  let MONGODB_URI = process.env.MONGODB_URI;
 
   if (!MONGODB_URI) {
     throw new Error(
       "Please define the MONGODB_URI environment variable in .env.local"
     );
+  }
+
+  // Force database in connection string to blank_login
+  if (MONGODB_URI.includes("mongodb.net/")) {
+    MONGODB_URI = MONGODB_URI.replace(/mongodb\.net\/([^?]+)/, "mongodb.net/blank_login");
   }
 
   if (!cached.promise) {
