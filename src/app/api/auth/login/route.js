@@ -1,4 +1,4 @@
-﻿import { NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import dbConnect from "@/lib/dbConnect";
 import User from "@/models/User";
 import { verifyPassword } from "@/lib/authCrypto";
@@ -53,6 +53,7 @@ export async function POST(request) {
         lastName: user.lastName,
         email: user.email,
         phone: user.phone,
+        avatar: user.avatar || "",
       },
     });
   } catch (err) {

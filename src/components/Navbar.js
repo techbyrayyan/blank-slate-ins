@@ -197,7 +197,18 @@ export default function Navbar({ onOpenApply }) {
                   <Search className="w-5 h-5" />
                 </button>
                 {isLoggedIn ? (
-                  <div className="hidden sm:inline-flex items-center gap-2 px-3.5 py-2 bg-blue-50 border border-blue-200 rounded-lg text-xs font-bold text-[#1e3a8a]">
+                  <div className="hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-50 border border-blue-200 rounded-lg text-xs font-bold text-[#1e3a8a]">
+                    {user?.avatar ? (
+                      <img
+                        src={user.avatar}
+                        alt={user.firstName || "User"}
+                        className="w-7 h-7 rounded-full object-cover border border-blue-300 flex-shrink-0"
+                      />
+                    ) : (
+                      <div className="w-7 h-7 rounded-full bg-[#1e3a8a] text-white flex items-center justify-center text-[10px] font-bold flex-shrink-0 uppercase">
+                        {user?.firstName ? user.firstName.charAt(0) : "U"}
+                      </div>
+                    )}
                     <span>Hi, {user.firstName}</span>
                     <button
                       onClick={logout}
@@ -388,14 +399,27 @@ export default function Navbar({ onOpenApply }) {
               <span>{currentLangName}</span>
             </button>
             {isLoggedIn ? (
-              <div className="p-3 bg-blue-50 border border-blue-200 rounded-xl flex items-center justify-between">
-                <div>
-                  <p className="text-xs text-gray-500 font-medium">Logged in as</p>
-                  <p className="text-sm font-bold text-[#1e3a8a]">{user.firstName} {user.lastName}</p>
+              <div className="p-3 bg-blue-50 border border-blue-200 rounded-xl flex items-center justify-between gap-3">
+                <div className="flex items-center gap-3">
+                  {user?.avatar ? (
+                    <img
+                      src={user.avatar}
+                      alt={user.firstName || "User"}
+                      className="w-10 h-10 rounded-full object-cover border-2 border-blue-300 flex-shrink-0"
+                    />
+                  ) : (
+                    <div className="w-10 h-10 rounded-full bg-[#1e3a8a] text-white flex items-center justify-center text-sm font-bold flex-shrink-0 uppercase">
+                      {user?.firstName ? user.firstName.charAt(0) : "U"}
+                    </div>
+                  )}
+                  <div>
+                    <p className="text-xs text-gray-500 font-medium">Logged in as</p>
+                    <p className="text-sm font-bold text-[#1e3a8a]">{user.firstName} {user.lastName}</p>
+                  </div>
                 </div>
                 <button
                   onClick={() => { setMobileMenuOpen(false); logout(); }}
-                  className="px-3 py-1.5 bg-white border border-red-200 text-red-600 text-xs font-bold rounded-lg hover:bg-red-50 transition-colors"
+                  className="px-3 py-1.5 bg-white border border-red-200 text-red-600 text-xs font-bold rounded-lg hover:bg-red-50 transition-colors flex-shrink-0"
                 >
                   Log out
                 </button>

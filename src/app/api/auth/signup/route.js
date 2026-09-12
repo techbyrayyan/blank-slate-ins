@@ -1,4 +1,4 @@
-﻿import { NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import dbConnect from "@/lib/dbConnect";
 import User from "@/models/User";
 import { hashPassword } from "@/lib/authCrypto";
@@ -7,7 +7,7 @@ export async function POST(request) {
   try {
     await dbConnect();
     const body = await request.json();
-    const { firstName, lastName, email, phone, password, confirmPassword } = body;
+    const { firstName, lastName, email, phone, password, confirmPassword, avatar } = body;
 
     // Validation
     if (!firstName || !lastName || !email || !phone || !password || !confirmPassword) {
@@ -49,6 +49,7 @@ export async function POST(request) {
       lastName: lastName.trim(),
       email: normalizedEmail,
       phone: phone.trim(),
+      avatar: avatar || "",
       passwordHash: hash,
       salt: salt,
     });
@@ -63,6 +64,7 @@ export async function POST(request) {
           lastName: user.lastName,
           email: user.email,
           phone: user.phone,
+          avatar: user.avatar || "",
         },
       },
       { status: 201 }
