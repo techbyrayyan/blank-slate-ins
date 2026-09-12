@@ -197,19 +197,25 @@ export default function Navbar({ onOpenApply }) {
                   <Search className="w-5 h-5" />
                 </button>
                 {isLoggedIn ? (
-                  <div className="hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-50 border border-blue-200 rounded-lg text-xs font-bold text-[#1e3a8a]">
-                    {user?.avatar ? (
-                      <img
-                        src={user.avatar}
-                        alt={user.firstName || "User"}
-                        className="w-7 h-7 rounded-full object-cover border border-blue-300 flex-shrink-0"
-                      />
-                    ) : (
-                      <div className="w-7 h-7 rounded-full bg-[#1e3a8a] text-white flex items-center justify-center text-[10px] font-bold flex-shrink-0 uppercase">
-                        {user?.firstName ? user.firstName.charAt(0) : "U"}
-                      </div>
-                    )}
-                    <span>Hi, {user.firstName}</span>
+                  <div className="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 bg-blue-50 hover:bg-blue-100/70 border border-blue-200 rounded-lg text-xs font-bold text-[#1e3a8a] transition-colors">
+                    <Link
+                      href="/profile"
+                      className="flex items-center gap-2 cursor-pointer group"
+                      title="View your profile"
+                    >
+                      {user?.avatar ? (
+                        <img
+                          src={user.avatar}
+                          alt={user.firstName || "User"}
+                          className="w-7 h-7 rounded-full object-cover border border-blue-300 flex-shrink-0 group-hover:ring-2 group-hover:ring-blue-400 transition-all"
+                        />
+                      ) : (
+                        <div className="w-7 h-7 rounded-full bg-[#1e3a8a] text-white flex items-center justify-center text-[10px] font-bold flex-shrink-0 uppercase group-hover:bg-[#152e72] transition-colors">
+                          {user?.firstName ? user.firstName.charAt(0) : "U"}
+                        </div>
+                      )}
+                      <span className="group-hover:underline">Hi, {user.firstName}</span>
+                    </Link>
                     <button
                       onClick={logout}
                       className="text-gray-500 hover:text-red-600 font-semibold ml-1 cursor-pointer transition-colors"
@@ -400,12 +406,16 @@ export default function Navbar({ onOpenApply }) {
             </button>
             {isLoggedIn ? (
               <div className="p-3 bg-blue-50 border border-blue-200 rounded-xl flex items-center justify-between gap-3">
-                <div className="flex items-center gap-3">
+                <Link
+                  href="/profile"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center gap-3 flex-1 group"
+                >
                   {user?.avatar ? (
                     <img
                       src={user.avatar}
                       alt={user.firstName || "User"}
-                      className="w-10 h-10 rounded-full object-cover border-2 border-blue-300 flex-shrink-0"
+                      className="w-10 h-10 rounded-full object-cover border-2 border-blue-300 flex-shrink-0 group-hover:ring-2 group-hover:ring-blue-400 transition-all"
                     />
                   ) : (
                     <div className="w-10 h-10 rounded-full bg-[#1e3a8a] text-white flex items-center justify-center text-sm font-bold flex-shrink-0 uppercase">
@@ -414,9 +424,10 @@ export default function Navbar({ onOpenApply }) {
                   )}
                   <div>
                     <p className="text-xs text-gray-500 font-medium">Logged in as</p>
-                    <p className="text-sm font-bold text-[#1e3a8a]">{user.firstName} {user.lastName}</p>
+                    <p className="text-sm font-bold text-[#1e3a8a] group-hover:underline">{user.firstName} {user.lastName}</p>
+                    <span className="text-[11px] text-[#1D4ED8] font-semibold">View Profile →</span>
                   </div>
-                </div>
+                </Link>
                 <button
                   onClick={() => { setMobileMenuOpen(false); logout(); }}
                   className="px-3 py-1.5 bg-white border border-red-200 text-red-600 text-xs font-bold rounded-lg hover:bg-red-50 transition-colors flex-shrink-0"
