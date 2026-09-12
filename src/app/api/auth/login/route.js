@@ -7,19 +7,12 @@ export async function POST(request) {
   try {
     await dbConnect();
     const body = await request.json();
-    const { email, password, confirmPassword } = body;
+    const { email, password } = body;
 
     // Validation
-    if (!email || !password || !confirmPassword) {
+    if (!email || !password) {
       return NextResponse.json(
-        { success: false, error: "Please enter your email, password, and confirm password." },
-        { status: 400 }
-      );
-    }
-
-    if (password !== confirmPassword) {
-      return NextResponse.json(
-        { success: false, error: "Password and Confirm Password do not match." },
+        { success: false, error: "Please enter your email and password." },
         { status: 400 }
       );
     }

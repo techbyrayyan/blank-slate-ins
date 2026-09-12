@@ -36,7 +36,6 @@ export default function AuthModal() {
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",
-    confirmPassword: "",
   });
 
   // Signup form state
@@ -52,7 +51,6 @@ export default function AuthModal() {
 
   // Password visibility toggles
   const [showLoginPassword, setShowLoginPassword] = useState(false);
-  const [showLoginConfirmPassword, setShowLoginConfirmPassword] = useState(false);
   const [showSignupPassword, setShowSignupPassword] = useState(false);
   const [showSignupConfirmPassword, setShowSignupConfirmPassword] = useState(false);
 
@@ -66,7 +64,6 @@ export default function AuthModal() {
     setErrorMsg("");
     setSuccessMsg("");
     setShowLoginPassword(false);
-    setShowLoginConfirmPassword(false);
     setShowSignupPassword(false);
     setShowSignupConfirmPassword(false);
   }, [authModalMode, authModalOpen]);
@@ -159,13 +156,8 @@ export default function AuthModal() {
     setErrorMsg("");
     setSuccessMsg("");
 
-    if (!loginData.email || !loginData.password || !loginData.confirmPassword) {
-      setErrorMsg("Please fill in all fields.");
-      return;
-    }
-
-    if (loginData.password !== loginData.confirmPassword) {
-      setErrorMsg("Password and Confirm Password do not match.");
+    if (!loginData.email || !loginData.password) {
+      setErrorMsg("Please enter both email and password.");
       return;
     }
 
@@ -397,52 +389,6 @@ export default function AuthModal() {
                       title={showLoginPassword ? "Hide password" : "Show password"}
                     >
                       {showLoginPassword ? (
-                        <EyeOff className="w-4 h-4 text-[#1D4ED8]" />
-                      ) : (
-                        <Eye className="w-4 h-4" />
-                      )}
-                    </button>
-                  </div>
-                </div>
-
-                {/* Confirm Password with clickable Lock & Eye */}
-                <div>
-                  <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5">
-                    Confirm Password
-                  </label>
-                  <div className="relative flex items-center">
-                    <button
-                      type="button"
-                      onClick={() => setShowLoginConfirmPassword((v) => !v)}
-                      className="absolute left-3 p-1 text-gray-500 hover:text-[#1D4ED8] transition-colors cursor-pointer"
-                      title={showLoginConfirmPassword ? "Click to hide password" : "Click to show password"}
-                    >
-                      {showLoginConfirmPassword ? (
-                        <Unlock className="w-4 h-4 text-[#1D4ED8]" />
-                      ) : (
-                        <Lock className="w-4 h-4" />
-                      )}
-                    </button>
-                    <input
-                      type={showLoginConfirmPassword ? "text" : "password"}
-                      required
-                      placeholder="••••••••"
-                      value={loginData.confirmPassword}
-                      onChange={(e) =>
-                        setLoginData({
-                          ...loginData,
-                          confirmPassword: e.target.value,
-                        })
-                      }
-                      className="w-full pl-10 pr-10 py-2.5 bg-gray-50 border border-gray-300 rounded-xl text-sm text-gray-900 focus:bg-white focus:border-[#1D4ED8] focus:ring-2 focus:ring-[#1D4ED8]/10 outline-none transition-all"
-                    />
-                    <button
-                      type="button"
-                      onClick={() => setShowLoginConfirmPassword((v) => !v)}
-                      className="absolute right-3 p-1 text-gray-400 hover:text-gray-700 transition-colors cursor-pointer"
-                      title={showLoginConfirmPassword ? "Hide password" : "Show password"}
-                    >
-                      {showLoginConfirmPassword ? (
                         <EyeOff className="w-4 h-4 text-[#1D4ED8]" />
                       ) : (
                         <Eye className="w-4 h-4" />
