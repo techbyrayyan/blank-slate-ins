@@ -210,7 +210,7 @@ export default function EditorialFooter() {
 
             {/* Center: Copyright */}
             <div className="text-center text-sm sm:text-base font-semibold text-white">
-              <p>© 2026 BlankSlate Institute. All Rights Reserved.</p>
+              <p>© 2026 Blank Slate Institute Pvt. Ltd. All Rights Reserved.</p>
             </div>
 
             {/* Right: Social Media Icons */}

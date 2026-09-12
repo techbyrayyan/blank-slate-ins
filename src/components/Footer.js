@@ -105,7 +105,7 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
-          <p>© 2026 BlankSlate Institute. All Rights Reserved.</p>
+          <p>© 2026 Blank Slate Institute Pvt. Ltd. All Rights Reserved.</p>
           <div className="flex items-center space-x-6 text-gray-400">
             <Link href="/about" className="hover:text-white transition-colors">About Us</Link>
             <Link href="/courses" className="hover:text-white transition-colors">Curriculum</Link>

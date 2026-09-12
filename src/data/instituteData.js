@@ -1,7 +1,7 @@
 // BlankSlate Institute — Comprehensive 2026 Editorial Central Data Store
 
 export const instituteInfo = {
-  name: "BlankSlate Institute",
+  name: "Blank Slate Institute Pvt. Ltd.",
   tagline: "Shape Your Future. Build What’s Next.",
   description:
     "Empowering the next generation of engineers and tech founders with production-grade AI, Full-Stack, and Computing mastery.",
