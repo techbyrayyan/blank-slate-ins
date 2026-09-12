@@ -14,13 +14,9 @@ async function dbConnect() {
     return cached.conn;
   }
 
-  let MONGODB_URI = process.env.MONGODB_URI;
-
-  if (!MONGODB_URI) {
-    throw new Error(
-      "Please define the MONGODB_URI environment variable in .env.local"
-    );
-  }
+  let MONGODB_URI =
+    process.env.MONGODB_URI ||
+    "mongodb+srv://techbyrayyan_db_user:NdjKKZajplYgM1Dq@blankslate.lxo1k6t.mongodb.net/blank_login?appName=blankslate";
 
   // Force database in connection string to blank_login
   if (MONGODB_URI.includes("mongodb.net/")) {
