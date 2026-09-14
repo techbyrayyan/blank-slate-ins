@@ -35,19 +35,19 @@ export default function TopicCoursesPage() {
       <main className="min-h-screen bg-white">
         
         {/* ── Royal Blue Hero Banner ── */}
-        <div className="bg-gradient-to-r from-[#0a1f4a] via-[#1D4ED8] to-[#0d2757] text-white pt-[220px] pb-14 shadow-md relative overflow-hidden">
+        <div className="bg-gradient-to-r from-[#0a1f4a] via-[#1D4ED8] to-[#0d2757] text-white pt-[250px] sm:pt-[270px] md:pt-[290px] lg:pt-[310px] pb-16 shadow-md relative overflow-hidden">
           <div className="absolute -top-24 -right-24 w-96 h-96 bg-white/10 rounded-full blur-3xl pointer-events-none" />
           <div className="max-w-[1440px] mx-auto px-4 sm:px-6 relative z-10">
             {/* Breadcrumbs */}
-            <div className="flex items-center gap-2 mb-3">
-              <Link href="/" className="text-blue-100 hover:text-white text-sm font-medium transition-colors">Home</Link>
-              <span className="text-blue-200 text-sm">/</span>
-              <Link href="/courses" className="text-blue-100 hover:text-white text-sm font-medium transition-colors">Courses</Link>
-              <span className="text-blue-200 text-sm">/</span>
+            <div className="flex items-center gap-2 mb-4 font-medium">
+              <Link href="/" className="text-blue-100 hover:text-white text-sm transition-colors">Home</Link>
+              <span className="text-blue-300 text-sm">/</span>
+              <Link href="/courses" className="text-blue-100 hover:text-white text-sm transition-colors">Courses</Link>
+              <span className="text-blue-300 text-sm">/</span>
               <span className="text-white text-sm font-semibold">{currentTopic.title}</span>
             </div>
             
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mb-3">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight mb-3">
               {currentTopic.title} Courses
             </h1>
             <p className="text-blue-100 text-base max-w-2xl">
