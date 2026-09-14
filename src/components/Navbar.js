@@ -264,8 +264,12 @@ export default function Navbar({ onOpenApply }) {
             </div>
           </div>
 
-          <nav className="bg-white border-b border-gray-200">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-2.5 flex items-center justify-between gap-3">
+          <nav className={`bg-white border-b border-gray-200 transition-all duration-300 ${
+            isScrolled ? "shadow-sm" : ""
+          }`}>
+            <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-between gap-3 transition-all duration-300 ${
+              isScrolled ? "py-1" : "py-2.5"
+            }`}>
               
               {/* Left side: Logo on scroll only across all devices (hidden by default when not scrolled) */}
               <div className="flex items-center flex-shrink-0">
@@ -277,14 +281,18 @@ export default function Navbar({ onOpenApply }) {
               </div>
 
               {/* Center: Nav links (Visible on mobile, tablet & desktop) */}
-              <div className="flex-1 flex items-center justify-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar py-0.5">
+              <div className="flex-1 flex items-center justify-center gap-1 sm:gap-1.5 overflow-x-auto no-scrollbar py-0.5">
                 {navLinks.map((link) => {
                   const isActive = pathname === link.href;
                   return (
                     <Link
                       key={link.name}
                       href={link.href}
-                      className={`px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all whitespace-nowrap flex-shrink-0 ${
+                      className={`transition-all whitespace-nowrap flex-shrink-0 rounded-lg font-semibold ${
+                        isScrolled
+                          ? "px-2.5 sm:px-3.5 py-1 text-xs sm:text-[13px]"
+                          : "px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm"
+                      } ${
                         isActive
                           ? "text-[#1e3a8a] bg-blue-50 font-bold"
                           : "text-gray-700 hover:text-[#1e3a8a] hover:bg-gray-50"
@@ -300,10 +308,14 @@ export default function Navbar({ onOpenApply }) {
               <div className="hidden md:flex items-center flex-shrink-0">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 bg-[#1e3a8a] hover:bg-[#152e72] text-white text-xs sm:text-sm font-bold rounded-xl shadow-md transition-all group cursor-pointer"
+                  className={`inline-flex items-center gap-2 bg-[#1e3a8a] hover:bg-[#152e72] text-white font-bold rounded-xl shadow-md transition-all group cursor-pointer ${
+                    isScrolled
+                      ? "px-3.5 sm:px-4 py-1.5 text-xs"
+                      : "px-4 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm"
+                  }`}
                 >
                   <span>Let&apos;s Talk</span>
-                  <ArrowRight className="w-3.5 sm:w-4 h-3.5 sm:h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
 
