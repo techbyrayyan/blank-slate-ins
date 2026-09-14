@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { ArrowRight, Menu, X, Search, Mail, Phone, Globe } from "lucide-react";
 import Logo from "./Logo";
 import SearchModal from "./SearchModal";
-import { FacebookIcon, LinkedinIcon, InstagramIcon } from "./SocialIcons";
+import { FacebookIcon, LinkedinIcon, InstagramIcon, YoutubeIcon, TikTokIcon } from "./SocialIcons";
 import { useAuth } from "@/context/AuthContext";
 
 const navLinks = [
@@ -163,6 +163,14 @@ export default function Navbar({ onOpenApply }) {
                 <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
                   className="text-white hover:text-blue-300 transition-colors p-1.5" aria-label="Instagram">
                   <InstagramIcon className="w-4 h-4 text-white" />
+                </a>
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"
+                  className="text-white hover:text-blue-300 transition-colors p-1.5" aria-label="YouTube">
+                  <YoutubeIcon className="w-4 h-4 text-white" />
+                </a>
+                <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer"
+                  className="text-white hover:text-blue-300 transition-colors p-1.5" aria-label="TikTok">
+                  <TikTokIcon className="w-4 h-4 text-white" />
                 </a>
               </div>
             </div>
