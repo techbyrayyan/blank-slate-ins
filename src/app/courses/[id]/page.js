@@ -59,7 +59,7 @@ export default function CourseDetailPage() {
       <main className="min-h-screen bg-white">
 
         {/* ── Royal Blue Hero Banner ── */}
-        <div className="bg-gradient-to-r from-[#0a1f4a] via-[#1D4ED8] to-[#0d2757] text-white pt-[260px] sm:pt-[280px] md:pt-[300px] lg:pt-[320px] pb-16 relative overflow-hidden shadow-md">
+        <div className="bg-gradient-to-r from-[#0a1f4a] via-[#1D4ED8] to-[#0d2757] text-white pt-[235px] sm:pt-[240px] pb-12 relative overflow-hidden shadow-md">
           
           {/* Ambient Blue Background Glow */}
           <div className="absolute -top-24 -right-24 w-96 h-96 bg-white/10 rounded-full blur-3xl pointer-events-none" />
@@ -68,7 +68,7 @@ export default function CourseDetailPage() {
           <div className="max-w-[1180px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="lg:max-w-[calc(100%-380px)]">
               {/* Breadcrumb */}
-              <div className="flex items-center gap-2 text-xs sm:text-sm text-blue-100 mb-5 font-medium flex-wrap">
+              <div className="flex items-center gap-2 text-xs sm:text-sm text-blue-100 mb-3.5 font-medium flex-wrap">
                 <Link href="/" className="hover:text-white transition-colors">Home</Link>
                 <span className="text-blue-300">/</span>
                 <Link href="/courses" className="hover:text-white transition-colors">Courses</Link>
@@ -77,10 +77,10 @@ export default function CourseDetailPage() {
               </div>
 
               {/* Title */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-black text-white leading-[1.15] tracking-tight mb-5 drop-shadow-sm">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[38px] font-black text-white leading-tight tracking-tight mb-4 drop-shadow-sm">
                 {course.title}
               </h1>
-              <p className="text-base sm:text-lg text-blue-100 mb-6 leading-relaxed max-w-3xl">
+              <p className="text-sm sm:text-base text-blue-100 mb-5 leading-relaxed max-w-2xl">
                 {course.description}
               </p>
 
@@ -238,7 +238,7 @@ export default function CourseDetailPage() {
             </div>
 
             {/* Right Column: Floating Sticky Purchase Card (Follows scroll down the page) */}
-            <div className="hidden lg:block h-full relative -mt-[340px] z-30">
+            <div className="hidden lg:block h-full relative -mt-[280px] z-30">
               <div className="sticky top-[180px] bg-white text-[#1c1d1f] rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
                 {/* Course Image with Play Button */}
                 <div className="relative aspect-[16/9] overflow-hidden bg-gray-100">
