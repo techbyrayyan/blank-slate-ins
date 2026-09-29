@@ -140,7 +140,21 @@ export default function CourseDetailPage() {
                   </div>
                 </div>
                 <div className="p-4">
-                  <div className="text-2xl font-extrabold mb-3">{course.price}</div>
+                  {course.originalPrice || course.id === 1 ? (
+                    <div className="mb-3.5 flex items-center gap-2.5 flex-wrap">
+                      <span className="text-base sm:text-lg font-bold text-gray-400 line-through">
+                        {course.originalPrice || "PKR 25,000"}
+                      </span>
+                      <span className="text-2xl sm:text-3xl font-black text-[#1c1d1f]">
+                        {course.discountedPrice || "PKR 12,500"}
+                      </span>
+                      <span className="bg-red-600 text-white text-xs sm:text-sm font-extrabold px-2.5 py-1 rounded-md uppercase tracking-wider shadow-sm">
+                        {course.discountPercent || "50% OFF"}
+                      </span>
+                    </div>
+                  ) : (
+                    <div className="text-2xl font-extrabold mb-3">{course.price}</div>
+                  )}
                   <button className="w-full bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-bold py-3 rounded-lg text-sm mb-2 flex items-center justify-center gap-2">
                     <ShoppingCart className="w-4 h-4" /> Add to cart
                   </button>
@@ -263,7 +277,23 @@ export default function CourseDetailPage() {
                   </div>
                 </div>
                 <div className="p-6">
-                  <div className="text-3xl font-extrabold text-[#1c1d1f] mb-4">{course.price}</div>
+                  {course.originalPrice || course.id === 1 ? (
+                    <div className="mb-5">
+                      <div className="flex items-center gap-3 flex-wrap">
+                        <span className="text-xl sm:text-2xl font-bold text-gray-400 line-through">
+                          {course.originalPrice || "PKR 25,000"}
+                        </span>
+                        <span className="text-3xl sm:text-4xl font-black text-[#1c1d1f]">
+                          {course.discountedPrice || "PKR 12,500"}
+                        </span>
+                        <span className="bg-red-600 text-white text-xs sm:text-sm font-black px-3 py-1 rounded-lg uppercase tracking-wider shadow-sm">
+                          {course.discountPercent || "50% OFF"}
+                        </span>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="text-3xl font-extrabold text-[#1c1d1f] mb-4">{course.price}</div>
+                  )}
                   <button className="w-full bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-bold py-3.5 rounded-xl flex items-center justify-center gap-2 text-sm mb-3 transition-colors shadow-md hover:shadow-lg">
                     <ShoppingCart className="w-4 h-4" /> Add to cart
                   </button>
