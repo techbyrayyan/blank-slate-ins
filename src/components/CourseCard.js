@@ -68,31 +68,45 @@ export default function CourseCard({ course, onOpenApply }) {
 
         {/* Bottom: Badges & Price */}
         <div className="mt-4">
-          <div className="flex items-center gap-2 flex-wrap mb-3.5">
+          <div className="flex items-center gap-1.5 flex-nowrap whitespace-nowrap mb-3.5 overflow-hidden">
             {course.badgeType === "premium" ? (
-              <span className="bg-[#1e3a8a] text-white text-xs sm:text-[13px] font-bold px-2.5 py-1 rounded flex items-center gap-1">
+              <span className="bg-[#1e3a8a] text-white text-xs font-bold px-2 py-0.5 rounded flex items-center gap-1 flex-shrink-0">
                 <Check className="w-3.5 h-3.5" />
                 Premium
               </span>
             ) : (
-              <span className="bg-blue-50 text-[#1e3a8a] border border-blue-200 text-xs sm:text-[13px] font-bold px-2.5 py-1 rounded">
+              <span className="bg-blue-50 text-[#1e3a8a] border border-blue-200 text-xs font-bold px-2 py-0.5 rounded flex-shrink-0">
                 {course.badge || "Bestseller"}
               </span>
             )}
 
-            <div className="border border-gray-300 rounded px-2.5 py-1 text-xs sm:text-[13px] flex items-center gap-1 font-bold text-[#1c1d1f]">
+            <div className="border border-gray-300 rounded px-2 py-0.5 text-xs flex items-center gap-1 font-bold text-[#1c1d1f] flex-shrink-0">
               <Star className="w-3.5 h-3.5 fill-[#b4690e] text-[#b4690e]" />
               <span>{course.rating}</span>
             </div>
 
-            <div className="border border-gray-300 rounded px-2.5 py-1 text-xs sm:text-[13px] text-[#55595d]">
+            <div className="border border-gray-300 rounded px-2 py-0.5 text-xs text-[#55595d] flex-shrink-0">
               {course.ratingCount}
             </div>
           </div>
 
-          <div className="font-black text-[#1c1d1f] group-hover:text-[#1e3a8a] transition-colors text-xl sm:text-2xl">
-            {course.price}
-          </div>
+          {course.id === 1 || course.discountedPrice ? (
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="text-xs sm:text-sm text-gray-400 line-through font-semibold">
+                {course.originalPrice || "PKR 25,000"}
+              </span>
+              <span className="font-black text-[#1c1d1f] group-hover:text-[#1e3a8a] transition-colors text-xl sm:text-2xl">
+                {course.discountedPrice || "PKR 12,500"}
+              </span>
+              <span className="bg-red-600 text-white text-[11px] sm:text-xs font-black px-2 py-0.5 rounded uppercase tracking-wider shadow-sm">
+                {course.discountPercent || "50% OFF"}
+              </span>
+            </div>
+          ) : (
+            <div className="font-black text-[#1c1d1f] group-hover:text-[#1e3a8a] transition-colors text-xl sm:text-2xl">
+              {course.price}
+            </div>
+          )}
         </div>
         </div>
       </Link>
