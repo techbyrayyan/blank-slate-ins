@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
-import { Check, ChevronDown, ChevronUp, ShoppingCart } from "lucide-react";
+import { Check, ChevronDown, ChevronUp, ShoppingCart, CalendarDays, Building2, Clock } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import EditorialFooter from "@/components/EditorialFooter";
 import { allCourses } from "@/lib/coursesData";
@@ -159,6 +159,63 @@ export default function CourseDetailPage() {
                     <ShoppingCart className="w-4 h-4" /> Add to cart
                   </button>
                   <button className="w-full border-2 border-[#2563EB] text-[#2563EB] font-bold py-2.5 rounded-lg text-sm">Enroll Now</button>
+                </div>
+              </div>
+
+              {/* ── Key Course Delivery Highlights (3 Feature Cards) ── */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 sm:gap-4">
+                {/* 1. Schedule / Days per week */}
+                <div className="bg-gradient-to-br from-blue-50/70 via-white to-white border border-blue-100/90 rounded-2xl p-4 sm:p-4.5 shadow-sm hover:shadow-md hover:border-[#1D4ED8]/30 transition-all duration-200 group">
+                  <div className="flex items-center gap-3 mb-2.5">
+                    <div className="w-10 h-10 rounded-xl bg-blue-100/80 text-[#1D4ED8] flex items-center justify-center flex-shrink-0 group-hover:bg-[#1D4ED8] group-hover:text-white transition-colors">
+                      <CalendarDays className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-blue-700 block">Class Schedule</span>
+                      <h4 className="text-sm sm:text-[15px] font-extrabold text-[#1c1d1f] leading-snug">
+                        {course.classesPerWeek || "3 Days / Week"}
+                      </h4>
+                    </div>
+                  </div>
+                  <p className="text-xs text-gray-500 font-medium pl-1 leading-relaxed">
+                    {course.classDuration ? `${course.classDuration} per session` : "2 hrs per class"} &bull; {course.hours || "72 hrs total"}
+                  </p>
+                </div>
+
+                {/* 2. Delivery Mode: On-Site & Online / Physical */}
+                <div className="bg-gradient-to-br from-indigo-50/70 via-white to-white border border-indigo-100/90 rounded-2xl p-4 sm:p-4.5 shadow-sm hover:shadow-md hover:border-indigo-300 transition-all duration-200 group">
+                  <div className="flex items-center gap-3 mb-2.5">
+                    <div className="w-10 h-10 rounded-xl bg-indigo-100/80 text-indigo-700 flex items-center justify-center flex-shrink-0 group-hover:bg-indigo-700 group-hover:text-white transition-colors">
+                      <Building2 className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-indigo-700 block">Learning Mode</span>
+                      <h4 className="text-sm sm:text-[15px] font-extrabold text-[#1c1d1f] leading-snug">
+                        On-Site &amp; Online
+                      </h4>
+                    </div>
+                  </div>
+                  <p className="text-xs text-gray-500 font-medium pl-1 leading-relaxed">
+                    Physical Campus Lab + Live Interactive
+                  </p>
+                </div>
+
+                {/* 3. Batches / Timings */}
+                <div className="bg-gradient-to-br from-sky-50/70 via-white to-white border border-sky-100/90 rounded-2xl p-4 sm:p-4.5 shadow-sm hover:shadow-md hover:border-sky-300 transition-all duration-200 group">
+                  <div className="flex items-center gap-3 mb-2.5">
+                    <div className="w-10 h-10 rounded-xl bg-sky-100/80 text-sky-700 flex items-center justify-center flex-shrink-0 group-hover:bg-sky-700 group-hover:text-white transition-colors">
+                      <Clock className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-sky-700 block">Batch Options</span>
+                      <h4 className="text-sm sm:text-[15px] font-extrabold text-[#1c1d1f] leading-snug">
+                        Morning &amp; Evening
+                      </h4>
+                    </div>
+                  </div>
+                  <p className="text-xs text-gray-500 font-medium pl-1 leading-relaxed">
+                    Weekday &amp; Weekend batches open
+                  </p>
                 </div>
               </div>
 
