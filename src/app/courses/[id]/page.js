@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { Check, ChevronDown, ChevronUp, ShoppingCart } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import EditorialFooter from "@/components/EditorialFooter";
@@ -23,6 +23,7 @@ function StarRow({ rating }) {
 
 export default function CourseDetailPage() {
   const { id } = useParams();
+  const router = useRouter();
   const course =
     allCourses.find((c) => c.slug && c.slug === id) ||
     allCourses.find((c) => String(c.id) === String(id)) ||
@@ -30,6 +31,15 @@ export default function CourseDetailPage() {
     allCourses.find((c) => c.title.toLowerCase().replace(/[^a-z0-9]/g, "-").includes(String(id).toLowerCase())) ||
     allCourses[0];
   const [openSections, setOpenSections] = useState([0]);
+
+  useEffect(() => {
+    if (course?.slug && id !== course.slug) {
+      if (typeof window !== "undefined") {
+        window.history.replaceState(null, "", `/courses/${course.slug}`);
+      }
+      router.replace(`/courses/${course.slug}`);
+    }
+  }, [course, id, router]);
 
   if (!course) {
     return (
