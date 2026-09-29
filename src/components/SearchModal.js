@@ -95,7 +95,7 @@ export default function SearchModal({ isOpen, onClose }) {
                 {filteredCourses.map((c) => (
                   <Link
                     key={c.id}
-                    href={`/courses/${c.id}`}
+                    href={`/courses/${c.slug || c.id}`}
                     onClick={onClose}
                     className="flex items-center justify-between p-3 rounded-2xl hover:bg-white/5 transition-colors group"
                   >

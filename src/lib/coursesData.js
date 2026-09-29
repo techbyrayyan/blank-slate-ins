@@ -28,6 +28,7 @@ export const topicsList = [
 export const allCourses = [
   {
     "id": 1,
+    "slug": "website-development-with-wordpress",
     "topicSlug": "web-development",
     "title": "Website Development with WordPress",
     "author": "Blank Slate Institute",
@@ -46,38 +47,78 @@ export const allCourses = [
     "classesPerWeek": "3 classes / week",
     "classDuration": "2 hrs",
     "students": "1,850",
-    "description": "Web fundamentals → HTML5 → CSS3 → responsive design → basic JavaScript → WordPress → Elementor → themes/plugins → WooCommerce basics → domains/hosting → cPanel → SEO basics → website security → live client-style website → portfolio.",
-    "longDescription": "Master website development with WordPress from the ground up. This course takes you from foundational web technologies (HTML5, CSS3, responsive layouts, and basic JavaScript) through professional WordPress and Elementor design, WooCommerce online stores, hosting, cPanel management, and site security. You will build and launch live client-style websites to showcase in your freelance or job portfolio.",
+    "description": "Web fundamentals → HTML5 → CSS3 → Responsive Design → Basic JavaScript → WordPress → Elementor → Themes and Plugins → WooCommerce Basics → Domains and Hosting → cPanel → SEO Basics → Website Security → Live Client-Style Website → Portfolio",
+    "longDescription": "Learn to build websites from the ground up with HTML5, CSS3, basic JavaScript and WordPress. This course covers everything from responsive layouts and dynamic elements to complete WordPress setup, Elementor customization, WooCommerce store creation, domain and hosting management via cPanel, SEO optimization, and website security. By the end of this course, you will have completed a live client-style website and built a professional portfolio ready to showcase to potential clients and employers.",
     "bullets": [
-      "Web fundamentals, HTML5, CSS3, responsive design & basic JavaScript",
-      "WordPress CMS, Elementor page builder, custom themes & essential plugins",
-      "WooCommerce store creation, product catalogs & payment setups",
-      "Domain, cPanel hosting, SSL, website security & client-ready portfolio"
+      "Understand how websites work and build pages using HTML5 and CSS3.",
+      "Create responsive layouts and add basic interactivity with JavaScript.",
+      "Build and customize websites with WordPress, Elementor, themes, and plugins.",
+      "Set up a basic online store with WooCommerce.",
+      "Connect domains, manage hosting through cPanel, and publish a live website.",
+      "Apply basic SEO and website security practices.",
+      "Complete a client-style website and build a portfolio to showcase your work."
     ],
     "requirements": [
-      "Matriculation or equivalent",
-      "Basic computer operations and internet browsing skills"
+      "Matric qualification",
+      "Basic computer and internet knowledge",
+      "Your own laptop for classroom practice and assignments",
+      "No previous coding or WordPress experience required"
     ],
     "sections": [
       {
-        "title": "Web Fundamentals, HTML5 & CSS3 Layouts",
-        "lectures": 8,
-        "duration": "16 hours"
+        "title": "Module 1: Web fundamentals",
+        "lectures": 3,
+        "duration": "6 hours"
       },
       {
-        "title": "WordPress Architecture & Elementor Page Building",
-        "lectures": 10,
-        "duration": "20 hours"
+        "title": "Module 2: HTML5",
+        "lectures": 4,
+        "duration": "8 hours"
       },
       {
-        "title": "WooCommerce E-Commerce Setup & Payments",
-        "lectures": 8,
-        "duration": "16 hours"
+        "title": "Module 3: CSS3",
+        "lectures": 5,
+        "duration": "10 hours"
       },
       {
-        "title": "Hosting, cPanel, Security & Live Portfolio Website",
-        "lectures": 10,
-        "duration": "20 hours"
+        "title": "Module 4: Responsive design",
+        "lectures": 3,
+        "duration": "6 hours"
+      },
+      {
+        "title": "Module 5: Basic JavaScript",
+        "lectures": 4,
+        "duration": "8 hours"
+      },
+      {
+        "title": "Module 6: WordPress fundamentals",
+        "lectures": 4,
+        "duration": "8 hours"
+      },
+      {
+        "title": "Module 7: Elementor, themes and plugins",
+        "lectures": 4,
+        "duration": "8 hours"
+      },
+      {
+        "title": "Module 8: WooCommerce basics",
+        "lectures": 2,
+        "duration": "4 hours"
+      },
+      {
+        "title": "Module 9: Domains, hosting and cPanel",
+        "lectures": 2,
+        "duration": "4 hours"
+      },
+      {
+        "title": "Module 10: SEO and security basics",
+        "lectures": 2,
+        "duration": "4 hours"
+      },
+      {
+        "title": "Module 11: Final project and portfolio",
+        "lectures": 3,
+        "duration": "6 hours"
       }
     ]
   },

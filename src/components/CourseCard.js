@@ -40,7 +40,7 @@ export default function CourseCard({ course, onOpenApply }) {
       onMouseLeave={() => setHovered(false)}
     >
       {/* Main Course Card — clickable → course detail page */}
-      <Link href={`/courses/${course.id}`} className="block group">
+      <Link href={`/courses/${course.slug || course.id}`} className="block group">
         <div
           className="cursor-pointer bg-white rounded-2xl border border-gray-200 p-4 sm:p-5 flex flex-col justify-between transition-all duration-300 min-h-[385px] w-full group-hover:border-[#2563EB] group-hover:shadow-[0_12px_36px_rgba(37,99,235,0.18)] group-hover:-translate-y-1"
           style={{ boxShadow: hovered ? "0 12px 36px rgba(37,99,235,0.18)" : undefined }}

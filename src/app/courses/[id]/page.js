@@ -24,6 +24,7 @@ function StarRow({ rating }) {
 export default function CourseDetailPage() {
   const { id } = useParams();
   const course =
+    allCourses.find((c) => c.slug && c.slug === id) ||
     allCourses.find((c) => String(c.id) === String(id)) ||
     allCourses.find((c) => String(c.id).endsWith(String(id))) ||
     allCourses.find((c) => c.title.toLowerCase().replace(/[^a-z0-9]/g, "-").includes(String(id).toLowerCase())) ||
@@ -291,7 +292,7 @@ export default function CourseDetailPage() {
                 {related.map((c) => (
                   <Link
                     key={c.id}
-                    href={`/courses/${c.id}`}
+                    href={`/courses/${c.slug || c.id}`}
                     className="group bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-md transition-shadow"
                   >
                     <div className="aspect-[16/9] overflow-hidden">
